@@ -16,6 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
+var URLdirectory = {   '00000' : '/page1.html',
+                    '00001' : '/page2.html'}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,6 +39,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        initIBeacons(URLdirectory);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,3 +55,43 @@ var app = {
 };
 
 app.initialize();
+
+var logToDom = function (message) {
+    var e = document.createElement('label');
+    e.innerText = message;
+
+    var br = document.createElement('br');
+    var br2 = document.createElement('br');
+    document.body.appendChild(e);
+    document.body.appendChild(br);
+    document.body.appendChild(br2);
+
+    window.scrollTo(0, window.document.height);
+};
+
+
+var initIBeacons = function (directory) {
+    var delegate = new cordova.plugins.locationManager.Delegate();
+
+    var current_beacon = null;
+
+    delegate.didRangeBeaconsInRegion = function (pluginResult) {
+        logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+
+        //is there a new beacon in Immediate range?
+        for(var i=0; i<pluginResult.beacons.length; i++) {
+            var beacon = pluginResult.beacons[i];
+            if(beacon.proximity == "ProximityImmediate" && (beacon.major != current_beacon)) {
+                //look up new html page, and redirect
+                var new_page = directory[beacon.major];
+                current_beacon = beacon.major;
+                window.location = new_page;
+            }
+        }
+    };
+
+    cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+    .fail(console.error)
+    .done();
+
+};
