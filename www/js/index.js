@@ -18,7 +18,7 @@
  */
 
 
-var URLdirectory = {   '00000' : '/page1.html',
+var URLdirectory = {   '6650' : '/page1.html',
                     '00001' : '/page2.html'}
 
 var app = {
@@ -39,6 +39,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        logToDom("initialised");
+        console.log("initialised");
         initIBeacons(URLdirectory);
     },
     // Update DOM on a Received Event
@@ -73,6 +75,7 @@ var logToDom = function (message) {
 var initIBeacons = function (directory) {
     var delegate = new cordova.plugins.locationManager.Delegate();
 
+    logToDom("Initialising Beacons");
     var current_beacon = null;
 
     delegate.didRangeBeaconsInRegion = function (pluginResult) {
@@ -89,6 +92,8 @@ var initIBeacons = function (directory) {
             }
         }
     };
+
+    var beaconRegion = '8492E75F-4FD6-469D-B132-043FE94921D8';
 
     cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
     .fail(console.error)
