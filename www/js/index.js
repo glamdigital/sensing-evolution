@@ -99,12 +99,14 @@ var initIBeacons = function (directory) {
     }
 
 
-    var beaconRegion = '8492E75F-4FD6-469D-B132-043FE94921D8';
+    var beaconRegionUUID = '8492E75F-4FD6-469D-B132-043FE94921D8';
+    var beaconRegion = cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID, null, null);
 
     logToDom('About to start ranging beacons');
     cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-    .fail(logToDom)
-    .done();
+        .success(logToDom)
+        .fail(logToDom)
+        .done();
     logToDom('Started ranging beacons');
 };
 
