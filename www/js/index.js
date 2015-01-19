@@ -94,11 +94,17 @@ var initIBeacons = function (directory) {
         }
     };
 
+    delegate.didStartMonitoringForRegion(pluginResult) {
+        logToDom('[DOM] did start monitoring for region: ' + JSON.stringify(pluginResult));
+    }
+
 
     var beaconRegion = '8492E75F-4FD6-469D-B132-043FE94921D8';
 
+    logToDom('About to start ranging beacons');
     cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
     .fail(logToDom)
     .done();
+    logToDom('Started ranging beacons');
 };
 
