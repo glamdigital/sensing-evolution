@@ -94,7 +94,7 @@ var initIBeacons = function (directory) {
         }
     };
 
-    delegate.didStartMonitoringForRegion(pluginResult) {
+    delegate.didStartMonitoringForRegion = function (pluginResult) {
         logToDom('[DOM] did start monitoring for region: ' + JSON.stringify(pluginResult));
     }
 
