@@ -108,7 +108,8 @@ var initIBeacons = function (directory) {
         logToDom("Exception creating beacon region");
         logToDom(e);
     }
-
+    logToDom(beaconRegion);
+    logToDom(beaconRegion instanceof cordova.plugins.locationManager.BeaconRegion);
     logToDom('About to start ranging beacons');
     try {
         cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
