@@ -111,6 +111,10 @@ var initIBeacons = function (directory) {
     logToDom(beaconRegion);
     logToDom(beaconRegion instanceof cordova.plugins.locationManager.BeaconRegion);
     logToDom('About to start ranging beacons');
+
+    cordova.plugins.locationManager.requestAlwaysAuthorization();
+
+
     try {
         cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
             .success(logToDom)
