@@ -101,7 +101,7 @@ var initIBeacons = function (directory) {
 
     var beaconRegionUUID = '8492E75F-4FD6-469D-B132-043FE94921D8';
     try {
-        var beaconRegion = cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID, null, null);
+        var beaconRegion = cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID, 6650, 13409);
     }
     catch (e) {
         logToDom("Exception creating beacon region");
