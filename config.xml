@@ -9,6 +9,9 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+
     <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+
     <feature name="http://api.phonegap.com/1.0/geolocation" />
 </widget>
