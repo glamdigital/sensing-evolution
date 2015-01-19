@@ -73,9 +73,11 @@ var logToDom = function (message) {
 
 
 var initIBeacons = function (directory) {
+    logToDom("Initialising Beacons - pre delegate");
     var delegate = new cordova.plugins.locationManager.Delegate();
 
-    logToDom("Initialising Beacons");
+    logToDom("Initialising Beacons - post delegate");
+    logToDom(delegate);
     var current_beacon = null;
 
     delegate.didRangeBeaconsInRegion = function (pluginResult) {
