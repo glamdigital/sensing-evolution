@@ -10,4 +10,5 @@
     <content src="index.html" />
     <access origin="*" />
     <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
 </widget>

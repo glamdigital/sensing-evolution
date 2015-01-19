@@ -71,19 +71,18 @@ var logToDom = function (message) {
     window.scrollTo(0, window.document.height);
 };
 
-
 var initIBeacons = function (directory) {
     logToDom("Initialising Beacons - pre delegate");
-    var delegate = new cordova.plugins.locationManager.Delegate();
 
+    var delegate = new cordova.plugins.locationManager.Delegate();
     logToDom("Initialising Beacons - post delegate");
     logToDom(delegate);
+
     var current_beacon = null;
-
     delegate.didRangeBeaconsInRegion = function (pluginResult) {
-        logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
-
         //is there a new beacon in Immediate range?
+
+        logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
         for(var i=0; i<pluginResult.beacons.length; i++) {
             var beacon = pluginResult.beacons[i];
             if(beacon.proximity == "ProximityImmediate" && (beacon.major != current_beacon)) {
@@ -95,10 +94,11 @@ var initIBeacons = function (directory) {
         }
     };
 
+
     var beaconRegion = '8492E75F-4FD6-469D-B132-043FE94921D8';
 
     cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-    .fail(console.error)
+    .fail(logToDom)
     .done();
-
 };
+
