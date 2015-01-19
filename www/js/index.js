@@ -100,13 +100,24 @@ var initIBeacons = function (directory) {
 
 
     var beaconRegionUUID = '8492E75F-4FD6-469D-B132-043FE94921D8';
-    var beaconRegion = cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID, null, null);
+    try {
+        var beaconRegion = cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID, null, null);
+    }
+    catch (e) {
+        logToDom("Exception creating beacon region");
+        logToDom(e);
+    }
 
     logToDom('About to start ranging beacons');
-    cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
-        .success(logToDom)
-        .fail(logToDom)
-        .done();
+    try {
+        cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+            .success(logToDom)
+            .fail(logToDom)
+            .done();
+    } catch (e) {
+        logToDom("Exception starting ranging beacons");
+        logToDom(e);
+    }
     logToDom('Started ranging beacons');
 };
 
