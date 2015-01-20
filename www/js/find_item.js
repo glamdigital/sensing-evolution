@@ -12,6 +12,7 @@ $(function() {
 
     var onItemFound = function(ev) {
         $(ev.target).hide();
+        $(ev.target).siblings('.hint-container').hide();
         $(ev.target).siblings('.found-item').show();
         setTimeout(playVideo, 500);
     };
@@ -30,9 +31,5 @@ $(function() {
 
     //show hint
     $('a.show-hint').on('click', revealHint);
-
-    console.log("BAA BAA");
-    $('body').append("FOAOAPSDFA");
-    logToDom("I'm Here");
 
 });
