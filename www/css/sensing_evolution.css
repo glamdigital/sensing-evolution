@@ -1,0 +1,70 @@
+/* line 4, ../sass/sensing_evolution.scss */
+body {
+  font-family: "Helvetica Neue", "Droid Sans", sans-serif;
+}
+
+/* line 8, ../sass/sensing_evolution.scss */
+.header {
+  background-color: #fafafa;
+}
+/* line 10, ../sass/sensing_evolution.scss */
+.header h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* line 16, ../sass/sensing_evolution.scss */
+.topic {
+  padding: 0px 20px;
+}
+/* line 18, ../sass/sensing_evolution.scss */
+.topic h2 {
+  text-align: center;
+}
+
+/* line 23, ../sass/sensing_evolution.scss */
+.search-item {
+  padding: 0px 20px;
+  text-align: center;
+}
+/* line 26, ../sass/sensing_evolution.scss */
+.search-item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 30, ../sass/sensing_evolution.scss */
+.search-item .hint {
+  display: none;
+}
+/* line 32, ../sass/sensing_evolution.scss */
+.search-item .hint.revealed {
+  display: block;
+}
+
+/* line 39, ../sass/sensing_evolution.scss */
+h3.name {
+  font-style: italic;
+  text-align: center;
+}
+
+/* line 44, ../sass/sensing_evolution.scss */
+.found-item {
+  display: none;
+  padding: 0px 20px;
+  text-align: center;
+}
+/* line 48, ../sass/sensing_evolution.scss */
+.found-item video {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 52, ../sass/sensing_evolution.scss */
+.found-item h3 {
+  color: darkgreen;
+}
+
+/* line 57, ../sass/sensing_evolution.scss */
+.dev-control {
+  display: block;
+  font-size: x-small;
+}

@@ -1,0 +1,60 @@
+$standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
+$standardPadding: 0px 20px;
+
+body {
+  font-family: $standardFontFamily;
+}
+
+.header {
+    background-color: #fafafa;
+    h1 {
+      text-align: center;
+      padding-top: 20px;
+    }
+}
+
+.topic {
+  padding: $standardPadding;
+  h2 {
+    text-align: center;
+  }
+}
+
+.search-item {
+  padding: $standardPadding;
+  text-align: center;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hint {
+    display: none;
+    &.revealed {
+      //Add the 'revealed' class once revealed, and the hint will be shown
+      display: block;
+    }
+  }
+}
+
+h3.name {
+  font-style: italic;
+  text-align: center;
+}
+
+.found-item {
+  display: none;
+  padding: $standardPadding;
+  text-align: center;
+  video {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h3 {
+    color: darkgreen;
+  }
+}
+
+.dev-control {
+  display: block;
+  font-size: x-small;
+}

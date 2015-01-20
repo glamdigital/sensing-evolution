@@ -18,12 +18,16 @@
  */
 
 
-var URLdirectory = {   '6650' : '/page1.html',
-                    '00001' : '/page2.html'}
+// Martin's iPhone
+var URLdirectory = {   '6650' : 'page1.html',    //Martin's iphone
+                    '26981' : 'page1.html'}      //icy marshmallow
+
+
 
 var app = {
     // Application Constructor
     initialize: function() {
+        logToDom("Intialising app");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -31,6 +35,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
+        logToDom("Binding events");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -38,7 +43,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        logToDom("Device Ready");
         logToDom("initialised");
         console.log("initialised");
         initIBeacons(URLdirectory);
@@ -56,7 +61,10 @@ var app = {
     }
 };
 
-app.initialize();
+$(function() {
+    app.initialize();
+});
+
 
 var logToDom = function (message) {
     var e = document.createElement('label');
@@ -71,49 +79,40 @@ var logToDom = function (message) {
     window.scrollTo(0, window.document.height);
 };
 
+
 var initIBeacons = function (directory) {
-    logToDom("Initialising Beacons - pre delegate");
+    cordova.plugins.locationManager.requestAlwaysAuthorization();
 
     var delegate = new cordova.plugins.locationManager.Delegate();
-    logToDom("Initialising Beacons - post delegate");
-    logToDom(delegate);
+    cordova.plugins.locationManager.setDelegate(delegate);
 
     var current_beacon = null;
     delegate.didRangeBeaconsInRegion = function (pluginResult) {
         //is there a new beacon in Immediate range?
 
-        logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
+        //logToDom('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
         for(var i=0; i<pluginResult.beacons.length; i++) {
             var beacon = pluginResult.beacons[i];
-            if(beacon.proximity == "ProximityImmediate" && (beacon.major != current_beacon)) {
-                //look up new html page, and redirect
-                var new_page = directory[beacon.major];
-                current_beacon = beacon.major;
-                window.location = new_page;
+            if(beacon.proximity == "ProximityImmediate") {
+                if(beacon.major != current_beacon) {
+                    //look up new html page, and redirect
+                    var new_page = directory[beacon.major];
+                    logToDom("new page is: " + new_page);
+                    current_beacon = beacon.major;
+                    //window.location = new_page;
+                    //trigger the 'found' event on the search item
+                    $('search-item').trigger('found');
+                }
+            }
+            else if (beacon.proximity == "ProimityNear") {
+                logToDom("Beacon in Near Range!");
             }
         }
     };
 
-    delegate.didStartMonitoringForRegion = function (pluginResult) {
-        logToDom('[DOM] did start monitoring for region: ' + JSON.stringify(pluginResult));
-    }
-
-
-    var beaconRegionUUID = '8492E75F-4FD6-469D-B132-043FE94921D8';
-    var beaconRegion = null;
-    try {
-        beaconRegion = new cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID);
-    }
-    catch (e) {
-        logToDom("Exception creating beacon region");
-        logToDom(e);
-    }
-    logToDom(beaconRegion);
-    logToDom(beaconRegion instanceof cordova.plugins.locationManager.BeaconRegion);
-    logToDom('About to start ranging beacons');
-
-    cordova.plugins.locationManager.requestAlwaysAuthorization();
-
+    var beaconRegionUUID = '8492E75F-4FD6-469D-B132-043FE94921D8';  //Martin's iPhone
+    var beaconRegionUUID = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D';  //icy marshmallow
+    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion("evo beacons", beaconRegionUUID);
 
     try {
         cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
@@ -121,8 +120,8 @@ var initIBeacons = function (directory) {
             .done();
     } catch (e) {
         logToDom("Exception starting ranging beacons");
-        logToDom(e);
     }
-    logToDom('Started ranging beacons');
+
+    logToDom("Now scanning for beacons");
 };
 
