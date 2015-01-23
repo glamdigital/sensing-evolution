@@ -1,9 +1,10 @@
 var beaconRegionUUID_ios = '8492E75F-4FD6-469D-B132-043FE94921D8';  //estimote iOS app'
-var beaconRegionUUID_icy = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D';  //icy marshmallow
+var beaconRegionUUID_beacons = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D';  //the 3 estimote beacons we have
+
 
 // Until we can manually set the UUID of a beacon, the UUID we are looking for
 // must be hard-coded here to whatever the demonstration beacon is currently using
-var beaconRegionUUID = beaconRegionUUID_ios;
+var beaconRegionUUID = beaconRegionUUID_beacons;
 
 // Set this to true to enable the logs to the DOM
 var log_to_dom_enabled = false;
