@@ -1,5 +1,8 @@
 $(function() {
 
+    var reset = function(ev) {
+
+    }
 
     var revealHint = function(ev) {
         ev.preventDefault();
@@ -17,12 +20,17 @@ $(function() {
         setTimeout(playVideo, 500);
     };
 
+    var resetAll = function(ev) {
+        location.reload();
+    }
+
     var playVideo = function() {
         $('video').get(0).play();
     }
 
     //listen for events telling us we've been found
     $('.search-item').on('found', onItemFound);
+    $('.restart-all').on('click', resetAll);
 
     //dev cheat button to simulate finding
     $('a.dev-control').on('click', function () {
@@ -31,5 +39,4 @@ $(function() {
 
     //show hint
     $('a.show-hint').on('click', revealHint);
-
 });
