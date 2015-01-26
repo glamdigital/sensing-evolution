@@ -59,8 +59,26 @@ body {
 h3.name {
   font-style: italic;
   text-align: center;
-  margin: 0px;
   padding-bottom: 20px;
+}
+
+.proximity-indicator {
+  background-color: #999999;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 13px 12px;
+  position: fixed;
+  &.far {
+    background-color: lightcoral;
+  }
+  &.near {
+    background-color: orange;
+  }
+  &.immediate {
+    background-color: lightgreen;
+  }
+
+
 }
 
 .found-item {
@@ -73,6 +91,7 @@ h3.name {
   }
   h3 {
     color: darkgreen;
+    display: inline;
   }
 }
 

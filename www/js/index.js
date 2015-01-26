@@ -85,7 +85,18 @@ var initIBeacons = function () {
 
                     //trigger that the object has been found.
                     $('.search-item').trigger('found');
+
+                    $('.proximity-indicator').removeClass('near far').addClass('immediate').html('Immediate');
                 }
+            }
+            else if(beacon.proximity == "ProximityNear") {
+                $('.proximity-indicator').removeClass('immediate far').addClass('near').html('Near');
+            }
+            else if(beacon.proximity == "ProximityFar") {
+                $('.proximity-indicator').removeClass('immediate near').addClass('far').html('Far')
+            }
+            else {
+                $('.proximity-indicator').removeClass('immediate near far').html('Scanning...')
             }
         }
     };
