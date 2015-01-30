@@ -3,6 +3,7 @@ platforms/
 .sass-cache/
 bower_components/
 node_modules/
+www/css
 
 *.swp
 

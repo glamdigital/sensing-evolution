@@ -18,6 +18,13 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
       'YOUR_NAME; Licensed MIT */\n',
     // Task configuration.
+    compass: {
+      dist: {
+        options: {
+          config: 'config.rb'
+        }
+      }
+    },
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -84,8 +91,11 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-jshint');
   //grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-bower-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   // Default task.
-  grunt.registerTask('default', ['bowerRequirejs']);
+  grunt.registerTask('require', ['bowerRequirejs']);
+  grunt.registerTask('style', ['compass']);
+  grunt.registerTask('package', ['bowerRequirejs', 'compass'])
 
 };
