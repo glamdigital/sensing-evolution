@@ -1,0 +1,74 @@
+body {
+  font-family: "Helvetica Neue", "Droid Sans", sans-serif;
+  margin: 0; }
+
+.header {
+  background-color: #f4f4f4;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+  .header h1 {
+    font-size: medium;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    margin: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #dddddd;
+    border-bottom-width: 1px; }
+
+.topic {
+  padding: 0px 20px; }
+  .topic h2 {
+    text-align: center; }
+
+.search-item {
+  padding: 0px 20px; }
+  .search-item img {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; }
+  .search-item .dev-control {
+    float: right; }
+
+.hint-container {
+  text-align: center; }
+  .hint-container .hint {
+    display: none; }
+    .hint-container .hint.revealed {
+      display: block; }
+
+h3.name {
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 20px; }
+
+.proximity-indicator {
+  background-color: #999999;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 13px 12px;
+  position: fixed; }
+  .proximity-indicator.far {
+    background-color: lightcoral; }
+  .proximity-indicator.near {
+    background-color: orange; }
+  .proximity-indicator.immediate {
+    background-color: lightgreen; }
+
+.found-item {
+  display: none;
+  padding: none;
+  text-align: center; }
+  .found-item video {
+    margin-left: auto;
+    margin-right: auto; }
+  .found-item h3 {
+    color: darkgreen;
+    display: inline; }
+
+.dev-control {
+  display: block;
+  font-size: x-small; }
