@@ -1,22 +1,13 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone'], function($, Backbone){
-    $(function() {
+require(['jquery','backbone', 'app/router'], function($, Backbone, Router){
 
+    console.log("In main. Creating router");
 
-    });
+    var router = new Router();
 
-    var SEVRouter = Backbone.Router.extend({
-        routes: {
-            "": "home"
-        },
-        home: function() {
-            console.log("Routed to home");
-        }
-    });
-
-    var router = new SEVRouter();
+    console.log("In main. Created router");
 
     //start the app
     Backbone.history.start();

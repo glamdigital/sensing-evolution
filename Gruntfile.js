@@ -96,23 +96,21 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'www/',
+            cwd: '',
             src: [
               'img/**',
               'video/**',
               'css/**',
-              'js/built.js',
+              'app/built.js',
+              'config.xml',
               ],
             dest:'',
             filter:'isFile'
           },
           {
-            src: ['config.xml'],
-          },
-          {
             expand: true,
             src: [
-              'www/index-built.html',
+              'index-built.html',
             ],
             rename: function(dest,src) { return 'index.html' }
           }
@@ -123,10 +121,9 @@ module.exports = function(grunt) {
       //release: {
         compile: {
           options: {
-            baseUrl: ".",
             mainConfigFile: "require.config.js",
-            name: "bower_components/almond/almond.js", // assumes a production build using almond
-            out: "www/js/built.js",
+            name: "app/libs/almond/almond.js", // assumes a production build using almond
+            out: "app/built.js",
             include: ['app/main'],
           }
         }

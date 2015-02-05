@@ -2,7 +2,7 @@ $(function() {
 
     var reset = function(ev) {
 
-    }
+    };
 
     var revealHint = function(ev) {
         ev.preventDefault();
@@ -22,11 +22,11 @@ $(function() {
 
     var resetAll = function(ev) {
         location.reload();
-    }
+    };
 
     var playVideo = function() {
         $('video').get(0).play();
-    }
+    };
 
     //listen for events telling us we've been found
     $('.search-item').on('found', onItemFound);

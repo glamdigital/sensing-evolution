@@ -1,16 +1,16 @@
 require.config({
-  baseURL: ".",
+  // baseUrl: "./app",
   shim: {
 
   },
   paths: {
-    almond: "bower_components/almond/almond",
-    backbone: "bower_components/backbone/backbone",
-    fastclick: "bower_components/fastclick/lib/fastclick",
-    handlebars: "bower_components/handlebars/handlebars",
-    jquery: "bower_components/jquery/dist/jquery",
-    requirejs: "bower_components/requirejs/require",
-    underscore: "bower_components/underscore/underscore"
+    almond: "app/libs/almond/almond",
+    backbone: "app/libs/backbone/backbone",
+    fastclick: "app/libs/fastclick/lib/fastclick",
+    handlebars: "app/libs/handlebars/handlebars",
+    jquery: "app/libs/jquery/dist/jquery",
+    requirejs: "app/libs/requirejs/require",
+    underscore: "app/libs/underscore/underscore",
   },
   packages: [
 

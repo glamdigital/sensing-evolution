@@ -1,9 +1,8 @@
 platforms/
 .idea/
 .sass-cache/
-bower_components/
 node_modules/
-www/css
+css
 
 *.swp
 
@@ -11,3 +10,4 @@ app.zip
 app-built
 plugins
 built.js
+app/libs
