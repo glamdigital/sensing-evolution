@@ -100,6 +100,7 @@ module.exports = function(grunt) {
             src: [
               'img/**',
               'video/**',
+              'css/**',
               'js/built.js',
               ],
             dest:'',
@@ -123,7 +124,7 @@ module.exports = function(grunt) {
         compile: {
           options: {
             baseUrl: ".",
-            mainConfigFile: "app/require.config.js",
+            mainConfigFile: "require.config.js",
             name: "bower_components/almond/almond.js", // assumes a production build using almond
             out: "www/js/built.js",
             include: ['app/main'],

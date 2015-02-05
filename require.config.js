@@ -16,3 +16,5 @@ require.config({
 
   ]
 });
+
+require(['app/main']);
