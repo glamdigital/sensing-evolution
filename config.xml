@@ -7,7 +7,7 @@
     <author email="dev@cordova.apache.org" href="http://www.it.ox.ac.uk">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="index-built.html" />
     <access origin="*" />
 
     <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />

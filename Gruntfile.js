@@ -91,7 +91,20 @@ module.exports = function(grunt) {
           archive: "app.zip",
           mode: "zip",
         },
-        files: {}
+        files: [
+          {
+            expand: true,
+            src: [
+              'www/img/**',
+              'www/video/**',
+              'www/config.xml',
+              'www/js/built.js',
+              'www/index-built.html',
+              ],
+            dest:'app-built/',
+            filter:'isFile'
+          },
+        ]
       }
     },
     requirejs: {
@@ -128,7 +141,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('style', ['compass']);
-  grunt.registerTask('package', ['requirejs']);
+  grunt.registerTask('package', ['requirejs', 'compress']);
   grunt.registerTask('cloud', ['phonegap-build']);
 
 };
