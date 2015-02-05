@@ -1,16 +1,28 @@
-define(["backbone", "jquery"],
-  function(Backbone, $) {
-
-    console.log("Making router");
+define(["backbone", "jquery", "app/collections/TopicsCollection", "app/views/TopicsView"],
+  function(Backbone, $, TopicsCollection, TopicsView) {
 
     var SEVRouter = Backbone.Router.extend({
-        // routes: {
-        //     "": "home"
-        // },
-        // home: function() {
-        //     console.log("Routed to home");
-        //     $('body').append("ROUTED TO HOME");
-        // }
+        initialize: function() {
+          //initialize the collections
+          this.topicsCollection = new TopicsCollection();
+          //'fetch' to init from local json file
+          this.topicsCollection.fetch({
+             error: function(coll, resp, opt) {
+              console.log("error fetching topics: ");
+              console.log(resp);
+            },
+            });
+
+        },
+        routes: {
+            "": "home"
+        },
+        home: function() {
+            var view = new TopicsView({
+                el: $("#topics-list"),
+                topics:this.topicsCollection
+              });
+        }
     });
 
     return SEVRouter;
