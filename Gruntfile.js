@@ -78,10 +78,12 @@ module.exports = function(grunt) {
       }
     },
     "phonegap-build": {
+      options: {
+        appId: 1274129
+      },
       release: {
         options: {
           archive: "app.zip",
-          "appID": "1274129",
         }
       }
     },
@@ -94,16 +96,25 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
+            cwd: 'www/',
             src: [
-              'www/img/**',
-              'www/video/**',
-              'www/config.xml',
-              'www/js/built.js',
-              'www/index-built.html',
+              'img/**',
+              'video/**',
+              'js/built.js',
               ],
-            dest:'app-built/',
+            dest:'',
             filter:'isFile'
           },
+          {
+            src: ['config.xml'],
+          },
+          {
+            expand: true,
+            src: [
+              'www/index-built.html',
+            ],
+            rename: function(dest,src) { return 'index.html' }
+          }
         ]
       }
     },
@@ -115,13 +126,7 @@ module.exports = function(grunt) {
             mainConfigFile: "app/require.config.js",
             name: "bower_components/almond/almond.js", // assumes a production build using almond
             out: "www/js/built.js",
-            //optimize: "none",
-            done: function(done, output) {
-              grunt.log.success(output);
-            },
             include: ['app/main'],
-            //insertRequire: ['app/main']
-            //modules: [ { name: 'app/main' }],
           }
         }
       //}
@@ -139,9 +144,22 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-  // Default task.
-  grunt.registerTask('style', ['compass']);
-  grunt.registerTask('package', ['requirejs', 'compress']);
-  grunt.registerTask('cloud', ['phonegap-build']);
+
+  grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
+
+  // push - push the build to phonegap with the auth token provided as an argument
+  // e.g. grunt push:<PhoneGapToken>
+  grunt.registerTask('push', 'Push app.zip to phonegap cloud build. Supply auth token as argument', function(token) {
+    if(!token) { grunt.log.error("Please specify auth token as an argument.  grunt push:<token>")}
+    grunt.config.set('phonegap-build.options.user', { token: token });
+    grunt.task.run('phonegap-build');
+  });
+
+  //grunt cloudbuild:<PhoneGapToken>
+  grunt.registerTask('cloudbuild', 'Runs package then pushes to phonegap cloud build. Supply auth token as argument', function(token) {
+    //package
+    grunt.task.run('package');
+    grunt.task.run('push:' + token);
+  });
 
 };
