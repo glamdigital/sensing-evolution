@@ -1,6 +1,12 @@
-define(["backbone", "jquery"], function(Backbone, $) {
+define(["backbone", "jquery", "hbs!app/templates/topics"], function(Backbone, $, topicsTemplate) {
 
   var TopicsView = Backbone.View.extend({
+
+    template: topicsTemplate,
+
+    serialize: function() {
+      return {topics: this.topics.toJSON()};
+    },
 
     initialize: function(params) {
       this.topics = params.topics;
@@ -9,9 +15,6 @@ define(["backbone", "jquery"], function(Backbone, $) {
       }, this);
     },
 
-    render: function() {
-      //todo render
-    }
   });
 
   return TopicsView;
