@@ -1,0 +1,22 @@
+[
+  {
+    "slug":"fossil1",
+    "topic":"fossils",
+    "title":"Megalosaurus",
+    "img":"img/megalosaurus.png",
+    "video":"video/megalosaurus.mp4",
+    "hint":"Hint Text",
+    "question":"megalosaurus-question",
+    "iBeaconMajor":11111
+  },
+  {
+    "slug":"fossil2",
+    "topic":"fossils",
+    "title":"Another dinosaur fossil",
+    "img":"img/dino2.png",
+    "video":"video/dino2.mp4",
+    "hint":"Here's a hint for dino 2",
+    "question":"dino2-question",
+    "iBeaconMajor":11112
+  }
+]

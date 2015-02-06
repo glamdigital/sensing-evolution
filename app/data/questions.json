@@ -1,0 +1,25 @@
+[
+  {
+    "slug":"megalosaurus-question",
+    "item":"fossil1",
+    "trail":"primary-trail",
+    "question":"What does 'extinct mean'",
+    "answers": [
+      {
+        "text": "All of these animals have died out.",
+        "isCorrect": true,
+        "response": "Animals that are alive today are known as 'extant', which means existing..."
+      }
+      {
+        "text": "This animal never really existed.",
+        "isCorrect": false,
+        "response": "You might be thinking of..."
+      }
+      {
+        "text": "There are very few of these animmals or plants left on Earth",
+        "isCorrect": false,
+        "response": "The word for that is 'endangered'...."
+      }
+    ]
+  }
+]

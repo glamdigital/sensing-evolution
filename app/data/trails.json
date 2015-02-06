@@ -1,0 +1,20 @@
+[
+  {
+    "name":"Primary School Trail",
+    "slug":"primary-trail",
+    "topics":
+      [
+        "fossils",
+        "mutation"
+      ]
+  },
+  {
+    "name":"GCSE Trail",
+    "slug":"gcse-trail",
+    "topics":
+      [
+        "natural-selection",
+        "species"
+      ]
+  }
+]

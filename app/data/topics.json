@@ -1,14 +1,38 @@
 [
     {
-      "name":"Fossils"
+      "title":"Fossils",
+      "slug":"fossils",
+      "trail":"primary-trail",
+      "items": [
+        "fossil1",
+        "fossil2"
+      ]
     },
     {
-      "name":"Mutation"
+      "title":"Mutation",
+      "slug":"mutation",
+      "trail":"primary-trail",
+      "items": [
+        "mutation1",
+        "mutation2"
+      ]
     },
     {
-      "name":"Natural Selection"
+      "title":"Natural Selection",
+      "slug":"natural-selection",
+      "trail":"gcse-trail",
+      "items": [
+        "natural-selection1",
+        "natural-selection2"
+      ]
     },
     {
-      "name":"Species"
+      "title":"Species",
+      "slug":"species",
+      "trail":"gcse-trail",
+      "items": [
+        "species1",
+        "species2"
+      ]
     }
 ]
