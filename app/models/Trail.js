@@ -1,18 +1,12 @@
 define(["backbone", "app/collections/topicsCollection"], function(Backbone, TopicsCollection) {
 
+  // Get all topics. Each Trail will build its own collection of topics which belong to it.
+  var allTopics = new TopicsCollection();
+  allTopics.fetch();
+
   var Trail = Backbone.Model.extend({
     initialize: function () {
-      var allTopics = new TopicsCollection();
-      allTopics.fetch( {
-        success: _.bind(function () {
-          //filter to those for this trail
-          var trailTopics = allTopics.where({ trail: this.attributes.slug });
-          this.topics = new TopicsCollection(trailTopics);
-        }, this),
-        error: function () {
-          console.log("error fetching topics for trail");
-        }
-      } );
+      this.topics = new TopicsCollection(Trail.allTopics.where({trail: this.attributes.slug}));
     },
 
     //return a TopicsCollection featuring all topics for this trail
@@ -20,7 +14,12 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
       return this.topics;
     },
 
-  });
+  },
+  {
+    //Class property stores all topics
+    allTopics: allTopics,
+  }
+  );
 
   return Trail;
 

@@ -25,17 +25,11 @@ define(["backbone"], function(Backbone) {
           this.unvisitedItems.add(items.at(j));
         }
       }
-
     },
 
     hasNext: function() {
       //returns true if there is a next item
       return _.size(this.unvisitedItems);
-    },
-
-    getNext: function() {
-      //returns the next item
-      return this.unvisitedItems.at(0);
     },
 
     getNextURL: function() {
@@ -59,10 +53,11 @@ define(["backbone"], function(Backbone) {
       return item;
     },
 
-    visitNext: function() {
+    visitItem: function(slug) {
       //record the next item as having been visited
-      var next = this.unvisitedItems.shift();
-      this.visitedItems.add(next);
+      var item = this.unvisitedItems.findWhere({slug: slug});
+      this.unvisitedItems.remove(item);
+      this.visitedItems.add(item);
     },
 
     // ItemsCollection of items the user has yet to visit
