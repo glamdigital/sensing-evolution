@@ -6,9 +6,9 @@ define(["backbone", "underscore", "hbs!app/templates/item"], function(Backbone, 
 
     serialize: function() {
       var output = this.item.toJSON();
+
       output.trailId = this.trailId;
-      output.topicIndex = this.topicIndex;
-      output.nextItemIndex = this.itemIndex +1;
+      output.nextURL = this.nextURL;
 
       return output;
     },
@@ -16,8 +16,7 @@ define(["backbone", "underscore", "hbs!app/templates/item"], function(Backbone, 
     initialize: function(params) {
       this.item = params.item;
       this.trailId = params.trailId;
-      this.topicIndex = params.topicIndex;
-      this.itemIndex = params.itemIndex;
+      this.nextURL = params.nextURL;
     }
 
   });

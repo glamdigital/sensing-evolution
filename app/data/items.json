@@ -2,6 +2,7 @@
   {
     "slug":"fossil1",
     "topic":"fossils",
+    "trail":"primary-trail",
     "title":"Megalosaurus",
     "img":"img/megalosaurus.png",
     "video":"video/megalosaurus.mp4",
@@ -12,6 +13,7 @@
   {
     "slug":"fossil2",
     "topic":"fossils",
+    "trail":"primary-trail",
     "title":"Another dinosaur fossil",
     "img":"img/dino2.png",
     "video":"video/dino2.mp4",
@@ -22,6 +24,7 @@
   {
     "slug":"fossil3",
     "topic":"fossils",
+    "trail":"primary-trail",
     "title":"A trilobyte fossil",
     "img":"img/dino3.png",
     "video":"video/dino3.mp4",
@@ -32,6 +35,7 @@
   {
     "slug":"mutation1",
     "topic":"mutation",
+    "trail":"primary-trail",
     "title":"An item that shows mutation",
     "img":"img/mutation1.png",
     "video":"video/mutation1.mp4",
@@ -42,6 +46,7 @@
   {
     "slug":"mutation2",
     "topic":"mutation",
+    "trail":"primary-trail",
     "title":"A second item that shows mutation",
     "img":"img/mutation2.png",
     "video":"video/mutation2.mp4",
@@ -52,6 +57,7 @@
   {
     "slug":"selection1",
     "topic":"natural-selection",
+    "trail":"primary-trail",
     "title":"Bird skeletons",
     "img":"img/selection1.png",
     "video":"video/selection1.mp4",
@@ -62,6 +68,7 @@
   {
     "slug":"selection2",
     "topic":"natural-selection",
+    "trail":"primary-trail",
     "title":"Moths",
     "img":"img/selection2.png",
     "video":"video/selection2.mp4",
@@ -72,6 +79,7 @@
   {
     "slug":"species1",
     "topic":"species",
+    "trail":"primary-trail",
     "title":"Dodo",
     "img":"img/species1.png",
     "video":"video/species1.mp4",
@@ -82,6 +90,7 @@
   {
     "slug":"species2",
     "topic":"species",
+    "trail":"primary-trail",
     "title":"Dodon't",
     "img":"img/species2.png",
     "video":"video/species1.mp4",
