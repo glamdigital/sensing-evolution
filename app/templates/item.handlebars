@@ -1,4 +1,28 @@
-<h5>({{trailId}})</h5>
-<h2>{{title}}</h2>
+<div class="header">
+    <span class="proximity-indicator">Scanning...</span>
+    <h1>....Trail Title....</h1>
+</div>
+<div class="topic">
+    <h2>....Topic title....</h2>
+</div>
+<div class="search-item">
+    Can you find...
+    <a href="{{nextURL}}" class="dev-control next">[Next item]</a>
+    <img src="{{imgURI}}">
+</div>
+<h3 class="name">{{title}}</h3>
+<div class="hint-container">
+    <a href="#" class="show-hint">Need a hint?</a>
+    <p class="hint">Hint text appears here</p>
+</div>
 
-<a href={{nextURL}}>Next</a>
+
+<div class="found-item">
+    <video width="100%" height="auto" webkit-playsinline controls preload="auto">
+      <source src="video/test_video.mp4" type="video/mp4">
+      <!--<source src="movie.ogg" type="video/ogg">-->
+        Your browser does not support the video tag.
+    </video>
+    <h3>You found it!</h3>
+    <a href="#/restart" class="restart-all">Restart</a>
+</div>
