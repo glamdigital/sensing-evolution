@@ -10,12 +10,13 @@ define(["backbone", "jquery", "underscore",
           //initialize the collections
           this.allTrails = new TrailsCollection();
           this.allTopics = new TopicsCollection();
-          _.shuffle(this.allTopics);
           this.allItems = new ItemsCollection();
-          _.shuffle(this.allItems);
 
           //'fetch' to init from local json file
           this.allTopics.fetch({
+             success: function(coll, resp, opt) {
+               _.shuffle(coll);
+             },
              error: function(coll, resp, opt) {
               console.log("error fetching topics: ");
               console.log(resp);
@@ -28,6 +29,9 @@ define(["backbone", "jquery", "underscore",
             }
           });
           this.allItems.fetch({
+            success: function(coll, resp, opt) {
+              _.shuffle(coll);
+            },
             error: function(coll, resp, opt) {
               console.log("error fetching items: ");
               console.log(resp);

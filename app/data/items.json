@@ -18,5 +18,75 @@
     "hint":"Here's a hint for dino 2",
     "question":"dino2-question",
     "iBeaconMajor":11112
+  },
+  {
+    "slug":"fossil3",
+    "topic":"fossils",
+    "title":"A trilobyte fossil",
+    "img":"img/dino3.png",
+    "video":"video/dino3.mp4",
+    "hint":"Here's a hint for dino 3",
+    "question":"dino3-question",
+    "iBeaconMajor":11113
+  },
+  {
+    "slug":"mutation1",
+    "topic":"mutation",
+    "title":"An item that shows mutation",
+    "img":"img/mutation1.png",
+    "video":"video/mutation1.mp4",
+    "hint":"Hint for mutation1",
+    "question":"mutation1-question",
+    "iBeaconMajor":11114
+  },
+  {
+    "slug":"mutation2",
+    "topic":"mutation",
+    "title":"A second item that shows mutation",
+    "img":"img/mutation2.png",
+    "video":"video/mutation2.mp4",
+    "hint":"Hint for mutation2",
+    "question":"mutation2-question",
+    "iBeaconMajor":11115
+  },
+  {
+    "slug":"selection1",
+    "topic":"natural-selection",
+    "title":"Bird skeletons",
+    "img":"img/selection1.png",
+    "video":"video/selection1.mp4",
+    "hint":"Hint for selection1",
+    "question":"selection1-question",
+    "iBeaconMajor":11116
+  },
+  {
+    "slug":"selection2",
+    "topic":"natural-selection",
+    "title":"Moths",
+    "img":"img/selection2.png",
+    "video":"video/selection2.mp4",
+    "hint":"Hint for selection2",
+    "question":"selection2-question",
+    "iBeaconMajor":11117
+  },
+  {
+    "slug":"species1",
+    "topic":"species",
+    "title":"Dodo",
+    "img":"img/species1.png",
+    "video":"video/species1.mp4",
+    "hint":"Hint for species1",
+    "question":"species1-question",
+    "iBeaconMajor":11118
+  },
+  {
+    "slug":"species2",
+    "topic":"species",
+    "title":"Dodon't",
+    "img":"img/species2.png",
+    "video":"video/species1.mp4",
+    "hint":"Hint for species1",
+    "question":"species2-question",
+    "iBeaconMajor":11119
   }
 ]
