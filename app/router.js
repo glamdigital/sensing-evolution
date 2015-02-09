@@ -23,7 +23,8 @@ define(["backbone", "jquery", "underscore",
             "": "home",
             "trail/:trail": "trail",
             "item/:item": "item",
-            "finished": "finished"
+            "finished": "finished",
+            "restart": "restart"
         },
 
         home: function() {
@@ -57,6 +58,11 @@ define(["backbone", "jquery", "underscore",
         finished: function() {
           var view = new FinishedView( {el: $('body')} );
           view.render();
+        },
+        restart: function() {
+          //restart the current trail
+          this.session = new Session(this.session.attributes.trail.attributes.slug);
+          Backbone.history.navigate(this.session.getNextURL());
         }
     });
 
