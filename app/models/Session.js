@@ -12,17 +12,15 @@ define(["backbone"], function(Backbone) {
 
       //get all topics for the trail
       var topics = trail.getTopics();
-
-      //randomise order of topics
-      _.shuffle(topics);
+      var shuffledTopics = topics.shuffle();
 
       //get all items for the topic, shuffle and add to unvisited items
       for(var i=0; i<topics.length; i++) {
-        var topic = topics.at(i);
+        var topic = shuffledTopics[i];
         var items = topic.getItems();
-        _.shuffle(items);
+        var shuffledItems = items.shuffle();
         for(var j=0; j<items.length; j++) {
-          this.unvisitedItems.add(items.at(j));
+          this.unvisitedItems.add(shuffledItems[j]);
         }
       }
     },
