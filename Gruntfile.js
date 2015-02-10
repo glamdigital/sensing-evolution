@@ -99,6 +99,7 @@ module.exports = function(grunt) {
             cwd: '',
             src: [
               'img/**',
+              'app/data/**',
               'video/**',
               'css/**',
               'app/built.js',
@@ -112,7 +113,7 @@ module.exports = function(grunt) {
             src: [
               'index-built.html',
             ],
-            rename: function(dest,src) { return 'index.html' }
+            rename: function(dest,src) { return 'index.html'; }
           }
         ]
       }
@@ -125,6 +126,7 @@ module.exports = function(grunt) {
             name: "app/libs/almond/almond.js", // assumes a production build using almond
             out: "app/built.js",
             include: ['app/main'],
+            optimize: 'none',
           }
         }
       //}
@@ -148,7 +150,7 @@ module.exports = function(grunt) {
   // push - push the build to phonegap with the auth token provided as an argument
   // e.g. grunt push:<PhoneGapToken>
   grunt.registerTask('push', 'Push app.zip to phonegap cloud build. Supply auth token as argument', function(token) {
-    if(!token) { grunt.log.error("Please specify auth token as an argument.  grunt push:<token>")}
+    if(!token) { grunt.log.error("Please specify auth token as an argument.  grunt push:<token>");}
     grunt.config.set('phonegap-build.options.user', { token: token });
     grunt.task.run('phonegap-build');
   });

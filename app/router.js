@@ -29,7 +29,7 @@ define(["backbone", "jquery", "underscore",
 
         home: function() {
           var view = new TrailsView({
-            el: $('body'),
+            el: $('#content'),
             trails:this.allTrails
           });
         },
@@ -48,7 +48,7 @@ define(["backbone", "jquery", "underscore",
           this.session.visitItem(itemSlug);
           var nextURL = this.session.getNextURL();
           var view = new ItemView({
-            el: $('body'),
+            el: $('#content'),
             item: item,
             nextURL: nextURL
           });

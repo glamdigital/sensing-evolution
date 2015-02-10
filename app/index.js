@@ -93,10 +93,10 @@ var initIBeacons = function () {
                 $('.proximity-indicator').removeClass('immediate far').addClass('near').html('Near');
             }
             else if(beacon.proximity == "ProximityFar") {
-                $('.proximity-indicator').removeClass('immediate near').addClass('far').html('Far')
+                $('.proximity-indicator').removeClass('immediate near').addClass('far').html('Far');
             }
             else {
-                $('.proximity-indicator').removeClass('immediate near far').html('Scanning...')
+                $('.proximity-indicator').removeClass('immediate near far').html('Scanning...');
             }
         }
     };
@@ -113,4 +113,3 @@ var initIBeacons = function () {
 
     logToDom("Now scanning for beacons");
 };
-

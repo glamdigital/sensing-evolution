@@ -8,7 +8,8 @@
     "video":"video/megalosaurus.mp4",
     "hint":"Hint Text",
     "question":"megalosaurus-question",
-    "iBeaconMajor":11111
+    "iBeaconMajor":6650,
+    "iBeaconHint":"ios"
   },
   {
     "slug":"fossil2",
@@ -19,7 +20,8 @@
     "video":"video/dino2.mp4",
     "hint":"Here's a hint for dino 2",
     "question":"dino2-question",
-    "iBeaconMajor":11112
+    "iBeaconMajor":45790,
+    "iBeaconHint":"Purple"
   },
   {
     "slug":"fossil3",
@@ -30,7 +32,8 @@
     "video":"video/dino3.mp4",
     "hint":"Here's a hint for dino 3",
     "question":"dino3-question",
-    "iBeaconMajor":11113
+    "iBeaconMajor":26981,
+    "iBeaconHint":"Blue"
   },
   {
     "slug":"mutation1",
@@ -41,7 +44,8 @@
     "video":"video/mutation1.mp4",
     "hint":"Hint for mutation1",
     "question":"mutation1-question",
-    "iBeaconMajor":11114
+    "iBeaconMajor":45790,
+    "iBeaconHint":"Purple"
   },
   {
     "slug":"mutation2",
@@ -52,7 +56,8 @@
     "video":"video/mutation2.mp4",
     "hint":"Hint for mutation2",
     "question":"mutation2-question",
-    "iBeaconMajor":11115
+    "iBeaconMajor":6650,
+    "iBeaconHint":"ios"
   },
   {
     "slug":"selection1",
@@ -63,7 +68,8 @@
     "video":"video/selection1.mp4",
     "hint":"Hint for selection1",
     "question":"selection1-question",
-    "iBeaconMajor":11116
+    "iBeaconMajor":45790,
+    "iBeaconHint":"Purple"
   },
   {
     "slug":"selection2",
@@ -74,7 +80,8 @@
     "video":"video/selection2.mp4",
     "hint":"Hint for selection2",
     "question":"selection2-question",
-    "iBeaconMajor":11117
+    "iBeaconMajor":26981,
+    "iBeaconHint":"Blue"
   },
   {
     "slug":"species1",
@@ -85,7 +92,8 @@
     "video":"video/species1.mp4",
     "hint":"Hint for species1",
     "question":"species1-question",
-    "iBeaconMajor":11118
+    "iBeaconMajor":45790,
+    "iBeaconHint":"Purple"
   },
   {
     "slug":"species2",
@@ -96,6 +104,7 @@
     "video":"video/species1.mp4",
     "hint":"Hint for species1",
     "question":"species2-question",
-    "iBeaconMajor":11119
+    "iBeaconMajor":26981,
+    "iBeaconHint":"Blue"
   }
 ]
