@@ -47,9 +47,13 @@ define(["backbone", "jquery", "underscore",
           //Inform the session that we've visited this item
           this.session.visitItem(itemSlug);
           var nextURL = this.session.getNextURL();
+          var currentTrail = this.session.getCurrentTrail();
+          var currentTopic = this.session.getCurrentTopic();
           var view = new ItemView({
             el: $('#content'),
             item: item,
+            trail: currentTrail,
+            topic: currentTopic,
             nextURL: nextURL
           });
           view.render();

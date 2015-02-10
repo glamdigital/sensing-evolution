@@ -1,4 +1,5 @@
-define(["backbone"], function(Backbone) {
+define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
+    function(Backbone, ItemsCollection, Trail) {
 
   var Session = Backbone.Model.extend({
 
@@ -48,7 +49,17 @@ define(["backbone"], function(Backbone) {
         //try the visited items instead
         item = this.visitedItems.findWhere({slug: slug});
       }
+      this.currentItem = item;
+      this.currentTopic = Trail.allTopics.findWhere({slug: item.attributes.topic});
       return item;
+    },
+
+    getCurrentTopic: function() {
+      return this.currentTopic;
+    },
+
+    getCurrentTrail: function() {
+      return this.trail;
     },
 
     visitItem: function(slug) {

@@ -8,16 +8,17 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
     serialize: function() {
       var output = this.item.toJSON();
 
-      output.trailId = this.trailId;
       output.nextURL = this.nextURL;
-
+      output.trailTitle = this.trail.attributes.name;
+      output.topicTitle = this.topic.attributes.title;
       return output;
     },
 
     initialize: function(params) {
       this.item = params.item;
-      this.trailId = params.trailId;
       this.nextURL = params.nextURL;
+      this.trail = params.trail;
+      this.topic = params.topic;
 
       //listen for events
       this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
