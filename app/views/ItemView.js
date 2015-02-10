@@ -20,20 +20,24 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
       this.nextURL = params.nextURL;
 
       //listen for events
-      var eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
+      this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
       // this.on(eventId, this.didRangeBeacon, this);
-      this.listenTo(Backbone, eventId, this.didRangeBeacon);
+      this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
+    },
+
+    afterRender: function() {
+      this.$video = $('#foundVideo');
+      this.video = this.$video[0];
+
+      this.$video.on('ended', this.onVideoEnded);
     },
 
     didRangeBeacon: function(proximity) {
-
-      Location.logToDom("View received beacon event");
-
       switch(proximity) {
         case "ProximityImmediate":
           //update proximity indicator
           $('.proximity-indicator').removeClass('near far').addClass('immediate').html('Immediate');
-          //find it
+          this.findObject();
           //TODO
           break;
         case "ProximityNear":
@@ -47,16 +51,34 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
       }
     },
 
+    findObject: function() {
+      $('.search-item').hide();
+      $('.found-item').show();
+      $('.hint-container').hide();
+      //start the video after half a second
+      setTimeout( _.bind(function() {
+        this.video.play();
+      }, this), 500);
+      //unsubscribe from further beacon events
+      this.stopListening(Backbone, this.eventId);
+    },
+
+    //For browser simulation of 'finding' the object. Click on the picture
     events: {
-      "click img" : "onClick"
+      "click img" : "onClickImage",
+      "click .show-hint" : "showHint",
+      "ended #foundVideo" : "onVideoEnded"
     },
-    onClick: function(ev) {
-      //p = purple beacon
-      //b = blue beacon
-      //i = ios virtual beacon
-      console.log(ev.which);
-      Backbone.trigger("beaconRange:" + this.item.attributes.iBeaconMajor, "ProximityImmediate");
+    onClickImage: function(ev) {
+      Backbone.trigger(this.eventId, "ProximityImmediate");
     },
+    showHint: function(ev) {
+      $('.show-hint').hide();
+      $('.hint').show();
+    },
+    onVideoEnded: function() {
+      Location.logToDom("Video ended");
+    }
 
   });
 

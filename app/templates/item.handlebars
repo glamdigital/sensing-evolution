@@ -5,9 +5,11 @@
 <div class="topic">
     <h2>....Topic title....</h2>
 </div>
+
+<a href="{{nextURL}}" class="dev-control next">[Next item]</a>
+
 <div class="search-item">
     Can you find...
-    <a href="{{nextURL}}" class="dev-control next">[Next item]</a>
     <img src="{{imgURI}}">
 </div>
 <h3 class="name">{{title}}</h3>
@@ -19,7 +21,7 @@
 
 
 <div class="found-item">
-    <video width="100%" height="auto" webkit-playsinline controls preload="auto">
+    <video id='foundVideo' width="100%" height="auto" webkit-playsinline controls preload="auto">
       <source src="video/test_video.mp4" type="video/mp4">
       <!--<source src="movie.ogg" type="video/ogg">-->
         Your browser does not support the video tag.

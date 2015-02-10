@@ -35,42 +35,25 @@ define(["backbone", "underscore"], function(Backbone, _ ) {
   var Location = {
     init: function() {
 
-      logToDom("Initialised location service.");
-
       //register delegate
       try {
-        if(window) {
-          if('cordova' in window) {
-            logToDom("Cordova is in window");
-          }
-          else {
-            logToDom("Cordova not in window");
-          }
-        }
-        else {
-          logToDom("No Window object");
-        }
+        window.cordova.plugins.locationManager.requestWhenInUseAuthorization();
 
+        this.delegate = new window.cordova.plugins.locationManager.Delegate();
+        window.cordova.plugins.locationManager.setDelegate(this.delegate);
+        this.delegate.didRangeBeaconsInRegion = this.handleRangedBeacons;
 
-      window.cordova.plugins.locationManager.requestWhenInUseAuthorization();
-
-      this.delegate = new window.cordova.plugins.locationManager.Delegate();
-      window.cordova.plugins.locationManager.setDelegate(this.delegate);
-      this.delegate.didRangeBeaconsInRegion = this.handleRangedBeacons;
-
-      logToDom("Created delegate. Starting location service");
-    } catch (e) {
-      logToDom("Exception initialising beacons");
-      logToDom(e.message);
-    }
-
+        logToDom("Started location service");
+      } catch (e) {
+        logToDom("Exception initialising beacons");
+        logToDom(e.message);
+      }
     },
 
     startRangingRegion: function(uuid) {
       try {
         var beaconRegion = new window.cordova.plugins.locationManager.BeaconRegion("evo beacons", uuid);
         window.cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion);
-        logToDom("Started ranging beacons in region " + uuid);
       } catch (e) {
         logToDom("Error starting ranging: " + e.message);
       }
