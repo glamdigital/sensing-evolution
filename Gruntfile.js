@@ -130,6 +130,27 @@ module.exports = function(grunt) {
           }
         }
       //}
+    },
+    convert: {
+      options: {
+        explicitArray: false,
+      },
+      trails: {
+        src: ['SensingEvolutionData/Trails-Table 1.csv'],
+        dest: 'app/data/trails.json'
+      },
+      topics: {
+        src: ['SensingEvolutionData/Topics-Table 1.csv'],
+        dest: 'app/data/topics.json'
+      },
+      items: {
+        src: ['SensingEvolutionData/Items-Table 1.csv'],
+        dest: 'app/data/items.json'
+      },
+      questions: {
+        src: ['SensingEvolutionData/Questions-Table 1.csv'],
+        dest: 'app/data/questions.json'
+      }
     }
   });
 
@@ -143,7 +164,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-phonegap-build');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-
+  grunt.loadNpmTasks('grunt-convert');
 
   grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
 
@@ -161,5 +182,7 @@ module.exports = function(grunt) {
     grunt.task.run('package');
     grunt.task.run('push:' + token);
   });
+
+  grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items', 'convert:questions']);
 
 };

@@ -17,7 +17,9 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-phonegap-build": "git://github.com/avgp/grunt-phonegap-build"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-convert": "^0.1.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

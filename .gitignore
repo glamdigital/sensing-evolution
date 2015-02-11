@@ -11,3 +11,5 @@ app-built
 plugins
 built.js
 app/libs
+
+*.csv

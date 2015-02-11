@@ -1,20 +1,42 @@
 [
   {
-    "name":"Primary School Trail",
-    "slug":"primary-trail",
-    "topics":
-      [
-        "fossils",
-        "mutation"
-      ]
+    "slug": "primary-trail",
+    "name": "Primary School Trail",
+    "": ""
   },
   {
-    "name":"GCSE Trail",
-    "slug":"gcse-trail",
-    "topics":
-      [
-        "natural-selection",
-        "species"
-      ]
+    "slug": "gcse-trail",
+    "name": "GCSE Trail",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
+  },
+  {
+    "slug": "",
+    "name": "",
+    "": ""
   }
 ]
