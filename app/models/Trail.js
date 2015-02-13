@@ -6,7 +6,10 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
 
   var Trail = Backbone.Model.extend({
     initialize: function () {
-      this.topics = new TopicsCollection(Trail.allTopics.where({trail: this.attributes.slug}));
+      //get all the topics which include this trail in their list of trails
+      this.topics = new TopicsCollection( Trail.allTopics.filter( function(topic) {
+        return topic.attributes.trails.indexOf(this.attributes.slug) >= 0;
+      }, this) );
     },
 
     //return a TopicsCollection featuring all topics for this trail

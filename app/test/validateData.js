@@ -18,28 +18,33 @@ define(["backbone", "app/collections/TrailsCollection", "app/collections/TopicsC
                 console.log("Verifying trails have topics");
                 trailsColl.forEach( function(trail) {
                   console.log("Trail: " + trail.attributes.name + " (" + trail.attributes.slug + ")");
-                  var trailTopics = topicsColl.where({trail: trail.attributes.slug});
-                  //Assert length trailTopics > 0
-                  if(trailTopics.length <= 0) {
+
+                  //Assert topics > 0
+                  if(trail.topics.length <= 0) {
                     console.error("No topics for trail: " + trail.attributes.name);
                   }
 
                   //check each item
-                  _.each(trailTopics, function(topic) {
+                  trail.topics.each( function(topic) {
                       console.log("  Topic: " + topic.attributes.title + "(" + topic.attributes.slug + ")");
-                      var topicItems = itemsColl.where({topic: topic.attributes.slug, trail:trail.attributes.slug});
-                      //Assert length trailTopics > 0
-                      if(topicItems.length <= 0) {
+                      //Assert length items > 0
+                      var trailItems = topic.items.filter( function(item) {
+                        return item.attributes.trails.indexOf(trail.attributes.slug) >= 0;
+                      }, this);
+                      if(trailItems.length <= 0) {
                         console.error("No items for topic: " + topic.attributes.title + " on trail: " + trail.attributes.name);
                       }
 
-                      _.each(topicItems, function(item) {
+                      _.each(trailItems, function(item) {
                         console.log("     Item: " + item.attributes.title + "(" + item.attributes.slug + ")");
-                        var itemQuestions = questionsColl.where({item: item.attributes.slug, trail:trail.attributes.slug});
                         //Assert length questions === 1
-                        if(itemQuestions.length === 1) {
+                        //get the questions which are applicable to the current trail.
+                        var trailQuestions = _.filter(item.questions, function(question) {
+                          return question.attributes.trails.indexOf(trail.attributes.slug) >= 0;
+                        }, this);
+                        if(trailQuestions.length === 1) {
                           console.log("       1 question found for this item on this trail");
-                        } else if(itemQuestions.length === 0) {
+                        } else if(trailQuestions.length === 0) {
                           console.error("       No questions found for this item on this trail");
                         } else {
                           console.error("       Too many questions found for this item on this trail");

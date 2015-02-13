@@ -2,7 +2,8 @@
   {
     "slug": "q-fossil-1",
     "item": "fossil1",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -14,7 +15,8 @@
   {
     "slug": "q-fossil-2-gcse",
     "item": "fossil1",
-    "trail": "gcse-trail",
+    "trail1": "gcse-trail",
+    "trail2": "",
     "question": "Harder question",
     "correctAnswer": "correct answer",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -26,7 +28,8 @@
   {
     "slug": "q-fossil-2",
     "item": "fossil2",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -38,7 +41,8 @@
   {
     "slug": "q-fossil-3",
     "item": "fossil3",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -50,7 +54,8 @@
   {
     "slug": "q-mutation-1",
     "item": "mutation1",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -62,7 +67,8 @@
   {
     "slug": "q-mutation2",
     "item": "mutation2",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -74,7 +80,8 @@
   {
     "slug": "q-selection1",
     "item": "selection1",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -86,7 +93,8 @@
   {
     "slug": "q-selection2",
     "item": "selection2",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -98,7 +106,8 @@
   {
     "slug": "q-species1",
     "item": "species1",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
@@ -110,7 +119,8 @@
   {
     "slug": "q-species1",
     "item": "species2",
-    "trail": "primary-trail",
+    "trail1": "primary-trail",
+    "trail2": "",
     "question": "What does ‘extinct mean’",
     "correctAnswer": "All of these animals have died out",
     "correctResponse": "Animals that are alive today are known as ‘extant’, which means ‘existing’. But when scientists can’t find any more living examples of a certain animal, that animal is said to be extinct. Dinosaurs, mammoths and the Museum’s famous Dodo are all now extinct.",
