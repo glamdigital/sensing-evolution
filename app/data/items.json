@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "fossil1",
+    "title": "Megalosaurus",
+    "topic": "fossils",
+    "trail": "primary-trail",
+    "image": "fossil1.jpg",
+    "video": "video.mp4",
+    "hint": "Look on the rear wall",
+    "beaconMajor": "6650",
+    "beaconHint": "ios"
+  },
+  {
+    "slug": "fossil2",
+    "title": "Another fossil",
+    "topic": "fossils",
+    "trail": "primary-trail",
+    "image": "fossil2.jpg",
+    "video": "video2.mp4",
+    "hint": "hint",
+    "beaconMajor": "45790",
+    "beaconHint": "Purple"
+  },
+  {
+    "slug": "fossil3",
+    "title": "blah",
+    "topic": "fossils",
+    "trail": "primary-trail",
+    "image": "fossil3.jpg",
+    "video": "blah.mp4",
+    "hint": "hint",
+    "beaconMajor": "26981",
+    "beaconHint": "Blue"
+  },
+  {
+    "slug": "mutation1",
+    "title": "Mutation",
+    "topic": "mutation",
+    "trail": "primary-trail",
+    "image": "mutation1.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "45790",
+    "beaconHint": "Purple"
+  },
+  {
+    "slug": "mutation2",
+    "title": "More mutation",
+    "topic": "mutation",
+    "trail": "primary-trail",
+    "image": "mutation2.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "26981",
+    "beaconHint": "Blue"
+  },
+  {
+    "slug": "selection1",
+    "title": "Survival of the fittest",
+    "topic": "selection",
+    "trail": "primary-trail",
+    "image": "selection1.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "6650",
+    "beaconHint": "ios"
+  },
+  {
+    "slug": "selection2",
+    "title": "Adaptation",
+    "topic": "selection",
+    "trail": "primary-trail",
+    "image": "selection2.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "45790",
+    "beaconHint": "Purple"
+  },
+  {
+    "slug": "species1",
+    "title": "Species",
+    "topic": "species",
+    "trail": "primary-trail",
+    "image": "species1.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "6650",
+    "beaconHint": "ios"
+  },
+  {
+    "slug": "species2",
+    "title": "Charles Darwin",
+    "topic": "species",
+    "trail": "primary-trail",
+    "image": "species2.jpg",
+    "video": "video.mp4",
+    "hint": "hint",
+    "beaconMajor": "26981",
+    "beaconHint": "Blue"
+  }
+]

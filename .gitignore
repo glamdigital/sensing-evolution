@@ -1,4 +1,15 @@
 platforms/
 .idea/
 .sass-cache/
+node_modules/
+*.css
 
+*.swp
+
+app.zip
+app-built
+plugins
+built.js
+app/libs
+
+*.csv
