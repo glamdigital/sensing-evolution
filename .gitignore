@@ -2,7 +2,7 @@ platforms/
 .idea/
 .sass-cache/
 node_modules/
-css
+*.css
 
 *.swp
 

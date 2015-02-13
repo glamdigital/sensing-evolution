@@ -1,42 +1,10 @@
 [
   {
     "slug": "primary-trail",
-    "name": "Primary School Trail",
-    "": ""
+    "name": "Primary School Trail"
   },
   {
     "slug": "gcse-trail",
-    "name": "GCSE Trail",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
-  },
-  {
-    "slug": "",
-    "name": "",
-    "": ""
+    "name": "GCSE Trail"
   }
 ]

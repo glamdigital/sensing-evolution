@@ -1,5 +1,9 @@
-define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], function(Backbone, _, itemTemplate, Location) {
+define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
+        "app/collections/QuestionsCollection", "app/views/QuestionView"],
+    function(Backbone, _, itemTemplate, Location, QuestionsCollection, QuestionView) {
 
+  var allQuestions = new QuestionsCollection();
+  allQuestions.fetch();
 
   var ItemView = Backbone.View.extend({
 
@@ -20,6 +24,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
       this.trail = params.trail;
       this.topic = params.topic;
 
+      //get the question
+      this.question = allQuestions.findWhere({item:this.item.attributes.slug});
+
       //listen for events
       this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
       // this.on(eventId, this.didRangeBeacon, this);
@@ -30,7 +37,8 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
       this.$video = $('#foundVideo');
       this.video = this.$video[0];
 
-      this.$video.on('ended', this.onVideoEnded);
+      var eventData = { question: this.question, url:this.nextURL };
+      this.$video.on('ended',  eventData, this.showQuestion);
     },
 
     didRangeBeacon: function(proximity) {
@@ -68,7 +76,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
     events: {
       "click img" : "onClickImage",
       "click .show-hint" : "showHint",
-      "ended #foundVideo" : "onVideoEnded"
+      // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
       Backbone.trigger(this.eventId, "ProximityImmediate");
@@ -77,11 +85,22 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location"], fun
       $('.show-hint').hide();
       $('.hint').show();
     },
-    onVideoEnded: function() {
-      Location.logToDom("Video ended");
+    // onVideoEnded: function() {
+    //   // Location.logToDom("Video ended");
+    //   this.showQuestion();
+    // },
+    showQuestion: function(ev) {
+      //create and render question view
+      var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
+      questionView.render();
     }
 
-  });
+  },
+  {
+    //class properties
+    allQuestions: allQuestions
+  }
+  );
 
   return ItemView;
 
