@@ -15,6 +15,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       output.nextURL = this.nextURL;
       output.trailTitle = this.trail.attributes.name;
       output.topicTitle = this.topic.attributes.title;
+      output.eventId = this.eventId;
       return output;
     },
 
@@ -28,7 +29,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       this.question = allQuestions.findWhere({item:this.item.attributes.slug});
 
       //listen for events
-      this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
+      this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       // this.on(eventId, this.didRangeBeacon, this);
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
     },
