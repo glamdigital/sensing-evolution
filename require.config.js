@@ -12,7 +12,8 @@ require.config({
     requirejs: "app/libs/requirejs/require",
     underscore: "app/libs/underscore/underscore",
     layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
-    hbs: "app/libs/require-handlebars-plugin/hbs"
+    hbs: "app/libs/require-handlebars-plugin/hbs",
+    jasmine: "app/libs/jasmine/lib/jasmine-core"
   },
   packages: [
 

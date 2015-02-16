@@ -1,6 +1,6 @@
 define(["backbone", "app/models/Item"], function(Backbone, Item){
 
-  ItemsCollection = Backbone.Collection.extend({
+  var ItemsCollection = Backbone.Collection.extend({
     url:"app/data/items.json",
     model: Item
   });
