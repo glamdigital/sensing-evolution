@@ -1,8 +1,8 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location'],
-  function($, Backbone, LayoutManager, Router, Location){
+require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
+  function($, Backbone, LayoutManager, Router, Location, Tests){
 
     //UUIDs to monitor
     //TODO move this to config
@@ -26,8 +26,6 @@ require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location'],
     //start the app
     Backbone.history.start();
 
-
-
-
+    Tests.validateData();
 
 });

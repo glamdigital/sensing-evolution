@@ -7,8 +7,43 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
   var Topic = Backbone.Model.extend({
     initialize: function () {
       //filter those which are for this topic
-      var topicItems = Topic.allItems.where({ topic: this.attributes.slug, trail: this.attributes.trail });
+      var topicItems = Topic.allItems.filter(function(item) {
+        var itemHasCorrectTopic = (item.attributes.topic === this.attributes.slug);
+
+        if(itemHasCorrectTopic) {
+        //check that the item belongs to at least one trail to which the topic belongs
+        var itemHasValidTrail = false;
+          for(var i=0; i<this.attributes.trails.length; i++) {
+            if (item.attributes.trails.indexOf(this.attributes.trails[i]) >= 0) {
+              itemHasValidTrail = true;
+              return true;
+            }
+          }
+        }
+      }, this);
       this.items = new ItemsCollection(topicItems);
+    },
+
+    parse: function (response) {
+      var t = {};
+      t.slug = response.slug;
+      t.title = response.title;
+      t.trails = [];
+
+      //read in the list of trails into a single array. The trails are parameters of id trail[n]
+      var foundEmpty = false;
+      var i=1;
+      while(!foundEmpty) {
+        var trailKey = "trail" + i;
+        if(response[trailKey]) {
+           t.trails.push(response[trailKey]);
+        } else {
+          foundEmpty = true;
+        }
+        i++;
+      }
+
+      return t;
     },
 
     getItems: function(trailSlug) {

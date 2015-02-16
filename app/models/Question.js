@@ -21,9 +21,24 @@ define(["backbone"], function(Backbone) {
                     });
       q.slug = response.slug;
       q.item = response.item;
-      q.trail = response.trail;
       q.question = response.question;
       q.selectedAnswer = null;
+
+      //read in the list of trails into a single array. The trails are parameters of id trail[n]
+      q.trails = [];
+      var foundEmpty = false;
+      var i=1;
+      while(!foundEmpty) {
+        var trailKey = "trail" + i;
+        if(response[trailKey]) {
+           q.trails.push(response[trailKey]);
+        } else {
+          foundEmpty = true;
+        }
+        i++;
+      }
+
+
       return q;
     },
     selectAnswer: function(id) {
