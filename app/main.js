@@ -26,6 +26,4 @@ require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location', 'ap
     //start the app
     Backbone.history.start();
 
-    Tests.validateData();
-
 });

@@ -27,5 +27,8 @@
     "backbone": "~1.1.2",
     "layoutmanager": "~0.9.5",
     "require-handlebars-plugin": "~0.11.2"
+  },
+  "devDependencies": {
+    "jasmine": "~2.2.1"
   }
 }

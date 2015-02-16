@@ -151,6 +151,19 @@ module.exports = function(grunt) {
         src: ['SensingEvolutionData/Questions-Table 1.csv'],
         dest: 'app/data/questions.json'
       }
+    },
+    jasmine: {
+        testTask: {
+            src: ['app/models/*.js', 'app/collections/*.js', 'app/views/*.js', 'app/location.js', 'app/main.js', 'app/router.js'],
+            options: {
+                specs: ['app/test/specs/*Specs.js'],
+                template: require('grunt-template-jasmine-requirejs'),
+                //host: 'http://127.0.0.1:8088/',
+                templateOptions: {
+                    requireConfigFile: './require.config.js'
+                }
+            }
+        }
     }
   });
 
@@ -165,6 +178,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-convert');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+
 
   grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
 
@@ -184,5 +199,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items', 'convert:questions']);
+
+  grunt.registerTask('test', 'Run jasmine tests', ['jasmine']);
 
 };

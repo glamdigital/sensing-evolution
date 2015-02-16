@@ -32,3 +32,13 @@ This sheet should be exported to .csv into a folder named SensingEvolutionData.
 The following task then converts the data to the json format read by the app
 
     grunt convertData
+
+
+### Testing
+
+Tests are configured using jasmine.
+
+Add spec files to test/specs/*Specs.js and can be run in the PhantomJS headless browser with the following Grunt task:
+
+    grunt test
+    
