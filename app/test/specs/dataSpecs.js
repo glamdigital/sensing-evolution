@@ -8,8 +8,8 @@ describe("Data validation", function() {
         }});
     });
 
-
-
+    //Ideally this test should be broken up into multiple tests to check each trail, topic, item etc individually.
+    //However, there's no way to conveniently do this, so for now this is a single test with information provided via logs.
     it("Should have a valid set of data", function() {
 
             //check each trail has at least one topic
@@ -39,7 +39,7 @@ describe("Data validation", function() {
                     var trailQuestions = _.filter(item.questions, function(question) {
                       return question.attributes.trails.indexOf(trail.attributes.slug) >= 0;
                     }, this);
-
+                    console.log("Checking number of questions");
                     expect(trailQuestions.length).toBe(1);
 
                   }, this);
@@ -48,10 +48,6 @@ describe("Data validation", function() {
 
 
 
-    });
-
-    it("should fail this test", function() {
-       expect(true).toBe(true);
     });
 
 });
