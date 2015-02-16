@@ -13,3 +13,5 @@ built.js
 app/libs
 
 *.csv
+.grunt
+_SpecRunner.html
