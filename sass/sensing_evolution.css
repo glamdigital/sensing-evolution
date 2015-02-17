@@ -2,6 +2,39 @@ body {
   font-family: "Helvetica Neue", "Droid Sans", sans-serif;
   margin: 0; }
 
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: white;
+  z-index: 1;
+  width: 30%; }
+
+a.nav-link {
+  font-weight: bold;
+  color: lightgray; }
+  a.nav-link.current {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-radius: 3px; }
+  a.nav-link.visited {
+    background-color: darkgreen;
+    border-radius: 3px; }
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%; }
+  .content.slideout {
+    left: 30%; }
+
 .header {
   background-color: #f4f4f4;
   width: 100%;
@@ -72,3 +105,10 @@ h3.name {
 .dev-control {
   display: block;
   font-size: x-small; }
+
+.question ul li div.response {
+  display: none; }
+.question .try-again {
+  display: none; }
+.question .proceed {
+  display: none; }

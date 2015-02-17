@@ -69,6 +69,41 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
       this.visitedItems.add(item);
     },
 
+    getAllSessionTopicsAndItems: function() {
+        var out = {
+            title: this.trail.attributes.name,
+            topics: []
+        };
+
+        var topics = this.trail.getTopics();
+        topics.each( function(topic) {
+            var isCurrentTopic = this.currentTopic === topic;
+            var topicDict = {
+                title: topic.attributes.title,
+                items: [],
+                isCurrent: isCurrentTopic
+            };
+            //fill in items array
+            var items = topic.getItemsForTrail(this.trail.attributes.slug);
+            items.each(function(item) {
+                var isCurrentItem = this.currentItem === item;
+                var isVisited = this.visitedItems.indexOf(item) >= 0;
+                //TODO track whether an item has been found
+                var itemDict = {
+                    title: item.attributes.title,
+                    slug: item.attributes.slug,
+                    isCurrent: isCurrentItem,
+                    isVisited: isVisited
+                };
+                topicDict.items.push(itemDict);
+            }, this);
+            out.topics.push(topicDict);
+        }, this);
+
+        return out;
+
+    },
+
     // ItemsCollection of items the user has yet to visit
     unvisitedItems: null,
 

@@ -67,8 +67,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
 
     //For browser simulation of 'finding' the object. Click on the picture
     events: {
-      "click img" : "onClickImage",
+      //"click img" : "onClickImage",
       "click .show-hint" : "showHint",
+      "click #nav-menu-button" : "toggleNavMenu",
       // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
@@ -82,12 +83,17 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       //create and render question view
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
       questionView.render();
+    },
+    toggleNavMenu: function(ev)
+    {
+        var content = $('#content');
+        content.toggleClass('slideout');
     }
 
   },
   {
     //class properties
-    allQuestions: allQuestions
+    //allQuestions: allQuestions
   }
   );
 

@@ -1,9 +1,50 @@
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
 $standardPadding: 0px 20px;
 
+$navBarWidth: 30%;
+
 body {
   font-family: $standardFontFamily;
   margin:0;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: white;
+  z-index: 1;
+  width: $navBarWidth
+}
+
+a.nav-link {
+  font-weight: bold;
+  color: lightgray;
+  &.current {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-radius: 3px;
+  }
+  &.visited {
+    background-color: darkgreen;
+    border-radius: 3px;
+  }
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  &.slideout{
+    left: $navBarWidth;
+  }
 }
 
 .header {

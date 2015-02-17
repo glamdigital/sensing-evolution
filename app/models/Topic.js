@@ -6,7 +6,7 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
 
   var Topic = Backbone.Model.extend({
     initialize: function () {
-      //filter those which are for this topic
+      //filter those items which are valid for this topic
       var topicItems = Topic.allItems.filter(function(item) {
         var itemHasCorrectTopic = (item.attributes.topic === this.attributes.slug);
 
@@ -46,8 +46,16 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
       return t;
     },
 
-    getItems: function(trailSlug) {
+    getItems: function() {
       return this.items;
+    },
+
+    //return a collection of items for this topic on the given trail
+    getItemsForTrail: function(trailSlug) {
+        var trailItems = this.items.filter(function(item) {
+           return item.attributes.trails.indexOf(trailSlug) >= 0;
+        });
+        return new ItemsCollection(trailItems);
     }
 
   },
