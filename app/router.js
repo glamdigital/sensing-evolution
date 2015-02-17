@@ -1,11 +1,11 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/ItemView", "app/views/FinishedView",
-          "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
+          "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, ItemView, FinishedView,
-            Session, NavView, DashboardView) {
+            ContentView, Session, NavView, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
         initialize: function() {
@@ -17,6 +17,9 @@ define(["backbone", "jquery", "underscore",
               console.log(resp);
             }
           });
+
+            //create the container content-view
+            this.contentView = new ContentView({el:$('#content')});
         },
 
         routes: {
@@ -31,60 +34,70 @@ define(["backbone", "jquery", "underscore",
 
         home: function() {
           var view = new TrailsView({
-            el: $('#content'),
             trails:this.allTrails
           });
+          this.contentView.setView(view);
           view.render();
-          this.navView.hide();
+            if(this.navView) {
+                this.navView.hide();
+            }
         },
 
         trail: function(trailSlug) {
-          //create a new session for the chosen trail
-          var trail = this.allTrails.findWhere( {slug: trailSlug} );
-          this.session = new Session(trail);
+            //create a new session for the chosen trail
+            var trail = this.allTrails.findWhere( {slug: trailSlug} );
+            this.session = new Session(trail);
 
-          //create a navbar now we have a session
-          this.navView = new NavView({el:$('#nav-menu'), session:this.session});
-          this.navView.render();
+            if(!this.navView) {
+                //create a navbar now we have a session
+                this.navView = new NavView({el: $('#nav-menu'), session: this.session});
+            }
+            else {
+                //update if for the new session.
+                this.navView.session = this.session;
+            }
+            this.navView.render();
 
-          //go to the next item
-          Backbone.history.navigate(this.session.getNextURL());
+            //go to the next item
+            Backbone.history.navigate(this.session.getNextURL());
         },
 
         item: function(itemSlug) {
-          var item = this.session.getItem(itemSlug);
-          //Inform the session that we've visited this item
-          this.session.visitItem(itemSlug);
-          var nextURL = this.session.getNextURL();
-          var currentTrail = this.session.getCurrentTrail();
-          var currentTopic = this.session.getCurrentTopic();
-          var view = new ItemView({
-            el: $('#content'),
-            item: item,
-            trail: currentTrail,
-            topic: currentTopic,
-            nextURL: nextURL
-          });
-          this.navView.render();
-          view.render();
+            var item = this.session.getItem(itemSlug);
+            //Inform the session that we've visited this item
+            this.session.visitItem(itemSlug);
+            var nextURL = this.session.getNextURL();
+            var currentTrail = this.session.getCurrentTrail();
+            var currentTopic = this.session.getCurrentTopic();
+            var view = new ItemView({
+                item: item,
+                trail: currentTrail,
+                topic: currentTopic,
+                nextURL: nextURL
+            });
+            this.contentView.setView(view);
+            view.render();
+            this.navView.render();
         },
         finished: function() {
-          var view = new FinishedView( {el: $('#content')} );
-          view.render();
+            var view = new FinishedView();
+            this.contentView.setView(view);
+            view.render();
             //TODO mark with the session that it's finished.
             //TODO re-render the nav menu
             //Hide the nav-menu
             this.navMenu.hide();
         },
         restart: function() {
-          //restart the current trail
-          this.session = new Session(this.session.attributes.trail.attributes.slug);
-          Backbone.history.navigate(this.session.getNextURL());
+            //restart the current trail
+            this.session = new Session(this.session.attributes.trail.attributes.slug);
+            Backbone.history.navigate(this.session.getNextURL());
         },
         dashboard: function() {
-            var dashboardView = new DashboardView( {el: $('#content'), beaconId: 45790});
+            var dashboardView = new DashboardView( {beaconId: 45790});
+            this.contentView.setView(dashboardView);
             dashboardView.render();
-        },
+        }
     });
 
     return SEVRouter;
