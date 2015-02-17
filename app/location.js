@@ -74,7 +74,9 @@ define(["backbone", "underscore"], function(Backbone, _ ) {
 
         //emit events in form 'beaconRange:<majorID>'
         var eventID = 'beaconRange:' + beacon.major;
-        Backbone.trigger(eventID, beacon.proximity);
+
+        var beacon_data = {proximity: beacon.proximity, rssi: beacon.rssi, accuracy: beacon.accuracy};
+        Backbone.trigger(eventID, beacon_data);
 
       }
     },

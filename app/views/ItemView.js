@@ -2,9 +2,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
         "app/collections/QuestionsCollection", "app/views/QuestionView"],
     function(Backbone, _, itemTemplate, Location, QuestionsCollection, QuestionView) {
 
-  var allQuestions = new QuestionsCollection();
-  allQuestions.fetch();
-
   var ItemView = Backbone.View.extend({
 
     template: itemTemplate,
@@ -15,7 +12,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       output.nextURL = this.nextURL;
       output.trailTitle = this.trail.attributes.name;
       output.topicTitle = this.topic.attributes.title;
-      output.eventId = this.eventId;
       return output;
     },
 
@@ -25,12 +21,8 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       this.trail = params.trail;
       this.topic = params.topic;
 
-      //get the question
-      this.question = allQuestions.findWhere({item:this.item.attributes.slug});
-
       //listen for events
-      this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
-      // this.on(eventId, this.didRangeBeacon, this);
+      this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
     },
 
@@ -86,10 +78,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       $('.show-hint').hide();
       $('.hint').show();
     },
-    // onVideoEnded: function() {
-    //   // Location.logToDom("Video ended");
-    //   this.showQuestion();
-    // },
     showQuestion: function(ev) {
       //create and render question view
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});

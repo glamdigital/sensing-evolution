@@ -1,11 +1,11 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/ItemView", "app/views/FinishedView",
-          "app/models/Session"],
+          "app/models/Session", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, ItemView, FinishedView,
-            Session) {
+            Session, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
         initialize: function() {
@@ -21,10 +21,12 @@ define(["backbone", "jquery", "underscore",
 
         routes: {
             "": "home",
+            "home": "home",
             "trail/:trail": "trail",
             "item/:item": "item",
             "finished": "finished",
-            "restart": "restart"
+            "restart": "restart",
+            "dashboard": "dashboard"
         },
 
         home: function() {
@@ -32,6 +34,7 @@ define(["backbone", "jquery", "underscore",
             el: $('#content'),
             trails:this.allTrails
           });
+          view.render();
         },
 
         trail: function(trailSlug) {
@@ -60,13 +63,17 @@ define(["backbone", "jquery", "underscore",
 
         },
         finished: function() {
-          var view = new FinishedView( {el: $('body')} );
+          var view = new FinishedView( {el: $('#content')} );
           view.render();
         },
         restart: function() {
           //restart the current trail
           this.session = new Session(this.session.attributes.trail.attributes.slug);
           Backbone.history.navigate(this.session.getNextURL());
+        },
+        dashboard: function() {
+            var dashboardView = new DashboardView( {el: $('#content'), beaconId: 45790});
+            dashboardView.render();
         }
     });
 
