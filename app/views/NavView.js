@@ -7,6 +7,9 @@ define(["backbone", "hbs!app/templates/nav_menu"], function(Backbone, navTemplat
         initialize: function(params) {
             this.session = params.session;
             this.session.on('change', this.render, this)
+
+            //re-render when any item is found
+            this.listenTo(Backbone, 'found-item', this.render);
         },
 
         serialize: function () {
