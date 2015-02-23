@@ -79,6 +79,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       Backbone.trigger(this.eventId, "ProximityImmediate");
     },
     showHint: function(ev) {
+        ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
     },

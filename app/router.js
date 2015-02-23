@@ -86,7 +86,7 @@ define(["backbone", "jquery", "underscore",
             //TODO mark with the session that it's finished.
             //TODO re-render the nav menu
             //Hide the nav-menu
-            this.navMenu.hide();
+            this.navView.hide();
         },
         restart: function() {
             //restart the current trail
