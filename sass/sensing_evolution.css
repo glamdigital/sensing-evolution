@@ -19,7 +19,7 @@ a.nav-link {
     border-width: 1px;
     border-color: blue;
     border-radius: 3px; }
-  a.nav-link.visited {
+  a.nav-link.found {
     background-color: darkgreen;
     border-radius: 3px; }
 

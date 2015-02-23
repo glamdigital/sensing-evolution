@@ -63,6 +63,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       }, this), 500);
       //unsubscribe from further beacon events
       this.stopListening(Backbone, this.eventId);
+      this.item.attributes.isFound=true;
     },
 
     //For browser simulation of 'finding' the object. Click on the picture

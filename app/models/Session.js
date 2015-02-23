@@ -1,5 +1,5 @@
-define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
-    function(Backbone, ItemsCollection, Trail) {
+define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCollection", "app/models/Trail"],
+    function(Backbone, ItemsCollection, TopicsCollection, Trail) {
 
   var Session = Backbone.Model.extend({
 
@@ -12,16 +12,16 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
       this.unvisitedItems = new ItemsCollection();
 
       //get all topics for the trail
-      var topics = trail.getTopics();
-      var shuffledTopics = topics.shuffle();
+      this.topics = trail.getTopics();
+      this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
 
       //get all items for the topic, shuffle and add to unvisited items
-      for(var i=0; i<topics.length; i++) {
-        var topic = shuffledTopics[i];
+      for(var i=0; i<this.shuffledTopics.length; i++) {
+        var topic = this.shuffledTopics.at(i);
         var items = topic.getItems();
-        var shuffledItems = items.shuffle();
+        topic.shuffledItems = new ItemsCollection(items.shuffle());
         for(var j=0; j<items.length; j++) {
-          this.unvisitedItems.add(shuffledItems[j]);
+          this.unvisitedItems.add(topic.shuffledItems.at(j));
         }
       }
     },
@@ -75,16 +75,15 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
             topics: []
         };
 
-        var topics = this.trail.getTopics();
-        topics.each( function(topic) {
+        this.shuffledTopics.each( function(topic) {
             var isCurrentTopic = this.currentTopic === topic;
             var topicDict = {
                 title: topic.attributes.title,
                 items: [],
                 isCurrent: isCurrentTopic
             };
-            //fill in items array
-            var items = topic.getItemsForTrail(this.trail.attributes.slug);
+            //fill in items
+            var items = topic.shuffledItems;
             items.each(function(item) {
                 var isCurrentItem = this.currentItem === item;
                 var isVisited = this.visitedItems.indexOf(item) >= 0;
@@ -93,7 +92,8 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
                     title: item.attributes.title,
                     slug: item.attributes.slug,
                     isCurrent: isCurrentItem,
-                    isVisited: isVisited
+                    isVisited: isVisited,
+                    isFound: item.attributes.isFound,
                 };
                 topicDict.items.push(itemDict);
             }, this);
