@@ -3,11 +3,11 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
   var allQuestions = new QuestionsCollection();
   allQuestions.fetch();
 
-  var ItemModel = Backbone.Model.extend({
+  var Item = Backbone.Model.extend({
 
     initialize: function() {
       //find all questions which pertain to this item with a topic in common
-      this.questions = ItemModel.allQuestions.filter(function(question) {
+      var questionsArray = Item.allQuestions.filter(function(question) {
         if(question.attributes.item === this.attributes.slug) {
           for(var i=0; i<this.attributes.trails.length; i++) {
             if(question.attributes.trails.indexOf(this.attributes.trails[i]) >= 0) {
@@ -17,6 +17,8 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
         }
         return false;
       }, this);
+        this.questions = new QuestionsCollection(questionsArray);
+        if(this.questions.length <= 0) { console.warn("Not enough quesions for item " + this.attributes.slug);}
     },
 
     parse: function(response) {
@@ -46,12 +48,20 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
       }
       return item;
     },
+
+    questionForTrail: function(trailId) {
+
+        var qs = this.questions.filter(function(question) {
+            return question.attributes.trails.indexOf(trailId) >= 0;
+        });
+        return qs[0];
+    }
   },
   {
     //class parameters
     allQuestions: allQuestions
   }
   );
-  return ItemModel;
+  return Item;
 
 });

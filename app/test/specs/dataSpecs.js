@@ -36,11 +36,10 @@ describe("Data validation", function() {
                     console.log("     Item: " + item.attributes.title + "(" + item.attributes.slug + ")");
                     //Assert length questions === 1
                     //get the questions which are applicable to the current trail.
-                    var trailQuestions = _.filter(item.questions, function(question) {
-                      return question.attributes.trails.indexOf(trail.attributes.slug) >= 0;
-                    }, this);
+                    var trailQuestion = item.questionForTrail(trail.attributes.slug);
                     console.log("Checking number of questions");
-                    expect(trailQuestions.length).toBe(1);
+                    expect(trailQuestion).not.toBe(null);
+                    expect(trailQuestion).not.toBe(undefined);
 
                   }, this);
               }, this);

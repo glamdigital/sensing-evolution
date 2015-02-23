@@ -1,4 +1,4 @@
-define(["backbone"], function(Backbone) {
+define(["backbone", "layoutmanager"], function(Backbone, Layout) {
 
     var ContentView = Backbone.Layout.extend();
 
