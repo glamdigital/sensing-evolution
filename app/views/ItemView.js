@@ -20,7 +20,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       this.nextURL = params.nextURL;
       this.trail = params.trail;
       this.topic = params.topic;
-
+      this.question = params.item.questionForTrail(this.trail.attributes.slug);
       //listen for events
       this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
@@ -67,7 +67,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
 
     //For browser simulation of 'finding' the object. Click on the picture
     events: {
-      "click img" : "onClickImage",
+      "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
@@ -84,10 +84,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       questionView.render();
     }
 
-  },
-  {
-    //class properties
-    allQuestions: allQuestions
   }
   );
 
