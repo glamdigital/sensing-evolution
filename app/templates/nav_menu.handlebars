@@ -1,0 +1,15 @@
+<h3>Sensing Evolution</h3>
+
+<a href="#/" class="nav-link">Home</a>
+
+<hr>
+
+{{#each topics}}
+    {{title}}
+    <ul>
+    {{#each items}}
+        <li><a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isFound}}found{{/if}}" href="#/item/{{slug}}">{{title}}</a></li>
+    {{/each}}
+    </ul>
+    <hr>
+{{/each}}

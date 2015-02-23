@@ -63,18 +63,23 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       }, this), 500);
       //unsubscribe from further beacon events
       this.stopListening(Backbone, this.eventId);
+      this.item.attributes.isFound=true;
+
+      Backbone.trigger('found-item');
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
     events: {
       "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
+      "click #nav-menu-button" : "toggleNavMenu",
       // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
       Backbone.trigger(this.eventId, "ProximityImmediate");
     },
     showHint: function(ev) {
+        ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
     },
@@ -82,8 +87,14 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       //create and render question view
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
       questionView.render();
+    },
+    toggleNavMenu: function(ev)
+    {
+        var content = $('#content');
+        content.toggleClass('slideout');
     }
 
+    //allQuestions: allQuestions
   }
   );
 

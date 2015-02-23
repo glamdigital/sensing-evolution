@@ -1,9 +1,63 @@
+@import "compass/css3";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
-$standardPadding: 0px 20px;
+$standardPadding: 0px 5px;
+
+$navBarWidth: 80%;
 
 body {
   font-family: $standardFontFamily;
   margin:0;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: white;
+  z-index: -1;
+  width: $navBarWidth;
+  height: 1000px;
+}
+
+.nav-menu-button {
+  position: absolute;
+  padding: 10px;
+}
+
+a.nav-link {
+  font-weight: bold;
+  color: lightgray;
+  &.current {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-radius: 3px;
+  }
+  &.found {
+    background-color: darkgreen;
+    border-radius: 3px;
+  }
+}
+
+.content {
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  overflow: scroll;
+  position: fixed;
+
+  &.slideout{
+    left: $navBarWidth;
+  }
+  min-height: 1000px;
+
+  @include transition-property(left);
+  @include transition-duration(0.25s);
 }
 
 .header {
@@ -27,7 +81,14 @@ body {
   padding: $standardPadding;
   h2 {
     text-align: center;
+    margin: 5px 0px;
   }
+}
+
+h3 {
+  text-align: center;
+  margin: 5px 0px;
+  padding-bottom: 5px;
 }
 
 .search-item {
@@ -38,7 +99,8 @@ body {
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
-    width: 100%;
+    width: 80%;
+    max-height: 40%;
   }
   .dev-control {
     float: right;
@@ -68,6 +130,8 @@ h3.name {
   padding: 5px 10px;
   margin: 13px 12px;
   position: fixed;
+  left: 70%;
+  top: 90%;
   &.far {
     background-color: lightcoral;
   }
@@ -77,6 +141,7 @@ h3.name {
   &.immediate {
     background-color: lightgreen;
   }
+
 
 
 }

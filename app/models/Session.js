@@ -1,5 +1,5 @@
-define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
-    function(Backbone, ItemsCollection, Trail) {
+define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCollection", "app/models/Trail"],
+    function(Backbone, ItemsCollection, TopicsCollection, Trail) {
 
   var Session = Backbone.Model.extend({
 
@@ -12,16 +12,18 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
       this.unvisitedItems = new ItemsCollection();
 
       //get all topics for the trail
-      var topics = trail.getTopics();
-      var shuffledTopics = topics.shuffle();
+      this.topics = trail.getTopics();
+      this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
 
       //get all items for the topic, shuffle and add to unvisited items
-      for(var i=0; i<topics.length; i++) {
-        var topic = shuffledTopics[i];
-        var items = topic.getItems();
-        var shuffledItems = items.shuffle();
+      for(var i=0; i<this.shuffledTopics.length; i++) {
+        var topic = this.shuffledTopics.at(i);
+        var items = topic.getItems().filter(function (item) {
+            return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
+        }, this);
+        topic.shuffledItems = new ItemsCollection(_.shuffle(items));
         for(var j=0; j<items.length; j++) {
-          this.unvisitedItems.add(shuffledItems[j]);
+          this.unvisitedItems.add(topic.shuffledItems.at(j));
         }
       }
     },
@@ -67,6 +69,41 @@ define(["backbone", "app/collections/ItemsCollection", "app/models/Trail"],
       var item = this.unvisitedItems.findWhere({slug: slug});
       this.unvisitedItems.remove(item);
       this.visitedItems.add(item);
+    },
+
+    getAllSessionTopicsAndItems: function() {
+        var out = {
+            title: this.trail.attributes.name,
+            topics: []
+        };
+
+        this.shuffledTopics.each( function(topic) {
+            var isCurrentTopic = this.currentTopic === topic;
+            var topicDict = {
+                title: topic.attributes.title,
+                items: [],
+                isCurrent: isCurrentTopic
+            };
+            //fill in items
+            var items = topic.shuffledItems;
+            items.each(function(item) {
+                var isCurrentItem = this.currentItem === item;
+                var isVisited = this.visitedItems.indexOf(item) >= 0;
+                //TODO track whether an item has been found
+                var itemDict = {
+                    title: item.attributes.title,
+                    slug: item.attributes.slug,
+                    isCurrent: isCurrentItem,
+                    isVisited: isVisited,
+                    isFound: item.attributes.isFound,
+                };
+                topicDict.items.push(itemDict);
+            }, this);
+            out.topics.push(topicDict);
+        }, this);
+
+        return out;
+
     },
 
     // ItemsCollection of items the user has yet to visit
