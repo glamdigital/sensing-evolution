@@ -18,8 +18,10 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
       //get all items for the topic, shuffle and add to unvisited items
       for(var i=0; i<this.shuffledTopics.length; i++) {
         var topic = this.shuffledTopics.at(i);
-        var items = topic.getItems();
-        topic.shuffledItems = new ItemsCollection(items.shuffle());
+        var items = topic.getItems().filter(function (item) {
+            return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
+        }, this);
+        topic.shuffledItems = new ItemsCollection(_.shuffle(items));
         for(var j=0; j<items.length; j++) {
           this.unvisitedItems.add(topic.shuffledItems.at(j));
         }
