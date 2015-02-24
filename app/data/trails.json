@@ -1,10 +1,12 @@
 [
   {
     "slug": "primary-trail",
-    "name": "Primary School Trail"
+    "name": "Primary School Trail",
+    "video": "0. INTRODUCTION V2.mp4"
   },
   {
     "slug": "gcse-trail",
-    "name": "GCSE Trail"
+    "name": "GCSE Trail",
+    "video": "0. INTRODUCTION V2.mp4"
   }
 ]

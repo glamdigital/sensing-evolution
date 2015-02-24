@@ -6,7 +6,7 @@
     "trail1": "primary-trail",
     "trail2": "gcse-trail",
     "image": "fossil1.jpg",
-    "video": "3. Megalosaurus.mpg",
+    "video": "3. Megalosaurus.mp4",
     "hint": "Look on the rear wall",
     "beaconMajor": "6650",
     "beaconHint": "ios"
@@ -18,7 +18,7 @@
     "trail1": "gcse-trail",
     "trail2": "",
     "image": "fossil2.jpg",
-    "video": "",
+    "video": "0. INTRODUCTION V2.mp4",
     "hint": "hint",
     "beaconMajor": "45790",
     "beaconHint": "Purple"

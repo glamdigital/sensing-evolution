@@ -1,10 +1,10 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
-          "app/views/TrailsView", "app/views/ItemView", "app/views/FinishedView",
+          "app/views/TrailsView", "app/views/TrailIntroView", "app/views/ItemView", "app/views/FinishedView",
           "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
-            TrailsView, ItemView, FinishedView,
+            TrailsView, TrailIntroView, ItemView, FinishedView,
             ContentView, Session, NavView, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
@@ -58,8 +58,14 @@ define(["backbone", "jquery", "underscore",
             }
             this.navView.render();
 
-            //go to the next item
-            Backbone.history.navigate(this.session.getNextURL());
+            //create intro view
+            var view = new TrailIntroView({
+                trail: trail,
+                nextURL: this.session.getNextURL()
+            });
+
+            this.contentView.setView(view);
+            view.render();
         },
 
         item: function(itemSlug) {
