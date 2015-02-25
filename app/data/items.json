@@ -8,8 +8,8 @@
     "image": "fossil1.jpg",
     "video": "3. Megalosaurus.mp4",
     "hint": "Look on the rear wall",
-    "beaconMajor": "6650",
-    "beaconHint": "ios"
+    "beaconMajor": "2567",
+    "beaconHint": "Purple"
   },
   {
     "slug": "fossil2",
@@ -21,7 +21,7 @@
     "video": "4. Icthyosaur.mp4",
     "hint": "hint",
     "beaconMajor": "45790",
-    "beaconHint": "Purple"
+    "beaconHint": "Purple/Green"
   },
   {
     "slug": "fossil3",
@@ -32,7 +32,7 @@
     "image": "fossil3.jpg",
     "video": "4. Icthyosaur.mp4",
     "hint": "hint",
-    "beaconMajor": "26981",
+    "beaconMajor": "11389",
     "beaconHint": "Blue"
   },
   {
@@ -44,7 +44,7 @@
     "image": "mutation1.jpg",
     "video": "1. Buckland Case.mp4",
     "hint": "hint",
-    "beaconMajor": "45790",
+    "beaconMajor": "2567",
     "beaconHint": "Purple"
   },
   {
@@ -56,8 +56,8 @@
     "image": "mutation2.jpg",
     "video": "2. Hyaena Life on Earth display.mp4",
     "hint": "hint",
-    "beaconMajor": "26981",
-    "beaconHint": "Blue"
+    "beaconMajor": "45790",
+    "beaconHint": "Purple/Green"
   },
   {
     "slug": "selection1",
@@ -68,8 +68,8 @@
     "image": "selection1.jpg",
     "video": "5. Peppered Moth and Snails Script.mp4",
     "hint": "hint",
-    "beaconMajor": "6650",
-    "beaconHint": "ios"
+    "beaconMajor": "11389",
+    "beaconHint": "Blue"
   },
   {
     "slug": "selection2",
@@ -78,9 +78,9 @@
     "trail1": "primary-trail",
     "trail2": "",
     "image": "selection2.jpg",
-    "video": "6. Darwins Pigeon Case Script.mp4",
+    "video": "6. Darwin’s Pigeon Case Script.mp4",
     "hint": "hint",
-    "beaconMajor": "45790",
+    "beaconMajor": "2567",
     "beaconHint": "Purple"
   },
   {
@@ -92,8 +92,8 @@
     "image": "species1.jpg",
     "video": "7. Reptiles SEvo Table.mp4",
     "hint": "hint",
-    "beaconMajor": "6650",
-    "beaconHint": "ios"
+    "beaconMajor": "45790",
+    "beaconHint": "Purple/Green"
   },
   {
     "slug": "species2",
@@ -104,7 +104,7 @@
     "image": "species2.jpg",
     "video": "8. Archaeopteryx.mp4",
     "hint": "hint",
-    "beaconMajor": "26981",
+    "beaconMajor": "11389",
     "beaconHint": "Blue"
   }
 ]
