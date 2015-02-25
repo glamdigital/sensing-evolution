@@ -9,6 +9,23 @@ body {
   margin:0;
 }
 
+h1 {
+  @media screen and (orientation:landscape) and (max-height: 321px) {
+    margin: 0px;
+  }
+  text-align: center;
+}
+
+video.intro {
+  max-height: 250px;
+  &.finished {
+    max-height: 200px;
+  }
+
+  @include transition-property(max-height);
+  @include transition-duration(0.25s);
+}
+
 .nav-menu {
   position: fixed;
   top: 0;
@@ -181,6 +198,10 @@ h3.name {
   }
 }
 
+.choose-trail {
+  float: left;
+  padding-right: $standardPadding;
+}
 .start-trail {
   display:none;
 }

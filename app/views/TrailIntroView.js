@@ -24,6 +24,11 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 
         showStartLink: function() {
             $('.start-trail').show();
+            //add the 'finished' class to the video
+            var $video = $('#intro-video');
+            $video.addClass('finished');
+            //hide the controls
+            $video.removeAttr('controls');
         }
 
     });
