@@ -22,7 +22,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       this.topic = params.topic;
       this.question = params.item.questionForTrail(this.trail.attributes.slug);
       //listen for events
-      this.eventId = 'beaconRange:' + this.item.attributes.iBeaconMajor;
+      this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
     },
 
