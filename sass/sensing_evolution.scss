@@ -17,9 +17,11 @@ h1 {
 }
 
 video.intro {
-  max-height: 250px;
-  &.finished {
-    max-height: 200px;
+  @media screen and (max-height: 321px) {
+    max-height: 250px;
+    &.finished {
+      max-height: 200px;
+    }
   }
 
   @include transition-property(max-height);
