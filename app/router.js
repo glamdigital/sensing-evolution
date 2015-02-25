@@ -83,7 +83,11 @@ define(["backbone", "jquery", "underscore",
             });
             this.contentView.setView(view);
             view.render();
+            //re-render and hide the nav view
             this.navView.render();
+            if(this.navView) {
+                this.navView.hide();
+            }
         },
         finished: function() {
             var view = new FinishedView();
