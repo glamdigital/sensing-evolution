@@ -1,6 +1,6 @@
-define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
+define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
         "app/collections/QuestionsCollection", "app/views/QuestionView"],
-    function(Backbone, _, itemTemplate, Location, QuestionsCollection, QuestionView) {
+    function(Backbone, _, itemTemplate, Logging, QuestionsCollection, QuestionView) {
 
   var ItemView = Backbone.View.extend({
 

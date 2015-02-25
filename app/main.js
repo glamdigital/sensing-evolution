@@ -1,8 +1,8 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
-  function($, Backbone, LayoutManager, Router, Location, Tests){
+require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
+  function($, Backbone, Logging, LayoutManager, Router, Location, Tests){
 
     //UUIDs to monitor
     //TODO move this to config
@@ -10,7 +10,7 @@ require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location', 'ap
     var Location_UUID_ios = '8492E75F-4FD6-469D-B132-043FE94921D8'; //ios
 
     var onReady = function() {
-      Location.logToDom("Device Ready");
+      Logging.logToDom("Device Ready");
       Location.init();
       Location.startRangingRegion(Location_UUID_ios);
       Location.startRangingRegion(Location_UUID_beacons);
@@ -25,5 +25,7 @@ require(['jquery','backbone', 'layoutmanager', 'app/router', 'app/location', 'ap
 
     //start the app
     Backbone.history.start();
+
+      Logging.logToDom("Started the app");
 
 });
