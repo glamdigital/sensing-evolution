@@ -1,6 +1,6 @@
 define(["backbone", "underscore"], function(Backbone, _ ) {
 
-  var log_to_dom_enabled = true;
+  var log_to_dom_enabled = false;
   var logToDom = function (message) {
       if(log_to_dom_enabled) {
           console.log("Logging to dom");
