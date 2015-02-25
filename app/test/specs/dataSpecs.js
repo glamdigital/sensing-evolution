@@ -16,7 +16,7 @@ describe("Data validation", function() {
             console.log(this.allTrails.length + " trails in total");
             console.log("Verifying trails have topics");
             this.allTrails.forEach( function(trail) {
-              console.log("Trail: " + trail.attributes.name + " (" + trail.attributes.slug + ")");
+              console.log("Trail: " + trail.attributes.title + " (" + trail.attributes.slug + ")");
 
               //Assert topics > 0
 

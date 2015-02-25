@@ -17,12 +17,18 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
       //get all items for the topic, shuffle and add to unvisited items
       for(var i=0; i<this.shuffledTopics.length; i++) {
-        var topic = this.shuffledTopics.at(i);
-        var items = topic.getItems().filter(function (item) {
-            return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
-        }, this);
-        topic.shuffledItems = new ItemsCollection(_.shuffle(items));
-        for(var j=0; j<items.length; j++) {
+          var topic = this.shuffledTopics.at(i);
+          var items = topic.getItems().filter(function (item) {
+              return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
+          }, this);
+          if(topic.attributes.fixed_order) {
+              //if the topic is set to be in fixed order, then items will appear in the order they are in the imported json
+              topic.shuffledItems = new ItemsCollection(items);
+          }
+          else {
+              topic.shuffledItems = new ItemsCollection(_.shuffle(items));
+          }
+          for(var j=0; j<items.length; j++) {
           this.unvisitedItems.add(topic.shuffledItems.at(j));
         }
       }
@@ -73,7 +79,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
     getAllSessionTopicsAndItems: function() {
         var out = {
-            title: this.trail.attributes.name,
+            title: this.trail.attributes.title,
             topics: []
         };
 

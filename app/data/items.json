@@ -18,7 +18,7 @@
     "trail1": "gcse-trail",
     "trail2": "",
     "image": "fossil2.jpg",
-    "video": "0. INTRODUCTION V2.mp4",
+    "video": "4. Ichthyosaur.mp4",
     "hint": "hint",
     "beaconMajor": "45790",
     "beaconHint": "Purple"
@@ -42,7 +42,7 @@
     "trail1": "primary-trail",
     "trail2": "gcse-trail",
     "image": "mutation1.jpg",
-    "video": "2. Hyaena Life on Earth display.mp4",
+    "video": "1. Buckland Case.mp4",
     "hint": "hint",
     "beaconMajor": "45790",
     "beaconHint": "Purple"
@@ -54,7 +54,7 @@
     "trail1": "primary-trail",
     "trail2": "gcse-trail",
     "image": "mutation2.jpg",
-    "video": "1. Buckland Case.mp4",
+    "video": "2. Hyaena Life on Earth display.mp4",
     "hint": "hint",
     "beaconMajor": "26981",
     "beaconHint": "Blue"
@@ -78,7 +78,7 @@
     "trail1": "primary-trail",
     "trail2": "",
     "image": "selection2.jpg",
-    "video": "6. Darwin's Pigeon Case Script.mp4",
+    "video": "6. Darwin’s Pigeon Case Script.mp4",
     "hint": "hint",
     "beaconMajor": "45790",
     "beaconHint": "Purple"

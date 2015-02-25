@@ -3,24 +3,28 @@
     "slug": "fossils",
     "title": "Fossils as Evidence",
     "trail1": "primary-trail",
-    "trail2": "gcse-trail"
+    "trail2": "gcse-trail",
+    "fixed_order": "FALSE"
   },
   {
     "slug": "mutation",
     "title": "Mutation",
     "trail1": "primary-trail",
-    "trail2": "gcse-trail"
+    "trail2": "gcse-trail",
+    "fixed_order": "FALSE"
   },
   {
     "slug": "species",
     "title": "Species",
     "trail1": "gcse-trail",
-    "trail2": ""
+    "trail2": "",
+    "fixed_order": "FALSE"
   },
   {
     "slug": "selection",
     "title": "Natural selection",
     "trail1": "primary-trail",
-    "trail2": ""
+    "trail2": "",
+    "fixed_order": "TRUE"
   }
 ]

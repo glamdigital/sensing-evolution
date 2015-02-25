@@ -10,7 +10,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/location",
       var output = this.item.toJSON();
 
       output.nextURL = this.nextURL;
-      output.trailTitle = this.trail.attributes.name;
+      output.trailTitle = this.trail.attributes.title;
       output.topicTitle = this.topic.attributes.title;
       return output;
     },

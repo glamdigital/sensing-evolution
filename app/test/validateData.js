@@ -17,11 +17,11 @@ define(["backbone", "app/collections/TrailsCollection", "app/collections/TopicsC
                 console.log(trailsColl.length + " trails in total");
                 console.log("Verifying trails have topics");
                 trailsColl.forEach( function(trail) {
-                  console.log("Trail: " + trail.attributes.name + " (" + trail.attributes.slug + ")");
+                  console.log("Trail: " + trail.attributes.title + " (" + trail.attributes.slug + ")");
 
                   //Assert topics > 0
                   if(trail.topics.length <= 0) {
-                    console.error("No topics for trail: " + trail.attributes.name);
+                    console.error("No topics for trail: " + trail.attributes.title);
                   }
 
                   //check each item
@@ -32,7 +32,7 @@ define(["backbone", "app/collections/TrailsCollection", "app/collections/TopicsC
                         return item.attributes.trails.indexOf(trail.attributes.slug) >= 0;
                       }, this);
                       if(trailItems.length <= 0) {
-                        console.error("No items for topic: " + topic.attributes.title + " on trail: " + trail.attributes.name);
+                        console.error("No items for topic: " + topic.attributes.title + " on trail: " + trail.attributes.title);
                       }
 
                       _.each(trailItems, function(item) {

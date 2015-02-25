@@ -43,6 +43,8 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
         i++;
       }
 
+      t.fixed_order = response.fixed_order=="true"? true: false;
+
       return t;
     },
 
