@@ -1,29 +1,29 @@
 [
   {
-    "slug": "fossils",
-    "title": "Fossils as Evidence",
-    "trail1": "primary-trail",
-    "trail2": "gcse-trail",
-    "fixed_order": "FALSE"
-  },
-  {
-    "slug": "mutation",
-    "title": "Mutation",
-    "trail1": "primary-trail",
-    "trail2": "gcse-trail",
-    "fixed_order": "FALSE"
-  },
-  {
-    "slug": "species",
-    "title": "Species",
-    "trail1": "gcse-trail",
+    "slug": "changes",
+    "title": "Changes over time",
+    "trail1": "Discover",
     "trail2": "",
-    "fixed_order": "FALSE"
+    "fixed_order": "TRUE"
   },
   {
-    "slug": "selection",
-    "title": "Natural selection",
-    "trail1": "primary-trail",
+    "slug": "fossils",
+    "title": "Fossil evidence",
+    "trail1": "Discover",
+    "trail2": "",
+    "fixed_order": "TRUE"
+  },
+  {
+    "slug": "variation",
+    "title": "Endless variations",
+    "trail1": "Discover",
+    "trail2": "",
+    "fixed_order": "TRUE"
+  },
+  {
+    "slug": "adaptation",
+    "title": "Adapt and evolve",
+    "trail1": "Discover",
     "trail2": "",
     "fixed_order": "TRUE"
   }

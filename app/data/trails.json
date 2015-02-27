@@ -1,14 +1,14 @@
 [
   {
-    "slug": "primary-trail",
-    "title": "Primary School Trail",
+    "slug": "Discover",
+    "title": "Discover",
     "video": "0. INTRODUCTION V2.mp4",
     "fixed_order": "FALSE"
   },
   {
-    "slug": "gcse-trail",
-    "title": "GCSE Trail",
-    "video": "0. INTRODUCTION V2.mp4",
-    "fixed_order": "TRUE"
+    "slug": "Discover",
+    "title": "Investigate",
+    "video": "",
+    "fixed_order": "FALSE"
   }
 ]

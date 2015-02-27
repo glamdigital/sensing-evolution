@@ -63,6 +63,7 @@ video {
 
 a.nav-link {
   font-weight: bold;
+  font-size: smaller;
   color: lightgray;
   &.current {
     border-style: solid;
@@ -119,15 +120,17 @@ a.nav-link {
 
 .topic {
   padding: $standardPadding;
-  width: 50%;
+  width: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   @media #{$phone} and #{$landscape} {
     float: right;
+    width: 50%;
   }
   h2 {
     margin: 5px 20px;
+    font-size: 1.2em;
   }
 }
 
@@ -256,17 +259,21 @@ h3 {
 .question {
   display: inline;
   margin: 0% 5%;
+  padding: 0px;
   text-align: center;
   font-weight: bold;
+  font-size: smaller;
   ul {
     text-align: left;
     list-style: none;
+    padding: 2px;
     li {
       div.response {
         display: none;
         font-size: small;
         font-weight: normal;
       }
+      padding-bottom: 10px;
     }
     max-height: 80%;
     overflow: scroll;
