@@ -1,6 +1,6 @@
 define([], function() {
 
-var log_to_dom_enabled = true;
+var log_to_dom_enabled = false;
 
     if(log_to_dom_enabled) {
         //change the background colour of the nav menu, so logs are visible

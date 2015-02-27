@@ -1,11 +1,16 @@
 @import "compass/css3";
-$phone: "only screen and (max-aspect-ratio: 15/9)";
-$tablet: "only screen and (min-aspect-ratio: 15/9)";
+$phone: "only screen and (min-aspect-ratio: 15/9)";
+$tablet: "only screen and (max-aspect-ratio: 15/9)";
 $landscape: "(orientation:landscape)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
-$standardPadding: 0px 5px;
+$standardPadding: 5px;
+$corner-radius: 5px;
+$navBarWidth: 200px;
+$fontColor: black;
 
-$navBarWidth: 80%;
+@mixin rounded-corners {
+  border-radius: $corner-radius;
+}
 
 body {
   font-family: $standardFontFamily;
@@ -115,6 +120,8 @@ a.nav-link {
   padding: $standardPadding;
   width: 50%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   @media #{$phone} and #{$landscape} {
     float: right;
   }
@@ -127,18 +134,18 @@ h3 {
   text-align: center;
   margin: 5px 0px;
   padding-bottom: 5px;
+
 }
 
 //Contains the image and instructions for the item the user is supposed to be searching for
 .search-item {
   padding: $standardPadding;
-//  .find-prompt {
-//    clear: both;
-//  }
-//  text-align: center;
+  float: left;
+  text-align: center;
+  width: 100%;
   img {
     @media #{$phone} and #{$landscape} {
-      max-width: 40%;
+      width: 80%;
       margin: 0 4%;
     }
     margin-left: auto;
@@ -150,6 +157,9 @@ h3 {
   }
   .dev-control {
     float: right;
+  }
+  @media #{$landscape} {
+    width: 45%;
   }
 }
 
@@ -164,12 +174,14 @@ h3 {
   }
 }
 
-h3.name {
-  font-style: italic;
-  text-align: center;
-  padding-bottom: 20px;
-  @media #{$phone} and #{$landscape} {
-    padding-bottom: 2px;
+div.item-title {
+  h3.name {
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 20px;
+    @media #{$phone} and #{$landscape} {
+      padding-bottom: 2px;
+    }
   }
 }
 
@@ -200,6 +212,7 @@ h3.name {
   padding: none;
   clear: none;
   text-align: center;
+  float: left;
   @media #{$phone} {
     padding: 0px 10px;
     &.finished {
@@ -231,7 +244,7 @@ h3.name {
 }
 
 .question {
-  display: inline-block;
+  display: inline;
   margin: 0% 5%;
   text-align: center;
   font-weight: bold;
@@ -265,4 +278,23 @@ h3.name {
 }
 .start-trail {
   display:none;
+}
+
+div.button {
+  &.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  a {
+    padding: 2*$standardPadding;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: $fontColor;
+  }
+  margin: 10px;
 }
