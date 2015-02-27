@@ -8,10 +8,11 @@ define(["backbone", "jquery", "hbs!app/templates/trails"], function(Backbone, $,
     },
 
     initialize: function(params) {
-      this.trails = params.trails;
-      this.trails.on('sync', function() {
-        this.render();
-      }, this);
+        this.trails = params.trails;
+        this.ready=false;
+        this.trails.on('sync', function() {
+            this.render();
+        }, this);
         $(window).resize(this.adjustPosition);
     },
 
@@ -26,8 +27,13 @@ define(["backbone", "jquery", "hbs!app/templates/trails"], function(Backbone, $,
           var top = (wHeight-h)/2;
           $container.css('top', top + "px");
       },
-      render: function() {
-          console.log(rendering);
+      renderIfReady: function() {
+          //Called from the route.
+          // On first visiting the trail select page, we only want to render it once the trails have synced
+          // On subsequent visits, we should render immediately.
+          if (this.trails.length > 0) {
+              this.render();
+          }
       }
   });
 
