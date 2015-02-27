@@ -1,5 +1,5 @@
-define(["backbone", "hbs!app/templates/question"],
-    function(Backbone, questionTemplate) {
+define(["backbone", "underscore", "hbs!app/templates/question"],
+    function(Backbone, _, questionTemplate) {
 
       var QuestionView = Backbone.View.extend({
 
@@ -13,6 +13,7 @@ define(["backbone", "hbs!app/templates/question"],
         serialize: function() {
           var output = this.question.toJSON();
           //shuffle the answers for rendering
+            output.answers = _.shuffle(output.answers);
           output.nextURL = this.nextURL;
           return output;
         },
