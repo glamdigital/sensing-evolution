@@ -1,19 +1,21 @@
 <div class="header">
     <img class="nav-menu-button" id="nav-menu-button" src="img/menu.png" width=50>
     <span class="proximity-indicator">Scanning...</span>
-    <h1>{{trailTitle}}</h1>
+    <h1 class="trail-title">{{trailTitle}}</h1>
 </div>
 <div class="topic">
     <h2>{{topicTitle}}</h2>
 </div>
 
-<a href="{{nextURL}}" class="dev-control next">[Next item]</a>
-
 <div class="search-item">
-    Can you find...
+    <div class="find-prompt">Can you find...</div>
     <img class="item-image" src="img/{{image}}">
 </div>
-<h3 class="name">{{title}}</h3>
+
+<div class="item-title">
+    <h3 class="name">{{title}}</h3>
+</div>
+
 <div class="hint-container">
     <a href="#" class="show-hint">Need a hint?</a>
     <smaller>({{beaconHint}} beacon)</smaller>
@@ -27,11 +29,8 @@
         Your browser does not support the video tag.
     </video>
     <h3>You found it!</h3>
-    <a href="#/restart" class="restart-all">Restart</a>
+    <!--<a href="#/restart" class="restart-all">Restart</a>-->
 </div>
 
 <div class="question">
 </div>
-
-
-<a href="#/dashboard">Beacon Ranging Dashboard</a>

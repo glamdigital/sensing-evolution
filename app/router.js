@@ -37,7 +37,7 @@ define(["backbone", "jquery", "underscore",
             trails:this.allTrails
           });
           this.contentView.setView(view);
-          view.render();
+          view.renderIfReady();
             if(this.navView) {
                 this.navView.hide();
             }

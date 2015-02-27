@@ -1,21 +1,4 @@
-define(["backbone", "underscore"], function(Backbone, _ ) {
-
-  var log_to_dom_enabled = false;
-  var logToDom = function (message) {
-      if(log_to_dom_enabled) {
-          console.log("Logging to dom");
-          var e = document.createElement('label');
-          e.innerText = message;
-
-          var br = document.createElement('br');
-          var br2 = document.createElement('br');
-          document.body.appendChild(e);
-          document.body.appendChild(br);
-          document.body.appendChild(br2);
-
-          //window.scrollTo(0, window.document.height);
-      }
-  };
+define(["backbone", "underscore", "app/logging"], function(Backbone, _, Logging) {
 
   // if(typeof(cordova)=='undefined') {
   //   var LocationDummy = {
@@ -43,10 +26,10 @@ define(["backbone", "underscore"], function(Backbone, _ ) {
         window.cordova.plugins.locationManager.setDelegate(this.delegate);
         this.delegate.didRangeBeaconsInRegion = this.handleRangedBeacons;
 
-        logToDom("Started location service");
+        Logging.logToDom("Started location service");
       } catch (e) {
-        logToDom("Exception initialising beacons");
-        logToDom(e.message);
+        Logging.logToDom("Exception initialising beacons");
+        Logging.logToDom(e.message);
       }
     },
 
@@ -55,7 +38,7 @@ define(["backbone", "underscore"], function(Backbone, _ ) {
         var beaconRegion = new window.cordova.plugins.locationManager.BeaconRegion("evo beacons", uuid);
         window.cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion);
       } catch (e) {
-        logToDom("Error starting ranging: " + e.message);
+        Logging.logToDom("Error starting ranging: " + e.message);
       }
     },
 
@@ -80,10 +63,6 @@ define(["backbone", "underscore"], function(Backbone, _ ) {
 
       }
     },
-
-    logToDom: function(message) {
-      logToDom(message);
-    }
 
   };
 

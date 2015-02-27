@@ -1,12 +1,47 @@
 @import "compass/css3";
+$phone: "only screen and (min-aspect-ratio: 15/9)";
+$tablet: "only screen and (max-aspect-ratio: 15/9)";
+$landscape: "(orientation:landscape)";
+$portrait: "(orientation:portrait)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
-$standardPadding: 0px 5px;
+$standardPadding: 5px;
+$corner-radius: 5px;
+$navBarWidth: 250px;
+$fontColor: black;
 
-$navBarWidth: 80%;
+@mixin rounded-corners {
+  border-radius: $corner-radius;
+}
 
 body {
   font-family: $standardFontFamily;
   margin:0;
+}
+
+h1 {
+  margin: 0px;
+  text-align: center;
+}
+
+.video-holder {
+  @media #{$phone} and #{$landscape} {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video {
+    width: 100%;
+    &.finished {
+//      Shrink down the video once it's finished in order to reveal the start button
+      @media #{$phone} and #{$landscape} {
+        max-height: 200px;
+      }
+    }
+  }
+
+  @include transition-property(max-height);
+  @include transition-duration(0.25s);
 }
 
 .nav-menu {
@@ -22,7 +57,8 @@ body {
 
 .nav-menu-button {
   position: absolute;
-  padding: 10px;
+  padding: 0;
+  float: left;
 }
 
 a.nav-link {
@@ -74,14 +110,24 @@ a.nav-link {
       border-bottom-style: solid;
       border-bottom-color: #dddddd;
       border-bottom-width: 1px;
+        @media #{$phone} and #{$landscape} {
+          text-align: left;
+          margin: 0px 30px 0px 70px;
+        }
     }
 }
 
 .topic {
   padding: $standardPadding;
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @media #{$phone} and #{$landscape} {
+    float: right;
+  }
   h2 {
-    text-align: center;
-    margin: 5px 0px;
+    margin: 5px 20px;
   }
 }
 
@@ -89,12 +135,20 @@ h3 {
   text-align: center;
   margin: 5px 0px;
   padding-bottom: 5px;
+
 }
 
+//Contains the image and instructions for the item the user is supposed to be searching for
 .search-item {
   padding: $standardPadding;
-//  text-align: center;
+  float: left;
+  text-align: center;
+  width: 100%;
   img {
+    @media #{$phone} and #{$landscape} {
+      width: 80%;
+      margin: 0 4%;
+    }
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -104,6 +158,9 @@ h3 {
   }
   .dev-control {
     float: right;
+  }
+  @media #{$landscape} {
+    width: 45%;
   }
 }
 
@@ -118,10 +175,15 @@ h3 {
   }
 }
 
-h3.name {
-  font-style: italic;
-  text-align: center;
-  padding-bottom: 20px;
+div.item-title {
+  h3.name {
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 20px;
+    @media #{$phone} and #{$landscape} {
+      padding-bottom: 2px;
+    }
+  }
 }
 
 .proximity-indicator {
@@ -141,24 +203,50 @@ h3.name {
   &.immediate {
     background-color: lightgreen;
   }
-
-
-
 }
 
 .found-item {
   display: none;
   padding: none;
+  clear: none;
   text-align: center;
+  float: left;
+  @media #{$phone} {
+    padding: 0px 10px;
+    &.finished {
+      max-width: 70%;
+    }
+  }
+  @media #{$phone} and #{$landscape} {
+    max-width: 61%;
+  }
+  @media #{$tablet} {
+    width: 100%;
+    clear: both;
+  }
+
+  &.finished {
+    max-width: 40%;
+    @media #{$tablet} and #{$portrait} {
+      max-width: 100%;
+    }
+  }
+
+  @include transition-property(max-width);
+  @include transition-duration(0.25s);
+
   video {
     margin-left: auto;
     margin-right: auto;
+    @media #{$tablet} and #{$landscape} {
+      width: 90%;
+    }
   }
-  h3 {
+h3 {
     color: darkgreen;
-    display: inline;
   }
 }
+
 
 .dev-control {
   display: block;
@@ -166,12 +254,22 @@ h3.name {
 }
 
 .question {
+  display: inline;
+  margin: 0% 5%;
+  text-align: center;
+  font-weight: bold;
   ul {
+    text-align: left;
+    list-style: none;
     li {
       div.response {
         display: none;
+        font-size: small;
+        font-weight: normal;
       }
     }
+    max-height: 80%;
+    overflow: scroll;
   }
   .try-again {
     display: none
@@ -179,8 +277,35 @@ h3.name {
   .proceed {
     display: none
   }
+  @media #{$phone} and #{$landscape} {
+    max-width: 50%;
+//    float: right;
+  }
 }
 
+.choose-trail {
+  float: left;
+  padding-right: $standardPadding;
+}
 .start-trail {
   display:none;
+}
+
+div.button {
+  &.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  a {
+    padding: 2*$standardPadding;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: $fontColor;
+  }
+  margin: 10px;
 }
