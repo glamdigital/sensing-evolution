@@ -2,10 +2,11 @@
 $phone: "only screen and (min-aspect-ratio: 15/9)";
 $tablet: "only screen and (max-aspect-ratio: 15/9)";
 $landscape: "(orientation:landscape)";
+$portrait: "(orientation:portrait)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
 $standardPadding: 5px;
 $corner-radius: 5px;
-$navBarWidth: 200px;
+$navBarWidth: 250px;
 $fontColor: black;
 
 @mixin rounded-corners {
@@ -202,9 +203,6 @@ div.item-title {
   &.immediate {
     background-color: lightgreen;
   }
-
-
-
 }
 
 .found-item {
@@ -221,22 +219,34 @@ div.item-title {
   }
   @media #{$phone} and #{$landscape} {
     max-width: 61%;
+  }
+  @media #{$tablet} {
+    width: 100%;
+    clear: both;
+  }
 
-    &.finished {
-      max-width: 40%;
+  &.finished {
+    max-width: 40%;
+    @media #{$tablet} and #{$portrait} {
+      max-width: 100%;
     }
   }
+
   @include transition-property(max-width);
   @include transition-duration(0.25s);
 
   video {
     margin-left: auto;
     margin-right: auto;
+    @media #{$tablet} and #{$landscape} {
+      width: 90%;
+    }
   }
-  h3 {
+h3 {
     color: darkgreen;
   }
 }
+
 
 .dev-control {
   display: block;
