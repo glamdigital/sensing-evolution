@@ -13,7 +13,11 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
       //get all topics for the trail
       this.topics = trail.getTopics();
-      this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
+        if(trail.attributes.fixed_order) {
+            this.shuffledTopics = this.topics;
+        } else {
+            this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
+        }
 
       //get all items for the topic, shuffle and add to unvisited items
       for(var i=0; i<this.shuffledTopics.length; i++) {

@@ -17,6 +17,15 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
       return this.topics;
     },
 
+    parse: function(response) {
+        var t = {};
+        t.slug = response.slug;
+        t.title = response.title;
+        t.video = response.video;
+        t.fixed_order = response.fixed_order=="true" || response.fixed_order=="TRUE";
+        return t;
+    }
+
   },
   {
     //Class property stores all topics
