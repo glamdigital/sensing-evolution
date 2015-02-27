@@ -24,6 +24,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       //listen for events
       this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
+      Logging.logToDom("Listening for event: " + this.eventId);
     },
 
     afterRender: function() {
@@ -31,11 +32,12 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.video = this.$video[0];
 
       var eventData = { question: this.question, url:this.nextURL };
-      this.$video.on('ended',  eventData, this.showQuestion);
+      this.$video.on('ended',  eventData, this.onVideoEnded);
     },
 
-    didRangeBeacon: function(proximity) {
-      switch(proximity) {
+    didRangeBeacon: function(data) {
+        Logging.logToDom("View heard about ranged beacon!");
+      switch(data.proximity) {
         case "ProximityImmediate":
           //update proximity indicator
           $('.proximity-indicator').removeClass('near far').addClass('immediate').html('Immediate');
@@ -55,7 +57,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
 
     findObject: function() {
       $('.search-item').hide();
-      $('.found-item').show();
+      $('.found-item').show().css('display', 'inline-block');
       $('.hint-container').hide();
       //start the video after half a second
       setTimeout( _.bind(function() {
@@ -76,17 +78,19 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
-      Backbone.trigger(this.eventId, "ProximityImmediate");
+      Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
     },
     showHint: function(ev) {
         ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
     },
-    showQuestion: function(ev) {
+    onVideoEnded: function(ev) {
       //create and render question view
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
       questionView.render();
+        //mark the video element as finished
+        $(ev.target).parents('div').addClass("finished");
     },
     toggleNavMenu: function(ev)
     {

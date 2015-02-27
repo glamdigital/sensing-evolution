@@ -1,4 +1,7 @@
 @import "compass/css3";
+$phone: "only screen and (max-aspect-ratio: 15/9)";
+$tablet: "only screen and (min-aspect-ratio: 15/9)";
+$landscape: "(orientation:landscape)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
 $standardPadding: 0px 5px;
 
@@ -10,24 +13,24 @@ body {
 }
 
 h1 {
-  @media screen and (orientation:landscape) and (min-aspect-ratio: 15/9) {
-    margin: 0px;
-  }
+  margin: 0px;
   text-align: center;
 }
 
 .video-holder {
-  @media screen and (orientation:landscape) and (min-aspect-ratio: 15/9) {
-//    max-height: 250px;
+  @media #{$phone} and #{$landscape} {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-video.intro {
+video {
     width: 100%;
     &.finished {
-      max-height: 200px;
+//      Shrink down the video once it's finished in order to reveal the start button
+      @media #{$phone} and #{$landscape} {
+        max-height: 200px;
+      }
     }
   }
 
@@ -48,7 +51,8 @@ video.intro {
 
 .nav-menu-button {
   position: absolute;
-  padding: 10px;
+  padding: 0;
+  float: left;
 }
 
 a.nav-link {
@@ -100,14 +104,22 @@ a.nav-link {
       border-bottom-style: solid;
       border-bottom-color: #dddddd;
       border-bottom-width: 1px;
+        @media #{$phone} and #{$landscape} {
+          text-align: left;
+          margin: 0px 30px 0px 70px;
+        }
     }
 }
 
 .topic {
   padding: $standardPadding;
+  width: 50%;
+  text-align: center;
+  @media #{$phone} and #{$landscape} {
+    float: right;
+  }
   h2 {
-    text-align: center;
-    margin: 5px 0px;
+    margin: 5px 20px;
   }
 }
 
@@ -117,10 +129,18 @@ h3 {
   padding-bottom: 5px;
 }
 
+//Contains the image and instructions for the item the user is supposed to be searching for
 .search-item {
   padding: $standardPadding;
+//  .find-prompt {
+//    clear: both;
+//  }
 //  text-align: center;
   img {
+    @media #{$phone} and #{$landscape} {
+      max-width: 40%;
+      margin: 0 4%;
+    }
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -148,6 +168,9 @@ h3.name {
   font-style: italic;
   text-align: center;
   padding-bottom: 20px;
+  @media #{$phone} and #{$landscape} {
+    padding-bottom: 2px;
+  }
 }
 
 .proximity-indicator {
@@ -175,14 +198,30 @@ h3.name {
 .found-item {
   display: none;
   padding: none;
+  clear: none;
   text-align: center;
+  @media #{$phone} {
+    padding: 0px 10px;
+    &.finished {
+      max-width: 70%;
+    }
+  }
+  @media #{$phone} and #{$landscape} {
+    max-width: 61%;
+
+    &.finished {
+      max-width: 40%;
+    }
+  }
+  @include transition-property(max-width);
+  @include transition-duration(0.25s);
+
   video {
     margin-left: auto;
     margin-right: auto;
   }
   h3 {
     color: darkgreen;
-    display: inline;
   }
 }
 
@@ -192,18 +231,31 @@ h3.name {
 }
 
 .question {
+  display: inline-block;
+  margin: 0% 5%;
+  text-align: center;
+  font-weight: bold;
   ul {
+    text-align: left;
     li {
       div.response {
         display: none;
+        font-size: small;
+        font-weight: normal;
       }
     }
+    max-height: 80%;
+    overflow: scroll;
   }
   .try-again {
     display: none
   }
   .proceed {
     display: none
+  }
+  @media #{$phone} and #{$landscape} {
+    max-width: 50%;
+//    float: right;
   }
 }
 
