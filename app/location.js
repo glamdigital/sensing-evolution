@@ -58,7 +58,7 @@ define(["backbone", "underscore", "app/logging"], function(Backbone, _, Logging)
         //emit events in form 'beaconRange:<majorID>'
         var eventID = 'beaconRange:' + beacon.major;
 
-        var beacon_data = {proximity: beacon.proximity, rssi: beacon.rssi, accuracy: beacon.accuracy};
+        var beacon_data = {proximity: beacon.proximity, rssi: beacon.rssi, accuracy: beacon.accuracy, major: beacon.major};
         Backbone.trigger(eventID, beacon_data);
 
       }
