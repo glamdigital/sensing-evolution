@@ -1,0 +1,445 @@
+/* line 18, ../sass/sensing_evolution.scss */
+body {
+  font-family: "Helvetica Neue", "Droid Sans", sans-serif;
+  margin: 0;
+}
+
+/* line 23, ../sass/sensing_evolution.scss */
+h1 {
+  margin: 0px;
+  text-align: center;
+}
+
+/* line 28, ../sass/sensing_evolution.scss */
+.video-holder {
+  -webkit-transition-property: max-height;
+  -moz-transition-property: max-height;
+  -o-transition-property: max-height;
+  transition-property: max-height;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 28, ../sass/sensing_evolution.scss */
+  .video-holder {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 35, ../sass/sensing_evolution.scss */
+.video-holder video {
+  width: 500px;
+  height: 281.25px;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 35, ../sass/sensing_evolution.scss */
+  .video-holder video {
+    width: 500px;
+    height: 281.25px;
+  }
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 43, ../sass/sensing_evolution.scss */
+  .video-holder video.finished {
+    max-height: 200px;
+  }
+}
+
+/* line 55, ../sass/sensing_evolution.scss */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: white;
+  z-index: -1;
+  width: 250px;
+  height: 1000px;
+}
+
+/* line 66, ../sass/sensing_evolution.scss */
+.nav-menu-button {
+  position: absolute;
+  padding: 0;
+  float: left;
+}
+
+/* line 72, ../sass/sensing_evolution.scss */
+a.nav-link {
+  font-weight: bold;
+  font-size: smaller;
+  color: lightgray;
+}
+/* line 76, ../sass/sensing_evolution.scss */
+a.nav-link.current {
+  border-style: solid;
+  border-width: 1px;
+  border-color: blue;
+  border-radius: 3px;
+}
+/* line 82, ../sass/sensing_evolution.scss */
+a.nav-link.found {
+  background-color: darkgreen;
+  border-radius: 3px;
+}
+
+/* line 88, ../sass/sensing_evolution.scss */
+.content {
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  width: 100%;
+  min-height: 100%;
+  overflow: scroll;
+  position: fixed;
+  min-height: 1000px;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 99, ../sass/sensing_evolution.scss */
+.content.slideout {
+  left: 250px;
+}
+
+/* line 108, ../sass/sensing_evolution.scss */
+.header {
+  background-color: #f4f4f4;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 113, ../sass/sensing_evolution.scss */
+.header h1 {
+  font-size: medium;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin: 0;
+  border-bottom-style: solid;
+  border-bottom-color: #dddddd;
+  border-bottom-width: 1px;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 113, ../sass/sensing_evolution.scss */
+  .header h1 {
+    text-align: left;
+    margin: 0px 30px 0px 70px;
+  }
+}
+
+/* line 129, ../sass/sensing_evolution.scss */
+.topic {
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 129, ../sass/sensing_evolution.scss */
+  .topic {
+    float: right;
+    width: 50%;
+  }
+}
+/* line 139, ../sass/sensing_evolution.scss */
+.topic h2 {
+  margin: 5px 20px;
+  font-size: 1.2em;
+}
+
+/* line 145, ../sass/sensing_evolution.scss */
+h3 {
+  text-align: center;
+  margin: 5px 0px;
+  padding-bottom: 5px;
+}
+
+/* line 153, ../sass/sensing_evolution.scss */
+.search-item {
+  padding: 5px;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+/* line 158, ../sass/sensing_evolution.scss */
+.search-item img {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  width: 80%;
+  max-height: 40%;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 158, ../sass/sensing_evolution.scss */
+  .search-item img {
+    width: 80%;
+    margin: 0 4%;
+  }
+}
+/* line 170, ../sass/sensing_evolution.scss */
+.search-item .dev-control {
+  float: right;
+}
+@media (orientation: landscape) {
+  /* line 153, ../sass/sensing_evolution.scss */
+  .search-item {
+    width: 45%;
+  }
+}
+
+/* line 178, ../sass/sensing_evolution.scss */
+.hint-container {
+  text-align: center;
+}
+/* line 180, ../sass/sensing_evolution.scss */
+.hint-container .hint {
+  display: none;
+}
+/* line 182, ../sass/sensing_evolution.scss */
+.hint-container .hint.revealed {
+  display: block;
+}
+
+/* line 190, ../sass/sensing_evolution.scss */
+div.item-title h3.name {
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 20px;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 190, ../sass/sensing_evolution.scss */
+  div.item-title h3.name {
+    padding-bottom: 2px;
+  }
+}
+
+/* line 200, ../sass/sensing_evolution.scss */
+.proximity-indicator {
+  background-color: #999999;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 13px 12px;
+  position: fixed;
+  left: 70%;
+  top: 90%;
+}
+/* line 208, ../sass/sensing_evolution.scss */
+.proximity-indicator.far {
+  background-color: lightcoral;
+}
+/* line 211, ../sass/sensing_evolution.scss */
+.proximity-indicator.near {
+  background-color: orange;
+}
+/* line 214, ../sass/sensing_evolution.scss */
+.proximity-indicator.immediate {
+  background-color: lightgreen;
+}
+
+/* line 219, ../sass/sensing_evolution.scss */
+.found-item {
+  display: none;
+  padding: none;
+  clear: none;
+  text-align: center;
+  float: left;
+  -webkit-transition-property: max-width;
+  -moz-transition-property: max-width;
+  -o-transition-property: max-width;
+  transition-property: max-width;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+@media only screen and (max-device-width: 767px) {
+  /* line 219, ../sass/sensing_evolution.scss */
+  .found-item {
+    padding: 0px 10px;
+  }
+  /* line 227, ../sass/sensing_evolution.scss */
+  .found-item.finished {
+    max-width: 70%;
+  }
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 219, ../sass/sensing_evolution.scss */
+  .found-item {
+    max-width: 61%;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 219, ../sass/sensing_evolution.scss */
+  .found-item {
+    width: 100%;
+    clear: both;
+  }
+}
+/* line 239, ../sass/sensing_evolution.scss */
+.found-item.finished {
+  max-width: 40%;
+}
+@media only screen and (min-device-width: 768px) and (orientation: portrait) {
+  /* line 239, ../sass/sensing_evolution.scss */
+  .found-item.finished {
+    max-width: 100%;
+  }
+}
+/* line 249, ../sass/sensing_evolution.scss */
+.found-item video {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 281.25px;
+}
+@media (orientation: portrait) {
+  /* line 249, ../sass/sensing_evolution.scss */
+  .found-item video {
+    width: 320px;
+    height: 180px;
+  }
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 249, ../sass/sensing_evolution.scss */
+  .found-item video {
+    width: 500px;
+    height: 281.25px;
+  }
+}
+@media only screen and (min-device-width: 768px) and (orientation: landscape) {
+  /* line 249, ../sass/sensing_evolution.scss */
+  .found-item video {
+    width: 5062.5%;
+  }
+}
+/* line 266, ../sass/sensing_evolution.scss */
+.found-item h3 {
+  color: darkgreen;
+}
+
+/* line 272, ../sass/sensing_evolution.scss */
+.dev-control {
+  display: block;
+  font-size: x-small;
+}
+
+/* line 277, ../sass/sensing_evolution.scss */
+.question {
+  display: inline;
+  margin: 0% 5%;
+  padding: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: smaller;
+}
+/* line 284, ../sass/sensing_evolution.scss */
+.question ul {
+  text-align: left;
+  list-style: none;
+  padding: 2px;
+  max-height: 80%;
+  overflow: scroll;
+}
+/* line 288, ../sass/sensing_evolution.scss */
+.question ul li {
+  padding-bottom: 10px;
+}
+/* line 289, ../sass/sensing_evolution.scss */
+.question ul li div.response {
+  display: none;
+  font-size: small;
+  font-weight: normal;
+}
+/* line 299, ../sass/sensing_evolution.scss */
+.question .try-again {
+  display: none;
+}
+/* line 302, ../sass/sensing_evolution.scss */
+.question .proceed {
+  display: none;
+}
+@media only screen and (max-device-width: 767px) and (orientation: landscape) {
+  /* line 277, ../sass/sensing_evolution.scss */
+  .question {
+    max-width: 50%;
+  }
+}
+
+/* line 311, ../sass/sensing_evolution.scss */
+.choose-trail {
+  float: left;
+  padding-right: 5px;
+}
+
+/* line 315, ../sass/sensing_evolution.scss */
+.start-trail {
+  display: none;
+}
+
+/* line 319, ../sass/sensing_evolution.scss */
+div.button {
+  margin: 10px;
+}
+/* line 320, ../sass/sensing_evolution.scss */
+div.button.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+/* line 326, ../sass/sensing_evolution.scss */
+div.button a {
+  padding: 10px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: lightgrey;
+  text-decoration: none;
+  color: black;
+}
+
+/* line 338, ../sass/sensing_evolution.scss */
+.media-test {
+  display: none;
+  background-color: blue;
+  padding: 10px;
+  width: 20%;
+  margin: 10px;
+}
+@media only screen and (max-device-width: 767px) {
+  /* line 344, ../sass/sensing_evolution.scss */
+  .media-test.phone {
+    display: inline;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  /* line 349, ../sass/sensing_evolution.scss */
+  .media-test.tablet {
+    display: inline;
+  }
+}
+@media only screen and (orientation: landscape) {
+  /* line 354, ../sass/sensing_evolution.scss */
+  .media-test.landscape {
+    display: inline;
+  }
+}
+@media only screen and (orientation: portrait) {
+  /* line 359, ../sass/sensing_evolution.scss */
+  .media-test.portrait {
+    display: inline;
+  }
+}
