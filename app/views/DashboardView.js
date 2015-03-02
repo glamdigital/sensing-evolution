@@ -6,7 +6,7 @@ define(["backbone", "jquery", "hbs!app/templates/dashboard", "app/location"], fu
 
         initialize: function (params) {
             this.beacons = params;
-
+            this.ready = false;
             //set some default values for the min and max
             this.minRSSI = -100;
             this.maxRSSI = -25;
@@ -39,15 +39,22 @@ define(["backbone", "jquery", "hbs!app/templates/dashboard", "app/location"], fu
 
                 //this.eventIds.push(eventId);
                 //subscribe to event
-                this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
-
+                var eventId = 'beaconRange:' + beaconId;
+                this.listenTo(Backbone, eventId, this.didRangeBeacon);
                 //duplicate the rssi and accuracy elements
-                $acc.clone().appendTo($accuracies).addClass(beaconId).prepend(this.beacons[i].name);
-                $rssi.clone().appendTo($rssis).addClass(beaconId).prepend(this.beacons[i].name);
+                var newacc = $acc.clone();
+                newacc.addClass('' + beaconId);
+                newacc.prepend(this.beacons[i].name);
+                newacc.appendTo($accuracies);
+                var newrssi = $rssi.clone();
+                newrssi.addClass('' + beaconId);
+                newrssi.prepend(this.beacons[i].name);
+                newrssi.appendTo($rssis);
             }
 
             $acc.hide();
             $rssi.hide();
+            this.ready=true;
         },
 
         events: {
@@ -58,34 +65,43 @@ define(["backbone", "jquery", "hbs!app/templates/dashboard", "app/location"], fu
             var randomAccuracy = this.minAccuracy + Math.random() * (this.maxAccuracy - this.minAccuracy);
             var randomRSSI = this.minRSSI + Math.random() * (this.maxRSSI - this.minRSSI);
             var randomProximity = randomAccuracy > 40 ? "FarProximity" : randomAccuracy > 10 ? "NearProximity" : "ImmediateProximity";
-            Backbone.trigger(this.eventId, {proximity: randomProximity, rssi: randomRSSI, accuracy: randomAccuracy});
+            Backbone.trigger('beaconRange:45790', {proximity: randomProximity, rssi: randomRSSI, accuracy: randomAccuracy, major:45790});
         },
 
         didRangeBeacon: function(data) {
+            if(!this.ready) {
+                return;
+            }
             //update the bars on the screen
 
-
             //rssi
-            var $rssi = $('#rssi.' + beacon.major);
-            var fill = 1 - (this.maxRSSI - data.rssi) / (this.maxRSSI - this.minRSSI);
+            var $rssi = $('#rssi.' + data.major);
+            if($rssi.length < 1) { alert("Didn't find RSSI element for " + data.major);}
+            var fill = 0;
+            if(data.rssi > 0) {
+                fill = 1 - (this.maxRSSI - data.rssi) / (this.maxRSSI - this.minRSSI);
+            }
             $rssi.find(".fillBar").css("width", fill*100 + "%");
             $rssi.find(".value").html(data.rssi);
 
             //accuracy
-            var $accuracy = $('#accuracy.' + beacon.major);
-            var fill2 = 1 - (this.maxAccuracy - data.accuracy) / (this.maxAccuracy - this.minAccuracy);
+            var $accuracy = $('#accuracy.' + data.major);
+            var fill2 = 0;
+            if (data.accuracy > -1) {
+                fill2 = 1 - (this.maxAccuracy - data.accuracy) / (this.maxAccuracy - this.minAccuracy);
+            }
             $accuracy.find(".fillBar").css("width", fill*100 + "%");
             $accuracy.find(".value").html(data.accuracy);
 
             switch(data.proximity) {
                 case "ProximityImmediate":
-                    $('.fillBar').addClass("immediate").removeClass("far").removeClass("near");
+                    $('.' + data.major + ' .fillBar').addClass("immediate").removeClass("far").removeClass("near");
                     break;
                 case "ProximityNear":
-                    $('.fillBar').addClass("near").removeClass("immediate").removeClass("far");
+                    $('.' + data.major + ' .fillBar').addClass("near").removeClass("immediate").removeClass("far");
                     break;
                 case "ProximityFar":
-                    $('.fillBar').addClass("far").removeClass("immediate").removeClass("near");
+                    $('.' + data.major + ' .fillBar').addClass("far").removeClass("immediate").removeClass("near");
                     break;
             }
         }
