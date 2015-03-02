@@ -1,6 +1,8 @@
 @import "compass/css3";
-$phone: "only screen and (min-aspect-ratio: 15/9)";
-$tablet: "only screen and (max-aspect-ratio: 15/9)";
+$phone: "only screen and (max-device-width: 767px)";
+$tablet: "only screen and (min-device-width: 768px)";
+$landscape-test: "only screen and (orientation: landscape)";
+$portrait-test: "only screen and (orientation: portrait)";
 $landscape: "(orientation:landscape)";
 $portrait: "(orientation:portrait)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
@@ -230,7 +232,7 @@ div.item-title {
 
   &.finished {
     max-width: 40%;
-    @media #{$tablet} and #{$portrait} {
+    @media #{$portrait} {
       max-width: 100%;
     }
   }
@@ -241,6 +243,10 @@ div.item-title {
   video {
     margin-left: auto;
     margin-right: auto;
+    clear: both;
+    @media #{$phone} and #{$portrait} {
+      width: 90%;
+    }
     @media #{$tablet} and #{$landscape} {
       width: 90%;
     }
@@ -315,4 +321,32 @@ div.button {
     color: $fontColor;
   }
   margin: 10px;
+}
+
+.media-test {
+  display: none;
+  background-color: blue;
+  padding: 10px;
+  width: 20%;
+  margin: 10px;
+  &.phone {
+    @media #{$phone} {
+      display: inline;
+    }
+  }
+  &.tablet {
+    @media #{$tablet} {
+      display: inline;
+    }
+  }
+  &.landscape {
+    @media #{$landscape-test} {
+      display: inline;
+    }
+  }
+  &.portrait {
+    @media #{$portrait-test} {
+      display: inline;
+    }
+  }
 }
