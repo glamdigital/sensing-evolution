@@ -55,6 +55,15 @@ video {
   z-index: -1;
   width: $navBarWidth;
   height: 1000px;
+  font-size: smaller;
+  overflow-y: scroll;
+
+  h4 {
+    margin: 5px 0px;
+  }
+  ul {
+    list-style: none;
+  }
 }
 
 .nav-menu-button {
@@ -87,7 +96,7 @@ a.nav-link {
   z-index: 2;
   width: 100%;
   min-height: 100%;
-  overflow: scroll;
+//  overflow: scroll;
   position: fixed;
 
   &.slideout{
@@ -268,7 +277,7 @@ h3 {
   padding: 0px;
   text-align: center;
   font-weight: bold;
-  font-size: smaller;
+  font-size: 0.9em;
   ul {
     text-align: left;
     list-style: none;

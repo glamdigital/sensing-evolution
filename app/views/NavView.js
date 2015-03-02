@@ -10,6 +10,12 @@ define(["backbone", "hbs!app/templates/nav_menu"], function(Backbone, navTemplat
 
             //re-render when any item is found
             this.listenTo(Backbone, 'found-item', this.render);
+            params.el.css('height', $(window).height() + 'px');
+            $(window).resize( function(ev) {
+               var $navmenu = $('#nav-menu');
+                var height = $(window).height() + 'px';
+                $navmenu.css('height', height);
+            });
         },
 
         serialize: function () {
