@@ -41,7 +41,11 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
         reset: function(ev) {
           //re-render view
           ev.preventDefault();
-          this.render();
+          //this.render();
+            $('.try-again').hide();
+            $('.response').hide();
+            var $answers = $('.answer').parents('li');
+            $answers.show();
         }
 
       });
