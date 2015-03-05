@@ -14,6 +14,16 @@
     <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 
     <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="default" />
 
     <feature name="http://api.phonegap.com/1.0/geolocation" />
+
+    <gap:config-file platform="ios" parent="UIStatusBarHidden">
+        <true/>
+    </gap:config-file>
+
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+    </gap:config-file>
 </widget>

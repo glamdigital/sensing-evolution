@@ -104,7 +104,12 @@ define(["backbone", "jquery", "underscore",
             Backbone.history.navigate(this.session.getNextURL());
         },
         dashboard: function() {
-            var dashboardView = new DashboardView( {beaconId: 45790});
+            var dashboardView = new DashboardView( [
+                {beaconId: 45790, name: 'Green'},
+                {beaconId: 2567, name: 'Purple'},
+                {beaconId: 11389, name: 'Blue'}
+            ]);
+            this.navView.hide();
             this.contentView.setView(dashboardView);
             dashboardView.render();
         }
