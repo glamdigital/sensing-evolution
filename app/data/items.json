@@ -5,11 +5,11 @@
     "topic": "changes",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "1. Buckland Case.mp4",
     "hint": "Look in the middle of the Museum for a display called 'Belonging to Professor Buckland'",
-    "beaconMajor": "2567",
-    "beaconHint": "P"
+    "beaconMajor": "2889",
+    "beaconHint": ""
   },
   {
     "slug": "changes2",
@@ -17,11 +17,11 @@
     "topic": "changes",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "2. Hyaena Life on Earth display.mp4",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
-    "beaconMajor": "45790",
-    "beaconHint": "G"
+    "beaconMajor": "9125",
+    "beaconHint": ""
   },
   {
     "slug": "fossils1",
@@ -29,11 +29,11 @@
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "3. Megalosaurus.mp4",
     "hint": "Look for the 'Megalosaurus' case near the T. rex",
-    "beaconMajor": "11389",
-    "beaconHint": "B"
+    "beaconMajor": "4005",
+    "beaconHint": ""
   },
   {
     "slug": "fossils2",
@@ -41,11 +41,11 @@
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "4. Ichthyosaur.mp4",
     "hint": "Look for the 'Ichthyosaurs' case",
-    "beaconMajor": "2567",
-    "beaconHint": "P"
+    "beaconMajor": "11889",
+    "beaconHint": ""
   },
   {
     "slug": "variation1",
@@ -53,11 +53,11 @@
     "topic": "variation",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "5. Peppered Moth and Snails Script.mp4",
     "hint": "Look for the display called 'Natural Selection at Work'",
-    "beaconMajor": "45790",
-    "beaconHint": "G"
+    "beaconMajor": "50339",
+    "beaconHint": ""
   },
   {
     "slug": "variation2",
@@ -65,11 +65,11 @@
     "topic": "variation",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "6. Darwins Pigeon Case Script.mp4",
     "hint": "Look for the display called 'Darwin's Principles'",
-    "beaconMajor": "11389",
-    "beaconHint": "B"
+    "beaconMajor": "14250",
+    "beaconHint": ""
   },
   {
     "slug": "adaptation1",
@@ -77,11 +77,11 @@
     "topic": "adaptation",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "7. Reptiles SEvo Table.mp4",
     "hint": "Head for the Sensing Evolution Reptiles table",
-    "beaconMajor": "2567",
-    "beaconHint": "P"
+    "beaconMajor": "63308",
+    "beaconHint": ""
   },
   {
     "slug": "adaptation2",
@@ -89,10 +89,10 @@
     "topic": "adaptation",
     "trail1": "Discover",
     "trail2": "",
-    "image": "",
+    "image": "fossil1.jpg",
     "video": "8. Archaeopteryx.mp4",
     "hint": "TBC",
-    "beaconMajor": "45790",
-    "beaconHint": "G"
+    "beaconMajor": "47050",
+    "beaconHint": ""
   }
 ]
