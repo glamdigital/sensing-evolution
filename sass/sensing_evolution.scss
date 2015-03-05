@@ -1,6 +1,6 @@
 @import "compass/css3";
-$phone: "only screen and (max-device-width: 767px)";
-$tablet: "only screen and (min-device-width: 768px)";
+$phone: "only screen and (max-width: 767px)";
+$tablet: "only screen and (min-width: 768px)";
 $landscape-test: "only screen and (orientation: landscape)";
 $portrait-test: "only screen and (orientation: portrait)";
 $landscape: "(orientation:landscape)";
@@ -10,6 +10,7 @@ $standardPadding: 5px;
 $corner-radius: 5px;
 $navBarWidth: 250px;
 $fontColor: black;
+$videoAspectRatio: 1.7777777778;
 
 @mixin rounded-corners {
   border-radius: $corner-radius;
@@ -37,7 +38,8 @@ video {
     &.finished {
 //      Shrink down the video once it's finished in order to reveal the start button
       @media #{$phone} and #{$landscape} {
-        max-height: 200px;
+        height: 200px;
+        width: 200px * $videoAspectRatio;
       }
     }
   }
@@ -95,7 +97,7 @@ a.nav-link {
   color: black;
   z-index: 2;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 //  overflow: scroll;
   position: fixed;
 
@@ -255,12 +257,14 @@ div.item-title {
     clear: both;
     @media #{$phone} and #{$portrait} {
       width: 90%;
+      height: 90% * $videoAspectRatio;
     }
     @media #{$tablet} and #{$landscape} {
       width: 90%;
+      height: 90% * $videoAspectRatio;
     }
   }
-h3 {
+  h3 {
     color: darkgreen;
   }
 }
@@ -290,7 +294,7 @@ h3 {
       }
       padding-bottom: 10px;
     }
-    max-height: 80%;
+    height: 100%;
     overflow: scroll;
   }
   .try-again {

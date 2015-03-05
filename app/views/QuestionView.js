@@ -8,12 +8,13 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
         initialize: function(params) {
           this.question = params.question;
           this.nextURL = params.nextURL;
+          this.shuffledAnswers = _.shuffle(this.question.attributes.answers);
         },
 
         serialize: function() {
           var output = this.question.toJSON();
-          //shuffle the answers for rendering
-            output.answers = _.shuffle(output.answers);
+          //insert the shuffled copy of the answers
+          output.shuffledAnswers = this.answers;
           output.nextURL = this.nextURL;
           return output;
         },
