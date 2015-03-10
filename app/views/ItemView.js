@@ -28,11 +28,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
     },
 
     afterRender: function() {
-      this.$video = $('#foundVideo');
-      this.video = this.$video[0];
+      this.$media = $('#foundMedia');
+      this.media = this.$media[0];
 
       var eventData = { question: this.question, url:this.nextURL };
-      this.$video.on('ended',  eventData, this.onVideoEnded);
+      this.$media.on('ended',  eventData, this.onVideoEnded);
     },
 
     didRangeBeacon: function(data) {
@@ -61,7 +61,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       $('.hint-container').hide();
       //start the video after half a second
       setTimeout( _.bind(function() {
-        this.video.play();
+        this.media.play();
       }, this), 500);
       //unsubscribe from further beacon events
       this.stopListening(Backbone, this.eventId);
@@ -89,7 +89,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       //create and render question view
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
       questionView.render();
-        //mark the video element as finished
+        //mark the media element as finished
         $(ev.target).parents('div').addClass("finished");
     },
     toggleNavMenu: function(ev)

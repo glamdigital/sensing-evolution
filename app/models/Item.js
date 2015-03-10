@@ -26,9 +26,12 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
       var item = {};
       item.slug = response.slug;
       item.title = response.title;
+      item.description = response.description;
       item.topic = response.component;
+      item.location = response.location;
       item.image = response.image;
-      item.video = response.video;
+      item.hint_image = response.hint_image;
+      item.audio = response.audio;
       item.hint = response.hint;
       item.beaconMajor = response.beaconMajor;
       item.beaconHint = response.beaconHint;

@@ -193,12 +193,15 @@ h3 {
 
 div.item-title {
   h3.name {
-    font-style: italic;
     text-align: center;
-    padding-bottom: 20px;
     @media #{$phone} and #{$landscape} {
       padding-bottom: 2px;
     }
+  }
+  h4 {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
   }
 }
 
@@ -239,6 +242,9 @@ div.item-title {
   @media #{$tablet} {
     width: 100%;
     clear: both;
+  }
+  img {
+    width: 80%;
   }
 
   &.finished {
