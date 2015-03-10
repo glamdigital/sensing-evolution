@@ -66,6 +66,12 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
       return item;
     },
 
+    getTopic: function(slug) {
+      var topic = this.trail.getTopics().findWhere({slug:slug});
+      this.currentTopic = topic;
+      return topic;
+    },
+
     getCurrentTopic: function() {
       return this.currentTopic;
     },

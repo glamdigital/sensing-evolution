@@ -1,10 +1,10 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
-          "app/views/TrailsView", "app/views/TrailIntroView", "app/views/ItemView", "app/views/FinishedView",
+          "app/views/TrailsView", "app/views/TrailIntroView", "app/views/TopicView", "app/views/ItemView", "app/views/FinishedView",
           "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
-            TrailsView, TrailIntroView, ItemView, FinishedView,
+            TrailsView, TrailIntroView, TopicView, ItemView, FinishedView,
             ContentView, Session, NavView, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
@@ -26,6 +26,7 @@ define(["backbone", "jquery", "underscore",
             "": "home",
             "home": "home",
             "trail/:trail": "trail",
+            "topic/:topic": "topic",
             "item/:item": "item",
             "finished": "finished",
             "restart": "restart",
@@ -66,6 +67,22 @@ define(["backbone", "jquery", "underscore",
 
             this.contentView.setView(view);
             view.render();
+        },
+
+        topic: function(topicSlug) {
+            var topic = this.session.getTopic(topicSlug);
+            var view = new TopicView({
+                topic: topic,
+                trail: this.session.getCurrentTrail()
+            });
+            this.contentView.setView(view);
+            view.render();
+
+            //re-render and hide the nav view
+            if(this.navView) {
+                this.navView.render();
+                this.navView.hide();
+            }
         },
 
         item: function(itemSlug) {

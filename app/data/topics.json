@@ -1,30 +1,26 @@
 [
   {
-    "slug": "changes",
-    "title": "Changes over time",
-    "trail1": "Discover",
-    "trail2": "",
+    "slug": "court",
+    "title": "The Court",
+    "description": "Explore objects on the ground floor",
+    "trail1": "world-war-one",
+    "trail2": "amulets-charms",
     "fixed_order": "TRUE"
   },
   {
-    "slug": "fossils",
-    "title": "Fossil evidence",
-    "trail1": "Discover",
-    "trail2": "",
+    "slug": "lower",
+    "title": "The Lower Gallery",
+    "description": "Explore objects on the first floor",
+    "trail1": "world-war-one",
+    "trail2": "amulets-charms",
     "fixed_order": "TRUE"
   },
   {
-    "slug": "variation",
-    "title": "Endless variations",
-    "trail1": "Discover",
-    "trail2": "",
-    "fixed_order": "TRUE"
-  },
-  {
-    "slug": "adaptation",
-    "title": "Adapt and evolve",
-    "trail1": "Discover",
-    "trail2": "",
+    "slug": "upper",
+    "title": "The Upper Gallery",
+    "description": "Explore objects on the second floor",
+    "trail1": "world-war-one",
+    "trail2": "amulets-charms",
     "fixed_order": "TRUE"
   }
 ]

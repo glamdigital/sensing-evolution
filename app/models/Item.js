@@ -26,7 +26,7 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
       var item = {};
       item.slug = response.slug;
       item.title = response.title;
-      item.topic = response.topic;
+      item.topic = response.component;
       item.image = response.image;
       item.video = response.video;
       item.hint = response.hint;

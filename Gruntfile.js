@@ -136,21 +136,17 @@ module.exports = function(grunt) {
         explicitArray: false,
       },
       trails: {
-        src: ['SensingEvolutionData/Trails-Table 1.csv'],
+        src: ['PRTrailsData/Trails-Table 1.csv'],
         dest: 'app/data/trails.json'
       },
       topics: {
-        src: ['SensingEvolutionData/Topics-Table 1.csv'],
+        src: ['PRTrailsData/Components-Table 1.csv'],
         dest: 'app/data/topics.json'
       },
       items: {
-        src: ['SensingEvolutionData/Items-Table 1.csv'],
+        src: ['PRTrailsData/Items-Table 1.csv'],
         dest: 'app/data/items.json'
       },
-      questions: {
-        src: ['SensingEvolutionData/Questions-Table 1.csv'],
-        dest: 'app/data/questions.json'
-      }
     },
     jasmine: {
         testTask: {
@@ -198,7 +194,7 @@ module.exports = function(grunt) {
     grunt.task.run('push:' + token);
   });
 
-  grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items', 'convert:questions']);
+  grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items']);
 
   grunt.registerTask('test', 'Run jasmine tests', ['jasmine']);
 

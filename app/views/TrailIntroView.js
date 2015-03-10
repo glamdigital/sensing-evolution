@@ -17,8 +17,11 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
         },
 
         serialize: function() {
-            var out = this.trail.toJSON();
+            var out = {}
+            out.trail = this.trail.toJSON();
+            out.topics = this.trail.getTopics().toJSON();
             out.nextURL = this.nextURL;
+            out.trail_slug = this.trail.attributes.slug;
             return out;
         },
 

@@ -1,0 +1,10 @@
+<img src="img/prmlogo2.jpg">
+<h1>{{trail.title}} - {{topic.title}}</h1>
+<p>{{topic.description}}</p>
+<div class="trails-list-container">
+    <ul>
+        {{#each items}}
+            <a href="#item/{{slug}}"><li>{{title}}</li></a>
+        {{/each}}
+    </ul>
+</div>
