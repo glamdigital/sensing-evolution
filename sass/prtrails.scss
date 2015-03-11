@@ -1,0 +1,39 @@
+$headerHeight: 50px;
+$arrow-width: 50px;
+
+@mixin flip() {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+
+.pr-header-container {
+  text-align: center;
+  background-color: white;
+  .pr-header {
+    z-index: 3;
+    height: $headerHeight;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    div {
+      height: $headerHeight;
+      display: inline-block;
+      a {
+        img {
+          height: 100%;
+          &.flip {
+            @include flip();
+          }
+        }
+      }
+      &.header-arrow {
+        width: $arrow-width;
+      }
+    }
+  }
+}

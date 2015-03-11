@@ -1,11 +1,11 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/TrailIntroView", "app/views/TopicView", "app/views/ItemView", "app/views/FinishedView",
-          "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
+          "app/views/ContentView", "app/views/HeaderView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, TrailIntroView, TopicView, ItemView, FinishedView,
-            ContentView, Session, NavView, DashboardView) {
+            ContentView, HeaderView, Session, NavView, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
         initialize: function() {
@@ -20,6 +20,8 @@ define(["backbone", "jquery", "underscore",
 
             //create the container content-view
             this.contentView = new ContentView({el:$('#content')});
+            this.headerView = new HeaderView({el:$('#prheader'), prevLink:null, nextLink:null, logoLink:null});
+            this.headerView.render();
         },
 
         routes: {

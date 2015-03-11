@@ -19,9 +19,9 @@ require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app
     //start the location service when the device is ready
     document.addEventListener('deviceready', onReady, false);
 
-    var router = new Router();
-
     Backbone.Layout.configure({ manage:true });
+
+    var router = new Router();
 
     //start the app
     Backbone.history.start();
