@@ -2,14 +2,13 @@
   {
     "slug": "ashtray",
     "title": "Circular ashtray made from the base of an artillery shell",
-    "topic": "world-war-one",
     "description": "The shell is a British ’18 pounder’ shell. The date of manufacture for the shell is given as 1916 on the base of the ashtray. Also on the base there is something else interesting lorem ipsum",
     "location": "Recycling display",
     "component": "court",
     "trail1": "world-war-one",
     "trail2": "",
-    "image": "ashtray.jpg",
-    "hint_image": "ashtray_hint.jpg",
+    "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "audio": "test.mp3",
     "hint": "This object is in the far left hand corner of the court in the cabinet labelled “Recycling Display” (as you look away from the shop and towards the back of the museum).",
     "beaconMajor": "2889",
@@ -18,7 +17,6 @@
   {
     "slug": "medallion",
     "title": "Medallion Inscribed with Lord’s…",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Amulets display cabinet",
     "component": "court",
@@ -34,7 +32,6 @@
   {
     "slug": "knife",
     "title": "Push knife from England",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Weaponry cabinet",
     "component": "court",
@@ -50,7 +47,6 @@
   {
     "slug": "wwo-f1-1",
     "title": "WWI item on first floor",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "first floor cabinet",
     "component": "lower",
@@ -66,7 +62,6 @@
   {
     "slug": "wwo-f1-2",
     "title": "Another WWI item on first floor",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "another first floor cabinet",
     "component": "lower",
@@ -82,7 +77,6 @@
   {
     "slug": "wwo-f2-1",
     "title": "WWI item on top floor",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "top floor",
     "component": "upper",
@@ -98,7 +92,6 @@
   {
     "slug": "wwo-f2-2",
     "title": "Another top floor WWI item",
-    "topic": "world-war-one",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "top floor cabinet",
     "component": "upper",
@@ -114,7 +107,6 @@
   {
     "slug": "amulets-g-1",
     "title": "Lorem ipsum dolor",
-    "topic": "amulets-charms",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",
     "component": "court",
@@ -130,7 +122,6 @@
   {
     "slug": "amulets-f1-1",
     "title": "Lorem ipsum dolor",
-    "topic": "amulets-charms",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",
     "component": "lower",
@@ -146,7 +137,6 @@
   {
     "slug": "amulets-f2-1",
     "title": "Lorem ipsum dolor",
-    "topic": "amulets-charms",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",
     "component": "upper",

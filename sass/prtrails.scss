@@ -43,3 +43,30 @@ $arrow-width: 60px;
     }
   }
 }
+
+h1.finished-title {
+  margin: 20px 30px;
+}
+
+h3.finished-message {
+  margin: 20px 30px;
+}
+
+p.finished-call-to-action {
+  margin: 40px 30px;
+}
+
+table.social-links-table {
+  padding-top: 40px;
+  width: 100%;
+  text-align: center;
+  tr {
+    td {
+      a {
+        img {
+          height: 50%;
+        }
+      }
+    }
+  }
+}
