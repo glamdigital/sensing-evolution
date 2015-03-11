@@ -24,7 +24,7 @@ define(["backbone", "jquery", "hbs!app/templates/trails"], function(Backbone, $,
           var $container = $('.trails-list-container');
           var h = $container.height();
           var wHeight = $(window).height();
-          var top = (wHeight-h)/2;
+          var top = (wHeight-h)/6;
           $container.css('top', top + "px");
       },
       renderIfReady: function() {
