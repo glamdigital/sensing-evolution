@@ -1,4 +1,4 @@
-define(["backbone", "app/collections/topicsCollection"], function(Backbone, TopicsCollection) {
+define(["backbone", "app/collections/topicsCollection", "app/floor_tracking"], function(Backbone, TopicsCollection, FloorTracking) {
 
   // Get all topics. Each Trail will build its own collection of topics which belong to it.
   var allTopics = new TopicsCollection();
@@ -34,6 +34,7 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
     loadTopics: function() {
       allTopics.fetch({success: function(coll, resp, opt) {
         console.log("fetched all topics");
+          var floorTracker = new FloorTracking(coll);
       }
       });
     }

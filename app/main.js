@@ -15,7 +15,6 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
       Location.startRangingRegion(Location_UUID_ios);
       Location.startRangingRegion(Location_UUID_beacons);
     };
-
     //start the location service when the device is ready
     document.addEventListener('deviceready', onReady, false);
 
@@ -24,7 +23,6 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
       //load topics and items
       Topic.loadItems();
       Trail.loadTopics();
-
 
     var router = new Router();
 

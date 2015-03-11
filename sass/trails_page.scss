@@ -33,6 +33,15 @@ div.trails-list-container {
         .subtitle {
           font-size: 0.8em;
         }
+
+        &.near {
+          border-left: 20px solid #888888;
+          background-color: #444444;
+        }
+        &.far {
+          border-left: 20px solid #444444;
+          background-color: #222222;
+        }
       }
     }
   }

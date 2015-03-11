@@ -29,6 +29,7 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
       t.title = response.title;
         t.description = response.description;
       t.trails = [];
+        t.entryPointBeaconIDs = [];
 
       //read in the list of trails into a single array. The trails are parameters of id trail[n]
       var foundEmpty = false;
@@ -42,6 +43,19 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
         }
         i++;
       }
+
+        //read in all possible entry point beacon IDs to an array.
+        var foundEmptyEntryPoint = false;
+        var j=1;
+        while(!foundEmptyEntryPoint) {
+            var entryPointKey = "entryPointBeaconId" + j;
+            if(response[entryPointKey]) {
+                t.entryPointBeaconIDs.push(response[entryPointKey]);
+            } else {
+                foundEmptyEntryPoint = true;
+            }
+            j++;
+        }
 
         t.fixed_order=false;
         if(response.fixed_order=="true" || response.fixed_order=="TRUE") {

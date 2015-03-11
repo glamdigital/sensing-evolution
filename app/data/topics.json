@@ -5,7 +5,9 @@
     "description": "Explore objects on the ground floor",
     "trail1": "world-war-one",
     "trail2": "amulets-charms",
-    "fixed_order": "TRUE"
+    "fixed_order": "TRUE",
+    "entryPointBeaconId1": "64823",
+    "entryPointBeaconId2": ""
   },
   {
     "slug": "lower",
@@ -13,7 +15,9 @@
     "description": "Explore objects on the first floor",
     "trail1": "world-war-one",
     "trail2": "amulets-charms",
-    "fixed_order": "TRUE"
+    "fixed_order": "TRUE",
+    "entryPointBeaconId1": "18829",
+    "entryPointBeaconId2": ""
   },
   {
     "slug": "upper",
@@ -21,6 +25,8 @@
     "description": "Explore objects on the second floor",
     "trail1": "world-war-one",
     "trail2": "amulets-charms",
-    "fixed_order": "TRUE"
+    "fixed_order": "TRUE",
+    "entryPointBeaconId1": "5744",
+    "entryPointBeaconId2": ""
   }
 ]
