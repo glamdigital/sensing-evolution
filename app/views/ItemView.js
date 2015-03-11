@@ -25,6 +25,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
       Logging.logToDom("Listening for event: " + this.eventId);
+      this.foundAtInit = params.found;
     },
 
     afterRender: function() {
@@ -33,6 +34,10 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
 
       var eventData = { question: this.question, url:this.nextURL };
       this.$media.on('ended',  eventData, this.onVideoEnded);
+
+      if(this.foundAtInit) {
+          this.findObject();
+      }
     },
 
     didRangeBeacon: function(data) {
@@ -42,7 +47,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
           //update proximity indicator
           $('.proximity-indicator').removeClass('near far').addClass('immediate').html('Immediate');
           this.findObject();
-          //TODO
           break;
         case "ProximityNear":
           //update proximity indicator

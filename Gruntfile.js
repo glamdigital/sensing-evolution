@@ -100,7 +100,7 @@ module.exports = function(grunt) {
             src: [
               'img/**',
               'app/data/**',
-              'video/**',
+              'audio/**',
               'css/**',
               'app/built.js',
               'config.xml',

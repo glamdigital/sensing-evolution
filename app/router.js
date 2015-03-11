@@ -28,6 +28,7 @@ define(["backbone", "jquery", "underscore",
             "trail/:trail": "trail",
             "topic/:topic": "topic",
             "item/:item": "item",
+            "found/:item": "found_item",
             "finished": "finished",
             "restart": "restart",
             "dashboard": "dashboard"
@@ -85,7 +86,13 @@ define(["backbone", "jquery", "underscore",
             }
         },
 
-        item: function(itemSlug) {
+        found_item: function(itemSlug) {
+            this.item(itemSlug, true);
+        },
+        item: function(itemSlug, found) {
+            //default 'found' to false if not specified
+            found = typeof found !== 'undefined' ? found : false;
+
             var item = this.session.getItem(itemSlug);
             //Inform the session that we've visited this item
             this.session.visitItem(itemSlug);
@@ -96,7 +103,8 @@ define(["backbone", "jquery", "underscore",
                 item: item,
                 trail: currentTrail,
                 topic: currentTopic,
-                nextURL: nextURL
+                nextURL: nextURL,
+                found: found,
             });
             this.contentView.setView(view);
             view.render();
