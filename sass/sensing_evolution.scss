@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "prtrails";
 $phone: "only screen and (max-width: 767px)";
 $tablet: "only screen and (min-width: 768px)";
 $landscape-test: "only screen and (orientation: landscape)";
@@ -92,8 +93,9 @@ a.nav-link {
 }
 
 .content {
-  top: 0;
+  top: $headerHeight + 2*$headerPadding;
   left: 0;
+  position: fixed;
   background-color: white;
   color: black;
   z-index: 2;
@@ -247,12 +249,20 @@ div.item-title {
   img {
     width: 80%;
   }
-
+  h5 {
+    margin: 5px 0px;
+  }
   &.finished {
     max-width: 40%;
     @media #{$portrait} {
       max-width: 100%;
     }
+
+  }
+  p.description {
+    overflow-y: scroll;
+    padding-bottom: 5px;
+
   }
 
   @include transition-property(max-width);

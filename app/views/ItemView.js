@@ -77,6 +77,14 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       //set header next link to found
       this.headerView.setNextURL(this.nextURL);
       this.headerView.render();
+
+
+        //fix the height of the description box, for correct overflow scrolling
+        var windowHeight = $(window).height();
+        var $description = $('p.description');
+        var descPos = $description.offset();
+        var descHeight = windowHeight - descPos.top - 10;
+        $description.height(descHeight);
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
