@@ -2,7 +2,6 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
 
   //Get all items. Each topic will build its own list of items.
   var allItems = new ItemsCollection();
-  allItems.fetch();
 
   var Topic = Backbone.Model.extend({
     initialize: function () {
@@ -67,7 +66,13 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
   },
   {
     //class property of all items
-    allItems: allItems
+    allItems: allItems,
+    loadItems: function() {
+      allItems.fetch({success: function(coll, resp, opt) {
+        console.log("fetched all items for topic");
+      }
+      });
+    }
   }
   );
 

@@ -20,7 +20,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.nextURL = params.nextURL;
       this.trail = params.trail;
       this.topic = params.topic;
-      this.question = params.item.questionForTrail(this.trail.attributes.slug);
       //listen for events
       this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
@@ -33,7 +32,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.$media = $('#foundMedia');
       this.media = this.$media[0];
 
-      var eventData = { question: this.question, url:this.nextURL };
+      var eventData = { url:this.nextURL };
       this.$media.on('ended',  eventData, this.onVideoEnded);
 
       if(this.foundAtInit) {

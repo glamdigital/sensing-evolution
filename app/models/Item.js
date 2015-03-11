@@ -1,24 +1,9 @@
 define(["backbone", "underscore", "app/collections/QuestionsCollection"], function(Backbone, _, QuestionsCollection) {
 
-  var allQuestions = new QuestionsCollection();
-  allQuestions.fetch();
 
   var Item = Backbone.Model.extend({
 
     initialize: function() {
-      //find all questions which pertain to this item with a topic in common
-      var questionsArray = Item.allQuestions.filter(function(question) {
-        if(question.attributes.item === this.attributes.slug) {
-          for(var i=0; i<this.attributes.trails.length; i++) {
-            if(question.attributes.trails.indexOf(this.attributes.trails[i]) >= 0) {
-              return true;
-            }
-          }
-        }
-        return false;
-      }, this);
-        this.questions = new QuestionsCollection(questionsArray);
-        if(this.questions.length <= 0) { console.warn("Not enough quesions for item " + this.attributes.slug);}
     },
 
     parse: function(response) {
@@ -50,19 +35,8 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
         i++;
       }
       return item;
-    },
-
-    questionForTrail: function(trailId) {
-
-        var qs = this.questions.filter(function(question) {
-            return question.attributes.trails.indexOf(trailId) >= 0;
-        });
-        return qs[0];
     }
-  },
-  {
-    //class parameters
-    allQuestions: allQuestions
+
   }
   );
   return Item;

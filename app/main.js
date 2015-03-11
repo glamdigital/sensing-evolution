@@ -1,8 +1,8 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
-  function($, Backbone, Logging, LayoutManager, Router, Location, Tests){
+require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
+  function($, Backbone, Trail, Topic, Logging, LayoutManager, Router, Location, Tests){
 
     //UUIDs to monitor
     //TODO move this to config
@@ -20,6 +20,11 @@ require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app
     document.addEventListener('deviceready', onReady, false);
 
     Backbone.Layout.configure({ manage:true });
+
+      //load topics and items
+      Topic.loadItems();
+      Trail.loadTopics();
+
 
     var router = new Router();
 
