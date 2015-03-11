@@ -1,9 +1,12 @@
 <h1>{{trail.title}} - {{topic.title}}</h1>
-<p>{{topic.description}}</p>
+<p class="description">{{topic.description}}</p>
 <div class="trails-list-container">
     <ul>
         {{#each items}}
-            <a href="#item/{{slug}}"><li>{{title}}</li></a>
+            <a href="#item/{{slug}}"><li>
+                <div class="main-title title-smaller">{{title}}</div>
+                <div class="subtitle">{{location}}</div>
+            </li></a>
         {{/each}}
     </ul>
 </div>

@@ -1,11 +1,13 @@
 <div class="trails-list-container">
 <br><h1>{{trail.title}}</h1>
 <br>
-<p>{{trail.description}}</p>
+<p class="description">{{trail.description}}</p>
     <ul>
-        {{trail.slug}}
         {{#each topics}}
-            <a href="#topic/{{slug}}"><li>{{title}}</li></a>
+            <a href="#topic/{{slug}}"><li>
+                <div class="main-title">{{title}}</div>
+                <div class="subtitle">{{description}}</div>
+            </li></a>
         {{/each}}
     </ul>
 </div>

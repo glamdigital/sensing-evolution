@@ -12,6 +12,7 @@ $arrow-width: 50px;
 
 
 .pr-header-container {
+  padding: 10px 0px;
   text-align: center;
   background-color: white;
   .pr-header {
@@ -26,6 +27,7 @@ $arrow-width: 50px;
       a {
         img {
           height: 100%;
+          padding: 0px;
           &.flip {
             @include flip();
           }
@@ -33,6 +35,9 @@ $arrow-width: 50px;
       }
       &.header-arrow {
         width: $arrow-width;
+      }
+      &.header-logo {
+        padding: 0px 2%;
       }
     }
   }

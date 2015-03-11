@@ -28,6 +28,7 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
       var t = {};
       t.slug = response.slug;
       t.title = response.title;
+        t.description = response.description;
       t.trails = [];
 
       //read in the list of trails into a single array. The trails are parameters of id trail[n]
