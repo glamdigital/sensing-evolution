@@ -31,7 +31,7 @@ define(["backbone", "jquery", "underscore",
             "topic/:topic": "topic",
             "item/:item": "item",
             "found/:item": "found_item",
-            "finished": "finished",
+            "finished/:trail": "finished",
             "restart": "restart",
             "dashboard": "dashboard"
         },
@@ -144,17 +144,24 @@ define(["backbone", "jquery", "underscore",
             this.headerView.render();
         },
         finished: function() {
-            var view = new FinishedView();
+            var trail = this.session.getCurrentTrail();
+            var view = new FinishedView({trail:trail});
             this.contentView.setView(view);
             view.render();
             //TODO mark with the session that it's finished.
             //TODO re-render the nav menu
             //Hide the nav-menu
             this.navView.hide();
+
+            //links
+            this.headerView.setPrevURL('#');
+            this.headerView.setNextURL(null);
+            this.headerView.render();
         },
         restart: function() {
             //restart the current trail
-            this.session = new Session(this.session.attributes.trail.attributes.slug);
+            trail = this.session.getCurrentTrail();
+            this.session = new Session(trail.attributes.slug);
             Backbone.history.navigate(this.session.getNextURL());
         },
         dashboard: function() {

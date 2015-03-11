@@ -45,13 +45,27 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
     getNextURL: function() {
       if(this.hasNext()) {
-        var item = this.unvisitedItems.at(0);
-        var URL = '#/item/' + item.attributes.slug;
-        return URL;
+          //var item = this.unvisitedItems.at(0);
+
+          //go to next item on the current topic
+          var ct = this.getCurrentTopic();
+          var currentTopicUnvisited = this.unvisitedItems.where({topic: ct.attributes.slug});
+          if (currentTopicUnvisited.length > 0) {
+              var item = currentTopicUnvisited[0];
+              var URL = '#/item/' + item.attributes.slug;
+              return URL;
+          }
+          else {
+              //go to topic homepage of first unvisited item
+              var firstUnvisited = this.unvisitedItems.at(0);
+              var URL = '#/topic/' + firstUnvisited.attributes.topic;
+              return URL;
+          }
+
       }
       else {
         //finished
-        return '#/finished';
+        return '#/finished/' + this.getCurrentTrail().attributes.slug;
       }
     },
 
@@ -73,7 +87,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
     },
 
     getCurrentTopic: function() {
-      return this.currentTopic;
+      return this.currentTopic ? this.currentTopic : this.topics.at(0);
     },
 
     getCurrentTrail: function() {
