@@ -26,6 +26,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
       Logging.logToDom("Listening for event: " + this.eventId);
       this.foundAtInit = params.found;
+      this.headerView = params.headerView;
     },
 
     afterRender: function() {
@@ -72,6 +73,10 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.item.attributes.isFound=true;
 
       Backbone.trigger('found-item');
+
+      //set header next link to found
+      this.headerView.setNextURL(this.nextURL);
+      this.headerView.render();
     },
 
     //For browser simulation of 'finding' the object. Click on the picture

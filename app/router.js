@@ -20,7 +20,7 @@ define(["backbone", "jquery", "underscore",
 
             //create the container content-view
             this.contentView = new ContentView({el:$('#content')});
-            this.headerView = new HeaderView({el:$('#prheader'), prevLink:null, nextLink:null, logoLink:null});
+            this.headerView = new HeaderView({el:$('#prheader'), prevLink:null, nextLink:null, logoLink:"#"});
             this.headerView.render();
         },
 
@@ -45,6 +45,12 @@ define(["backbone", "jquery", "underscore",
             if(this.navView) {
                 this.navView.hide();
             }
+
+            //set links
+            this.headerView.setPrevURL(null);
+            this.headerView.setNextURL(null);
+            this.headerView.setLogoURL('#');
+            this.headerView.render();
         },
 
         trail: function(trailSlug) {
@@ -70,13 +76,19 @@ define(["backbone", "jquery", "underscore",
 
             this.contentView.setView(view);
             view.render();
+
+            //set links
+            this.headerView.setPrevURL('#');
+            this.headerView.setNextURL(null);
+            this.headerView.render();
         },
 
         topic: function(topicSlug) {
             var topic = this.session.getTopic(topicSlug);
+            var trail = this.session.getCurrentTrail();
             var view = new TopicView({
                 topic: topic,
-                trail: this.session.getCurrentTrail()
+                trail: trail
             });
             this.contentView.setView(view);
             view.render();
@@ -86,10 +98,19 @@ define(["backbone", "jquery", "underscore",
                 this.navView.render();
                 this.navView.hide();
             }
+
+            //links
+            this.headerView.setPrevURL('#trail/' + trail.attributes.slug);
+            this.headerView.setNextURL(null);
+            this.headerView.render();
         },
 
         found_item: function(itemSlug) {
             this.item(itemSlug, true);
+
+            //links
+            this.headerView.setNextURL(this.session.getNextURL());
+            this.headerView.render();
         },
         item: function(itemSlug, found) {
             //default 'found' to false if not specified
@@ -107,6 +128,7 @@ define(["backbone", "jquery", "underscore",
                 topic: currentTopic,
                 nextURL: nextURL,
                 found: found,
+                headerView: this.headerView
             });
             this.contentView.setView(view);
             view.render();
@@ -115,6 +137,11 @@ define(["backbone", "jquery", "underscore",
             if(this.navView) {
                 this.navView.hide();
             }
+
+            //links
+            this.headerView.setPrevURL('#topic/' + currentTopic.attributes.slug);
+            this.headerView.setNextURL('#found/' + item.attributes.slug);
+            this.headerView.render();
         },
         finished: function() {
             var view = new FinishedView();
