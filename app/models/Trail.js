@@ -2,7 +2,6 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
 
   // Get all topics. Each Trail will build its own collection of topics which belong to it.
   var allTopics = new TopicsCollection();
-  allTopics.fetch();
 
   var Trail = Backbone.Model.extend({
     initialize: function () {
@@ -30,6 +29,9 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
   {
     //Class property stores all topics
     allTopics: allTopics,
+      loadTopics: function() {
+        allTopics.fetch();
+      }
   }
   );
 

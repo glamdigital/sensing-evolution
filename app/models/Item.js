@@ -1,7 +1,6 @@
 define(["backbone", "underscore", "app/collections/QuestionsCollection"], function(Backbone, _, QuestionsCollection) {
 
   var allQuestions = new QuestionsCollection();
-  allQuestions.fetch();
 
   var Item = Backbone.Model.extend({
 
@@ -59,7 +58,10 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
   },
   {
     //class parameters
-    allQuestions: allQuestions
+    allQuestions: allQuestions,
+      loadQuestions: function() {
+            allQuestions.fetch();
+      }
   }
   );
   return Item;

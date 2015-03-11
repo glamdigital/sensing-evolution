@@ -1,8 +1,9 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
-  function($, Backbone, Logging, LayoutManager, Router, Location, Tests){
+require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app/location',
+        'app/test/validateData', 'app/models/Trail', 'app/models/Topic', 'app/models/Item'],
+  function($, Backbone, Logging, LayoutManager, Router, Location, Tests, Trail, Topic, Item){
 
     //UUIDs to monitor
     //TODO move this to config
@@ -19,9 +20,14 @@ require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app
     //start the location service when the device is ready
     document.addEventListener('deviceready', onReady, false);
 
+    Backbone.Layout.configure({ manage:true });
+
+    Item.loadQuestions();
+    Topic.loadItems();
+    Trail.loadTopics();
+
     var router = new Router();
 
-    Backbone.Layout.configure({ manage:true });
 
     //start the app
     Backbone.history.start();
