@@ -59,8 +59,8 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
   {
     //class parameters
     allQuestions: allQuestions,
-      loadQuestions: function() {
-            allQuestions.fetch();
+      loadQuestions: function(callback) {
+            allQuestions.fetch({success: callback });
       }
   }
   );

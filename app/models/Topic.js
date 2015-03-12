@@ -66,8 +66,8 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
   {
     //class property of all items
     allItems: allItems,
-      loadItems: function() {
-          allItems.fetch();
+      loadItems: function(callback) {
+          allItems.fetch({success: callback});
       }
   }
   );

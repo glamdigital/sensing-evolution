@@ -29,8 +29,8 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
   {
     //Class property stores all topics
     allTopics: allTopics,
-      loadTopics: function() {
-        allTopics.fetch();
+      loadTopics: function(callback) {
+        allTopics.fetch({success: callback});
       }
   }
   );
