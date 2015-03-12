@@ -1,6 +1,7 @@
-define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
+define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/floor_tracking",
         "app/collections/QuestionsCollection", "app/views/QuestionView"],
-    function(Backbone, _, itemTemplate, Logging, QuestionsCollection, QuestionView) {
+    function(Backbone, _, itemTemplate, Logging, FloorTracking,
+             QuestionsCollection, QuestionView) {
 
   var ItemView = Backbone.View.extend({
 
@@ -84,6 +85,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
         var descPos = $description.offset();
         var descHeight = windowHeight - descPos.top - 10;
         $description.height(descHeight);
+
+        //enable user prompting to switch floor
+        FloorTracking.prompttoSwitch = true;
     },
 
     //For browser simulation of 'finding' the object. Click on the picture

@@ -2,9 +2,8 @@
 //we can keep track of where the user is.
 //This module retrieves beacon IDs from all 'topics'(/components) and
 
-define(['app/logging', 'backbone', 'app/models/trail'],
-    function(Logging, Backbone, Trail) {
-
+define(['app/logging', 'backbone', 'underscore', 'app/models/trail'],
+    function(Logging, Backbone, _, Trail) {
         var FloorTracking = Backbone.Model.extend(
             {
             initialize : function(topics) {
@@ -25,13 +24,32 @@ define(['app/logging', 'backbone', 'app/models/trail'],
                         //This is a new floor. update current floor and emit a message
                         this.currentTopic = this.beaconsDict[data.major.toString()];
                         Backbone.trigger('changed_floor', this.currentTopic.attributes.slug);
+                        if(FloorTracking.promptToSwitch) {
+                            this.promptToSwitchFloor();
+                        }
                     }
+                }
+            },
+            promptToSwitchFloor: function(floorSlug) {
+                var title = "Entering " + this.currentTopic.attributes.title;
+                var message = "Switch to this area?";
+                var buttonLabels = ['Not now', 'OK'];
+                navigator.notification.confirm(message, _.bind(this.userChoseToSwitchFloor, this),
+                title, buttonLabels);
+            },
+            userChoseToSwitchFloor: function(buttonIndex) {
+                if(buttonIndex == 2) {
+                    Backbone.history.navigate('#/topic/' + this.currentTopic.attributes.slug);
                 }
             },
 
             currentTopic: null,
             beaconsDict: {}
-        }
+        },
+            {
+                //Class attribute enabled flag. Can be enabled/disabled by views
+                promptToSwitch:true
+            }
         );
 
         return FloorTracking;

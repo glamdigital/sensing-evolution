@@ -1,11 +1,13 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/TrailIntroView", "app/views/TopicView", "app/views/ItemView", "app/views/FinishedView",
-          "app/views/ContentView", "app/views/HeaderView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
+          "app/views/ContentView", "app/views/HeaderView", "app/models/Session", "app/views/NavView", "app/views/DashboardView",
+          "app/floor_tracking"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, TrailIntroView, TopicView, ItemView, FinishedView,
-            ContentView, HeaderView, Session, NavView, DashboardView) {
+            ContentView, HeaderView, Session, NavView, DashboardView,
+            FloorTracking) {
 
     var SEVRouter = Backbone.Router.extend({
         initialize: function() {
@@ -51,6 +53,8 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setNextURL(null);
             this.headerView.setLogoURL('#');
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = false;
         },
 
         trail: function(trailSlug) {
@@ -81,6 +85,8 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setPrevURL('#');
             this.headerView.setNextURL(null);
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = true;
         },
 
         topic: function(topicSlug) {
@@ -103,6 +109,8 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setPrevURL('#trail/' + trail.attributes.slug);
             this.headerView.setNextURL(null);
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = true;
         },
 
         found_item: function(itemSlug) {
@@ -111,6 +119,8 @@ define(["backbone", "jquery", "underscore",
             //links
             this.headerView.setNextURL(this.session.getNextURL());
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = true;
         },
         item: function(itemSlug, found) {
             //default 'found' to false if not specified
@@ -142,6 +152,8 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setPrevURL('#topic/' + currentTopic.attributes.slug);
             this.headerView.setNextURL('#found/' + item.attributes.slug);
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = false;
         },
         finished: function() {
             var trail = this.session.getCurrentTrail();
@@ -157,12 +169,16 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setPrevURL('#');
             this.headerView.setNextURL(null);
             this.headerView.render();
+
+            FloorTracking.prompttoSwitch = false;
         },
         restart: function() {
             //restart the current trail
             trail = this.session.getCurrentTrail();
             this.session = new Session(trail.attributes.slug);
             Backbone.history.navigate(this.session.getNextURL());
+
+            FloorTracking.prompttoSwitch = false;
         },
         dashboard: function() {
             var dashboardView = new DashboardView( [
@@ -175,6 +191,8 @@ define(["backbone", "jquery", "underscore",
             }
             this.contentView.setView(dashboardView);
             dashboardView.render();
+
+            FloorTracking.prompttoSwitch = false;
         }
     });
 
