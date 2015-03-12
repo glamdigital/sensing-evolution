@@ -166,11 +166,13 @@ define(["backbone", "jquery", "underscore",
         },
         dashboard: function() {
             var dashboardView = new DashboardView( [
-                {beaconId: 4005, name: 'Fossils1'},
-                {beaconId: 11889, name: 'Fossil2'},
-                {beaconId: 2889, name: 'Changes1'}
+                {beaconId: 64823, name: 'ground'},
+                {beaconId: 18829, name: 'floor1'},
+                {beaconId: 5744, name: 'floor2'}
             ]);
-            this.navView.hide();
+            if(this.navView) {
+                this.navView.hide();
+            }
             this.contentView.setView(dashboardView);
             dashboardView.render();
         }
