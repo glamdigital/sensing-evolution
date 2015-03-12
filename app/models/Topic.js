@@ -81,9 +81,10 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
   {
     //class property of all items
     allItems: allItems,
-    loadItems: function() {
+    loadItems: function(callback) {
       allItems.fetch({success: function(coll, resp, opt) {
         console.log("fetched all items for topic");
+          if(callback) { callback(); }
       }
       });
     }

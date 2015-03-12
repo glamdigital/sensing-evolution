@@ -1,8 +1,8 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData'],
-  function($, Backbone, Trail, Topic, Logging, LayoutManager, Router, Location, Tests){
+require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData', 'app/floor_tracking'],
+  function($, Backbone, Trail, Topic, Logging, LayoutManager, Router, Location, Tests, FloorTracking){
 
     //UUIDs to monitor
     //TODO move this to config
@@ -21,14 +21,17 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
     Backbone.Layout.configure({ manage:true });
 
       //load topics and items
-      Topic.loadItems();
-      Trail.loadTopics();
+      Topic.loadItems( function() {
+          Trail.loadTopics( function(coll) {
+              var floorTracker = new FloorTracking(coll);
+              var router = new Router();
+              //start the app
+              Backbone.history.start();
 
-    var router = new Router();
+              Logging.logToDom("Started the app");
+          })
+      } );
 
-    //start the app
-    Backbone.history.start();
 
-      Logging.logToDom("Started the app");
 
 });
