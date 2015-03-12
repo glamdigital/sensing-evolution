@@ -34,13 +34,6 @@ describe("Data validation", function() {
 
                   _.each(trailItems, function(item) {
                     console.log("     Item: " + item.attributes.title + "(" + item.attributes.slug + ")");
-                    //Assert length questions === 1
-                    //get the questions which are applicable to the current trail.
-                    var trailQuestion = item.questionForTrail(trail.attributes.slug);
-                    console.log("Checking number of questions");
-                    expect(trailQuestion).not.toBe(null);
-                    expect(trailQuestion).not.toBe(undefined);
-
                   }, this);
               }, this);
             }, this);

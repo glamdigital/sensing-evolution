@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="uk.ac.ox.museums.sensingevolution" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Sensing Evolution</name>
+<widget id="uk.ac.ox.museums.prtrails" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Pitt Rivers Trails</name>
     <description>
-        A test app for ibeacon functionality
+        Explore the Pitt Rivers museum
     </description>
-    <author email="dev@cordova.apache.org" href="http://www.it.ox.ac.uk">
-        Apache Cordova Team
+    <author email="apps@maillist.ox.ac.uk" href="http://www.it.ox.ac.uk">
+        Mobile and Web Applications Team - Oxford University
     </author>
     <content src="index.html" />
     <access origin="*" />
