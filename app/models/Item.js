@@ -16,7 +16,7 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
         }
         return false;
       }, this);
-        this.questions = new QuestionsCollection(questionsArray);
+        this.questions = new QuestionsCollection(_.shuffle(questionsArray));
         if(this.questions.length <= 0) { console.warn("Not enough quesions for item " + this.attributes.slug);}
     },
 

@@ -46,6 +46,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
           break;
         case "ProximityNear":
           //update proximity indicator
+          this.findObject();
           $('.proximity-indicator').removeClass('immediate far').addClass('near').html('Near');
           break;
         case "ProximityFar":
@@ -60,9 +61,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       $('.found-item').show().css('display', 'inline-block');
       $('.hint-container').hide();
       //start the video after half a second
-      setTimeout( _.bind(function() {
-        this.video.play();
-      }, this), 500);
+      //setTimeout( _.bind(function() {
+      //  this.video.play();
+      //}, this), 500);
       //unsubscribe from further beacon events
       this.stopListening(Backbone, this.eventId);
       this.item.attributes.isFound=true;

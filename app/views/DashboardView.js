@@ -64,8 +64,8 @@ define(["backbone", "jquery", "hbs!app/templates/dashboard", "app/location"], fu
         simulateRange: function () {
             var randomAccuracy = this.minAccuracy + Math.random() * (this.maxAccuracy - this.minAccuracy);
             var randomRSSI = this.minRSSI + Math.random() * (this.maxRSSI - this.minRSSI);
-            var randomProximity = randomAccuracy > 40 ? "FarProximity" : randomAccuracy > 10 ? "NearProximity" : "ImmediateProximity";
-            Backbone.trigger('beaconRange:45790', {proximity: randomProximity, rssi: randomRSSI, accuracy: randomAccuracy, major:45790});
+            var randomProximity = randomAccuracy > 40 ? "ProximityFar" : randomAccuracy > 10 ? "ProximityNear" : "ProximityImmediate";
+            Backbone.trigger('beaconRange:4005', {proximity: randomProximity, rssi: randomRSSI, accuracy: randomAccuracy, major:4005});
         },
 
         didRangeBeacon: function(data) {
@@ -75,17 +75,18 @@ define(["backbone", "jquery", "hbs!app/templates/dashboard", "app/location"], fu
             //update the bars on the screen
 
             //rssi
-            var $rssi = $('#rssi.' + data.major);
+            var $rssis = $('#rssis');
+            var $rssi = $rssis.find($('.' + data.major));
             if($rssi.length < 1) { alert("Didn't find RSSI element for " + data.major);}
             var fill = 0;
-            if(data.rssi > 0) {
+            if(data.rssi < 0) {
                 fill = 1 - (this.maxRSSI - data.rssi) / (this.maxRSSI - this.minRSSI);
             }
             $rssi.find(".fillBar").css("width", fill*100 + "%");
             $rssi.find(".value").html(data.rssi);
 
             //accuracy
-            var $accuracy = $('#accuracy.' + data.major);
+            var $accuracy = $('#accuracies').find($('.' + data.major));
             var fill2 = 0;
             if (data.accuracy > -1) {
                 fill2 = 1 - (this.maxAccuracy - data.accuracy) / (this.maxAccuracy - this.minAccuracy);
