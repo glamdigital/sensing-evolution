@@ -25,7 +25,7 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
 
     parse: function (response) {
       var t = {};
-      t.slug = response.slug;
+      t.slug = response.id;
       t.title = response.title;
         t.description = response.description;
       t.trails = [];

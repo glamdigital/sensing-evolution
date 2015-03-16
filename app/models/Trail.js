@@ -18,7 +18,7 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
 
     parse: function(response) {
         var t = {};
-        t.slug = response.slug;
+        t.slug = response.id;
         t.title = response.title;
         t.description = response.description;
         t.shareURL = response.shareURL;

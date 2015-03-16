@@ -19,7 +19,7 @@ define(["backbone"], function(Backbone) {
                       isCorrect: false,
                       id: 3
                     });
-      q.slug = response.slug;
+      q.slug = response.id;
       q.item = response.item;
       q.question = response.question;
       q.selectedAnswer = null;

@@ -9,7 +9,7 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
     parse: function(response) {
 
       var item = {};
-      item.slug = response.slug;
+      item.slug = response.id;
       item.title = response.title;
       item.description = response.description;
       item.topic = response.component;

@@ -1,6 +1,6 @@
 [
   {
-    "slug": "ashtray",
+    "id": "ashtray",
     "title": "Circular ashtray made from the base of an artillery shell",
     "description": "The shell is a British ’18 pounder’ shell. The date of manufacture for the shell is given as 1916 on the base of the ashtray. Also on the base there is something else interesting lorem ipsum",
     "location": "Recycling display",
@@ -15,7 +15,7 @@
     "beaconHint": "F1"
   },
   {
-    "slug": "medallion",
+    "id": "medallion",
     "title": "Medallion Inscribed with Lord’s…",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Amulets display cabinet",
@@ -30,7 +30,7 @@
     "beaconHint": "F2"
   },
   {
-    "slug": "knife",
+    "id": "knife",
     "title": "Push knife from England",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Weaponry cabinet",
@@ -45,7 +45,7 @@
     "beaconHint": "C1"
   },
   {
-    "slug": "wwo-f1-1",
+    "id": "wwo-f1-1",
     "title": "WWI item on first floor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "first floor cabinet",
@@ -60,7 +60,7 @@
     "beaconHint": "C2"
   },
   {
-    "slug": "wwo-f1-2",
+    "id": "wwo-f1-2",
     "title": "Another WWI item on first floor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "another first floor cabinet",
@@ -75,7 +75,7 @@
     "beaconHint": "V1"
   },
   {
-    "slug": "wwo-f2-1",
+    "id": "wwo-f2-1",
     "title": "WWI item on top floor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "top floor",
@@ -90,7 +90,7 @@
     "beaconHint": "V2"
   },
   {
-    "slug": "wwo-f2-2",
+    "id": "wwo-f2-2",
     "title": "Another top floor WWI item",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "top floor cabinet",
@@ -105,7 +105,7 @@
     "beaconHint": "A1"
   },
   {
-    "slug": "amulets-g-1",
+    "id": "amulets-g-1",
     "title": "Lorem ipsum dolor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",
@@ -120,7 +120,7 @@
     "beaconHint": "A2"
   },
   {
-    "slug": "amulets-f1-1",
+    "id": "amulets-f1-1",
     "title": "Lorem ipsum dolor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",
@@ -135,7 +135,7 @@
     "beaconHint": "A2"
   },
   {
-    "slug": "amulets-f2-1",
+    "id": "amulets-f2-1",
     "title": "Lorem ipsum dolor",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     "location": "Lorem ipsum dolor",

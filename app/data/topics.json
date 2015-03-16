@@ -1,6 +1,6 @@
 [
   {
-    "slug": "court",
+    "id": "court",
     "title": "The Court",
     "description": "Explore objects on the ground floor",
     "trail1": "world-war-one",
@@ -10,7 +10,7 @@
     "entryPointBeaconId2": ""
   },
   {
-    "slug": "lower",
+    "id": "lower",
     "title": "The Lower Gallery",
     "description": "Explore objects on the first floor",
     "trail1": "world-war-one",
@@ -20,7 +20,7 @@
     "entryPointBeaconId2": ""
   },
   {
-    "slug": "upper",
+    "id": "upper",
     "title": "The Upper Gallery",
     "description": "Explore objects on the second floor",
     "trail1": "world-war-one",
