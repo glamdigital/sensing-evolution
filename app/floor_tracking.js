@@ -15,17 +15,19 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail'],
                     this.listenTo(Backbone, eventId, this.beaconRanged);
                     this.beaconsDict[beaconID.toString()] = topic;
                 }, this);
+                this.currentlyRequestingSwitch = false;
             },
 
             beaconRanged: function(data) {
                 //if we're near to a beacon that's different than the current one
-                if(data.proximity === "ProximityImmediate") {
+                if(data.proximity === "ProximityImmediate" || data.proximity === "ProximityNear") {
                     if(this.currentTopic===null || this.currentTopic.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
                         //This is a new floor. update current floor and emit a message
                         this.currentTopic = this.beaconsDict[data.major.toString()];
                         Backbone.trigger('changed_floor', this.currentTopic.attributes.slug);
-                        if(FloorTracking.promptToSwitch) {
+                        if(FloorTracking.promptToSwitch && !this.currentlyRequestingSwitch) {
                             this.promptToSwitchFloor();
+                            this.currentlyRequestingSwitch = true;
                         }
                     }
                 }
@@ -34,13 +36,25 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail'],
                 var title = "Entering " + this.currentTopic.attributes.title;
                 var message = "Switch to this area?";
                 var buttonLabels = ['Not now', 'OK'];
-                navigator.notification.confirm(message, _.bind(this.userChoseToSwitchFloor, this),
+                if (navigator.notification) {
+                    navigator.notification.confirm(message, _.bind(this.userChoseToSwitchFloor, this),
                 title, buttonLabels);
+                }
+                else
+                {
+                    //desktop browser testing, just switch
+                    this.userChoseToSwitchFloor(2);
+                }
             },
             userChoseToSwitchFloor: function(buttonIndex) {
                 if(buttonIndex == 2) {
                     Backbone.history.navigate('#/topic/' + this.currentTopic.attributes.slug);
                 }
+                //enable another floor switch in a few seconds
+                setTimeout(this.setNotRequestingSwitch.bind(this), 3000);
+            },
+            setNotRequestingSwitch: function() {
+                this.currentlyRequestingSwitch = false;
             },
 
             currentTopic: null,
