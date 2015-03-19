@@ -6,10 +6,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "1. Buckland Case.mp4",
-    "hint": "Look in the middle of the Museum for a display called 'Belonging to Professor Buckland'",
-    "beaconMajor": "2889",
-    "beaconHint": ""
+    "video_poster": "video_posters/test_poster.png",
+    "hint": "This object is in the far left hand corner of the court in the cabinet labelled ‘Recycling Display’ (as you look away from the shop and towards the back of the museum).",
+    "Unlock Code": "1111",
+    "beaconMajor": "2889"
   },
   {
     "slug": "changes2",
@@ -18,10 +20,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "2. Hyaena Life on Earth display.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
-    "beaconMajor": "9125",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "9125"
   },
   {
     "slug": "fossils1",
@@ -30,10 +34,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "3. Megalosaurus.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the 'Megalosaurus' case near the T. rex",
-    "beaconMajor": "4005",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "4005"
   },
   {
     "slug": "fossils2",
@@ -42,10 +48,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
-    "video": "4. Ichthyosaur.mp4",
+    "hint_image": "fossil1.jpg",
+    "video": "4. Icthyosaur.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the 'Ichthyosaurs' case",
-    "beaconMajor": "11889",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "11889"
   },
   {
     "slug": "variation1",
@@ -54,10 +62,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "5. Peppered Moth and Snails Script.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the display called 'Natural Selection at Work'",
-    "beaconMajor": "50339",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "50339"
   },
   {
     "slug": "variation2",
@@ -66,10 +76,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "6. Darwins Pigeon Case Script.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the display called 'Darwin's Principles'",
-    "beaconMajor": "14250",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "14250"
   },
   {
     "slug": "adaptation1",
@@ -78,10 +90,12 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "7. Reptiles SEvo Table.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "Head for the Sensing Evolution Reptiles table",
-    "beaconMajor": "63308",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "63308"
   },
   {
     "slug": "adaptation2",
@@ -90,9 +104,11 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "fossil1.jpg",
+    "hint_image": "fossil1.jpg",
     "video": "8. Archaeopteryx.mp4",
+    "video_poster": "video_posters/test_poster.png",
     "hint": "TBC",
-    "beaconMajor": "47050",
-    "beaconHint": ""
+    "Unlock Code": "1111",
+    "beaconMajor": "47050"
   }
 ]

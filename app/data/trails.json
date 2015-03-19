@@ -2,13 +2,19 @@
   {
     "slug": "Discover",
     "title": "Discover",
+    "subtitle": "Learn the basic ideas behind evolution",
     "video": "0. INTRODUCTION V2.mp4",
+    "video_caption": "with Steve Backshall",
+    "video_poster": "video_posters/test_poster.png",
     "fixed_order": "FALSE"
   },
   {
-    "slug": "Discover",
+    "slug": "Investigate",
     "title": "Investigate",
+    "subtitle": "",
     "video": "",
+    "video_caption": "",
+    "video_poster": "",
     "fixed_order": "FALSE"
   }
 ]

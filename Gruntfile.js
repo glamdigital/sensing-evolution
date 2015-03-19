@@ -136,19 +136,19 @@ module.exports = function(grunt) {
         explicitArray: false,
       },
       trails: {
-        src: ['SensingEvolutionData/Trails-Table 1.csv'],
+        src: ['SensingEvolutionData/SensingEvolutionData - Trails.csv'],
         dest: 'app/data/trails.json'
       },
       topics: {
-        src: ['SensingEvolutionData/Topics-Table 1.csv'],
+        src: ['SensingEvolutionData/SensingEvolutionData - Topics.csv'],
         dest: 'app/data/topics.json'
       },
       items: {
-        src: ['SensingEvolutionData/Items-Table 1.csv'],
+        src: ['SensingEvolutionData/SensingEvolutionData - Items.csv'],
         dest: 'app/data/items.json'
       },
       questions: {
-        src: ['SensingEvolutionData/Questions-Table 1.csv'],
+        src: ['SensingEvolutionData/SensingEvolutionData - Questions.csv'],
         dest: 'app/data/questions.json'
       }
     },

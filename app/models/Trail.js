@@ -17,7 +17,7 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
     },
 
     parse: function(response) {
-        var t = {};
+        var t = response;
         t.slug = response.slug;
         t.title = response.title;
         t.video = response.video;

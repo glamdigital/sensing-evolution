@@ -26,5 +26,33 @@
     "trail1": "Discover",
     "trail2": "",
     "fixed_order": "TRUE"
+  },
+  {
+    "slug": "topic1",
+    "title": "TBD",
+    "trail1": "Investigate",
+    "trail2": "",
+    "fixed_order": "TRUE"
+  },
+  {
+    "slug": "topic2",
+    "title": "TBD",
+    "trail1": "Investigate",
+    "trail2": "",
+    "fixed_order": "TRUE"
+  },
+  {
+    "slug": "topic3",
+    "title": "TBD",
+    "trail1": "Investigate",
+    "trail2": "",
+    "fixed_order": "TRUE"
+  },
+  {
+    "slug": "topic4",
+    "title": "TBD",
+    "trail1": "Investigate",
+    "trail2": "",
+    "fixed_order": "TRUE"
   }
 ]
