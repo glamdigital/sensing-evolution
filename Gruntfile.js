@@ -136,15 +136,15 @@ module.exports = function(grunt) {
         explicitArray: false,
       },
       trails: {
-        src: ['PRTrailsData/Trails-Table 1.csv'],
+        src: ['PRTrailsData/PittRiversTrails_appData - Trails.csv'],
         dest: 'app/data/trails.json'
       },
       topics: {
-        src: ['PRTrailsData/Components-Table 1.csv'],
+        src: ['PRTrailsData/PittRiversTrails_appData - Components.csv'],
         dest: 'app/data/topics.json'
       },
       items: {
-        src: ['PRTrailsData/Items-Table 1.csv'],
+        src: ['PRTrailsData/PittRiversTrails_appData - Items.csv'],
         dest: 'app/data/items.json'
       },
     },

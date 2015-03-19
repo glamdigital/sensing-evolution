@@ -56,7 +56,10 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
           break;
         case "ProximityFar":
           //update proximity indicator
-          $('.proximity-indicator').removeClass('immediate near far').html('Scanning...');
+          $('.proximity-indicator').removeClass('immediate near').addClass('far').html('Far');
+          break;
+        default:
+            $('.proximity-indicator').removeClass('immediate near far').html('Scanning...');
           break;
       }
     },

@@ -62,7 +62,7 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail'],
         },
             {
                 //Class attribute enabled flag. Can be enabled/disabled by views
-                promptToSwitch:true
+                promptToSwitch:false
             }
         );
 

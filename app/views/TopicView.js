@@ -30,7 +30,7 @@ define(["backbone", "hbs!app/templates/topic"],
             },
 
             didRangeBeacon: function(data) {
-                if(data.proximity === 'ProximityImmediate')
+                if(data.proximity === 'ProximityImmediate' || data.proximity == 'ProximityNear')
                 {
                     //stop listening for the trigger event
                     var item = this.beaconsDict[data.major.toString()];
