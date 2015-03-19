@@ -1,10 +1,10 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
-          "app/views/TrailsView", "app/views/TrailIntroView", "app/views/ItemView", "app/views/FinishedView",
+          "app/views/TrailsView", "app/views/TrailInstructionsView", "app/views/TrailIntroView", "app/views/ItemView", "app/views/FinishedView",
           "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
   function(Backbone, $, _,
             TrailsCollection,
-            TrailsView, TrailIntroView, ItemView, FinishedView,
+            TrailsView, TrailInstructionsView, TrailIntroView, ItemView, FinishedView,
             ContentView, Session, NavView, DashboardView) {
 
     var SEVRouter = Backbone.Router.extend({
@@ -26,6 +26,7 @@ define(["backbone", "jquery", "underscore",
             "": "home",
             "home": "home",
             "trail/:trail": "trail",
+            "trail_video/:trail": "trail_video",
             "item/:item": "item",
             "finished": "finished",
             "restart": "restart",
@@ -57,6 +58,21 @@ define(["backbone", "jquery", "underscore",
                 this.navView.session = this.session;
             }
             this.navView.render();
+
+            //create intro view
+            var view = new TrailInstructionsView({
+                trail: trail
+            });
+
+            this.contentView.setView(view);
+            view.render();
+        },
+
+        trail_video: function(trailSlug) {
+            var trail = this.session.getCurrentTrail();
+            if (trailSlug != trail.attributes.slug) {
+                console.error("Trying to show video for trail other than the current one")
+            }
 
             //create intro view
             var view = new TrailIntroView({
