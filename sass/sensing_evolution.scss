@@ -202,6 +202,10 @@ h3 {
 
 .hint-container {
   text-align: center;
+  margin-left: 50%;
+  .button {
+    margin: 20px 10px 10px 10px;
+  }
   .hint {
     display: none;
     &.revealed {
@@ -325,6 +329,8 @@ div.item-title {
 
 .question {
   margin-left: 35%;
+  max-height: 220px;
+  overflow-y: scroll;
   div {
     display: inline;
     padding: 0px;

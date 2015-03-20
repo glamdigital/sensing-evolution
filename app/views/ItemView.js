@@ -93,7 +93,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
     },
     showHint: function(ev) {
         ev.preventDefault();
-      $('.show-hint').hide();
+      $('.button-hint').hide();
       $('.hint').show();
     },
     onVideoEnded: function(ev) {
