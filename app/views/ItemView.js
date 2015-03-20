@@ -1,6 +1,6 @@
-define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
-        "app/collections/QuestionsCollection", "app/views/QuestionView"],
-    function(Backbone, _, itemTemplate, Logging, QuestionsCollection, QuestionView) {
+define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/logging",
+        "app/collections/QuestionsCollection", "app/views/QuestionView", "app/views/UnlockCodeView",],
+    function(Backbone, _, $, itemTemplate, Logging, QuestionsCollection, QuestionView, UnlockCodeView) {
 
   var ItemView = Backbone.View.extend({
 
@@ -25,6 +25,8 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.eventId = 'beaconRange:' + this.item.attributes.beaconMajor;
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
       Logging.logToDom("Listening for event: " + this.eventId);
+      this.listenTo(Backbone, 'unlock-item', this.findObject);
+
     },
 
     afterRender: function() {
@@ -33,6 +35,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
 
       var eventData = { question: this.question, url:this.nextURL };
       this.$video.on('ended',  eventData, this.onVideoEnded);
+
+        //create the unlock view
+        this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
+        this.unlockView.render();
+
     },
 
     didRangeBeacon: function(data) {
@@ -70,6 +77,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.item.attributes.isFound=true;
 
       Backbone.trigger('found-item');
+      this.unlockView.remove();
 
     },
 

@@ -440,3 +440,17 @@ div.button {
     }
   }
 }
+
+.item-unlock {
+  margin-top: 40px;
+  text-align: center;
+  .item-unlock-code {
+    font-size: 1.4em;
+    height: 30px;
+    line-height: 1.6em;
+  }
+  .button {
+    width: 20px;
+    display: inline;
+  }
+}
