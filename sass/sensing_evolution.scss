@@ -241,15 +241,14 @@ div.item-title {
   }
 }
 
+
 .found-item {
-  position: absolute;
-  top: 50px;
-  left: 10px;
+  position: relative;
+  top: -45px;
+  margin: auto;
   display: none;
   padding: 0px;
-  clear: none;
   text-align: center;
-  float: left;
   @media #{$phone} {
     padding: 0px 10px;
     &.finished {
@@ -257,8 +256,8 @@ div.item-title {
       top: 120px;
     }
   }
-  @media #{$phone} and #{$landscape} {
-    max-width: 61%;
+  @media #{$phone}{
+    max-width: 50%;
   }
   @media #{$tablet} {
     width: 100%;
@@ -266,6 +265,10 @@ div.item-title {
   }
 
   &.finished {
+    clear: none;
+    float: left;
+    left: 10px;
+    position: absolute;
     max-width: 25%;
     @media #{$portrait} {
       max-width: 100%;
@@ -296,7 +299,7 @@ div.item-title {
     }
   }
 
-  video {
+  video.intro {
     margin-left: auto;
     margin-right: auto;
     clear: both;

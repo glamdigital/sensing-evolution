@@ -58,7 +58,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
 
     findObject: function() {
       $('.search-item').hide();
-      $('.found-item').show().css('display', 'inline-block');
+      $('.found-item').show();
       $('.hint-container').hide();
       $('.proximity-indicator').hide();
       //start the video after half a second
