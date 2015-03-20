@@ -11,7 +11,7 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 
         afterRender: function() {
             this.$video = $('#intro-video');
-            this.video - this.$video[0];
+            this.video = this.$video[0];
 
             this.$video.on('ended', this.showStartLink);
         },
@@ -23,13 +23,27 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
         },
 
         showStartLink: function() {
-            $('.start-trail').show();
+            $('.buttons-container').show();
             //add the 'finished' class to the video
             var $video = $('#intro-video');
-            $video.addClass('finished');
+            //$video.addClass('finished');
             //hide the controls
-            $video.removeAttr('controls');
+            //$video.removeAttr('controls');
+        },
+
+        replayVideo: function(ev) {
+          ev.preventDefault();
+          this.video.currentTime = 0;
+          this.video.play();
+
+            //hide controls
+            $('.buttons-container').hide();
+        },
+
+        events: {
+            "click #replay": "replayVideo"
         }
+
 
     });
 

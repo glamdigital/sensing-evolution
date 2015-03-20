@@ -22,15 +22,15 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
 
     parse: function(response) {
 
-      var item = {};
-      item.slug = response.slug;
-      item.title = response.title;
-      item.topic = response.topic;
-      item.image = response.image;
-      item.video = response.video;
-      item.hint = response.hint;
-      item.beaconMajor = response.beaconMajor;
-      item.beaconHint = response.beaconHint;
+      var item = response;
+      //item.slug = response.slug;
+      //item.title = response.title;
+      //item.topic = response.topic;
+      //item.image = response.image;
+      //item.video = response.video;
+      //item.hint = response.hint;
+      //item.beaconMajor = response.beaconMajor;
+      //item.beaconHint = response.beaconHint;
 
       item.trails = [];
       //read in the list of trails into a single array. The trails are parameters of id trail[n]

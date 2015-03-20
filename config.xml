@@ -15,7 +15,7 @@
 
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="Orientation" value="default" />
+    <preference name="Orientation" value="landscape" />
 
     <feature name="http://api.phonegap.com/1.0/geolocation" />
 

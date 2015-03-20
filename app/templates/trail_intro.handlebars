@@ -1,13 +1,12 @@
-<h1>{{title}}</h1>
-<br>
 <div class="video-holder">
-    <video id="intro-video" class="intro" width="100%" height="auto" webkit-playsinline controls preload="auto" autoplay poster="img/{{video_poster}}" >
+    <div class="buttons-container">
+        <div id="replay" class="button center"><a>Replay</a></div>
+        <div id="start-trail" class="button center"><a href="{{nextURL}}">Start the trail!</a></div>
+    </div>
+    <video id="intro-video" class="intro" width="100%" controls autoplay height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
         <source src="video/{{video}}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-</div>
-<div class="button center">
-    <a class="start-trail" href="{{nextURL}}">Start the trail!</a>
 </div>
 
 
