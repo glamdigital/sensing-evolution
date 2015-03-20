@@ -20,10 +20,16 @@
 </div>
 
 <div class="found-item">
-    <video id='foundVideo' width="100%" height="auto" webkit-playsinline controls preload="auto" poster="img/{{video_poster}}">
+    <div id="play" class="button center play-button">
+        <a>Play</a>
+    </div>
+    <video id='foundVideo' width="100%" controls height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}">
       <source src="video/{{video}}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <div id="replay" class="button center play-button replay hidden">
+        <a>Watch Again</a>
+    </div>
     <h3>You found it!</h3>
     <!--<a href="#/restart" class="restart-all">Restart</a>-->
 </div>

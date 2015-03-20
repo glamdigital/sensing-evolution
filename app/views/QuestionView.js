@@ -28,11 +28,12 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
           //hide other answers. Reveal response
           ev.preventDefault();
           var $target = $(ev.target);
-          $target.parents('li').siblings('li').hide();
-          $target.siblings('.response').show();
+            $target.parents('.button').addClass('chosen');
+          $target.parents('.answer-container').siblings('.answer-container').hide();
+          $target.parents('.button').siblings('.response').show();
 
           //either show proceed, or retry
-          if($target.parent().hasClass('correct')) {
+          if($target.parents('.answer').hasClass('correct')) {
             $('.proceed').show();
           } else {
             $('.try-again').show();
@@ -45,7 +46,8 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
           //this.render();
             $('.try-again').hide();
             $('.response').hide();
-            var $answers = $('.answer').parents('li');
+            var $answers = $('.answer-container');
+            $answers.find('.button').removeClass('chosen');
             $answers.show();
         }
 

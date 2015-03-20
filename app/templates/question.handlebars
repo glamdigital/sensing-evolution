@@ -1,17 +1,19 @@
+<div>
 {{question}}
-<ul>
+<div class="questions">
   {{#each answers}}
-    <li>
+    <div class="answer-container">
       <div class="answer {{#if isCorrect}}correct{{/if}} qId={{id}}">
-        <a href="#">{{text}}</a>
+        <div class="button {{#if isCorrect}}correct{{/if}}"><a href="#"><div>{{text}}</div></a></div>
         <div class="response {{#if isCorrect}}correct{{/if}} qId={{id}}">
           <!--{{#if isCorrect}}<span class='correct'>Correct. </span>-->
           <!--{{else}}<span class='incorrect'>No. </span>{{/if}}-->
           {{response}}
         </div>
       </div>
-    </li>
+    </div>
   {{/each}}
-</ul>
-<div class="try-again"><a href="#">Try Again</a></div>
-<div class="proceed"><a href="{{nextURL}}">Next Challenge</a></div>
+</div>
+<div class="try-again button"><a href="#">Try Again</a></div>
+<div class="proceed button"><a href="{{nextURL}}">Next Challenge</a></div>
+</div>

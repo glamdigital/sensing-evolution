@@ -39,6 +39,7 @@ h1 {
 
     .buttons-container {
       display: none;
+      z-index: 5;
       position: relative;
       top: 50px;
       min-height: 100px;
@@ -227,8 +228,8 @@ div.item-title {
   padding: 5px 10px;
   margin: 13px 12px;
   position: fixed;
-  left: 70%;
-  top: 90%;
+  left: 75%;
+  top: 0px;
   &.far {
     background-color: lightcoral;
   }
@@ -241,8 +242,11 @@ div.item-title {
 }
 
 .found-item {
+  position: absolute;
+  top: 50px;
+  left: 10px;
   display: none;
-  padding: none;
+  padding: 0px;
   clear: none;
   text-align: center;
   float: left;
@@ -250,6 +254,7 @@ div.item-title {
     padding: 0px 10px;
     &.finished {
       max-width: 70%;
+      top: 120px;
     }
   }
   @media #{$phone} and #{$landscape} {
@@ -261,14 +266,35 @@ div.item-title {
   }
 
   &.finished {
-    max-width: 40%;
+    max-width: 25%;
     @media #{$portrait} {
       max-width: 100%;
+      top: 120px;
     }
+  }
+  video.playing {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
   }
 
   @include transition-property(max-width);
   @include transition-duration(0.25s);
+
+  .play-button {
+    position: relative;
+    top: 125px;
+    z-index: 5;
+    &.hidden {
+      display: none;
+    }
+    &.replay {
+      top: 0px;
+      width: 100%;
+      padding-bottom: 5px;
+    }
+  }
 
   video {
     margin-left: auto;
@@ -295,36 +321,58 @@ div.item-title {
 }
 
 .question {
-  display: inline;
-  margin: 0% 5%;
-  padding: 0px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.9em;
-  ul {
-    text-align: left;
-    list-style: none;
-    padding: 2px;
-    li {
-      div.response {
-        display: none;
-        font-size: small;
-        font-weight: normal;
+  margin-left: 35%;
+  div {
+    display: inline;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+
+    .questions {
+      display: block;
+      text-align: left;
+      list-style: none;
+      padding: 2px;
+      list-style-position: inside;
+      .answer-container {
+        display: block;
+        div.answer {
+          display: block;
+          .button {
+            margin: 5px 0px;
+            padding: 4px 10px;
+            text-align: center;
+
+            &.chosen {
+              background-color: red;
+              border-style: none;
+              &.correct {
+                background-color: green;
+              }
+            }
+
+          }
+        }
+        div.response {
+          display: none;
+          font-size: 1.0em;
+          font-weight: normal;
+        }
+        padding: 0px 10px;
       }
-      padding-bottom: 10px;
+      height: 100%;
+      overflow: scroll;
     }
-    height: 100%;
-    overflow: scroll;
-  }
-  .try-again {
-    display: none
-  }
-  .proceed {
-    display: none
-  }
-  @media #{$phone} and #{$landscape} {
-    max-width: 50%;
-//    float: right;
+    .try-again {
+      display: none;
+      width: 35%;
+      float: right;
+    }
+    .proceed {
+      display: none;
+      width: 35%;
+      float: right;
+    }
   }
 }
 
@@ -343,16 +391,17 @@ div.button {
     margin-right: auto;
     display: block;
   }
-  a {
     padding: 2*$standardPadding;
     border-style: solid;
     border-radius: 5px;
     border-width: 1px;
     background-color: lightgrey;
-    text-decoration: none;
+  a {
     color: $fontColor;
+    text-decoration: none;
   }
   margin: 10px;
+  display: block;
 }
 
 .media-test {

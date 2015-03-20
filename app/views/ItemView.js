@@ -60,6 +60,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       $('.search-item').hide();
       $('.found-item').show().css('display', 'inline-block');
       $('.hint-container').hide();
+      $('.proximity-indicator').hide();
       //start the video after half a second
       //setTimeout( _.bind(function() {
       //  this.video.play();
@@ -69,6 +70,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       this.item.attributes.isFound=true;
 
       Backbone.trigger('found-item');
+
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
@@ -76,10 +78,18 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
       "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
+      "click .play-button" : "playVideo",
       // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
       Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
+    },
+    playVideo: function(ev) {
+      this.video.play();
+        this.$video.addClass('playing');
+        //hide the play control
+        $('.play-button').hide();
+
     },
     showHint: function(ev) {
         ev.preventDefault();
@@ -88,10 +98,14 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging",
     },
     onVideoEnded: function(ev) {
       //create and render question view
+        $('video').removeClass('playing');
       var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
       questionView.render();
         //mark the video element as finished
         $(ev.target).parents('div').addClass("finished");
+
+        //show the replay button
+        $('#replay').show();
     },
     toggleNavMenu: function(ev)
     {
