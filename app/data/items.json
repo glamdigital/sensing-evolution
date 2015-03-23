@@ -122,7 +122,7 @@
     "image": "fossil1.jpg",
     "hint_image": "ashtray_hint.jpg",
     "map_image": "ashtray_map.png",
-    "audio": "test.mp3",
+    "audio": "",
     "hint": "This object is…",
     "beaconMajor": "47050",
     "beaconHint": "A2"
@@ -138,7 +138,7 @@
     "image": "fossil1.jpg",
     "hint_image": "ashtray_hint.jpg",
     "map_image": "ashtray_map.png",
-    "audio": "test.mp3",
+    "audio": "",
     "hint": "This object is…",
     "beaconMajor": "47050",
     "beaconHint": "A2"
@@ -154,7 +154,7 @@
     "image": "fossil1.jpg",
     "hint_image": "ashtray_hint.jpg",
     "map_image": "ashtray_map.png",
-    "audio": "test.mp3",
+    "audio": "",
     "hint": "This object is…",
     "beaconMajor": "47050",
     "beaconHint": "A2"
