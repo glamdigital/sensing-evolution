@@ -1,5 +1,5 @@
 $item-height: 40px;
-
+$audio-height: 30px;
 div.trails-list-container {
   text-align: center;
 
@@ -23,13 +23,13 @@ div.trails-list-container {
         &.audio {
           margin-top: 20px;
           padding: 5px 0;
-          height: $item-height - 10px;
+          height: $audio-height;
         }
 
         audio {
-          width: 50%;
           float: right;
           padding-right: 20px;
+
         }
 
         div {
@@ -52,8 +52,26 @@ div.trails-list-container {
             margin-right: 30%;
           }
           &.audio {
-            width: 40%;
+            width: 90%;
             padding-top: 4px;
+            img.audio-control-icon {
+              height: $audio-height;
+              width: $audio-height;
+              float: right;
+              position: relative;
+              top: -4px;
+              padding: 0px 5px;
+              &.pause {
+                display: none;
+              }
+              &.restart {
+                display: none;
+              }
+              &.speaker {
+                padding-right: 20px;
+                float: left;
+              }
+            }
           }
         }
         &.near {

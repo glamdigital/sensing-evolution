@@ -76,6 +76,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 
       Backbone.trigger('found-item');
 
+      //vibrate
+        if(navigator.notification) {
+            navigator.notification.vibrate(500);
+        }
+
       //set header next link to found
       this.headerView.setNextURL(this.nextURL);
       this.headerView.render();
