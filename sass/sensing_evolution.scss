@@ -162,6 +162,7 @@ h3 {
   float: left;
   text-align: center;
   width: 100%;
+
   img {
     @media #{$phone} and #{$landscape} {
       width: 80%;

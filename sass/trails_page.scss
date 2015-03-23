@@ -1,3 +1,5 @@
+$item-height: 40px;
+
 div.trails-list-container {
   text-align: center;
 
@@ -10,30 +12,34 @@ div.trails-list-container {
       color: white;
       li {
         background-color: black;
-        margin: 5px auto;
-        width: 90%;
-//        height: 80px;
-        padding: 15px 5%;
+        margin: 5px 0px;
+        width: 100%;
+        height: $item-height;
+        padding: 15px 0;
         text-align: left;
         white-space: nowrap;
         text-overflow: ellipsis;
 
-        .trails-list-item {
-        }
-        .main-title {
-          font-size: 1.2em;
-          padding-bottom: 5px;
-          overflow-x: hidden;
-          text-overflow: ellipsis;
-          &.title-smaller
-          {
-            font-size: 1.0em;
+        div {
+          margin-left: 5%;
+          &.trails-list-item {
+            margin-right: 30%;
+          }
+          &.main-title {
+            margin-right: 30%;
+            font-size: 1.2em;
+            padding-bottom: 5px;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            &.title-smaller {
+              font-size: 1.0em;
+            }
+          }
+          &.subtitle {
+            font-size: 0.8em;
+            margin-right: 30%;
           }
         }
-        .subtitle {
-          font-size: 0.8em;
-        }
-
         &.near {
           border-left: 20px solid #888888;
           background-color: #444444;
@@ -41,6 +47,14 @@ div.trails-list-container {
         &.far {
           border-left: 20px solid #444444;
           background-color: #222222;
+        }
+
+        img.item-thumbnail {
+          height: $item-height + 16px;
+          margin: 0px 5px;
+          float: right;
+          position: relative;
+          top: -8px;
         }
       }
     }
