@@ -36,6 +36,7 @@ h1 {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    background-color: black;
 
     .buttons-container {
       display: none;
@@ -44,6 +45,9 @@ h1 {
       top: 50px;
       min-height: 100px;
       background-color: black;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
       .button {
         padding: 30px;
       }

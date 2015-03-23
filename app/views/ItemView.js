@@ -79,6 +79,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       Backbone.trigger('found-item');
       this.unlockView.remove();
 
+      navigator.notification.vibrate(500);
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
