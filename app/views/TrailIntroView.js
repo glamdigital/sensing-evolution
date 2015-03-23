@@ -26,7 +26,21 @@ define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_i
             return out;
         },
 
-        showStartLink: function() {
+        events: {
+            "click .trail-intro-audio": "playAudio",
+            "click .main-title": "playAudio"
+        },
+
+        playAudio: function(ev) {
+            ev.preventDefault();
+            var $audio = $('.trail-intro-audio');
+            $audio.show();
+            var audio = $audio[0];
+            audio.play();
+        },
+
+        showStartLink: function(ev) {
+            ev.preventDefault();
             $('.start-trail').show();
             //add the 'finished' class to the video
             var $video = $('#intro-video');

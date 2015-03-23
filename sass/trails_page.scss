@@ -20,6 +20,18 @@ div.trails-list-container {
         white-space: nowrap;
         text-overflow: ellipsis;
 
+        &.audio {
+          margin-top: 20px;
+          padding: 5px 0;
+          height: $item-height - 10px;
+        }
+
+        audio {
+          width: 50%;
+          float: right;
+          padding-right: 20px;
+        }
+
         div {
           margin-left: 5%;
           &.trails-list-item {
@@ -38,6 +50,10 @@ div.trails-list-container {
           &.subtitle {
             font-size: 0.8em;
             margin-right: 30%;
+          }
+          &.audio {
+            width: 40%;
+            padding-top: 4px;
           }
         }
         &.near {

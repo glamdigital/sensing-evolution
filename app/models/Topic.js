@@ -24,10 +24,10 @@ define(["backbone", "app/collections/ItemsCollection"], function(Backbone, Items
     },
 
     parse: function (response) {
-      var t = {};
+      var t = response;
       t.slug = response.id;
-      t.title = response.title;
-        t.description = response.description;
+      //t.title = response.title;
+      //  t.description = response.description;
       t.trails = [];
         t.entryPointBeaconIDs = [];
 

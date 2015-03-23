@@ -17,12 +17,12 @@ define(["backbone", "app/collections/topicsCollection"], function(Backbone, Topi
     },
 
     parse: function(response) {
-        var t = {};
+        var t = response;
         t.slug = response.id;
-        t.title = response.title;
-        t.description = response.description;
-        t.shareURL = response.shareURL;
-        t.video = response.video;
+        //t.title = response.title;
+        //t.description = response.description;
+        //t.shareURL = response.shareURL;
+        //t.video = response.video;
         t.fixed_order = response.fixed_order=="true" || response.fixed_order=="TRUE";
         return t;
     }

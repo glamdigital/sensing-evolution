@@ -1,6 +1,5 @@
 <div class="trails-list-container">
-<br><h1>{{trail.title}}</h1>
-<br>
+<h1>{{trail.title}}</h1>
 <p class="description">{{trail.description}}</p>
     <ul>
         {{#each topics}}
@@ -9,6 +8,17 @@
                 <div class="subtitle">{{description}}</div>
             </li></a>
         {{/each}}
+        {{#if trail.audio}}
+        <a class="play-trail-intro">
+        <li class="audio play-trail-intro">
+            <audio class="trail-intro-audio" width="90%" height="auto" controls preload="auto">
+                <source src="audio/{{trail.audio}}" type="audio/mpeg">
+                Your browser does not support the audio tag
+            </audio>
+            <div class="main-title audio">Trail Intro</div>
+        </li>
+        </a>
+        {{/if}}
     </ul>
 </div>
 
