@@ -36,17 +36,39 @@ define(['backbone', 'hbs!app/templates/unlock_code'],
             if (code_value == this.item_code) {
                 //unlock the item
                 console.log("Code cracked!");
-                Backbone.trigger('unlock-item', null);
+                $code.addClass('correct');
+                setTimeout(this.goToFoundPage, 1000);
+
+                //TODO SFX/animation
             }
-            else if(code_value.length == 4){
+            else if(code_value.length == this.item_code.length){
                 //Full, incorrect code entered
                 //inform the user and clear the box
                 console.log("Incorrect code entered!");
-                $code.empty();
+
+                //turn it red, then reset later
+                this.input_disabled = true;
+                $code.addClass('incorrect');
+
+                setTimeout(this.reset.bind(this), 1000);
+
+                //TODO SFX/animation
+
             } else {
                 //nothing to do
 
             }
+        },
+
+        reset: function() {
+            var $code = $('.item-unlock-code');
+            $code.empty();
+            $code.removeClass('incorrect');
+            this.input_disabled = false;
+        },
+
+        goToFoundPage: function() {
+            Backbone.trigger('unlock-item', null);
         }
 
     })
