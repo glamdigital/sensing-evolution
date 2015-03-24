@@ -10,7 +10,7 @@
     "video": "1. Buckland Case.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "This object is in the far left hand corner of the court in the cabinet labelled ‘Recycling Display’ (as you look away from the shop and towards the back of the museum).",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "2889"
   },
   {
@@ -24,7 +24,7 @@
     "video": "2. Hyaena Life on Earth display.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "9125"
   },
   {
@@ -38,7 +38,7 @@
     "video": "3. Megalosaurus.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the 'Megalosaurus' case near the T. rex",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "4005"
   },
   {
@@ -52,7 +52,7 @@
     "video": "4. Icthyosaur.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the 'Ichthyosaurs' case",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "11889"
   },
   {
@@ -66,7 +66,7 @@
     "video": "5. Peppered Moth and Snails Script.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the display called 'Natural Selection at Work'",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "50339"
   },
   {
@@ -80,7 +80,7 @@
     "video": "6. Darwins Pigeon Case Script.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Look for the display called 'Darwin's Principles'",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "14250"
   },
   {
@@ -94,7 +94,7 @@
     "video": "7. Reptiles SEvo Table.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "Head for the Sensing Evolution Reptiles table",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "63308"
   },
   {
@@ -108,7 +108,7 @@
     "video": "8. Archaeopteryx.mp4",
     "video_poster": "video_posters/test_poster.png",
     "hint": "TBC",
-    "unlock_code": "1111",
+    "code": "1111",
     "beaconMajor": "47050"
   }
 ]

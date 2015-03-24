@@ -224,6 +224,7 @@ div.item-title {
     font-style: italic;
     text-align: center;
     padding-bottom: 20px;
+    clear: right;
     @media #{$phone} and #{$landscape} {
       padding-bottom: 2px;
     }
@@ -448,27 +449,39 @@ div.button {
 .item-unlock {
   margin-top: 30px;
   text-align: center;
-  .item-unlock-code {
-    font-size: 1.4em;
-    height: 30px;
-    line-height: 1.6em;
-    margin: 10px auto 20px auto;
-    width: 70%;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    &.incorrect {
-      color: darkred;
-      border-color: darkred;
-    }
-    &.correct {
-      color: darkgreen;
-      border-color: darkgreen;
-    }
+  margin: 20px 10px 20px 10px;
+  clear: both;
+  height: 30px;
+  float: right;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px;
+  &.correct {
+    border-color: darkgreen;
+    color: darkgreen;
+  }
+  &.incorrect {
+    border-color: darkred;
+    color: darkred;
   }
   .button {
-    width: 20px;
-    display: inline;
-    margin: 0px;
   }
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    padding-left: 10px;
+  }
+  input{
+    height: 24px;
+    padding: 3px 0px 3px 10px;
+    vertical-align: bottom;
+    border: none;
+    border-right: solid 1px grey;
+    position: relative;
+    top: -2px;
+    display: none;
+    font-size: 0.8em;
+    color: inherit;
+  }
+
 }

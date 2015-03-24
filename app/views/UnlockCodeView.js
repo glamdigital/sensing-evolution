@@ -6,7 +6,7 @@ define(['backbone', 'hbs!app/templates/unlock_code'],
         template: unlockCodeTemplate,
 
         initialize: function (params) {
-            this.item_code = params.item.attributes.unlock_code;
+            this.item_code = params.item.attributes.code;
         },
 
         serialize: function (params) {
@@ -14,7 +14,32 @@ define(['backbone', 'hbs!app/templates/unlock_code'],
         },
 
         events: {
-            "click .unlock-code-button" : "onClickedButton"
+            "click .unlock-code-button" : "onClickedButton",
+            "click .reveal-input-code" : "onClickReveal",
+            "keyup #code-input" : "onEnterCodeDigit",
+        },
+
+        onClickReveal: function(ev) {
+            var $input = $('#code-input');
+            $input.show();
+        },
+
+        onEnterCodeDigit: function(ev) {
+            var $input = $('#code-input');
+            var enteredCode = $input.val();
+
+            if (enteredCode == this.item_code) {
+                console.log("Code cracked!");
+                $input.parent().addClass('correct').removeClass('incorrect');
+                setTimeout(this.goToFoundPage, 1000);
+            }
+            else if (enteredCode.length == this.item_code.length) {
+                $input.parent().addClass('incorrect');
+            }
+            else {
+                $input.parent().removeClass('correct').removeClass('incorrect');
+            }
+
         },
 
         onClickedButton: function(ev) {
