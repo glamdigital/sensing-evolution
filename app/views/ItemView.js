@@ -64,12 +64,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       $('.search-item').hide();
       $('.found-item').show().css('display', 'inline-block');
       $('.hint-container').hide();
-      //start the video after half a second
-        if (this.item.attributes.audio) {
-            setTimeout(_.bind(function () {
-                this.media.play();
-            }, this), 500);
-        }
+
       //unsubscribe from further beacon events
       this.stopListening(Backbone, this.eventId);
       this.item.attributes.isFound=true;
@@ -102,8 +97,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
-      // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
+      "click #play-audio" : "playAudio",
+      "click #pause-audio" : "pauseAudio",
+      "click #restart-audio" : "restartAudio",
     },
+
     onClickImage: function(ev) {
       Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
     },
@@ -111,6 +109,29 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
         ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
+    },
+
+    playAudio: function(ev) {
+        if(this.media) {
+            this.media.play();
+            $('#play-audio').hide();
+            $('#pause-audio').show();
+            $('#restart-audio').show();
+        }
+    },
+
+    pauseAudio: function(ev) {
+        if(this.media) {
+            this.media.pause();
+        }
+        $('#play-audio').show();
+        $('#pause-audio').hide();
+    },
+
+    restartAudio: function(ev) {
+        if(this.media) {
+            this.media.currentTime = 0;
+        }
     },
 
     toggleNavMenu: function(ev)

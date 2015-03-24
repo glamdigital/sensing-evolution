@@ -1,5 +1,4 @@
 @import "compass/css3";
-@import "prtrails";
 $phone: "only screen and (max-width: 767px)";
 $tablet: "only screen and (min-width: 768px)";
 $landscape-test: "only screen and (orientation: landscape)";
@@ -12,6 +11,10 @@ $corner-radius: 5px;
 $navBarWidth: 250px;
 $fontColor: black;
 $videoAspectRatio: 1.7777777778;
+$headerHeight: 60px;
+$headerPadding: 10px;
+
+
 
 @mixin rounded-corners {
   border-radius: $corner-radius;
@@ -234,15 +237,7 @@ div.item-title {
   clear: none;
   text-align: center;
   float: left;
-  @media #{$phone} {
-    padding: 0px 10px;
-    &.finished {
-      max-width: 70%;
-    }
-  }
-  @media #{$phone} and #{$landscape} {
-    max-width: 61%;
-  }
+
   @media #{$tablet} {
     width: 100%;
     clear: both;

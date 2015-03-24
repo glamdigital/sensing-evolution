@@ -33,6 +33,7 @@ define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_i
             "click #play-audio": "playAudio",
             "click #pause-audio": "pauseAudio",
             "click #restart-audio": "restartAudio",
+            "click .play": "playAudio",
         },
 
         playAudio: function(ev) {
@@ -55,10 +56,10 @@ define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_i
         restartAudio: function(ev) {
             if(this.audio) {
                 this.audio.currentTime = 0;
-                this.audio.play();
+                //this.audio.play();
             }
-            $('#play-audio').hide();
-            $('#pause-audio').show();
+            //$('#play-audio').hide();
+            //$('#pause-audio').show();
         },
 
         showStartLink: function(ev) {

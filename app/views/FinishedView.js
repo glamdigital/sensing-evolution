@@ -7,14 +7,14 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
       initialize: function(params) {
         this.trail = params.trail;
         this.shareURL = "http://www.prm.ox.ac.uk";
-        this.instagramInstalled = false;
+        this.instagramIsInstalled = false;
           var ig = typeof(Instagram);
           if(typeof(Instagram) !== "undefined") {
               Instagram.isInstalled(function (err, installed) {
                   if (installed) {
                       console.log("Instagram is", installed); // installed app version on Android
                       alert("Instagram is installed");
-                      this.instagramInstalled = true;
+                      this.instagramIsInstalled = true;
                   } else {
                       console.log("Instagram is not installed");
                       alert("Instagram is not installed");
@@ -61,6 +61,8 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
           }
           else {
               console.log("Unable to share as Instagram is not installed");
+              alert("Instagram is not installed on your device. Please install and try again.");
+              //TODO check whether installed when user tries again.
           }
       },
       buildShareMessage: function() {
