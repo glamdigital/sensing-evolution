@@ -30,9 +30,10 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
           //hide other answers. Reveal response
           ev.preventDefault();
           var $target = $(ev.target);
-            $target.parents('.button').addClass('chosen');
-          $target.parents('.answer-container').siblings('.answer-container').hide();
-          $target.parents('.button').siblings('.response').show();
+          var $button = $target.hasClass('button') ? $target : $target.parents('.button');
+          $button.addClass('chosen');
+          $button.parents('.answer-container').siblings('.answer-container').hide();
+          $button.siblings('.response').show();
 
           //either show proceed, or retry
           if($target.parents('.answer').hasClass('correct')) {
