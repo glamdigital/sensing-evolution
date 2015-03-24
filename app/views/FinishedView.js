@@ -6,18 +6,15 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
 
       initialize: function(params) {
         this.trail = params.trail;
-        this.shareURL = "http://www.prm.ox.ac.uk";
         this.instagramIsInstalled = false;
           var ig = typeof(Instagram);
           if(typeof(Instagram) !== "undefined") {
               Instagram.isInstalled(function (err, installed) {
                   if (installed) {
                       console.log("Instagram is", installed); // installed app version on Android
-                      alert("Instagram is installed");
                       this.instagramIsInstalled = true;
                   } else {
                       console.log("Instagram is not installed");
-                      alert("Instagram is not installed");
                   }
               }.bind(this));
           }
@@ -27,6 +24,22 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
           var out = {};
           out.trail = this.trail.toJSON();
           return out;
+      },
+
+      afterRender: function() {
+          var canvas = $('#insta')[0];
+          var ctx = canvas.getContext('2d');
+          this.dataURL = null;
+          var img = new Image;
+          img.crossOrigin = 'Anonymous';
+          img.onload = function() {
+              canvas.height = img.height;
+              canvas.width = img.width;
+              ctx.drawImage(img, 0,0);
+              this.dataURL = canvas.toDataURL('image/png');
+              canvas = null;
+          };
+          img.src = this.trail.attributes.share_image;
       },
       events: {
           "click #share-facebook": "onClickFacebook",
@@ -49,11 +62,9 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
       },
       onClickInstagram: function(event) {
           if(this.instagramIsInstalled) {
-              alert("Pressed Instagram button, with instagram installed");
-              Instagram.share("http://www.prm.ox.ac.uk/images/sliderimages/Interior2013.jpg", "Testing instagram", function (err) {
+              Instagram.share('insta', this.buildShareMessage(), function (err) {
                   if (err) {
                       console.log("not shared");
-                      alert("Not shared");
                   } else {
                       console.log("shared");
                   }
@@ -66,7 +77,7 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
           }
       },
       buildShareMessage: function() {
-          return "I just completed the " + this.trail.attributes.title + " at the Pitt Rivers Museum";
+          return this.trail.attributes.share_message;
       }
 
   });
