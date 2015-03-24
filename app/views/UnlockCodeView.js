@@ -21,7 +21,7 @@ define(['backbone', 'hbs!app/templates/unlock_code'],
 
         onClickReveal: function(ev) {
             var $input = $('#code-input');
-            $input.show();
+            $input.show().focus();
         },
 
         onEnterCodeDigit: function(ev) {
