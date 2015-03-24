@@ -7,7 +7,8 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
 
         initialize: function(params) {
           this.question = params.question;
-          this.nextURL = params.nextURL;
+          //this.nextURL = params.nextURL;
+          this.session = params.session;
           this.shuffledAnswers = _.shuffle(this.question.attributes.answers);
         },
 
@@ -21,7 +22,8 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
 
         events: {
           "click .answer": "onSelectAnswer",
-          "click .try-again": "reset"
+          "click .try-again": "reset",
+          "click .proceed": "proceed"
         },
 
         onSelectAnswer: function(ev) {
@@ -35,6 +37,8 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
           //either show proceed, or retry
           if($target.parents('.answer').hasClass('correct')) {
             $('.proceed').show();
+              //fire an event to say this item is complete
+              Backbone.trigger('complete-item', {slug: this.question.attributes.item});
           } else {
             $('.try-again').show();
           }
@@ -49,6 +53,13 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
             var $answers = $('.answer-container');
             $answers.find('.button').removeClass('chosen');
             $answers.show();
+        },
+
+        proceed: function(ev) {
+            ev.preventDefault();
+            //get next url and navigate to
+            var nextURL = this.session.getNextURL();
+            Backbone.history.navigate(nextURL);
         }
 
       });

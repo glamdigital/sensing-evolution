@@ -87,15 +87,16 @@ define(["backbone", "jquery", "underscore",
         item: function(itemSlug) {
             var item = this.session.getItem(itemSlug);
             //Inform the session that we've visited this item
-            this.session.visitItem(itemSlug);
-            var nextURL = this.session.getNextURL();
+            //var nextURL = this.session.getNextURL();
             var currentTrail = this.session.getCurrentTrail();
             var currentTopic = this.session.getCurrentTopic();
             var view = new ItemView({
                 item: item,
                 trail: currentTrail,
                 topic: currentTopic,
-                nextURL: nextURL
+                //nextURL: nextURL
+                session: this.session,
+                //need to pass the session rather than the URL, as the appropriate nextUrL can't be determined at this point
             });
             this.contentView.setView(view);
             view.render();

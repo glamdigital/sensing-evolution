@@ -36,6 +36,9 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
           this.unvisitedItems.add(topic.shuffledItems.at(j));
         }
       }
+
+      //listen for items being found
+        this.listenTo(Backbone, 'complete-item', this.completeItem);
     },
 
     hasNext: function() {
@@ -74,6 +77,12 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
       return this.trail;
     },
 
+    completeItem: function(data) {
+        //called when the item has been completed
+        // - i.e. the item has been found, and the question has been answered correctly
+        this.visitItem(data.slug);
+    },
+
     visitItem: function(slug) {
       //record the next item as having been visited
       var item = this.unvisitedItems.findWhere({slug: slug});
@@ -105,7 +114,8 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
                     slug: item.attributes.slug,
                     isCurrent: isCurrentItem,
                     isVisited: isVisited,
-                    isFound: item.attributes.isFound,
+                    isAvailable: item.attributes.isAvailable,
+                    isFound: item.attributes.isFound
                 };
                 topicDict.items.push(itemDict);
             }, this);
@@ -120,7 +130,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
     unvisitedItems: null,
 
     // ItemsCollection of Items the user has already visited
-    visitedItems: null,
+    visitedItems: null
 
   });
 

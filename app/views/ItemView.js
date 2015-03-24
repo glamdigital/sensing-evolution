@@ -17,7 +17,8 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
 
     initialize: function(params) {
       this.item = params.item;
-      this.nextURL = params.nextURL;
+      //this.nextURL = params.nextURL;
+      this.session = params.session;
       this.trail = params.trail;
       this.topic = params.topic;
       this.question = params.item.questionForTrail(this.trail.attributes.slug);
@@ -26,7 +27,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       this.listenTo(Backbone, this.eventId, this.didRangeBeacon);
       Logging.logToDom("Listening for event: " + this.eventId);
       this.listenTo(Backbone, 'unlock-item', this.findObject);
-
+      this.item.attributes.isAvailable = true;
     },
 
     afterRender: function() {
@@ -34,7 +35,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       this.video = this.$video[0];
 
       var eventData = { question: this.question, url:this.nextURL };
-      this.$video.on('ended',  eventData, this.onVideoEnded);
+      this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
 
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
@@ -108,7 +109,11 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
     onVideoEnded: function(ev) {
       //create and render question view
         $('video').removeClass('playing');
-      var questionView = new QuestionView({el: $('.question'), question:ev.data.question, nextURL:ev.data.url});
+      var questionView = new QuestionView({ el: $('.question'),
+                                            question:ev.data.question,
+                                            //nextURL:ev.data.url
+                                            session:this.session
+                                        });
       questionView.render();
         //mark the video element as finished
         $(ev.target).parents('div').addClass("finished");
