@@ -1,7 +1,7 @@
 define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/floor_tracking",
-        "app/collections/QuestionsCollection", "app/views/QuestionView"],
+        "app/views/AudioControlsView"],
     function(Backbone, _, itemTemplate, Logging, FloorTracking,
-             QuestionsCollection, QuestionView) {
+             AudioControlsView) {
 
   var ItemView = Backbone.View.extend({
 
@@ -31,14 +31,14 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 
     afterRender: function() {
         if (this.item.attributes.audio) {
-            this.$media = $('#foundMedia');
-            this.media = this.$media[0];
-
+            this.audioControlsView = new AudioControlsView({el: $('.audio-controls', this.el), audio: this.item.attributes.audio});
+            this.audioControlsView.render();
         }
 
         if(this.foundAtInit) {
           this.findObject();
         }
+
     },
 
     didRangeBeacon: function(data) {
@@ -97,9 +97,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
-      "click #play-audio" : "playAudio",
-      "click #pause-audio" : "pauseAudio",
-      "click #restart-audio" : "restartAudio",
     },
 
     onClickImage: function(ev) {
@@ -109,29 +106,6 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
         ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
-    },
-
-    playAudio: function(ev) {
-        if(this.media) {
-            this.media.play();
-            $('#play-audio').hide();
-            $('#pause-audio').show();
-            $('#restart-audio').show();
-        }
-    },
-
-    pauseAudio: function(ev) {
-        if(this.media) {
-            this.media.pause();
-        }
-        $('#play-audio').show();
-        $('#pause-audio').hide();
-    },
-
-    restartAudio: function(ev) {
-        if(this.media) {
-            this.media.currentTime = 0;
-        }
     },
 
     toggleNavMenu: function(ev)

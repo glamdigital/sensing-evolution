@@ -11,16 +11,6 @@
     </ul>
 </div>
 {{#if trail.audio}}
-    <div class="main-title audio">
-        <img id="speaker-audio" src="img/white-speaker-128.png" class="audio-control-icon speaker" />
-            Trail Intro
-        <a><img id="play-audio" src="img/white-play-128.png" class="audio-control-icon play" /></a>
-        <img id="pause-audio" src="img/white-pause-128.png" class="audio-control-icon pause" />
-        <img id="restart-audio" src="img/white-skip-to-start-128.png" class="audio-control-icon restart" />
-    </div>
-    <audio id='foundMedia' width="100%" height="auto" preload="auto">
-      <source src="audio/{{trail.audio}}" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
+    <div class="audio-controls"></div>
 {{/if}}
 

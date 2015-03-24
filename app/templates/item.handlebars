@@ -18,18 +18,7 @@
 <div class="found-item">
     <img class="item-image" src="img/{{image}}">
     {{#if audio}}
-            <div class="main-title audio">
-            <img id="speaker-audio" src="img/white-speaker-128.png" class="audio-control-icon speaker" />
-                Trail Intro
-            <img id="play-audio" src="img/white-play-128.png" class="audio-control-icon play" />
-            <img id="pause-audio" src="img/white-pause-128.png" class="audio-control-icon pause" />
-            <img id="restart-audio" src="img/white-restart-128.png" class="audio-control-icon restart" />
-            </div>
-
-    <audio id='foundMedia' width="100%" height="auto" webkit-playsinline preload="auto">
-      <source src="audio/{{audio}}" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
+        <div class="audio-controls"></div>
     {{/if}}
     <h5>Location: {{location}}</h5>
     <p class="description">{{description}}</p>

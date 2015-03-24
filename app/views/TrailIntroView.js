@@ -1,5 +1,5 @@
-define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_intro"],
-    function(Backbone, _, Trail, trailIntro) {
+define(["backbone", "underscore", "app/models/Trail", "app/views/AudioControlsView", "hbs!app/templates/trail_intro"],
+    function(Backbone, _, Trail, AudioControlsView, trailIntro) {
 
     var TrailIntroView = Backbone.View.extend({
         template: trailIntro,
@@ -11,12 +11,9 @@ define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_i
         },
 
         afterRender: function() {
-            this.$video = $('#intro-video');
-            this.video - this.$video[0];
-
-            this.$video.on('ended', this.showStartLink);
             if (this.trail.attributes.audio) {
-                this.audio = $('audio')[0];
+                this.audioControls = new AudioControlsView({el:$('.audio-controls'), audio: this.trail.attributes.audio});
+                this.audioControls.render();
             }
         },
 
@@ -56,10 +53,7 @@ define(["backbone", "underscore", "app/models/Trail", "hbs!app/templates/trail_i
         restartAudio: function(ev) {
             if(this.audio) {
                 this.audio.currentTime = 0;
-                //this.audio.play();
             }
-            //$('#play-audio').hide();
-            //$('#pause-audio').show();
         },
 
         showStartLink: function(ev) {
