@@ -12,7 +12,9 @@ define(["backbone", "underscore", "app/models/Trail", "app/views/AudioControlsVi
 
         afterRender: function() {
             if (this.trail.attributes.audio) {
-                this.audioControls = new AudioControlsView({el:$('.audio-controls'), audio: this.trail.attributes.audio});
+                this.audioControls = new AudioControlsView({el:$('.audio-controls'),
+                                                            audio: this.trail.attributes.audio,
+                                                            caption: 'Trail Intro'});
                 this.audioControls.render();
             }
         },

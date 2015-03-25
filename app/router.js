@@ -1,12 +1,12 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/TrailIntroView", "app/views/TopicView", "app/views/ItemView", "app/views/FinishedView",
-          "app/views/ContentView", "app/views/HeaderView", "app/models/Session", "app/views/NavView", "app/views/DashboardView",
+          "app/views/ContentView", "app/views/HeaderView", "app/models/Session", "app/views/DashboardView",
           "app/floor_tracking"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, TrailIntroView, TopicView, ItemView, FinishedView,
-            ContentView, HeaderView, Session, NavView, DashboardView,
+            ContentView, HeaderView, Session, DashboardView,
             FloorTracking) {
 
     var SEVRouter = Backbone.Router.extend({
@@ -44,9 +44,6 @@ define(["backbone", "jquery", "underscore",
           });
           this.contentView.setView(view);
           view.renderIfReady();
-            if(this.navView) {
-                this.navView.hide();
-            }
 
             //set links
             this.headerView.setPrevURL(null);
@@ -61,16 +58,6 @@ define(["backbone", "jquery", "underscore",
             //create a new session for the chosen trail
             var trail = this.allTrails.findWhere( {slug: trailSlug} );
             this.session = new Session(trail);
-
-            //if(!this.navView) {
-            //    //create a navbar now we have a session
-            //    this.navView = new NavView({el: $('#nav-menu'), session: this.session});
-            //}
-            //else {
-            //    //update if for the new session.
-            //    this.navView.session = this.session;
-            //}
-            //this.navView.render();
 
             //create intro view
             var view = new TrailIntroView({
@@ -98,12 +85,6 @@ define(["backbone", "jquery", "underscore",
             });
             this.contentView.setView(view);
             view.render();
-
-            //re-render and hide the nav view
-            //if(this.navView) {
-            //    this.navView.render();
-            //    this.navView.hide();
-            //}
 
             //links
             this.headerView.setPrevURL('#trail/' + trail.attributes.slug);
@@ -142,11 +123,6 @@ define(["backbone", "jquery", "underscore",
             });
             this.contentView.setView(view);
             view.render();
-            //re-render and hide the nav view
-            this.navView.render();
-            //if(this.navView) {
-            //    this.navView.hide();
-            //}
 
             //links
             this.headerView.setPrevURL('#topic/' + currentTopic.attributes.slug);
@@ -162,8 +138,6 @@ define(["backbone", "jquery", "underscore",
             view.render();
             //TODO mark with the session that it's finished.
             //TODO re-render the nav menu
-            //Hide the nav-menu
-            //this.navView.hide();
 
             //links
             this.headerView.setPrevURL('#');
@@ -186,9 +160,6 @@ define(["backbone", "jquery", "underscore",
                 {beaconId: 18829, name: 'floor1'},
                 {beaconId: 5744, name: 'floor2'}
             ]);
-            //if(this.navView) {
-            //    this.navView.hide();
-            //}
             this.contentView.setView(dashboardView);
             dashboardView.render();
 

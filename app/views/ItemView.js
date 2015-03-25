@@ -31,7 +31,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 
     afterRender: function() {
         if (this.item.attributes.audio) {
-            this.audioControlsView = new AudioControlsView({el: $('.audio-controls', this.el), audio: this.item.attributes.audio});
+            this.audioControlsView = new AudioControlsView({el: $('.audio-controls', this.el),
+                                                            audio: this.item.attributes.audio,
+                                                            caption: 'About this item'});
             this.audioControlsView.render();
         }
 

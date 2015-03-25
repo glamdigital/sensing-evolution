@@ -7,10 +7,11 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
 
         initialize: function(params) {
             this.audio = params.audio;
+            this.caption = params.caption;
         },
 
         serialize: function() {
-            return { audio: this.audio };
+            return { audio: this.audio, caption: this.caption };
         },
 
         afterRender: function() {
