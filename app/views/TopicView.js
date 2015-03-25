@@ -30,15 +30,26 @@ define(["backbone", "hbs!app/templates/topic"],
             },
 
             didRangeBeacon: function(data) {
-                if(data.proximity === 'ProximityImmediate')
+                var item = this.beaconsDict[data.major.toString()];
+                if(item==undefined) {
+                    alert("undefined beacon in dict from data: " + data);
+                    return;
+                }
+                var $itemListEntry = $('#item-'+item.attributes.slug);
+
+                if(data.proximity === 'ProximityImmediate' || data.proximity == 'ProximityNear')
                 {
-                    //stop listening for the trigger event
-                    var item = this.beaconsDict[data.major.toString()];
-                    if(item==undefined) {
-                        alert("undefined beacon in dict from data: " + data);
+                    //vibrate if this is a transition to near
+                    if(navigator.notification && !$itemListentry.hasClass('nearby')) {
+                        navigator.notification.vibrate(500);
                     }
-                    //route to appropriate page
-                    Backbone.history.navigate('#/found/' + item.attributes.slug);
+
+                    //add class to item to make bg cycle
+                    $itemListEntry.addClass('nearby');
+                }
+                else {
+                    //remove class which makes bg cycle
+                    $itemsListEntry.removeClass('nearby');
                 }
             }
 
