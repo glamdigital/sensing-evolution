@@ -49,7 +49,7 @@ define(["backbone", "hbs!app/templates/topic"],
                 }
                 else {
                     //remove class which makes bg cycle
-                    $itemsListEntry.removeClass('nearby');
+                    $itemListEntry.removeClass('nearby');
                 }
             }
 
