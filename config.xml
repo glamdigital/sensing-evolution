@@ -17,6 +17,8 @@
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
     <gap:plugin name="com.vladstirbu.cordova.instagram" version="0.4.1" />
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+    <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+    <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="DisallowOverscroll" value="true" />
