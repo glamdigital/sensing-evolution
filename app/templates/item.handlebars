@@ -3,16 +3,16 @@
 </div>
 
 <div class="hint-container">
-    <!--<a href="#" class="show-hint">Need a hint?</a>-->
     <smaller>({{beaconHint}} beacon)</smaller>
-    <h4>How to find this object</h4>
-    <p>{{hint}}</p>
     <h5>Location: {{location}}</h5>
 </div>
 
 <div class="search-item">
     <img class="item-image" src="img/{{hint_image}}">
-    <img class="item-image" src="img/{{map_image}}">
+    <a><div class="black-bar map-link">Show on Map</div></a>
+    <div class="map-container">
+        <img class="map-image" src="img/{{map_image}}">
+    </div>
 </div>
 
 <div class="found-item">
@@ -22,7 +22,6 @@
     {{/if}}
     <h5>Location: {{location}}</h5>
     <p class="description">{{description}}</p>
-    <!--<a href="#/restart" class="restart-all">Restart</a>-->
 </div>
 
 <div class="question">

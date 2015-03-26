@@ -99,6 +99,8 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
+      "click .map-link" : "showMap",
+      "click .map-container" : "hideMap"
     },
 
     onClickImage: function(ev) {
@@ -108,6 +110,21 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
         ev.preventDefault();
       $('.show-hint').hide();
       $('.hint').show();
+    },
+
+    showMap: function(ev) {
+      $('.map-container').show();
+        //reposition to center on screen;
+        var $img = $('img.map-image');
+        var sHeight = $(window).height();
+        var imgHeight = $img.height();
+        var offset = (sHeight - imgHeight)/2;
+        $img.css('top', '' + offset + 'px');
+
+    },
+
+    hideMap: function(ev) {
+      $('.map-container').hide();
     },
 
     toggleNavMenu: function(ev)

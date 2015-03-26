@@ -88,28 +88,94 @@ table.social-links-table {
   margin-top: 40px;
 }
 
-div.audio {
+div.black-bar {
   width: auto;
-  height: $audio-height;
   background: black;
   padding: 5px 12px;
   color: white;
   font-size: 1em;
   line-height: 2.2em;
-  img.audio-control-icon {
+  &.audio {
     height: $audio-height;
-    width: $audio-height;
-    float: right;
-    padding: 0px 10px;
-    &.pause {
-      display: none;
+    img.audio-control-icon {
+      height: $audio-height;
+      width: $audio-height;
+      float: right;
+      padding: 0px 10px;
+      &.pause {
+        display: none;
+      }
+      &.restart {
+        display: none;
+      }
+      &.speaker {
+        padding-right: 20px;
+        float: left;
+      }
     }
-    &.restart {
-      display: none;
+  }
+  &.map-link {
+    height: 40px;
+  }
+}
+
+.map-container {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: black;
+  width: 100%;
+  height: 400%;
+  text-align: center;
+  img.map-image {
+    max-width: 100%;
+    position: relative;
+  }
+}
+
+.prompt {
+  position: fixed;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+
+  .user-prompt {
+    padding: 10px 0px;
+    background-color: black;
+    &.title {
+      font-size: 1.1em;
     }
-    &.speaker {
-      padding-right: 20px;
-      float: left;
+    &.subtitle {
+      font-size: 0.8em;
+      border-bottom: solid 1px grey;
     }
+  }
+}
+
+.white-edge {
+  width: 100%;
+  height: 100px;
+//  background-color: white;
+  background: linear-gradient(transparent, white);
+  opacity: 0.8;
+
+}
+.button-holder {
+  background-color: black;
+  width: 100%;
+
+  .prompt-button {
+    width: 48%;
+    display: inline-block;
+    background-color: black;
+    font-weight: bold;
+    padding: 10px 0px;
+    &.no {
+      border-right: solid 1px grey;
+    }
+
   }
 }

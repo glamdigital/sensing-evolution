@@ -36,10 +36,12 @@ define(["backbone", "hbs!app/templates/topic"],
                     return;
                 }
                 var $itemListEntry = $('#item-'+item.attributes.slug);
-
+                if($itemListEntry.length == 0) {
+                    alert("No item list entries found for item")
+                }
                 if(data.proximity === 'ProximityImmediate' || data.proximity == 'ProximityNear')
                 {
-                    //vibrate if this is a transition to near
+                    ////vibrate if this is a transition to near
                     if(navigator.notification && !$itemListentry.hasClass('nearby')) {
                         navigator.notification.vibrate(500);
                     }
