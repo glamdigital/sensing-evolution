@@ -15,3 +15,6 @@ app/libs
 *.csv
 .grunt
 _SpecRunner.html
+www
+
+*.css.map

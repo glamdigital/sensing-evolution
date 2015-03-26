@@ -87,6 +87,22 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+        main: {
+            files: [
+                {   expand: true,
+                    src: ["app/built.js",
+                        "app/data/**",
+                        "img/**",
+                        "video/**",
+                        "css/**",
+                        ],
+                    dest: "www" },
+                {   src: ["index-built.html"],
+                    dest: "www/index.html" }
+            ]
+        }
+    },
     compress: {
       release: {
         options: {
@@ -164,7 +180,50 @@ module.exports = function(grunt) {
                 }
             }
         }
+    },
+    cordovacli: {
+        options: {
+            path: 'app'
+        },
+        ios: {
+            options: {
+                command: 'build',
+                platforms: ['ios']
+            }
+        },
+        android: {
+            options: {
+                command: 'build',
+                platforms: ['android']
+            }
+        },
+        android_e: {
+            options: {
+                command: 'emulate',
+                platforms: ['android'],
+                args: ['--target', 'Nexus5']
+            }
+        },
+        ios_e: {
+            options: {
+                command: 'emulate',
+                platforms: ['ios']
+            }
+        },
+        android_r: {
+            options: {
+                command: 'run',
+                platforms: ['android']
+            }
+        },
+        ios_r: {
+            options: {
+                command: 'run',
+                platforms: ['ios']
+            }
+        }
     }
+
   });
 
   // These plugins provide necessary tasks.
@@ -176,10 +235,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-phonegap-build');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-convert');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-
+  grunt.loadNpmTasks('grunt-cordovacli');
 
   grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
 
@@ -196,6 +256,14 @@ module.exports = function(grunt) {
     //package
     grunt.task.run('package');
     grunt.task.run('push:' + token);
+  });
+
+  grunt.registerTask('packageLocal', 'prepares for local build by compiling js/css and copying assets across', ['requirejs', 'compass', 'copy'])
+  //grunt localbuild:<ios|android>
+  grunt.registerTask('localbuild', "Runs the appropriate pre-build steps then invokes cordova's build command", function(arg) {
+     grunt.task.run('packageLocal');
+      if (!arg) { arg='build_ios'; }
+      grunt.task.run('cordovacli:' + arg);
   });
 
   grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items', 'convert:questions']);
