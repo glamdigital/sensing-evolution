@@ -32,7 +32,6 @@ define(['backbone', 'jquery', 'hbs!app/templates/user_prompt'], function(Backbon
             if(this.vibrate && navigator.notification) {
                 navigator.notification.vibrate(500);
             }
-            alert("Showing User Prompt");
         },
 
         events: {

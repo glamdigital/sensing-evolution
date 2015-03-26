@@ -15,9 +15,7 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
                     this.listenTo(Backbone, eventId, this.beaconRanged);
                     this.beaconsDict[beaconID.toString()] = topic;
                 }, this);
-                var el = $('#prompt');
-                this.alertView = new Backbone.View({el:el});
-                el.hide();
+                this.promptsSuppressed = false;
 
             },
 
@@ -28,8 +26,8 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
                         //This is a new floor. update current floor and emit a message
                         this.currentTopic = this.beaconsDict[data.major.toString()];
                         Backbone.trigger('changed_floor', this.currentTopic.attributes.slug);
-                        alert('On a new floor');
-                        if(FloorTracking.promptToSwitch) {
+                        if(FloorTracking.promptToSwitch && !this.promptsSuppressed) {
+                            this.suppressPrompts();
                             this.promptToSwitchFloor();
                         }
                     }
@@ -38,9 +36,6 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
             promptToSwitchFloor: function(floorSlug) {
                 var title = "Entering " + this.currentTopic.attributes.title;
                 var message = "Switch to this area?";
-                //var buttonLabels = ['Not now', 'OK'];
-                //navigator.notification.confirm(message, _.bind(this.userChoseToSwitchFloor, this),
-                //title, buttonLabels);
 
                 //create the alert view
                 var view = new UserPromptView( {
@@ -50,32 +45,40 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
                     yes_string: 'OK',
                     no_string: 'Not Now',
                     yesCallback: this.switchFloor.bind(this),
-                    noCallback: null,
+                    noCallback: this.unsuppressPromptsWithDelay.bind(this),
                     vibrate: 500
                 });
 
                 view.render();
-
-                this.alertView.setView(view);
             },
 
             switchFloor: function() {
                 Backbone.history.navigate('#/topic/' + this.currentTopic.attributes.slug);
+                this.unsuppressPromptsWithDelay(5000);
             },
 
-            userChoseToSwitchFloor: function(buttonIndex) {
-                if(buttonIndex == 2) {
-                    Backbone.history.navigate('#/topic/' + this.currentTopic.attributes.slug);
-                }
+            //suppress prompts - don't bother the user with them if they've recently seen one.
+            suppressPrompts: function() {
+                this.promptsSuppressed = true;
+            },
+
+            unsuppressPromptsWithDelay: function(delay) {
+                //default to 3s
+                if(!delay) { delay = 3000; }
+                setTimeout(this.unsuppressPrompts.bind(this), delay);
+            },
+
+            unsuppressPrompts: function() {
+                this.promptsSuppressed = false;
             },
 
             currentTopic: null,
             beaconsDict: {}
         },
-            {
-                //Class attribute enabled flag. Can be enabled/disabled by views
-                promptToSwitch:true
-            }
+        {
+            //Class attribute enabled flag. Can be enabled/disabled by views
+            promptToSwitch:true
+        }
         );
 
         return FloorTracking;
