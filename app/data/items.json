@@ -8,7 +8,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d1buckland.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d1buckland.png",
     "hint": "This object is in the far left hand corner of the court in the cabinet labelled ‘Recycling Display’ (as you look away from the shop and towards the back of the museum).",
     "code": "1111",
     "beaconMajor": "2889"
@@ -22,7 +22,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d2hyaena.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d2hyaena.png",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
     "code": "1111",
     "beaconMajor": "9125"
@@ -36,7 +36,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d3megalosaurus.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d3megalosaurus.png",
     "hint": "Look for the 'Megalosaurus' case near the T. rex",
     "code": "1111",
     "beaconMajor": "4005"
@@ -50,7 +50,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d4icthyosaur.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d4icthyosaur.png",
     "hint": "Look for the 'Ichthyosaurs' case",
     "code": "1111",
     "beaconMajor": "11889"
@@ -64,7 +64,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d5pepperedmoth.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d5pepperedmoth.png",
     "hint": "Look for the display called 'Natural Selection at Work'",
     "code": "1111",
     "beaconMajor": "50339"
@@ -78,7 +78,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d6darwin.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d6darwin.png",
     "hint": "Look for the display called 'Darwin's Principles'",
     "code": "1111",
     "beaconMajor": "14250"
@@ -92,7 +92,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d7reptiles.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d7reptiles.png",
     "hint": "Head for the Sensing Evolution Reptiles table",
     "code": "1111",
     "beaconMajor": "63308"
@@ -106,7 +106,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "d8archaeopteryx.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d8archaeopteryx.png",
     "hint": "TBC",
     "code": "1111",
     "beaconMajor": "47050"
@@ -120,7 +120,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i1darwin.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i1darwin.png",
     "hint": "One of the statues is of Charles Darwin…",
     "code": "1111",
     "beaconMajor": "2889"
@@ -134,7 +134,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i2ourplace.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i2ourplace.png",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
     "code": "1111",
     "beaconMajor": "9125"
@@ -148,7 +148,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i3success.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i3success.png",
     "hint": "Head for the Sensing Evolution Mammals table",
     "code": "1111",
     "beaconMajor": "4005"
@@ -162,7 +162,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i4dna.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i4dna.png",
     "hint": "Look for the spinning DNA model",
     "code": "1111",
     "beaconMajor": "11889"
@@ -176,7 +176,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i5archaeopteryx.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i5archaeopteryx.png",
     "hint": "TBC",
     "code": "1111",
     "beaconMajor": "50339"
@@ -190,7 +190,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i6horse.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i6horse.png",
     "hint": "The Evolution of the Horse' display is tucked away in one of the 'cloisters'",
     "code": "1111",
     "beaconMajor": "14250"
@@ -204,7 +204,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i7naturalselection.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i7naturalselection.png",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
     "code": "1111",
     "beaconMajor": "63308"
@@ -218,7 +218,7 @@
     "image": "fossil1.jpg",
     "hint_image": "fossil1.jpg",
     "video": "i8sexualselection.mp4",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i8sexualselection.png",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
     "code": "1111",
     "beaconMajor": "47050"

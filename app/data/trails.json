@@ -7,7 +7,7 @@
     "trail_icon_image": "dodo_logo.jpeg",
     "video": "d0intro.mp4",
     "video_caption": "with Steve Backshall",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/d0intro.png",
     "fixed_order": "FALSE"
   },
   {
@@ -18,7 +18,7 @@
     "trail_icon_image": "dodo_logo.jpeg",
     "video": "i0intro.mp4",
     "video_caption": "with Alice Roberts",
-    "video_poster": "video_posters/test_poster.png",
+    "video_poster": "video_posters/i0intro.png",
     "fixed_order": "FALSE"
   }
 ]

@@ -1,24 +1,26 @@
-define(["backbone"], function(Backbone) {
+define(["backbone", "underscore"], function(Backbone, _) {
 
   var Question = Backbone.Model.extend({
     parse: function(response) {
       //collate the correct/incorrect response fields into an array of answer objects
       var q = { answers: []};
-      q.answers.push ( { text: response.correctAnswer,
+	    var answers = [];
+      answers.push ( { text: response.correctAnswer,
                        response: response.correctResponse,
                        isCorrect: true,
                        id: 1
                      });
-      q.answers.push ( { text: response.incorrectAnswer1,
+      answers.push ( { text: response.incorrectAnswer1,
                       response: response.incorrectResponse1,
                       isCorrect: false,
                       id: 2
                     });
-      q.answers.push ( { text: response.incorrectAnswer2,
+      answers.push ( { text: response.incorrectAnswer2,
                       response: response.incorrectResponse2,
                       isCorrect: false,
                       id: 3
                     });
+	    q.answers = _.shuffle(answers)
       q.slug = response.slug;
       q.item = response.item;
       q.question = response.question;
@@ -37,7 +39,6 @@ define(["backbone"], function(Backbone) {
         }
         i++;
       }
-
 
       return q;
     },

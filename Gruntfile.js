@@ -244,7 +244,14 @@ module.exports = function(grunt) {
             }
         }
     },
-    clean: ["www","platforms/android/res/raw"]
+    clean: ["www","platforms/android/res/raw"],
+	ffmpeg: {
+		options: {
+			FFmpegOptions: {
+
+			}
+		}
+	}
 
   });
 
