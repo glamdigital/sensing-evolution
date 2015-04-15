@@ -100,11 +100,6 @@ module.exports = function(grunt) {
                     dest: "www" },
                 {   src: ["index-built.html"],
                     dest: "www/index.html" },
-                {
-                    expand: true,
-                    src: ["video/**"],
-                    dest: "platforms"
-                }
             ]
         },
         android: {
@@ -120,7 +115,7 @@ module.exports = function(grunt) {
                 },
                 {   expand: true,
 	                flatten: true,
-                    src: ["video/**"],
+                    src: ["video/*"],
                     dest: "platforms/android/res/raw"
                 },
                 {   src: ["index-built.html"],

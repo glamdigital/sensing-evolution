@@ -14,8 +14,10 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
             this.video = this.$video[0];
 
             //initiailize the video plugin
+            //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
+	        var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
             window.plugins.html5Video.initialize({
-                "introvideo" : this.trail.attributes.video,
+                "introvideo" : videoPath + this.trail.attributes.video,
             });
 
             setTimeout(this.startVideo.bind(this), 500);

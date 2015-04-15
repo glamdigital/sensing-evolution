@@ -37,7 +37,9 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       var eventData = { question: this.question, url:this.nextURL };
       this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
 
-      window.plugins.html5Video.initialize({"foundVideo": this.item.attributes.video});
+	    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
+	    var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
+      window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
 
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});

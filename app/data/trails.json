@@ -13,7 +13,7 @@
   {
     "slug": "Investigate",
     "title": "Investigate",
-    "subtitle": "",
+    "subtitle": "Learn more about evolution",
     "instructions": "Follow the clues to find the items within the museum.\nThe app should trigger automatically as you approach the correct item, or you can enter the unlock code shown next to the item.\nLook out for the Sensing Evolution logo.",
     "trail_icon_image": "dodo_logo.jpeg",
     "video": "i0intro.mp4",
