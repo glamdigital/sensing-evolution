@@ -13,9 +13,18 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
             this.$video = $('#intro-video');
             this.video = this.$video[0];
 
+            //initiailize the video plugin
+            window.plugins.html5Video.initialize({
+                "introvideo" : this.trail.attributes.video,
+            });
+
+            setTimeout(this.startVideo.bind(this), 500);
             this.$video.on('ended', this.showStartLink);
         },
-
+        startVideo: function() {
+	        console.log("Playing video");
+          window.plugins.html5Video.play('introvideo', this.showStartLink);
+        },
         serialize: function() {
             var out = this.trail.toJSON();
             out.nextURL = this.nextURL;
@@ -33,8 +42,7 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 
         replayVideo: function(ev) {
           ev.preventDefault();
-          this.video.currentTime = 0;
-          this.video.play();
+          window.plugins.html5Video.play('introvideo');
 
             //hide controls
             $('.buttons-container').hide();

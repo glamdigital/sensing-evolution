@@ -1,0 +1,44 @@
+Node version: v0.10.33
+
+Cordova version: 4.3.0
+
+Config.xml file: 
+
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="uk.ac.ox.museums.sensingevolution" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Sensing Evolution</name>
+    <description>
+        A test app for ibeacon functionality
+    </description>
+    <author email="dev@cordova.apache.org" href="http://www.it.ox.ac.uk">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <gap:plugin name="com.unarin.cordova.beacon" version="3.2.1" />
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+    <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="orientation" value="landscape" />
+
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
+
+    <gap:config-file platform="ios" parent="UIStatusBarHidden">
+        <true/>
+    </gap:config-file>
+
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+    </gap:config-file>
+</widget>
+
+
+Plugins: 
+
+com.unarin.cordova.beacon
+
+No Platforms Currently Installed
+

@@ -28,29 +28,29 @@
     "fixed_order": "TRUE"
   },
   {
-    "slug": "topic1",
-    "title": "TBD",
+    "slug": "origin",
+    "title": "Origin of species",
     "trail1": "Investigate",
     "trail2": "",
     "fixed_order": "TRUE"
   },
   {
-    "slug": "topic2",
-    "title": "TBD",
+    "slug": "reproduction",
+    "title": "Reproduction, reproduction",
     "trail1": "Investigate",
     "trail2": "",
     "fixed_order": "TRUE"
   },
   {
-    "slug": "topic3",
-    "title": "TBD",
+    "slug": "ancestors",
+    "title": "Ancient ancestors",
     "trail1": "Investigate",
     "trail2": "",
     "fixed_order": "TRUE"
   },
   {
-    "slug": "topic4",
-    "title": "TBD",
+    "slug": "selection",
+    "title": "Selection in action",
     "trail1": "Investigate",
     "trail2": "",
     "fixed_order": "TRUE"

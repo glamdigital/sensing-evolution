@@ -5,7 +5,7 @@
     "subtitle": "Learn the basic ideas behind evolution",
     "instructions": "Follow the clues to find the items within the museum.\nThe app should trigger automatically as you approach the correct item, or you can enter the unlock code shown next to the item.\nLook out for the Sensing Evolution logo.",
     "trail_icon_image": "dodo_logo.jpeg",
-    "video": "0. INTRODUCTION V2.mp4",
+    "video": "d0intro.mp4",
     "video_caption": "with Steve Backshall",
     "video_poster": "video_posters/test_poster.png",
     "fixed_order": "FALSE"
@@ -16,9 +16,9 @@
     "subtitle": "",
     "instructions": "Follow the clues to find the items within the museum.\nThe app should trigger automatically as you approach the correct item, or you can enter the unlock code shown next to the item.\nLook out for the Sensing Evolution logo.",
     "trail_icon_image": "dodo_logo.jpeg",
-    "video": "",
-    "video_caption": "",
-    "video_poster": "",
+    "video": "i0intro.mp4",
+    "video_caption": "with Alice Roberts",
+    "video_poster": "video_posters/test_poster.png",
     "fixed_order": "FALSE"
   }
 ]

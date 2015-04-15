@@ -44,7 +44,7 @@ h1 {
       position: relative;
       top: 50px;
       min-height: 100px;
-      background-color: black;
+      background-color: transparent;
       width: 50%;
       margin-left: auto;
       margin-right: auto;
@@ -59,6 +59,7 @@ h1 {
 
 video {
     width: 100%;
+    z-index: 1000;
     &.finished {
 //      Shrink down the video once it's finished in order to reveal the start button
       @media #{$phone} and #{$landscape} {
@@ -71,6 +72,8 @@ video {
   @include transition-property(max-height);
   @include transition-duration(0.25s);
 }
+
+.nav-menu::-webkit-scrollbar {display:none;}
 
 .nav-menu {
   h3 {

@@ -99,9 +99,35 @@ module.exports = function(grunt) {
                         ],
                     dest: "www" },
                 {   src: ["index-built.html"],
-                    dest: "www/index.html" }
+                    dest: "www/index.html" },
+                {
+                    expand: true,
+                    src: ["video/**"],
+                    dest: "platforms"
+                }
             ]
-        }
+        },
+        android: {
+            files: [
+                {
+                    expand: true,
+                    src: ["app/built.js",
+                        "app/data/**",
+                        "img/**",
+                        "css/**",
+                        ],
+                    dest: "www"
+                },
+                {   expand: true,
+	                flatten: true,
+                    src: ["video/**"],
+                    dest: "platforms/android/res/raw"
+                },
+                {   src: ["index-built.html"],
+                    dest: "www/index.html"
+                }
+            ]
+        },
     },
     compress: {
       release: {
@@ -222,7 +248,8 @@ module.exports = function(grunt) {
                 platforms: ['ios']
             }
         }
-    }
+    },
+    clean: ["www","platforms/android/res/raw"]
 
   });
 
@@ -240,6 +267,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-convert');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-cordovacli');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
 
@@ -258,11 +286,18 @@ module.exports = function(grunt) {
     grunt.task.run('push:' + token);
   });
 
-  grunt.registerTask('packageLocal', 'prepares for local build by compiling js/css and copying assets across', ['requirejs', 'compass', 'copy'])
+  grunt.registerTask('packageLocalAndroid', 'prepares for local build by compiling js/css and copying assets across', ['clean','requirejs', 'compass', 'clean', 'copy:android']);
+  grunt.registerTask('packageLocal', 'prepares for local build by compiling js/css and copying assets across', ['requirejs', 'compass', 'clean', 'copy']);
   //grunt localbuild:<ios|android>
   grunt.registerTask('localbuild', "Runs the appropriate pre-build steps then invokes cordova's build command", function(arg) {
-     grunt.task.run('packageLocal');
       if (!arg) { arg='build_ios'; }
+      //use different package step for android
+      if(arg.indexOf('android') >=0 ) {
+          grunt.task.run('packageLocalAndroid');
+      }
+      else {
+          grunt.task.run('packageLocal');
+      }
       grunt.task.run('cordovacli:' + arg);
   });
 

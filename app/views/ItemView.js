@@ -37,6 +37,8 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       var eventData = { question: this.question, url:this.nextURL };
       this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
 
+      window.plugins.html5Video.initialize({"foundVideo": this.item.attributes.video});
+
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
         this.unlockView.render();
@@ -95,11 +97,11 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
     },
     playVideo: function(ev) {
-      this.video.play();
+      //this.video.play();
         this.$video.addClass('playing');
-        //hide the play control
+      //  //hide the play control
         $('.play-button').hide();
-
+      window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
     },
     showHint: function(ev) {
         ev.preventDefault();
@@ -116,7 +118,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
                                         });
       questionView.render();
         //mark the video element as finished
-        $(ev.target).parents('div').addClass("finished");
+        $('video').parents('div').addClass("finished");
 
         //show the replay button
         $('#replay').show();
