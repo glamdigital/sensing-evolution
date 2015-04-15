@@ -39,7 +39,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
 
 	    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
 	    var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
-      window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
+        window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
 
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
@@ -93,13 +93,11 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
       "click .play-button" : "playVideo",
-      // "ended #foundVideo" : "showQuestion"       //This doesn't appear to work. Need to bind in initialize instead.
     },
     onClickImage: function(ev) {
       Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
     },
     playVideo: function(ev) {
-      //this.video.play();
         this.$video.addClass('playing');
       //  //hide the play control
         $('.play-button').hide();
@@ -131,7 +129,6 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
         content.toggleClass('slideout');
     }
 
-    //allQuestions: allQuestions
   }
   );
 

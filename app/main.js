@@ -28,46 +28,11 @@ require(['jquery','backbone', 'app/logging', 'layoutmanager', 'app/router', 'app
         Trail.loadTopics( function() {
             var router = new Router();
             //start the app
-            //register all videos
             Backbone.history.start();
             Logging.logToDom("Started the app");
-
-                allTrails = new TrailsCollection();
-                allTrails.fetch({
-                    error: function(coll, resp, opt) {
-                        console.log("error fetching trails: ");
-                        console.log(resp);
-                    },
-                    success: function(coll, resp, opt)
-                    {
-                        //get all videos from
-                        register_videos(coll, Topic.allItems);
-                    }.bind(this)
-                });
-
-                //register id-file relationships withe the html5 video plugin
-                var registerVideos = function() {
-                    var trails = new TrailsCollection();
-                    var items = Topic.AllItems;
-                }
 
           });
       });
     });
-
-    var register_videos = function(allTrails, allItems) {
-        console.log("Registering videos");
-        var videos = {};
-        //build a dictionary of all videos - each trail intro and each item found video
-        allTrails.each(function(trail) {
-            videos[trail.attributes.slug] = trail.attributes.video;
-        }.bind(this));
-
-        Topic.allItems.each(function(item) {
-            videos[item.attributes.slug] = item.attributes.video;
-        }.bind(this));
-
-        //window.plugins.html5Video.initialize(videos);
-    };
 
 });
