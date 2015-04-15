@@ -37,10 +37,11 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       var eventData = { question: this.question, url:this.nextURL };
       this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
 
-	    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
-	    var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
-        window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
-
+	    if(typeof(device)!='undefined') {
+		    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
+		    var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
+		    window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
+	    }
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
         this.unlockView.render();
@@ -101,7 +102,12 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
         this.$video.addClass('playing');
       //  //hide the play control
         $('.play-button').hide();
-      window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
+	    if(typeof(device)!='undefined') {
+		    window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
+	    } else {
+		    //browser
+		    this.$video[0].play();
+	    }
     },
     showHint: function(ev) {
         ev.preventDefault();

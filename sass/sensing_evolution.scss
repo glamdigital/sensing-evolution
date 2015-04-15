@@ -29,7 +29,7 @@ h1 {
 
 
 .video-holder {
-  @media #{$phone} and #{$landscape} {
+//  @media #{$phone} and #{$landscape} {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,7 +54,7 @@ h1 {
       &.show {
         display: block;
       }
-    }
+//    }
 }
 
 video {

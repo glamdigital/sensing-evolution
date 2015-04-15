@@ -15,12 +15,13 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 
             //initiailize the video plugin
             //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
-            var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
-	        console.log("Initializing video");
-            window.plugins.html5Video.initialize({
-                "introvideo" : videoPath + this.trail.attributes.video,
-            });
-			console.log(window.plugins.html5Video._videos);
+	        if(typeof(device)!='undefined') {
+		        var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
+		        console.log("Initializing video");
+		        window.plugins.html5Video.initialize({
+			        "introvideo": videoPath + this.trail.attributes.video,
+		        });
+	        }
 
             setTimeout(this.startVideo.bind(this), 2000);
             this.$video.on('ended', this.showStartLink);
@@ -28,7 +29,11 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
         },
         startVideo: function() {
 	        console.log("Playing video");
-            window.plugins.html5Video.play('introvideo', this.showStartLink);
+	        if(typeof(device)!='undefined') {
+		        window.plugins.html5Video.play('introvideo', this.showStartLink);
+	        } else {
+		        this.video.play();
+	        }
         },
         serialize: function() {
             var out = this.trail.toJSON();
