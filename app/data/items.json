@@ -123,7 +123,7 @@
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
     "code": "1111",
-    "beaconMajor": "2889"
+    "beaconMajor": "14250"
   },
   {
     "slug": "origin2",
@@ -137,7 +137,7 @@
     "video_poster": "video_posters/i2ourplace.jpg",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
     "code": "1111",
-    "beaconMajor": "9125"
+    "beaconMajor": "21925"
   },
   {
     "slug": "reproduction1",
@@ -151,7 +151,7 @@
     "video_poster": "video_posters/i3success.jpg",
     "hint": "Head for the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "4005"
+    "beaconMajor": "22691"
   },
   {
     "slug": "reproduction2",
@@ -165,7 +165,7 @@
     "video_poster": "video_posters/i4dna.jpg",
     "hint": "Look for the spinning DNA model",
     "code": "1111",
-    "beaconMajor": "11889"
+    "beaconMajor": "53044"
   },
   {
     "slug": "ancestors1",
@@ -179,7 +179,7 @@
     "video_poster": "video_posters/i5archaeopteryx.jpg",
     "hint": "TBC",
     "code": "1111",
-    "beaconMajor": "50339"
+    "beaconMajor": "47050"
   },
   {
     "slug": "ancestors2",
@@ -193,7 +193,7 @@
     "video_poster": "video_posters/i6horse.jpg",
     "hint": "The Evolution of the Horse' display is tucked away in one of the 'cloisters'",
     "code": "1111",
-    "beaconMajor": "14250"
+    "beaconMajor": "61866"
   },
   {
     "slug": "selection1",
@@ -207,7 +207,7 @@
     "video_poster": "video_posters/i7naturalselection.jpg",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
     "code": "1111",
-    "beaconMajor": "63308"
+    "beaconMajor": "50197"
   },
   {
     "slug": "selection2",
@@ -221,6 +221,6 @@
     "video_poster": "video_posters/i8sexualselection.jpg",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
     "code": "1111",
-    "beaconMajor": "47050"
+    "beaconMajor": "47967"
   }
 ]

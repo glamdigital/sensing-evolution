@@ -1,8 +1,6 @@
 @import "compass/css3";
 $phone: "only screen and (max-width: 767px)";
 $tablet: "only screen and (min-width: 768px)";
-$landscape-test: "only screen and (orientation: landscape)";
-$portrait-test: "only screen and (orientation: portrait)";
 $landscape: "(orientation:landscape)";
 $portrait: "(orientation:portrait)";
 $standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
@@ -27,9 +25,8 @@ h1 {
 }
 
 
-
+// Used on the trail_intro page
 .video-holder {
-//  @media #{$phone} and #{$landscape} {
     position: absolute;
     top: 0;
     left: 0;
@@ -52,10 +49,12 @@ h1 {
         padding: 30px;
       }
       &.show {
+        // show class is added after the video finishes
         display: block;
       }
-//    }
 }
+
+// applies to the 'found item' video
 
 video {
     width: 100%;
@@ -69,13 +68,16 @@ video {
     }
   }
 
+  //shrink down gracefully rather than popping
   @include transition-property(max-height);
   @include transition-duration(0.25s);
 }
 
+//Hide the scroll bar on the nav menu for android - it appears on top of everything else
 .nav-menu::-webkit-scrollbar {display:none;}
 
 .nav-menu {
+  //'sensing evolution' title
   h3 {
     font-weight: normal;
   }
@@ -90,14 +92,19 @@ video {
   font-size: smaller;
   overflow-y: scroll;
 
+  //trail name
   h4 {
     margin: 5px 0px;
     font-weight: normal;
   }
+
+  //list of items
   ul {
     list-style: none;
     padding-left: 10px;
     margin: 2px;
+
+    //the li for the item the user is currently on
     li.current {
       margin: 10px;
       border-style: solid;
@@ -135,9 +142,9 @@ a.nav-link {
   z-index: 2;
   width: 100%;
   height: 100%;
-//  overflow: scroll;
   position: fixed;
 
+  //if the nav menu is shown
   &.slideout{
     left: $navBarWidth;
   }
@@ -147,6 +154,8 @@ a.nav-link {
   @include transition-duration(0.25s);
 }
 
+
+//Header across the top of the content page
 .header {
     background-color: #f4f4f4;
     width: 100%;
@@ -168,6 +177,7 @@ a.nav-link {
     }
 }
 
+// Unused?
 .topic {
   padding: $standardPadding;
   width: 100%;
@@ -196,7 +206,9 @@ h3 {
   padding: $standardPadding;
   float: left;
   text-align: center;
-  width: 100%;
+  width: 45%;
+
+  //Thumbnail/map image
   img {
     @media #{$phone} and #{$landscape} {
       width: 80%;
@@ -209,20 +221,20 @@ h3 {
     width: 80%;
     max-height: 40%;
   }
-  .dev-control {
-    float: right;
-  }
-  @media #{$landscape} {
-    width: 45%;
-  }
+
 }
 
+//container for the hint on the item page
 .hint-container {
   text-align: center;
   margin-left: 50%;
+
+  //button offering hint to user
   .button {
     margin: 20px 10px 10px 10px;
   }
+
+  //hint text itself
   .hint {
     display: none;
     &.revealed {
@@ -232,6 +244,7 @@ h3 {
   }
 }
 
+//title on the item page
 div.item-title {
   h3.name {
     font-style: italic;
@@ -244,6 +257,7 @@ div.item-title {
   }
 }
 
+//Proximity indiciator on item page
 .proximity-indicator {
   background-color: #999999;
   border-radius: 20px;
@@ -252,6 +266,8 @@ div.item-title {
   position: fixed;
   left: 75%;
   top: 0px;
+
+  //one additional class added dependent on input range
   &.far {
     background-color: lightcoral;
   }
@@ -263,7 +279,10 @@ div.item-title {
   }
 }
 
-
+//container for what is shown after the user finds the item
+// - video
+// - congratulations text
+// - replay button
 .found-item {
   position: relative;
   top: -45px;
@@ -286,6 +305,7 @@ div.item-title {
     clear: both;
   }
 
+  //shrink video down after it's finished playing
   &.finished {
     clear: none;
     float: left;
@@ -297,6 +317,8 @@ div.item-title {
       top: 120px;
     }
   }
+
+  //fullscreen video while it's playing
   video.playing {
     position: fixed;
     top: 0px;
@@ -307,6 +329,7 @@ div.item-title {
   @include transition-property(max-width);
   @include transition-duration(0.25s);
 
+  // play / play again buttons
   .play-button {
     position: relative;
     top: 125px;
@@ -325,29 +348,32 @@ div.item-title {
     margin-left: auto;
     margin-right: auto;
     clear: both;
-    @media #{$phone} and #{$portrait} {
-      width: 90%;
-      height: 90% * $videoAspectRatio;
-    }
     @media #{$tablet} and #{$landscape} {
       width: 90%;
       height: 90% * $videoAspectRatio;
     }
   }
+  //'well done' text
   h3 {
     color: darkgreen;
   }
 }
 
-
+//class for dev-controls
+// Make this display: none for final build
 .dev-control {
   display: block;
   font-size: x-small;
 }
 
+
+//container for questions
 .question {
   margin-left: 35%;
   max-height: 220px;
+
+  //some questions/answers are quite long. Allow overflow scrolling for this div.
+  // Somewhat hard to notice unfortunately.
   overflow-y: scroll;
   div {
     display: inline;
@@ -370,6 +396,7 @@ div.item-title {
             padding: 4px 10px;
             text-align: center;
 
+            //class added to answer button once picked, for red/green highlighting.
             &.chosen {
               background-color: red;
               border-style: none;
@@ -380,6 +407,7 @@ div.item-title {
 
           }
         }
+        //explanatory text after selecting an answer
         div.response {
           display: none;
           font-size: 1.0em;
@@ -389,6 +417,8 @@ div.item-title {
       }
       height: 100%;
     }
+
+    //buttons shown after answering
     .try-again {
       display: none;
       width: 35%;
@@ -402,14 +432,12 @@ div.item-title {
   }
 }
 
-.choose-trail {
-  float: left;
-  padding-right: $standardPadding;
-}
+//Shown after intro video finishes
 .start-trail {
   display:none;
 }
 
+//shared style for all buttons
 div.button {
   &.center {
     text-align: center;
@@ -430,34 +458,8 @@ div.button {
   display: block;
 }
 
-.media-test {
-  display: none;
-  background-color: blue;
-  padding: 10px;
-  width: 20%;
-  margin: 10px;
-  &.phone {
-    @media #{$phone} {
-      display: inline;
-    }
-  }
-  &.tablet {
-    @media #{$tablet} {
-      display: inline;
-    }
-  }
-  &.landscape {
-    @media #{$landscape-test} {
-      display: inline;
-    }
-  }
-  &.portrait {
-    @media #{$portrait-test} {
-      display: inline;
-    }
-  }
-}
 
+//container for the item unlock view on the item page
 .item-unlock {
   margin-top: 30px;
   text-align: center;
@@ -468,6 +470,8 @@ div.button {
   border: solid 1px black;
   border-radius: 5px;
   padding: 5px;
+
+  //classes added after attempted input code
   &.correct {
     border-color: darkgreen;
     color: darkgreen;
@@ -478,11 +482,15 @@ div.button {
   }
   .button {
   }
+
+  //key icon
   img {
     max-height: 100%;
     max-width: 100%;
     padding-left: 10px;
   }
+
+  //input field for typing in number
   input{
     height: 24px;
     padding: 3px 0px 3px 10px;
