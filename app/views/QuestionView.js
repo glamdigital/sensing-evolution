@@ -10,6 +10,17 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
           //this.nextURL = params.nextURL;
           this.session = params.session;
           this.shuffledAnswers = _.shuffle(this.question.attributes.answers);
+
+	        //init audio
+            if(typeof(Media) !== 'undefined') {
+
+	            var pathPrefix = ''
+                if(device.platform.toLowerCase() === "android") {
+                    pathPrefix = "/android_asset/www/";
+                }
+                this.correctAudio = new Media(pathPrefix + this.question.attributes.correctSound);
+	            this.incorrectAudio = new Media(pathPrefix + this.question.attributes.incorrectSound)
+                } else { console.log("Media plugin not available!");}
         },
 
         serialize: function() {
@@ -42,12 +53,13 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
               Backbone.trigger('complete-item', {slug: this.question.attributes.item});
 
 	          //Play the correct sound
-				$('#correct')[0].play();
+				this.correctAudio.play();
+
           } else {
             $('.try-again').show();
 
 	          //Play the incorrect sound
-	          $('#incorrect')[0].play();
+	          this.incorrectAudio.play();
           }
         },
 
