@@ -40,8 +40,14 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
             $('.proceed').show();
               //fire an event to say this item is complete
               Backbone.trigger('complete-item', {slug: this.question.attributes.item});
+
+	          //Play the correct sound
+				$('#correct')[0].play();
           } else {
             $('.try-again').show();
+
+	          //Play the incorrect sound
+	          $('#incorrect')[0].play();
           }
         },
 

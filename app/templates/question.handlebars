@@ -1,6 +1,8 @@
 <div>
 {{question}}
 <div class="questions">
+    <audio src="audio/{{correctSound}}" id="correct"></audio>
+    <audio src="audio/{{incorrectSound}}" id="incorrect"></audio>
   {{#each answers}}
     <div class="answer-container">
       <div class="answer {{#if isCorrect}}correct{{/if}} qId={{id}}">

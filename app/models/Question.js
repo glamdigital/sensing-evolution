@@ -25,6 +25,8 @@ define(["backbone", "underscore"], function(Backbone, _) {
       q.item = response.item;
       q.question = response.question;
       q.selectedAnswer = null;
+	    q.correctSound = response.correctSound;
+	    q.incorrectSound = response.incorrectSound;
 
       //read in the list of trails into a single array. The trails are parameters of id trail[n]
       q.trails = [];

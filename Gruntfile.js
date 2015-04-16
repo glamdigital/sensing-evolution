@@ -95,6 +95,7 @@ module.exports = function(grunt) {
                         "app/data/**",
                         "img/**",
                         "video/**",
+	                    "audio/**",
                         "css/**",
                         ],
                     dest: "www" },
@@ -109,6 +110,7 @@ module.exports = function(grunt) {
                     src: ["app/built.js",
                         "app/data/**",
                         "img/**",
+	                    "audio/**",
                         "css/**",
                         ],
                     dest: "www"
