@@ -90,13 +90,9 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
 
     //For browser simulation of 'finding' the object. Click on the picture
     events: {
-      "click img.item-image" : "onClickImage",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
       "click .play-button" : "playVideo",
-    },
-    onClickImage: function(ev) {
-      Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
     },
     playVideo: function(ev) {
         this.$video.addClass('playing');
