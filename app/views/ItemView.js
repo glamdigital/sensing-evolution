@@ -34,8 +34,8 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       this.$video = $('#foundVideo');
       this.video = this.$video[0];
 
-      var eventData = { question: this.question, url:this.nextURL };
-      this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
+      //var eventData = { question: this.question, url:this.nextURL };
+      //this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
 
 	    if(typeof(device)!='undefined') {
 		    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
@@ -114,7 +114,7 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
       //create and render question view
         $('video').removeClass('playing');
       var questionView = new QuestionView({ el: $('.question'),
-                                            question:ev.data.question,
+                                            question:this.question,
                                             //nextURL:ev.data.url
                                             session:this.session
                                         });

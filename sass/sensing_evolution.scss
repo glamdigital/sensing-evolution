@@ -17,6 +17,7 @@ $videoAspectRatio: 1.7777777778;
 body {
   font-family: $standardFontFamily;
   margin:0;
+//  font-size: 18px;
 }
 
 h1 {
@@ -362,7 +363,7 @@ div.item-title {
 //class for dev-controls
 // Make this display: none for final build
 .dev-control {
-  display: block;
+  display: none;
   font-size: x-small;
 }
 

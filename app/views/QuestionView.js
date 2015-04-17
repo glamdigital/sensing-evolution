@@ -19,7 +19,7 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
                     pathPrefix = "/android_asset/www/";
                 }
                 this.correctAudio = new Media(pathPrefix + this.question.attributes.correctSound);
-	            this.incorrectAudio = new Media(pathPrefix + this.question.attributes.incorrectSound)
+	            this.incorrectAudio = new Media(pathPrefix + this.question.attributes.incorrectSound);
                 } else { console.log("Media plugin not available!");}
         },
 
