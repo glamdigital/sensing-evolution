@@ -490,13 +490,18 @@ div.button {
 .item-unlock {
   margin-top: 30px;
   text-align: center;
-  margin: 20px 20px 20px 10px;
+  margin: 20px 0px 20px 10px;
   clear: both;
   height: 30px;
   float: right;
   border: solid 1px black;
   border-radius: 5px;
   padding: 5px;
+  z-index: 100;
+
+  //For some reason, the button doesn't respond on iPhone without this...
+  position: relative;
+  left: -10px;
 
   //classes added after attempted input code
   &.correct {

@@ -23,7 +23,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		        });
 	        }
 
-            setTimeout(this.startVideo.bind(this), 2000);
+            setTimeout(this.startVideo.bind(this), 5000);
             this.$video.on('ended', this.showStartLink.bind(this));
 
 			setTimeout(this.centreElements.bind(this), 100);
