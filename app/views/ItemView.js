@@ -78,7 +78,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       $('.search-item').hide();
       $('.hint-container').hide();
       $('.proximity-indicator').hide();
-
+        $('.before-found').hide();
 	    $('video').show();
 	    $('.play').show();
       //start the video after half a second
@@ -141,10 +141,11 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
         //show the replay button and thumbnail
 	    $('.found-item').show();
 
-		setTimeout(this.centreQuestion.bind(this), 50);
+		setTimeout(this.centreQuestion.bind(this), 100);
 
 	    //hide the video
 	    $('video').hide();
+	    $('.replay').show();
     },
 	  centreQuestion: function() {
 	    this.moveToVerticalCentre($('.question'));

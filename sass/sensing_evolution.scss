@@ -248,8 +248,9 @@ h3 {
       }
     }
     
+    margin-top: 3%;
+
     @media #{$tablet} {
-      margin-top: 10%;
       margin-right: 10%
     }
   }
@@ -261,7 +262,9 @@ div.item-title {
     text-align: center;
     padding-bottom: 20px;
     clear: right;
+    margin-top: 10%;
     @media #{$phone} and #{$landscape} {
+      margin-top: 15%;
       padding-bottom: 2px;
     }
   }
@@ -391,7 +394,7 @@ div.item-title {
 //container for questions
 .question {
   margin-left: 35%;
-  max-height: 220px;
+  max-height: 260px;
   @media #{$tablet} {
     max-height: 50%;
   }
@@ -487,7 +490,7 @@ div.button {
 .item-unlock {
   margin-top: 30px;
   text-align: center;
-  margin: 20px 10px 20px 10px;
+  margin: 20px 20px 20px 10px;
   clear: both;
   height: 30px;
   float: right;
