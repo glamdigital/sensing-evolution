@@ -5,15 +5,27 @@ define(["jquery", "underscore"], function($, _) {
 	var CentreMixin = {
 
 		moveToCentre: function($target) {
-			var h = $target.height();
-			var w = $target.width();
-			var wHeight = $(window).height();
-			var wWidth = $(window).width();
-			console.log("h=" + h + "; w= " + w);
-			var top = (wHeight-h)/2;
-			var left = (wWidth-w)/2;
-			$target.css('top', top + "px");
-			$target.css('left', left + "px");
+			this._moveToCentre($target, true, true)
+		},
+
+		_moveToCentre: function($target, vertical, horizontal) {
+			if(vertical) {
+				var h = $target.height();
+				var wHeight = $(window).height();
+				var top = (wHeight - h) / 2;
+				$target.css('top', top + "px");
+			}
+
+			if(horizontal) {
+				var w = $target.width();
+				var wWidth = $(window).width();
+				var left = (wWidth - w) / 2;
+				$target.css('left', left + "px");
+			}
+		},
+
+		moveToVerticalCentre: function($target) {
+			this._moveToCentre($target, true, false);
 		}
 	};
 

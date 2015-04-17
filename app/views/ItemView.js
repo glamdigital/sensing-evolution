@@ -35,7 +35,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       this.video = this.$video[0];
 
       //var eventData = { question: this.question, url:this.nextURL };
-      //this.$video.on('ended',  eventData, this.onVideoEnded.bind(this));
+      this.$video.on('ended', this.onVideoEnded.bind(this));
 
 	    if(typeof(device)!='undefined') {
 		    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
@@ -76,9 +76,11 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 
     findObject: function() {
       $('.search-item').hide();
-      $('.found-item').show();
       $('.hint-container').hide();
       $('.proximity-indicator').hide();
+
+	    $('video').show();
+	    $('.play').show();
       //start the video after half a second
       //setTimeout( _.bind(function() {
       //  this.video.play();
@@ -90,6 +92,9 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       Backbone.trigger('found-item');
       this.unlockView.remove();
 
+	    //center play button
+	    this.moveToCentre($('.play'));
+		this.moveToCentre($('#foundVideo'));
       navigator.notification.vibrate(500);
     },
 
@@ -109,6 +114,12 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 		    //browser
 		    this.$video[0].play();
 	    }
+
+
+	    //finish the video early for testing
+	    if(typeof(device) == 'undefined') {
+		    setTimeout(this.onVideoEnded.bind(this), 2000);
+	    }
     },
     showHint: function(ev) {
         ev.preventDefault();
@@ -125,11 +136,20 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
                                         });
       questionView.render();
         //mark the video element as finished
-        $('video').parents('div').addClass("finished");
+        $('video').parents('div').addClass("finished").removeClass("center-vertically");
 
-        //show the replay button
-        $('#replay').show();
+        //show the replay button and thumbnail
+	    $('.found-item').show();
+
+		setTimeout(this.centreQuestion.bind(this), 50);
+
+	    //hide the video
+	    $('video').hide();
     },
+	  centreQuestion: function() {
+	    this.moveToVerticalCentre($('.question'));
+	    this.moveToVerticalCentre($('.found-item'));
+	  },
     toggleNavMenu: function(ev)
     {
         var content = $('#content');
@@ -139,7 +159,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
   }
   );
 
-	    _.extend(ItemView.prototype, CentreMixin);
+    _.extend(ItemView.prototype, CentreMixin);
 
   return ItemView;
 

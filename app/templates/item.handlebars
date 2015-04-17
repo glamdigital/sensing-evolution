@@ -24,13 +24,15 @@
     </div>
 </div>
 
-<div class="found-item">
-    <div id="play" class="button center play-button">
-        <a>Play</a>
-    </div>
-    <video id='foundVideo' width="100%" height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
-        <source src="video/{{video}}" type="video/mp4">
-    </video>
+<video id='foundVideo' class='found center-vertically' width="100%" height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
+    <source src="video/{{video}}" type="video/mp4">
+</video>
+<div id="play" class="play play-button button center center-vertically">
+	<a>Play</a>
+</div>
+
+<div class="found-item center-vertically">
+    <img class="video_thumbnail" src="img/{{video_poster}}">
     <div id="replay" class="button center play-button replay hidden">
         <a>Watch Again</a>
     </div>
@@ -38,5 +40,5 @@
     <!--<a href="#/restart" class="restart-all">Restart</a>-->
 </div>
 
-<div class="question">
+<div class="question center-vertically">
 </div>

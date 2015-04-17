@@ -54,9 +54,9 @@ h1 {
         // show class is added after the video finishes
         display: block;
       }
-}
+    }
 
-// applies to the 'found item' video
+// applies to the intro video
 
 video {
     width: 100%;
@@ -294,80 +294,69 @@ div.item-title {
 // - congratulations text
 // - replay button
 .found-item {
+  width:20%;
   position: relative;
   top: -45px;
-  margin: auto;
+  margin: 0px 5%;
   display: none;
   padding: 0px;
   text-align: center;
-  @media #{$phone} {
-    padding: 0px 10px;
-    &.finished {
-      max-width: 70%;
-      top: 120px;
-    }
-  }
-  @media #{$phone}{
-    max-width: 50%;
-  }
-  @media #{$tablet} {
-    width: 100%;
-    clear: both;
-  }
+//  @media #{$phone} {
+//    padding: 0px 10px;
+//    &.finished {
+//      max-width: 70%;
+//      top: 120px;
+//    }
+//  }
+//  @media #{$phone}{
+//    max-width: 50%;
+//  }
+//  @media #{$tablet} {
+//    width: 100%;
+//    clear: both;
+//  }
+//
+//  //shrink video down after it's finished playing
+//  &.finished {
+//    clear: none;
+//    float: left;
+//    left: 10px;
+//    position: absolute;
+//    max-width: 25%;
+//    @media #{$portrait} {
+//      max-width: 100%;
+//      top: 120px;
+//    }
+//  }
 
-  //shrink video down after it's finished playing
-  &.finished {
-    clear: none;
-    float: left;
-    left: 10px;
-    position: absolute;
-    max-width: 25%;
-    @media #{$portrait} {
-      max-width: 100%;
-      top: 120px;
-    }
-  }
-
-  //fullscreen video while it's playing
-  video.playing {
-    position: fixed;
-    top: 0px;
-    left: 0px;
+  img.video_thumbnail {
     width: 100%;
+    height: auto;
   }
 
   @include transition-property(max-width);
   @include transition-duration(0.25s);
 
-  // play / play again buttons
-  .play-button {
-    position: relative;
-    top: 125px;
-    z-index: 5;
-    &.hidden {
-      display: none;
-    }
-    &.replay {
-      top: 0px;
-      width: 100%;
-      padding-bottom: 5px;
-    }
-  }
 
-  video.intro {
-    margin-left: auto;
-    margin-right: auto;
-    clear: both;
-    @media #{$tablet} and #{$landscape} {
-      width: 90%;
-      height: 90% * $videoAspectRatio;
-    }
-  }
+
   //'well done' text
   h3 {
     color: darkgreen;
   }
 }
+
+  //fullscreen video while it's playing
+  video.found{
+    display: none;
+    &.playing {
+      display: inline;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      background-color: #000000;
+    }
+  }
 
 //class for dev-controls
 // Make this display: none for final build
@@ -376,11 +365,36 @@ div.item-title {
   font-size: x-small;
 }
 
+// play / play again buttons on item page
+.play-button {
+  position: relative;
+  top: 125px;
+  z-index: 5;
+  &.hidden {
+    display: none;
+  }
+  &.play {
+    width: 50%;
+    line-height: 3em;
+    margin: 0px;
+    padding: 5px;
+    font-size: 1.8em;
+    display: none;
+  }
+  &.replay {
+    top: 0px;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+}
 
 //container for questions
 .question {
   margin-left: 35%;
   max-height: 220px;
+  @media #{$tablet} {
+    max-height: 50%;
+  }
 
   //some questions/answers are quite long. Allow overflow scrolling for this div.
   // Somewhat hard to notice unfortunately.
@@ -453,7 +467,7 @@ div.button {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+//    display: block;
   }
     padding: 2*$standardPadding;
     border-style: solid;
