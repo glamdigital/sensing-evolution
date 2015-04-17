@@ -17,7 +17,9 @@ $videoAspectRatio: 1.7777777778;
 body {
   font-family: $standardFontFamily;
   margin:0;
-//  font-size: 18px;
+  @media #{$tablet} {
+    font-size: 24px;
+  }
 }
 
 h1 {
@@ -35,17 +37,16 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     background-color: black;
+    min-height: 1000px;
 
     .buttons-container {
       display: none;
-      z-index: 5;
+      z-index: 50000;
       position: relative;
       top: 50px;
       min-height: 100px;
       background-color: transparent;
       width: 50%;
-      margin-left: auto;
-      margin-right: auto;
       .button {
         padding: 30px;
       }
@@ -202,49 +203,57 @@ h3 {
 
 }
 
-//Contains the image and instructions for the item the user is supposed to be searching for
-.search-item {
-  padding: $standardPadding;
-  float: left;
-  text-align: center;
-  width: 45%;
+//everything the user sees before finding the item
+.before-found {
+  width: 100%;
+  //Contains the image and instructions for the item the user is supposed to be searching for
+  .search-item {
+    padding: $standardPadding;
+    float: left;
+    text-align: center;
+    width: 45%;
 
-  //Thumbnail/map image
-  img {
-    @media #{$phone} and #{$landscape} {
+    //Thumbnail/map image
+    img {
+      @media #{$phone} and #{$landscape} {
+        width: 80%;
+        margin: 0 4%;
+      }
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0;
+      padding-right: 0;
       width: 80%;
-      margin: 0 4%;
+      max-height: 40%;
     }
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
-    width: 80%;
-    max-height: 40%;
+
   }
 
-}
+  //container for the hint on the item page
+  .hint-container {
+    text-align: center;
+    margin-left: 50%;
 
-//container for the hint on the item page
-.hint-container {
-  text-align: center;
-  margin-left: 50%;
+    //button offering hint to user
+    .button {
+      margin: 20px 10px 10px 10px;
+    }
 
-  //button offering hint to user
-  .button {
-    margin: 20px 10px 10px 10px;
-  }
-
-  //hint text itself
-  .hint {
-    display: none;
-    &.revealed {
-      //Add the 'revealed' class once revealed, and the hint will be shown
-      display: block;
+    //hint text itself
+    .hint {
+      display: none;
+      &.revealed {
+        //Add the 'revealed' class once revealed, and the hint will be shown
+        display: block;
+      }
+    }
+    
+    @media #{$tablet} {
+      margin-top: 10%;
+      margin-right: 10%
     }
   }
 }
-
 //title on the item page
 div.item-title {
   h3.name {
@@ -505,4 +514,10 @@ div.button {
     color: inherit;
   }
 
+}
+
+//Class added to elements to centre them vertically.
+// It's also necessary
+.center-vertically {
+  position: absolute;
 }

@@ -1,6 +1,6 @@
-define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/logging",
+define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templates/item", "app/logging",
         "app/collections/QuestionsCollection", "app/views/QuestionView", "app/views/UnlockCodeView",],
-    function(Backbone, _, $, itemTemplate, Logging, QuestionsCollection, QuestionView, UnlockCodeView) {
+    function(Backbone, _, $, CentreMixin, itemTemplate, Logging, QuestionsCollection, QuestionView, UnlockCodeView) {
 
   var ItemView = Backbone.View.extend({
 
@@ -46,6 +46,11 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
         this.unlockView.render();
 
+		setTimeout(this.centreElements.bind(this), 100);
+    },
+
+    centreElements: function() {
+	    this.moveToCentre($('.before-found'));
     },
 
     didRangeBeacon: function(data) {
@@ -133,6 +138,8 @@ define(["backbone", "underscore", "jquery", "hbs!app/templates/item", "app/loggi
 
   }
   );
+
+	    _.extend(ItemView.prototype, CentreMixin);
 
   return ItemView;
 

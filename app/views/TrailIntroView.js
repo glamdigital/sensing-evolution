@@ -1,5 +1,5 @@
-define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
-    function(Backbone, Trail, trailIntro) {
+define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!app/templates/trail_intro"],
+    function(Backbone, _, CentreMixin, Trail, trailIntro) {
 
     var TrailIntroView = Backbone.View.extend({
         template: trailIntro,
@@ -24,9 +24,13 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 	        }
 
             setTimeout(this.startVideo.bind(this), 2000);
-            this.$video.on('ended', this.showStartLink);
+            this.$video.on('ended', this.showStartLink.bind(this));
 
+			setTimeout(this.centreElements.bind(this), 100);
         },
+	    centreElements: function() {
+	        this.moveToCentre(this.$video);
+	    },
         startVideo: function() {
 	        console.log("Playing video");
 	        if(typeof(device)!='undefined') {
@@ -42,7 +46,9 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
         },
 
         showStartLink: function() {
-            $('.buttons-container').show();
+	        var $buttonsContainer = $('.buttons-container');
+            $buttonsContainer.show();
+            this.moveToCentre($buttonsContainer);
             //add the 'finished' class to the video
             var $video = $('#intro-video');
         },
@@ -61,6 +67,9 @@ define(["backbone", "app/models/Trail", "hbs!app/templates/trail_intro"],
 
 
     });
+
+    _.extend(TrailIntroView.prototype, CentreMixin);
+
 
     return TrailIntroView;
 
