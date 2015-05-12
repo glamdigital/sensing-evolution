@@ -61,13 +61,9 @@ h1 {
 video {
     width: 100%;
     z-index: 1000;
-    &.finished {
-//      Shrink down the video once it's finished in order to reveal the start button
-      @media #{$phone} and #{$landscape} {
-        height: 200px;
-        width: 200px * $videoAspectRatio;
-      }
-    }
+  position: fixed;
+  top: 0px;
+  left: 0px;
   }
 
   //shrink down gracefully rather than popping
