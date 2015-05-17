@@ -479,10 +479,14 @@ h3 {
   //input field for typing in number
   input{
     height: 24px;
+    margin: 6px 0 4px;
+    @media #{$tablet} {
+      margin: 16px 0 14px;
+    }
     padding: 3px 0px 3px 10px;
-    vertical-align: bottom;
     text-align: left;
     border: none;
+    vertical-align: top;
     border-right: solid 1px grey;
     position: relative;
     top: -2px;
