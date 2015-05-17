@@ -34,44 +34,61 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.1em;
 }
 
-// Used on the trail_intro page
-.video-holder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+//shared style for all buttons
+div.button {
+  &.center {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: black;
-    min-height: 1000px;
+  }
+    padding: 2*$standardPadding;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: lightgrey;
+  a {
+    color: $fontColor;
+    text-decoration: none;
+  }
+  margin: 10px;
+  display: block;
+}
 
-    .buttons-container {
-      display: none;
-      z-index: 50000;
-      position: relative;
-      top: 50px;
-      min-height: 100px;
-      background-color: transparent;
-      width: 50%;
-      .button {
-        padding: 30px;
-      }
-      &.show {
-        // show class is added after the video finishes
-        display: block;
-      }
+// Used on the trail_intro page
+.video-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  min-height: 1000px;
+
+  .buttons-container {
+    display: none;
+    z-index: 50000;
+    position: relative;
+    top: 50px;
+    min-height: 100px;
+    background-color: transparent;
+    width: 50%;
+    .button {
+      padding: 30px;
     }
-
-// applies to the intro video
-
-video {
+    &.show {
+      // show class is added after the video finishes
+      display: block;
+    }
+  }
+  // applies to the intro video
+  video {
     width: 100%;
     z-index: 1000;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
   }
-
   //shrink down gracefully rather than popping
   @include transition-property(max-height);
   @include transition-duration(0.25s);
@@ -181,6 +198,29 @@ a.nav-link {
   }
 }
 
+//Proximity indiciator on item page
+.proximity-indicator {
+  background-color: #999999;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 13px 12px;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  //one additional class added dependent on input range
+  &.far {
+    background-color: lightcoral;
+  }
+  &.near {
+    background-color: orange;
+  }
+  &.immediate {
+    background-color: lightgreen;
+  }
+}
+
+
 // Unused?
 .topic {
   padding: $standardPadding;
@@ -272,27 +312,6 @@ div.item-title {
   }
 }
 
-//Proximity indiciator on item page
-.proximity-indicator {
-  background-color: #999999;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 13px 12px;
-  position: fixed;
-  left: 75%;
-  top: 0px;
-
-  //one additional class added dependent on input range
-  &.far {
-    background-color: lightcoral;
-  }
-  &.near {
-    background-color: orange;
-  }
-  &.immediate {
-    background-color: lightgreen;
-  }
-}
 
 //container for what is shown after the user finds the item
 // - video
@@ -306,62 +325,30 @@ div.item-title {
   display: none;
   padding: 0px;
   text-align: center;
-//  @media #{$phone} {
-//    padding: 0px 10px;
-//    &.finished {
-//      max-width: 70%;
-//      top: 120px;
-//    }
-//  }
-//  @media #{$phone}{
-//    max-width: 50%;
-//  }
-//  @media #{$tablet} {
-//    width: 100%;
-//    clear: both;
-//  }
-//
-//  //shrink video down after it's finished playing
-//  &.finished {
-//    clear: none;
-//    float: left;
-//    left: 10px;
-//    position: absolute;
-//    max-width: 25%;
-//    @media #{$portrait} {
-//      max-width: 100%;
-//      top: 120px;
-//    }
-//  }
-
   img.video_thumbnail {
     width: 100%;
     height: auto;
   }
-
   @include transition-property(max-width);
   @include transition-duration(0.25s);
-
-
-
   //'well done' text
   h3 {
     color: darkgreen;
   }
 }
 
-  //fullscreen video while it's playing
-  video.found{
-    display: none;
-    &.playing {
-      display: inline;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      background-color: #000000;
-    }
+//fullscreen video while it's playing
+video.found {
+  display: none;
+  &.playing {
+    display: inline;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #000000;
   }
+}
 
 //class for dev-controls
 // Make this display: none for final build
@@ -463,28 +450,6 @@ div.item-title {
   display:none;
 }
 
-//shared style for all buttons
-div.button {
-  &.center {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-//    display: block;
-  }
-    padding: 2*$standardPadding;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 1px;
-    background-color: lightgrey;
-  a {
-    color: $fontColor;
-    text-decoration: none;
-  }
-  margin: 10px;
-  display: block;
-}
-
-
 //container for the item unlock view on the item page
 .item-unlock {
   margin-top: 30px;
@@ -511,16 +476,12 @@ div.button {
     border-color: darkred;
     color: darkred;
   }
-  .button {
-  }
-
   //key icon
   img {
     max-height: 100%;
     max-width: 100%;
     padding-left: 10px;
   }
-
   //input field for typing in number
   input{
     height: 24px;
