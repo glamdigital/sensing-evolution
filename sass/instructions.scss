@@ -1,6 +1,7 @@
-$tablet: "only screen and (min-width: 768px)";
-
 //instructions page shown after picking trail
+
+@import "_variables.scss";
+
 .instructions {
   width: 100%;
   text-align: left;

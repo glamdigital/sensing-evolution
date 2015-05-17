@@ -1,0 +1,19 @@
+@import "compass/css3";
+
+@font-face {
+    font-family: "FrutigerLight";
+    src: url("../fonts/frutigel.ttf");   
+}
+$blue: rgba(0, 47, 101, 1.0);
+$transparentGrey: rgba(105, 100, 92, 0.3);
+$overlayWhite: rgba(255, 255, 255, 0.7);
+$phone: "only screen and (max-width: 767px)";
+$tablet: "only screen and (min-width: 768px)";
+$landscape: "(orientation:landscape)";
+$portrait: "(orientation:portrait)";
+$standardFontFamily: "FrutigerLight";
+$standardPadding: 5px;
+$corner-radius: 5px;
+$navBarWidth: 320px;
+$fontColor: $blue;
+$videoAspectRatio: 1.7777777778;
