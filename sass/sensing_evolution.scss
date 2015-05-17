@@ -5,6 +5,7 @@
     src: url("../fonts/frutigel.ttf");   
 }
 $blue: rgba(0, 47, 101, 1.0);
+$transparentGrey: rgba(105, 100, 92, 0.3);
 $overlayWhite: rgba(255, 255, 255, 0.7);
 $phone: "only screen and (max-width: 767px)";
 $tablet: "only screen and (min-width: 768px)";
@@ -47,9 +48,9 @@ div.button {
   }
     padding: 2*$standardPadding;
     border-style: solid;
-    border-radius: 5px;
+    border-color: $transparentGrey;
     border-width: 1px;
-    background-color: lightgrey;
+    background-color: $overlayWhite;
   a {
     color: $fontColor;
     text-decoration: none;
