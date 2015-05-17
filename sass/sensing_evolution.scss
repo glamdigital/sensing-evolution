@@ -245,202 +245,197 @@ h3 {
 
 }
 
-//everything the user sees before finding the item
-.before-found {
-  width: 100%;
-  //Contains the image and instructions for the item the user is supposed to be searching for
-  .search-item {
-    padding: $standardPadding;
-    float: left;
-    text-align: center;
-    width: 45%;
-
-    //Thumbnail/map image
-    img {
-      @media #{$phone} and #{$landscape} {
-        width: 80%;
-        margin: 0 4%;
-      }
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-      width: 80%;
-      max-height: 40%;
-    }
-
-  }
-
-  //container for the hint on the item page
-  .hint-container {
-    text-align: center;
-    margin-left: 50%;
-
-    //button offering hint to user
-    .button {
-      margin: 20px 10px 10px 10px;
-    }
-
-    //hint text itself
-    .hint {
-      display: none;
-      &.revealed {
-        //Add the 'revealed' class once revealed, and the hint will be shown
-        display: block;
-      }
-    }
-    
-    margin-top: 3%;
-
-    @media #{$tablet} {
-      margin-right: 10%
-    }
-  }
-}
-//title on the item page
-div.item-title {
-  h3.name {
-    font-style: italic;
-    text-align: center;
-    padding-bottom: 20px;
-    clear: right;
-    margin-top: 10%;
-    @media #{$phone} and #{$landscape} {
-      margin-top: 15%;
-      padding-bottom: 2px;
-    }
-  }
-}
-
-
-//container for what is shown after the user finds the item
-// - video
-// - congratulations text
-// - replay button
-.found-item {
-  width:20%;
-  position: relative;
-  top: -45px;
-  margin: 0px 5%;
-  display: none;
-  padding: 0px;
-  text-align: center;
-  img.video_thumbnail {
+.item {
+  // the main item image
+  img.item-image {
     width: 100%;
     height: auto;
+    position: absolute;
+    z-index: -1;
   }
-  @include transition-property(max-width);
-  @include transition-duration(0.25s);
-  //'well done' text
-  h3 {
-    color: darkgreen;
-  }
-}
 
-//fullscreen video while it's playing
-video.found {
-  display: none;
-  &.playing {
-    display: inline;
-    position: fixed;
-    top: 0px;
-    left: 0px;
+  //everything the user sees before finding the item
+  .before-found {
     width: 100%;
-    background-color: #000000;
+    //Contains the image and instructions for the item the user is supposed to be searching for
+    .search-item {
+      padding: $standardPadding;
+      float: left;
+      text-align: center;
+      width: 45%;
+
+      //Thumbnail/map image
+      img {
+        @media #{$phone} and #{$landscape} {
+          width: 80%;
+          margin: 0 4%;
+        }
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        width: 80%;
+        max-height: 40%;
+      }
+
+    }
+
+    //container for the hint on the item page
+    .hint-container {
+      text-align: center;
+      margin-left: 50%;
+
+      //button offering hint to user
+      .button {
+        margin: 20px 10px 10px 10px;
+      }
+
+      //hint text itself
+      .hint {
+        display: none;
+        &.revealed {
+          //Add the 'revealed' class once revealed, and the hint will be shown
+          display: block;
+        }
+      }
+      
+      margin-top: 3%;
+
+      @media #{$tablet} {
+        margin-right: 10%
+      }
+    }
   }
-}
 
-//class for dev-controls
-// Make this display: none for final build
-.dev-control {
-  display: none;
-  font-size: x-small;
-}
-
-// play / play again buttons on item page
-.play-button {
-  position: relative;
-  top: 125px;
-  z-index: 5;
-  &.hidden {
+  //container for what is shown after the user finds the item
+  // - video
+  // - congratulations text
+  // - replay button
+  .found-item {
+    width:20%;
+    position: relative;
+    top: -45px;
+    margin: 0px 5%;
     display: none;
-  }
-  &.play {
-    width: 50%;
-    line-height: 3em;
-    margin: 0px;
-    padding: 5px;
-    font-size: 1.8em;
-    display: none;
-  }
-  &.replay {
-    top: 0px;
-    width: 100%;
-    padding-bottom: 5px;
-  }
-}
-
-//container for questions
-.question {
-  margin-left: 35%;
-  max-height: 260px;
-  @media #{$tablet} {
-    max-height: 50%;
-  }
-
-  //some questions/answers are quite long. Allow overflow scrolling for this div.
-  // Somewhat hard to notice unfortunately.
-  overflow-y: scroll;
-  div {
-    display: inline;
     padding: 0px;
     text-align: center;
-    .questions {
-      display: block;
-      text-align: left;
-      list-style: none;
-      padding: 2px;
-      list-style-position: inside;
-      .answer-container {
+    img.video_thumbnail {
+      width: 100%;
+      height: auto;
+    }
+    @include transition-property(max-width);
+    @include transition-duration(0.25s);
+    //'well done' text
+    h3 {
+      color: darkgreen;
+    }
+  }
+
+  //fullscreen video while it's playing
+  video.found {
+    display: none;
+    &.playing {
+      display: inline;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      background-color: #000000;
+    }
+  }
+
+  //class for dev-controls
+  // Make this display: none for final build
+  .dev-control {
+    display: none;
+    font-size: x-small;
+  }
+
+  // play / play again buttons on item page
+  .play-button {
+    position: relative;
+    top: 125px;
+    z-index: 5;
+    &.hidden {
+      display: none;
+    }
+    &.play {
+      width: 50%;
+      line-height: 3em;
+      margin: 0px;
+      padding: 5px;
+      font-size: 1.8em;
+      display: none;
+    }
+    &.replay {
+      top: 0px;
+      width: 100%;
+      padding-bottom: 5px;
+    }
+  }
+
+  //container for questions
+  .question {
+    margin-left: 35%;
+    max-height: 260px;
+    @media #{$tablet} {
+      max-height: 50%;
+    }
+
+    //some questions/answers are quite long. Allow overflow scrolling for this div.
+    // Somewhat hard to notice unfortunately.
+    overflow-y: scroll;
+    div {
+      display: inline;
+      padding: 0px;
+      text-align: center;
+      .questions {
         display: block;
-        div.answer {
+        text-align: left;
+        list-style: none;
+        padding: 2px;
+        list-style-position: inside;
+        .answer-container {
           display: block;
-          .button {
-            margin: 5px 0px;
-            padding: 4px 10px;
-            text-align: center;
+          div.answer {
+            display: block;
+            .button {
+              margin: 5px 0px;
+              padding: 4px 10px;
+              text-align: center;
 
-            //class added to answer button once picked, for red/green highlighting.
-            &.chosen {
-              background-color: red;
-              border-style: none;
-              &.correct {
-                background-color: green;
+              //class added to answer button once picked, for red/green highlighting.
+              &.chosen {
+                background-color: red;
+                border-style: none;
+                &.correct {
+                  background-color: green;
+                }
               }
+
             }
-
           }
+          //explanatory text after selecting an answer
+          div.response {
+            display: none;
+            font-size: 1.0em;
+          }
+          padding: 0px 10px;
         }
-        //explanatory text after selecting an answer
-        div.response {
-          display: none;
-          font-size: 1.0em;
-        }
-        padding: 0px 10px;
+        height: 100%;
       }
-      height: 100%;
-    }
 
-    //buttons shown after answering
-    .try-again {
-      display: none;
-      width: 35%;
-      float: right;
-    }
-    .proceed {
-      display: none;
-      width: 35%;
-      float: right;
+      //buttons shown after answering
+      .try-again {
+        display: none;
+        width: 35%;
+        float: right;
+      }
+      .proceed {
+        display: none;
+        width: 35%;
+        float: right;
+      }
     }
   }
 }
