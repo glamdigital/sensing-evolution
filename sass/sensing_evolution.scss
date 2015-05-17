@@ -264,7 +264,7 @@ h3 {
     width: 100%;
     //Contains the image and instructions for the item the user is supposed to be searching for
     .find-prompt {
-      padding: $standardPadding;
+      padding: 0.3em 0.2em 0.1em;
       float: left;
       text-align: left;
       background-color: $overlayWhite;
@@ -285,8 +285,13 @@ h3 {
       }
 
       //button offering hint to user
-      .button {
-        margin: 20px 10px 10px 10px;
+      .button-hint {
+        margin: 30px 10px 10px 10px;
+        a {
+          color: $fontColor;
+          text-decoration: none;
+        }
+        margin: 10px;
       }
 
       //hint text itself
