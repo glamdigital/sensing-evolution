@@ -29,11 +29,9 @@ body {
   }
 }
 
-h1 {
-  margin: 0px;
-  text-align: center;
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
 }
-
 
 // Used on the trail_intro page
 .video-holder {
@@ -83,9 +81,6 @@ video {
 
 .nav-menu {
   //'sensing evolution' title
-  h3 {
-    font-weight: normal;
-  }
   position: fixed;
   top: 0;
   left: 0;
@@ -100,7 +95,6 @@ video {
   //trail name
   h4 {
     margin: 5px 0px;
-    font-weight: normal;
   }
 
   //list of items
@@ -161,24 +155,29 @@ a.nav-link {
 
 //Header across the top of the content page
 .header {
-    background-color: #f4f4f4;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;    
+  .titles {
+    text-align: center;
+    padding: .4em 2em;
     h1 {
-      font-size: medium;
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 10px;
-      margin: 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      margin: 0 0 .4em;
+      text-align: left;
+      display: inline-block;
       border-bottom-style: solid;
-      border-bottom-color: #dddddd;
+      border-bottom-color: $blue;
       border-bottom-width: 1px;
-        @media #{$phone} and #{$landscape} {
-          text-align: left;
-          margin: 0px 30px 0px 70px;
-        }
     }
+    h2 {
+      font-size: 1.2em;
+      line-height: 1em;
+      margin: 0;
+    }     
+  }
 }
 
 // Unused?
@@ -408,8 +407,6 @@ div.item-title {
     display: inline;
     padding: 0px;
     text-align: center;
-    font-weight: bold;
-
     .questions {
       display: block;
       text-align: left;
@@ -440,7 +437,6 @@ div.item-title {
         div.response {
           display: none;
           font-size: 1.0em;
-          font-weight: normal;
         }
         padding: 0px 10px;
       }
