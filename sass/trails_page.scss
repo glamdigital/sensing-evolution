@@ -33,14 +33,14 @@ div.trails-list-container {
             font-size: 0.8em;
           }
         }
-        &.primary-trail {
+        &.Discover {
           background: url(../img/trailButtonDiscover.jpg);
           background-size: cover;
           .trails-list-item {
             margin-left: 60%;
           }
         }
-        &.gcse-trail {
+        &.Investigate {
           background: url(../img/trailButtonExplore.jpg);
           background-size: cover;
         }
