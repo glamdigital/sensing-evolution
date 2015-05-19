@@ -46,7 +46,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
         this.unlockView.render();
 
-		setTimeout(this.centreElements.bind(this), 100);
+		//setTimeout(this.centreElements.bind(this), 100);
     },
 
     centreElements: function() {
@@ -78,7 +78,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       $('.search-item').hide();
       $('.hint-container').hide();
       $('.proximity-indicator').hide();
-        $('.before-found').hide();
+      $('.before-found').hide();
 	    $('video').show();
 	    $('.play').show();
       //start the video after half a second
@@ -94,7 +94,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 
 	    //center play button
 	    this.moveToCentre($('.play'));
-		this.moveToCentre($('#foundVideo'));
+		  this.moveToCentre($('#foundVideo'));
       navigator.notification.vibrate(500);
     },
 
@@ -128,28 +128,28 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     },
     onVideoEnded: function(ev) {
       //create and render question view
-        $('video').removeClass('playing');
+      $('video').removeClass('playing');
       var questionView = new QuestionView({ el: $('.question'),
                                             question:this.question,
                                             //nextURL:ev.data.url
                                             session:this.session
                                         });
       questionView.render();
-        //mark the video element as finished
-        $('video').parents('div').addClass("finished").removeClass("center-vertically");
+      //mark the video element as finished
+      $('video').parents('div').addClass("finished").removeClass("center-vertically");
 
-        //show the replay button and thumbnail
-	    $('.found-item').show();
+      //show the found item panel
+      $('.found-item').show();
 
-		setTimeout(this.centreQuestion.bind(this), 100);
+      //setTimeout(this.centreQuestion.bind(this), 100);
 
 	    //hide the video
 	    $('video').hide();
 	    $('.replay').show();
     },
 	  centreQuestion: function() {
-	    this.moveToVerticalCentre($('.question'));
-	    this.moveToVerticalCentre($('.found-item'));
+	    this.moveToVerticalCentre($('.questions'));
+	    this.moveToVerticalCentre($('.video-container'));
 	  },
     toggleNavMenu: function(ev)
     {
