@@ -23,14 +23,18 @@ div.trails-list-container {
           height: 100%;
           background-color: $overlayWhite;
           color: $blue;
+          padding-top: 40px;
+          @media #{$tablet} {
+            padding-top: 90px;
+          }
           .title {
-            line-height: 140px;
-            @media #{$tablet} {
-              line-height: 240px;
-            }
+            font-size: 1em;
+            text-transform: uppercase;
+            margin-bottom: 0.4em;
           }
           .subtitle {
-            font-size: 0.8em;
+            font-size: 1em;
+            padding: 0 20px;
           }
         }
         &.Discover {
