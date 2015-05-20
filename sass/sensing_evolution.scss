@@ -316,8 +316,8 @@ h3 {
     display:none;
     .video-container {
       float: left;
-      width: 20%;
-      margin: 0px 5%;
+      width: 25%;
+      margin-left: 5%;
       padding: 1em 0 0;
       text-align: center;
       img.video_thumbnail {
@@ -420,14 +420,14 @@ h3 {
       width: 50%;
       line-height: 3em;
       margin: 0px;
-      padding: 5px;
+      padding: 0.4em;
       font-size: 1.8em;
       display: none;
     }
     &.replay {
+      padding: 0.4em 0;
       top: 0px;
       width: 100%;
-      padding-bottom: 5px;
     }
   }
 
