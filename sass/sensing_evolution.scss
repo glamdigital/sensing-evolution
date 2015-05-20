@@ -12,6 +12,7 @@ body {
   margin:0;
   height:100%;
   font-size: 19px;
+  line-height: 1em;
   @media #{$tablet} {
     font-size: 24px;
   }
@@ -86,8 +87,8 @@ div.button {
 .nav-menu::-webkit-scrollbar {display:none;}
 
 .nav-menu {
-  //'sensing evolution' title
   position: fixed;
+  padding: $standardPadding $standardPadding 0;
   top: 0;
   left: 0;
   background-color: #444;
@@ -97,26 +98,34 @@ div.button {
   height: 1000px;
   font-size: smaller;
   overflow-y: scroll;
-
-  //trail name
-  h4 {
-    margin: 5px 0px;
+  .titles {
+    text-align: center;
+    margin-bottom: 1em;
+    //'sensing evolution' title
+    h3 {
+      text-transform: uppercase;
+      border-bottom: 1px solid white;
+      display: inline-block;
+    }
+    //trail name
+    h4 {
+      line-height: 1em;
+      margin: 0.2em 0 0;     
+    }
   }
-
   //list of items
   ul {
     list-style: none;
-    padding-left: 10px;
-    margin: 2px;
+    padding-left: 0.4em;
+    margin: 0.2em 0.4em 0.4em;
 
     //the li for the item the user is currently on
     li.current {
-      margin: 10px;
       border-style: solid;
-      border-width: 1px;
-      border-left-width: 16px;
+      border-width: 0;
+      border-left-width: 4px;
       border-color: lightgrey;
-      padding: 2px 4px 2px 10px;
+      padding: 2px 4px 2px 4px;
     }
   }
 }
