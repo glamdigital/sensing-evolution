@@ -97,6 +97,7 @@ module.exports = function(grunt) {
                         "video/**",
 	                    "audio/**",
                         "css/**",
+	                    "fonts/**",
                         ],
                     dest: "www" },
                 {   src: ["index-built.html"],
@@ -112,6 +113,7 @@ module.exports = function(grunt) {
                         "img/**",
 	                    "audio/**",
                         "css/**",
+	                    "fonts/**",
                         ],
                     dest: "www"
                 },
