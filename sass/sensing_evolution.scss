@@ -334,57 +334,61 @@ h3 {
       //container for questions
     .question {
       position: relative;
+      padding: 1em 0 0;
       margin-left: 35%;
       height: 100%;
       width: 65%;
       //some questions/answers are quite long. Allow overflow scrolling for this div.
       // Somewhat hard to notice unfortunately.
-      overflow-y: scroll;      
-        .questions {
-          text-align: left;
+      overflow-y: scroll; 
+      .question-text {
+        font-size: 1.2em;
+        line-height: 1em;
+        margin-bottom: 0.4em;
+      }     
+      .questions {
+        text-align: left;
+        display: block;
+        list-style: none;
+        list-style-position: inside;
+        .answer-container {
           display: block;
-          list-style: none;
-          list-style-position: inside;
-          .answer-container {
+          padding: 0px 1em 0 0;
+          div.answer {
             display: block;
-            div.answer {
-              display: block;
-              .button {
-                margin: 0 0 0.4em;
-                padding: 0.4em 0.4em 0.2em;
-                //class added to answer button once picked, for red/green highlighting.
-                &.chosen {
-                  background-color: red;
-                  border-style: none;
-                  &.correct {
-                    background-color: green;
-                  }
+            .button {
+              margin: 0 0.4em 0.4em 0;
+              padding: 0.4em 0.4em 0.2em;
+              //class added to answer button once picked, for red/green highlighting.
+              &.chosen {
+                background-color: red;
+                border-style: none;
+                &.correct {
+                  background-color: green;
                 }
-
               }
             }
-            //explanatory text after selecting an answer
-            div.response {
-              display: none;
-              font-size: 1.0em;
-            }
-            padding: 0px 10px;
           }
-          height: 100%;
+          //explanatory text after selecting an answer
+          div.response {
+            display: none;
+            font-size: 1.0em;
+          }
         }
-
-        //buttons shown after answering
-        .try-again {
-          display: none;
-          width: 35%;
-          float: right;
-        }
-        .proceed {
-          display: none;
-          width: 35%;
-          float: right;
-        }      
+        height: 100%;
       }
+
+      //buttons shown after answering
+      .try-again {
+        display: none;
+        width: 35%;
+        float: right;
+      }
+      .proceed {
+        display: none;
+        width: 35%;
+        float: right;
+      }      
     }
   }
 
@@ -430,6 +434,7 @@ h3 {
       width: 100%;
     }
   }
+}
 
 
 
