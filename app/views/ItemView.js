@@ -103,6 +103,8 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
       "click .play-button" : "playVideo",
+      "click .pause" : "pauseVideo",
+      "click .resume" : "resumeVideo",
     },
     playVideo: function(ev) {
         this.$video.addClass('playing');
@@ -120,6 +122,19 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    if(typeof(device) == 'undefined') {
 		    setTimeout(this.onVideoEnded.bind(this), 2000);
 	    }
+
+	    //unhide controls
+	    $('.controls-container').show();
+    },
+    pauseVideo: function(ev) {
+	    this.video.pause();
+	    $('.pause').hide();
+	    $('.resume').show();
+    },
+    resumeVideo: function(ev) {
+	    this.video.play();
+	    $('.pause').show();
+	    $('.resume').hide();
     },
     showHint: function(ev) {
         ev.preventDefault();
@@ -146,6 +161,8 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    //hide the video
 	    $('video').hide();
 	    $('.replay').show();
+	    $('.controls-container').hide();
+
     },
 	  centreQuestion: function() {
 	    this.moveToVerticalCentre($('.questions'));

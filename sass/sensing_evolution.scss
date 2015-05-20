@@ -70,9 +70,11 @@ div.button {
       display: block;
     }
   }
+
   // applies to the intro video
   video {
     width: 100%;
+    height: 100%;
     z-index: 1000;
     position: fixed;
     top: 0px;
@@ -82,6 +84,22 @@ div.button {
   @include transition-property(max-height);
   @include transition-duration(0.25s);
 }
+
+.controls-container {
+    z-index: 40000;
+    position: absolute;
+    top: 100px;
+    min-height: 100px;
+    background-color: transparent;
+    width: 25%;
+    left: 0px;
+    .button {
+      padding: 30px;
+      &.resume {
+        display: none;
+      }
+    }
+  }
 
 //Hide the scroll bar on the nav menu for android - it appears on top of everything else
 .nav-menu::-webkit-scrollbar {display:none;}
@@ -93,7 +111,7 @@ div.button {
   left: 0;
   background-color: #444;
   color: white;
-  z-index: -1;
+  z-index: 0;
   width: $navBarWidth;
   height: 1000px;
   font-size: smaller;

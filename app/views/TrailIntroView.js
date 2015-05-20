@@ -79,18 +79,40 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
             this.moveToCentre($buttonsContainer);
             //add the 'finished' class to the video
             var $video = $('#intro-video');
+
+	        //hide controls
+	        $('.controls-container').hide();
         },
 
         replayVideo: function(ev) {
           ev.preventDefault();
           window.plugins.html5Video.play('introvideo');
 
-            //hide controls
+            //hide nav controls
             $('.buttons-container').hide();
+
+	        //unhide video controls
+	        $('.controls-container').show();
         },
+	    pauseVideo: function(ev) {
+		    console.log("pausing video");
+		    this.$video[0].pause();
+		    //toggle buttons
+		    $('#pause').hide();
+		    $('#resume').show();
+	    },
+	    resumeVideo: function(ev) {
+		    console.log("resuming video");
+		    this.$video[0].play();
+		    //toggle buttons
+		    $('#pause').show();
+		    $('#resume').hide();
+	    },
 
         events: {
-            "click #replay": "replayVideo"
+            "click #replay": "replayVideo",
+	        "click #pause": "pauseVideo",
+	        "click #resume": "resumeVideo"
         }
 
 
