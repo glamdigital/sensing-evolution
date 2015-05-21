@@ -75,12 +75,9 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     },
 
     findObject: function() {
-      $('.search-item').hide();
-      $('.hint-container').hide();
       $('.proximity-indicator').hide();
       $('.before-found').hide();
-	    $('video').show();
-	    $('.play').show();
+      $('.found-video').show();
       //start the video after half a second
       //setTimeout( _.bind(function() {
       //  this.video.play();
@@ -114,25 +111,24 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.playVideo(ev);
     },
     playVideo: function(ev) {
-        this.$video.addClass('playing');
+      
+      this.$video.addClass('playing');
       //  //hide the play control
-        $('.play-button').hide();
-	    if(typeof(device)!='undefined') {
+      $('.play-button').hide();
+	    
+      if(typeof(device)!='undefined') {
 		    window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
 	    } else {
 		    //browser
 		    this.$video[0].play();
 	    }
-
-
-
 	    //finish the video early for testing
 	    if(typeof(device) == 'undefined') {
 		    setTimeout(this.onVideoEnded.bind(this), 2000);
 	    }
 
 	    //unhide video and controls
-        $('video').show();
+      $('.found-video').show();
 	    $('.controls-container').show();
     },
     pauseVideo: function(ev) {
@@ -155,7 +151,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.onVideoEnded();
     },
     showHint: function(ev) {
-        ev.preventDefault();
+      ev.preventDefault();
       $('.button-hint').hide();
       $('.hint').show();
     },
@@ -171,16 +167,15 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       //mark the video element as finished
       $('video').parents('div').addClass("finished").removeClass("center-vertically");
 
-      //show the found item panel
+	    //hide the video
+      $('.found-video').hide();
+	    $('.replay').show();
+
+          //show the found item panel
       $('.found-item').show();
 
       //setTimeout(this.centreQuestion.bind(this), 100);
-
-	    //hide the video
-	    $('video').hide();
-	    $('.replay').show();
-	    $('.controls-container').hide();
-
+	
     },
 	  centreQuestion: function() {
 	    this.moveToVerticalCentre($('.questions'));
