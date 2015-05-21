@@ -101,7 +101,12 @@ div.button {
       }
       &.stop {
         //stop button is hidden until second play
-        display: none;
+        @if $debug {
+          display: block;
+        }
+        @else {
+          display: none;
+        }
       }
     }
   }
@@ -167,10 +172,17 @@ a.nav-link {
   font-size: 1.0em;
   color: #777;
   text-decoration: none;
+  @if $debug {
+    pointer-events: auto;
+  }
+  @else {
+    pointer-events: none;
+  }
   &.current {
 
   }
   &.found {
+    pointer-events: auto;
     color: white;
   }
 }
@@ -430,10 +442,14 @@ h3 {
   }
 
   //class for dev-controls
-  // Make this display: none for final build
   .dev-control {
-    display: none;
-    font-size: x-small;
+    @if $debug {
+      display: block;
+    }
+    @else {
+      display: none;
+      font-size: x-small;
+    }
   }
 
   // play / play again buttons on item page

@@ -148,10 +148,11 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     stopVideo: function(ev) {
 	    this.video.pause();
 	    this.video.currentTime = 0;
-	    this.$video.hide();
-	    $('.controls-container').hide();
-	    $('.buttons-container').show();
-        $('.replay').show();
+        //this.$video.hide();
+        //$('.controls-container').hide();
+        //$('.buttons-container').show();
+        //$('.replay').show();
+	    this.onVideoEnded();
     },
     showHint: function(ev) {
         ev.preventDefault();

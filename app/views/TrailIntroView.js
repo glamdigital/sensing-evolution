@@ -111,12 +111,14 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		    $('#resume').hide();
 	    },
 	    stopVideo: function(ev) {
-		    console.log("stopping video");
-		  this.$video[0].pause();
+		   // console.log("stopping video");
+	      this.$video[0].pause();
 	      this.$video[0].currentTime = 0;
-		    this.$video.hide();
-		    $('.controls-container').hide();
-		    $('.buttons-container').show();
+		    this.showStartLink();
+		   // this.$video.hide();
+		   // $('.controls-container').hide();
+		   // $('.buttons-container').show();
+
 	    },
 
         events: {
