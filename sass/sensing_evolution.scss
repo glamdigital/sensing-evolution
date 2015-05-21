@@ -96,6 +96,11 @@ div.button {
     .button {
       padding: 30px;
       &.resume {
+        //resume button hidden until pause pressed
+        display: none;
+      }
+      &.stop {
+        //stop button is hidden until second play
         display: none;
       }
     }
@@ -420,6 +425,7 @@ h3 {
       left: 0px;
       width: 100%;
       background-color: #000000;
+      z-index:1000;
     }
   }
 
