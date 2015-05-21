@@ -93,6 +93,8 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 
 	        //unhide video controls
 	        $('.controls-container').show();
+	        $('.stop').show();
+	        this.$video.show();
         },
 	    pauseVideo: function(ev) {
 		    console.log("pausing video");
@@ -108,11 +110,22 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		    $('#pause').show();
 		    $('#resume').hide();
 	    },
+	    stopVideo: function(ev) {
+		   // console.log("stopping video");
+	      this.$video[0].pause();
+	      this.$video[0].currentTime = 0;
+		    this.showStartLink();
+		   // this.$video.hide();
+		   // $('.controls-container').hide();
+		   // $('.buttons-container').show();
+
+	    },
 
         events: {
             "click #replay": "replayVideo",
 	        "click #pause": "pauseVideo",
-	        "click #resume": "resumeVideo"
+	        "click #resume": "resumeVideo",
+	        "click #stop": "stopVideo",
         }
 
 

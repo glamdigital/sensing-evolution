@@ -102,9 +102,16 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     events: {
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
-      "click .play-button" : "playVideo",
+      "click .replay": "replayVideo",
+      "click .play" : "playVideo",
       "click .pause" : "pauseVideo",
       "click .resume" : "resumeVideo",
+      "click .stop" : "stopVideo",
+    },
+    replayVideo: function(ev) {
+	    //enable stopping on second play
+	    $('.stop').show();
+	    this.playVideo(ev);
     },
     playVideo: function(ev) {
         this.$video.addClass('playing');
@@ -118,12 +125,14 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    }
 
 
+
 	    //finish the video early for testing
 	    if(typeof(device) == 'undefined') {
 		    setTimeout(this.onVideoEnded.bind(this), 2000);
 	    }
 
-	    //unhide controls
+	    //unhide video and controls
+        $('video').show();
 	    $('.controls-container').show();
     },
     pauseVideo: function(ev) {
@@ -135,6 +144,15 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.video.play();
 	    $('.pause').show();
 	    $('.resume').hide();
+    },
+    stopVideo: function(ev) {
+	    this.video.pause();
+	    this.video.currentTime = 0;
+        //this.$video.hide();
+        //$('.controls-container').hide();
+        //$('.buttons-container').show();
+        //$('.replay').show();
+	    this.onVideoEnded();
     },
     showHint: function(ev) {
         ev.preventDefault();
