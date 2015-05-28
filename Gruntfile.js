@@ -160,7 +160,66 @@ module.exports = function(grunt) {
                 }
             }
         }
-    }
+    },
+	  clean: ["www"],
+	  cordovacli: {
+		  options: {
+			  path: 'app'
+		  },
+		  ios: {
+			  options: {
+				  command: 'build',
+				  platforms: ['ios']
+			  }
+		  },
+		  android: {
+			  options: {
+				  command: 'build',
+				  platforms: ['android']
+			  }
+		  },
+		  android_e: {
+			  options: {
+				  command: 'emulate',
+				  platforms: ['android'],
+				  args: ['--target', 'Nexus5']
+			  }
+		  },
+		  ios_e: {
+			  options: {
+				  command: 'emulate',
+				  platforms: ['ios']
+			  }
+		  },
+		  android_r: {
+			  options: {
+				  command: 'run',
+				  platforms: ['android']
+			  }
+		  },
+		  ios_r: {
+			  options: {
+				  command: 'run',
+				  platforms: ['ios']
+			  }
+		  }
+	  },
+	  copy: {
+        main: {
+            files: [
+                {   expand: true,
+                    src: ["app/built.js",
+                        "app/data/**",
+                        "img/**",
+	                    "audio/**",
+                        "css/**",
+                        ],
+                    dest: "www" },
+                {   src: ["index-built.html"],
+                    dest: "www/index.html" },
+            ]
+        },
+    },
   });
 
   // These plugins provide necessary tasks.
@@ -175,6 +234,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-convert');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-cordovacli');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
 
   grunt.registerTask('package', 'Process all source files and zip to app.zip', ['requirejs', 'compass', 'compress']);
@@ -185,6 +247,20 @@ module.exports = function(grunt) {
     if(!token) { grunt.log.error("Please specify auth token as an argument.  grunt push:<token>");}
     grunt.config.set('phonegap-build.options.user', { token: token });
     grunt.task.run('phonegap-build');
+  });
+  grunt.registerTask('packageLocal', 'prepares for local build by compiling js/css and copying assets across', ['requirejs', 'compass', 'clean', 'copy']);
+
+	//grunt localbuild:<ios|android>
+  grunt.registerTask('localbuild', "Runs the appropriate pre-build steps then invokes cordova's build command", function(arg) {
+      if (!arg) { arg='build_ios'; }
+      //use different package step for android
+      if(arg.indexOf('android') >=0 ) {
+          grunt.task.run('packageLocalAndroid');
+      }
+      else {
+          grunt.task.run('packageLocal');
+      }
+      grunt.task.run('cordovacli:' + arg);
   });
 
   //grunt cloudbuild:<PhoneGapToken>
