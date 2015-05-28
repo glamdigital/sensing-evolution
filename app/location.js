@@ -22,10 +22,28 @@ define(["backbone", "underscore", "app/logging"], function(Backbone, _, Logging)
       try {
         window.cordova.plugins.locationManager.requestWhenInUseAuthorization();
 
+        //check bluetooth enabled, prompt if not
+        window.cordova.plugins.locationManager.isBluetoothEnabled()
+		    .then(function(isEnabled){
+		        console.log("isEnabled: " + isEnabled);
+		        if (!isEnabled) {
+			        if(device.platform == 'Android' || device.platform == 'amazon-fireos') {
+				        //enable function works on Android
+			           cordova.plugins.locationManager.enableBluetooth();
+			        }
+			        else {
+				        //prompt user to enable on iOS
+				        alert("Bluetooth is disabled. Please enable bluetooth to use the location awareness capabilities of this app.");
+			        }
+		        }
+		    })
+		    .fail(console.error)
+		    .done();
+
+
         this.delegate = new window.cordova.plugins.locationManager.Delegate();
         window.cordova.plugins.locationManager.setDelegate(this.delegate);
         this.delegate.didRangeBeaconsInRegion = this.handleRangedBeacons;
-
         Logging.logToDom("Started location service");
       } catch (e) {
         Logging.logToDom("Exception initialising beacons");
