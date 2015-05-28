@@ -9,7 +9,7 @@
     "map": "mapBottomCentre.png",
     "video": "d1buckland.mp4",
     "video_poster": "video_posters/d1buckland.jpg",
-    "hint": "This object is in the far left hand corner of the court in the cabinet labelled ‘Recycling Display’ (as you look away from the shop and towards the back of the museum).",
+    "hint": "Look for the display in the centre court called 'Belonging to Professor Buckland'.",
     "code": "1111",
     "beaconMajor": "2889"
   },
@@ -19,7 +19,7 @@
     "topic": "changes",
     "trail1": "Discover",
     "trail2": "",
-    "image": "Kirkdale.jpg",
+    "image": "Hyaena.jpg",
     "map": "mapBottomRight.png",
     "video": "d2hyaena.mp4",
     "video_poster": "video_posters/d2hyaena.jpg",
@@ -29,7 +29,7 @@
   },
   {
     "slug": "fossils1",
-    "title": "Megalosaurus: An Oxfordshire Dinosaur",
+    "title": "<i>Megalosaurus</i>: An Oxfordshire Dinosaur",
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
@@ -37,7 +37,7 @@
     "map": "mapTopCentre.png",
     "video": "d3megalosaurus.mp4",
     "video_poster": "video_posters/d3megalosaurus.jpg",
-    "hint": "Look for the 'Megalosaurus' case near the T. rex",
+    "hint": "Look for the '<i>Megalosaurus</i>' case near the T. rex",
     "code": "1111",
     "beaconMajor": "4005"
   },
@@ -47,7 +47,7 @@
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
-    "image": "Ichtyosaur.jpg",
+    "image": "Ichthyosaur.jpg",
     "map": "mapBottomRight.png",
     "video": "d4icthyosaur.mp4",
     "video_poster": "video_posters/d4icthyosaur.jpg",
@@ -107,7 +107,7 @@
     "map": "mapBottomLeft.png",
     "video": "d8archaeopteryx.mp4",
     "video_poster": "video_posters/d8archaeopteryx.jpg",
-    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammal table",
+    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
     "beaconMajor": "47050"
   },
@@ -123,7 +123,7 @@
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
     "code": "1111",
-    "beaconMajor": "14250"
+    "beaconMajor": "12518"
   },
   {
     "slug": "origin2",
@@ -177,7 +177,7 @@
     "map": "mapBottomLeft.png",
     "video": "i5archaeopteryx.mp4",
     "video_poster": "video_posters/i5archaeopteryx.jpg",
-    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammal table",
+    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
     "beaconMajor": "47050"
   },
@@ -191,7 +191,7 @@
     "map": "mapTopLeft.png",
     "video": "i6horse.mp4",
     "video_poster": "video_posters/i6horse.jpg",
-    "hint": "The Evolution of the Horse' display is tucked away in one of the 'cloisters'",
+    "hint": "The 'Evolution of the Horse' display is tucked away in one of the 'cloisters'",
     "code": "1111",
     "beaconMajor": "61866"
   },
