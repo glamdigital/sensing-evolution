@@ -1,10 +1,10 @@
 <div class="titles">
 	<h3>Sensing Evolution</h3>
-	<h4>{{title}}</h4>
+	<h4>{{{title}}}</h4>
 </div>
 
 {{#each topics}}
-    {{title}}
+    {{{title}}}
     <ul>
     {{#each items}}
         <li class="{{#if isCurrent}}current{{/if}}"><a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isAvailable}}found{{/if}}" href="#/item/{{slug}}">{{title}}</a></li>

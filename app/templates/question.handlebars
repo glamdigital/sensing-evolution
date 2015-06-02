@@ -6,7 +6,7 @@
     {{#each answers}}
       <div class="answer-container">
         <div class="answer {{#if isCorrect}}correct{{/if}} qId={{id}}">
-          <div class="button {{#if isCorrect}}correct{{/if}}"><a href="#"><div>{{text}}</div></a></div>
+          <div class="button {{#if isCorrect}}correct{{/if}}"><a href="#"><div>{{{text}}}</div></a></div>
           <div class="response {{#if isCorrect}}correct{{/if}} qId={{id}}">
             <!--{{#if isCorrect}}<span class='correct'>Correct. </span>-->
             <!--{{else}}<span class='incorrect'>No. </span>{{/if}}-->
