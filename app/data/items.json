@@ -11,7 +11,8 @@
     "video_poster": "video_posters/d1buckland.jpg",
     "hint": "Look for the display in the centre court called 'Belonging to Professor Buckland'.",
     "code": "1111",
-    "beaconMajor": "2889"
+    "beaconMajor": "2889",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "changes2",
@@ -25,7 +26,8 @@
     "video_poster": "video_posters/d2hyaena.jpg",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
     "code": "1111",
-    "beaconMajor": "9125"
+    "beaconMajor": "9125",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "fossils1",
@@ -39,7 +41,8 @@
     "video_poster": "video_posters/d3megalosaurus.jpg",
     "hint": "Look for the '<i>Megalosaurus</i>' case near the T. rex",
     "code": "1111",
-    "beaconMajor": "4005"
+    "beaconMajor": "4005",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "fossils2",
@@ -53,7 +56,8 @@
     "video_poster": "video_posters/d4icthyosaur.jpg",
     "hint": "Look for the 'Ichthyosaurs' case",
     "code": "1111",
-    "beaconMajor": "11889"
+    "beaconMajor": "11889",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "variation1",
@@ -67,7 +71,8 @@
     "video_poster": "video_posters/d5pepperedmoth.jpg",
     "hint": "Look for the display called 'Natural Selection at Work'",
     "code": "1111",
-    "beaconMajor": "50339"
+    "beaconMajor": "50339",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "variation2",
@@ -81,7 +86,8 @@
     "video_poster": "video_posters/d6darwin.jpg",
     "hint": "Look for the display called 'Darwin's Principles'",
     "code": "1111",
-    "beaconMajor": "14250"
+    "beaconMajor": "14250",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "adaptation1",
@@ -95,7 +101,8 @@
     "video_poster": "video_posters/d7reptiles.jpg",
     "hint": "Head for the Sensing Evolution Reptiles table",
     "code": "1111",
-    "beaconMajor": "63308"
+    "beaconMajor": "63308",
+    "triggerOnFar": "TRUE"
   },
   {
     "slug": "adaptation2",
@@ -109,7 +116,8 @@
     "video_poster": "video_posters/d8archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "47050"
+    "beaconMajor": "47050",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "origin1",
@@ -123,7 +131,8 @@
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
     "code": "1111",
-    "beaconMajor": "12518"
+    "beaconMajor": "12518",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "origin2",
@@ -137,7 +146,8 @@
     "video_poster": "video_posters/i2ourplace.jpg",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
     "code": "1111",
-    "beaconMajor": "21925"
+    "beaconMajor": "21925",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "reproduction1",
@@ -151,7 +161,8 @@
     "video_poster": "video_posters/i3success.jpg",
     "hint": "Head for the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "22691"
+    "beaconMajor": "22691",
+    "triggerOnFar": "TRUE"
   },
   {
     "slug": "reproduction2",
@@ -165,7 +176,8 @@
     "video_poster": "video_posters/i4dna.jpg",
     "hint": "Look for the spinning DNA model",
     "code": "1111",
-    "beaconMajor": "53044"
+    "beaconMajor": "53044",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "ancestors1",
@@ -179,7 +191,8 @@
     "video_poster": "video_posters/i5archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "47050"
+    "beaconMajor": "47050",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "ancestors2",
@@ -193,7 +206,8 @@
     "video_poster": "video_posters/i6horse.jpg",
     "hint": "The 'Evolution of the Horse' display is tucked away in one of the 'cloisters'",
     "code": "1111",
-    "beaconMajor": "61866"
+    "beaconMajor": "61866",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "selection1",
@@ -207,7 +221,8 @@
     "video_poster": "video_posters/i7naturalselection.jpg",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
     "code": "1111",
-    "beaconMajor": "50197"
+    "beaconMajor": "50197",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "selection2",
@@ -221,6 +236,7 @@
     "video_poster": "video_posters/i8sexualselection.jpg",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
     "code": "1111",
-    "beaconMajor": "46641"
+    "beaconMajor": "47967",
+    "triggerOnFar": "FALSE"
   }
 ]

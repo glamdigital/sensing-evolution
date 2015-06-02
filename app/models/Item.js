@@ -24,6 +24,12 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
 
       var item = response;
 
+      if (response.triggerOnFar === "TRUE") {
+	      item.triggerOnFar = true;
+      } else {
+	      item.triggerOnFar = false;
+      }
+
       item.trails = [];
       //read in the list of trails into a single array. The trails are parameters of id trail[n]
       var foundEmpty = false;

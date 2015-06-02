@@ -68,6 +68,9 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
           $('.proximity-indicator').removeClass('immediate far').addClass('near').html('Near');
           break;
         case "ProximityFar":
+	        if(this.item.attributes.triggerOnFar) {
+		        this.findObject();
+	        }
           //update proximity indicator
           $('.proximity-indicator').removeClass('immediate near far').html('Scanning...');
           break;
