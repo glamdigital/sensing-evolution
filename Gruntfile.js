@@ -254,12 +254,12 @@ module.exports = function(grunt) {
   grunt.registerTask('localbuild', "Runs the appropriate pre-build steps then invokes cordova's build command", function(arg) {
       if (!arg) { arg='build_ios'; }
       //use different package step for android
-      if(arg.indexOf('android') >=0 ) {
-          grunt.task.run('packageLocalAndroid');
-      }
-      else {
+      //if(arg.indexOf('android') >=0 ) {
+      //    grunt.task.run('packageLocalAndroid');
+      //}
+      //else {
           grunt.task.run('packageLocal');
-      }
+      //}
       grunt.task.run('cordovacli:' + arg);
   });
 
