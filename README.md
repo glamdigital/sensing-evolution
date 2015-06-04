@@ -12,9 +12,16 @@ Assuming that `npm` is installed:
 
 ### Building via phonegap cloud build
 
-    grunt cloudbuild:<authToken>
+    grunt localbuild:ios        //build for ios
+    grunt localbuild:ios_r      //build and run for ios
+    grunt localbuild:android    //build for android
+    grunt localbuild:android_r  //build and run for android
 
-Your auth token can be found on the 'Client Applications' panel of Phonegap's 'Edit Account' page
+Note, sometimes these commands will run on simulator rather than device. In this case, it may be necessary to run via the cordova cli
+e.g.
+```
+cordova run ios --device
+```
 
 
 ### Importing data
@@ -28,17 +35,6 @@ This sheet should be exported to .csv into a folder named SensingEvolutionData.
 >It's necessary to either remove these rows, or else clean up the exported csv. OpenOffice doesn't suffer from this problem, but can only export one sheet at a time.
 
 
-
 The following task then converts the data to the json format read by the app
 
     grunt convertData
-
-
-### Testing
-
-Tests are configured using jasmine.
-
-Add spec files to test/specs/*Specs.js and can be run in the PhantomJS headless browser with the following Grunt task:
-
-    grunt test
-    
