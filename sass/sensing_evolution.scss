@@ -369,7 +369,7 @@ h3 {
       @include transition-duration(0.25s);
       //'well done' text
       h3 {
-        color: darkgreen;
+        color: $green;
       }
     }
       //container for questions
@@ -402,10 +402,10 @@ h3 {
               padding: 0.4em 0.4em 0.2em;
               //class added to answer button once picked, for red/green highlighting.
               &.chosen {
-                background-color: red;
+                background-color: $red;
                 border-style: none;
                 &.correct {
-                  background-color: green;
+                  background-color: $green;
                 }
               }
             }
@@ -500,12 +500,12 @@ h3 {
   left: -10px;  
   //classes added after attempted input code
   &.correct {
-    border-color: darkgreen;
-    color: darkgreen;
+    border-color: $green;
+    color: $green;
   }
   &.incorrect {
-    border-color: darkred;
-    color: darkred;
+    border-color: $red;
+    color: $red;
   }
   //key icon
   img {
