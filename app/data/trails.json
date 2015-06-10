@@ -3,20 +3,22 @@
     "slug": "Discover",
     "title": "Discover",
     "subtitle": "Learn the basic ideas behind evolution",
-    "instructions": "Follow the clues to find the items within the museum.\nThe app should trigger automatically as you approach the correct item, or you can enter the unlock code shown next to the item.\nLook out for the Sensing Evolution logo.",
-    "trail_icon_image": "dodo_logo.jpeg",
+    "instructions": "In separate Google doc - Intro screen copy",
+    "trail_icon_image": "",
     "video": "d0intro.mp4",
     "video_poster": "video_posters/d0intro.jpg",
+    "finished_text": "lorem ipsum dolor",
     "fixed_order": "FALSE"
   },
   {
     "slug": "Investigate",
     "title": "Investigate",
     "subtitle": "Learn more about evolution",
-    "instructions": "Follow the clues to find the items within the museum.\nThe app should trigger automatically as you approach the correct item, or you can enter the unlock code shown next to the item.\nLook out for the Sensing Evolution logo.",
-    "trail_icon_image": "dodo_logo.jpeg",
+    "instructions": "In separate Google doc - Intro screen copy",
+    "trail_icon_image": "",
     "video": "i0intro.mp4",
     "video_poster": "video_posters/i0intro.jpg",
+    "finished_text": "",
     "fixed_order": "FALSE"
   }
 ]

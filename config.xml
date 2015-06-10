@@ -26,7 +26,18 @@
         <true/>
     </gap:config-file>
 
-    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
         <false/>
+    </gap:config-file>
+
+    <gap:config-file platform="ios" parent="UISupportedInterfaceOrientations~ipad" overwrite="false">
+        <array>
+            <string>UIInterfaceOrientationLandscapeLeft</string>
+            <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+    </gap:config-file>
+
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+    <false/>
     </gap:config-file>
 </widget>

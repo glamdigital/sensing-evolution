@@ -1,10 +1,14 @@
+<div class="header">
+    <div class="titles">
+        <h1 class="title">Sensing Evolution</h1>
+        <h2 class="subtitle">Select a Trail</h2>
+    </div>
+</div>
 <div class="trails-list-container">
-    <h1>Select Trail</h1>
-    <p>Welcome to the Sensing Evolution app! Please select a trail</p>
     <ul>
     {{#each trails}}
-        <a href='#trail/{{slug}}'><li><div class="trails-list-item">
-            <div class='title'>{{title}}<div>
+        <a href='#trail/{{slug}}'><li class="{{slug}}"><div class="trails-list-item">
+            <div class='title'>{{title}}</div>
             <div class='subtitle'>{{subtitle}}</div>
         </div></li></a>
 

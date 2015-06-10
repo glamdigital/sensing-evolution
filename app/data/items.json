@@ -6,12 +6,13 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "Buckland.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomCentre.png",
     "video": "d1buckland.mp4",
     "video_poster": "video_posters/d1buckland.jpg",
-    "hint": "This object is in the far left hand corner of the court in the cabinet labelled ‘Recycling Display’ (as you look away from the shop and towards the back of the museum).",
+    "hint": "Look for the display in the centre court called 'Belonging to Professor Buckland'.",
     "code": "1111",
-    "beaconMajor": "2889"
+    "beaconMajor": "2889",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "changes2",
@@ -19,27 +20,29 @@
     "topic": "changes",
     "trail1": "Discover",
     "trail2": "",
-    "image": "Kirkdale.jpg",
+    "image": "Hyaena.jpg",
     "map": "mapBottomRight.png",
     "video": "d2hyaena.mp4",
     "video_poster": "video_posters/d2hyaena.jpg",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
     "code": "1111",
-    "beaconMajor": "9125"
+    "beaconMajor": "9125",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "fossils1",
-    "title": "Megalosaurus: An Oxfordshire Dinosaur",
+    "title": "<i>Megalosaurus</i>: An Oxfordshire Dinosaur",
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
     "image": "Megalosaurus.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapTopCentre.png",
     "video": "d3megalosaurus.mp4",
     "video_poster": "video_posters/d3megalosaurus.jpg",
-    "hint": "Look for the 'Megalosaurus' case near the T. rex",
+    "hint": "Look for the '<i>Megalosaurus</i>' case near the T. rex",
     "code": "1111",
-    "beaconMajor": "4005"
+    "beaconMajor": "4005",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "fossils2",
@@ -47,13 +50,14 @@
     "topic": "fossils",
     "trail1": "Discover",
     "trail2": "",
-    "image": "Ichtyosaur.jpg",
+    "image": "Ichthyosaur.jpg",
     "map": "mapBottomRight.png",
     "video": "d4icthyosaur.mp4",
     "video_poster": "video_posters/d4icthyosaur.jpg",
     "hint": "Look for the 'Ichthyosaurs' case",
     "code": "1111",
-    "beaconMajor": "46013"
+    "beaconMajor": "11889",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "variation1",
@@ -62,12 +66,13 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "Snails.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "d5pepperedmoth.mp4",
     "video_poster": "video_posters/d5pepperedmoth.jpg",
     "hint": "Look for the display called 'Natural Selection at Work'",
     "code": "1111",
-    "beaconMajor": "50339"
+    "beaconMajor": "50339",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "variation2",
@@ -76,12 +81,13 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "Darwin-pigeons.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "d6darwin.mp4",
     "video_poster": "video_posters/d6darwin.jpg",
     "hint": "Look for the display called 'Darwin's Principles'",
     "code": "1111",
-    "beaconMajor": "14250"
+    "beaconMajor": "14250",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "adaptation1",
@@ -90,12 +96,13 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "Reptile-table.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "d7reptiles.mp4",
     "video_poster": "video_posters/d7reptiles.jpg",
     "hint": "Head for the Sensing Evolution Reptiles table",
     "code": "1111",
-    "beaconMajor": "63308"
+    "beaconMajor": "63308",
+    "triggerOnFar": "TRUE"
   },
   {
     "slug": "adaptation2",
@@ -104,12 +111,13 @@
     "trail1": "Discover",
     "trail2": "",
     "image": "Archaeopteryx.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "d8archaeopteryx.mp4",
     "video_poster": "video_posters/d8archaeopteryx.jpg",
-    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammal table",
+    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "47050"
+    "beaconMajor": "47050",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "origin1",
@@ -118,12 +126,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Darwin.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapTopCentre.png",
     "video": "i1darwin.mp4",
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
     "code": "1111",
-    "beaconMajor": "14250"
+    "beaconMajor": "12518",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "origin2",
@@ -132,12 +141,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Lucy.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapTopLeft.png",
     "video": "i2ourplace.mp4",
     "video_poster": "video_posters/i2ourplace.jpg",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
     "code": "1111",
-    "beaconMajor": "21925"
+    "beaconMajor": "21925",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "reproduction1",
@@ -146,12 +156,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Mammal-table.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "i3success.mp4",
     "video_poster": "video_posters/i3success.jpg",
     "hint": "Head for the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "22691"
+    "beaconMajor": "22691",
+    "triggerOnFar": "TRUE"
   },
   {
     "slug": "reproduction2",
@@ -160,12 +171,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "DNA.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "i4dna.mp4",
     "video_poster": "video_posters/i4dna.jpg",
     "hint": "Look for the spinning DNA model",
     "code": "1111",
-    "beaconMajor": "53044"
+    "beaconMajor": "53044",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "ancestors1",
@@ -174,12 +186,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Archaeopteryx.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "i5archaeopteryx.mp4",
     "video_poster": "video_posters/i5archaeopteryx.jpg",
-    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammal table",
+    "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
     "code": "1111",
-    "beaconMajor": "47050"
+    "beaconMajor": "47050",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "ancestors2",
@@ -188,12 +201,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Horse.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapTopLeft.png",
     "video": "i6horse.mp4",
     "video_poster": "video_posters/i6horse.jpg",
-    "hint": "The Evolution of the Horse' display is tucked away in one of the 'cloisters'",
+    "hint": "The 'Evolution of the Horse' display is tucked away in one of the 'cloisters'",
     "code": "1111",
-    "beaconMajor": "61866"
+    "beaconMajor": "61866",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "selection1",
@@ -202,12 +216,13 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Snowy-Owl.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapTopLeft.png",
     "video": "i7naturalselection.mp4",
     "video_poster": "video_posters/i7naturalselection.jpg",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
     "code": "1111",
-    "beaconMajor": "50197"
+    "beaconMajor": "50197",
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "selection2",
@@ -216,11 +231,12 @@
     "trail1": "Investigate",
     "trail2": "",
     "image": "Peacock.jpg",
-    "map": "mapBottomRight.png",
+    "map": "mapBottomLeft.png",
     "video": "i8sexualselection.mp4",
     "video_poster": "video_posters/i8sexualselection.jpg",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
     "code": "1111",
-    "beaconMajor": "46641"
+    "beaconMajor": "47967",
+    "triggerOnFar": "FALSE"
   }
 ]

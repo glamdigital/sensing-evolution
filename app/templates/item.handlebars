@@ -1,44 +1,49 @@
 <div class="header">
-    <img class="nav-menu-button" id="nav-menu-button" src="img/menu.png" width=50>
+    <img class="nav-menu-button" id="nav-menu-button" src="img/menu.png">
     <span class="proximity-indicator">Scanning...</span>
-    <h1 class="trail-title">{{topicTitle}}</h1>
-</div>
-
-<div id="unlock-code" class="item-unlock">
-
-</div>
-
-<div class="before-found center-vertically">
-    <div class="search-item">
-        <div class="find-prompt">Can you find...</div>
-        <img class="item-image" src="img/items/{{image}}">
-    </div>
-
-    <div class="item-title">
-        <h3 class="name">{{title}}</h3>
-    </div>
-
-    <div class="hint-container">
-        <div class="button button-hint"><a href="#" class="show-hint">Need a hint?</a></div>
-        <p class="hint">{{{hint}}}</p>
+    <div class="titles">
+        <h1 class="title">{{topicTitle}}</h1>
+        <h2 class="subtitle">{{{title}}}</h2>
     </div>
 </div>
 
-<video id='foundVideo' class='found center-vertically' width="100%" height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
-    <!--<source src="video/{{video}}" type="video/mp4">-->
-</video>
-<div id="play" class="play play-button button center center-vertically">
-	<a>You found it!<br>Play the video</a>
-</div>
+<div class="item">
 
-<div class="found-item center-vertically">
-    <h3>You found it!</h3>
-    <img class="video_thumbnail" src="img/{{video_poster}}">
-    <div id="replay" class="button center play-button replay hidden">
-        <a>Watch Again</a>
+    <img class="item-image" src="img/items/{{image}}">
+    <div class="before-found">
+        <div class="find-prompt">Can you find...</div>        
+        <div class="hint-container">
+            <div id="unlock-code" class="item-unlock"></div>
+            <img class="item-map" src="img/maps/{{map}}">
+            <div class="button-hint"><a href="#" class="show-hint">Need a hint?</a></div>
+            <p class="hint">{{{hint}}}</p>
+        </div>
     </div>
-    <!--<a href="#/restart" class="restart-all">Restart</a>-->
-</div>
 
-<div class="question center-vertically">
+    <div class="found-video">
+        <video id='foundVideo' class='found center-vertically' width="100%" height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
+            <source src="video/{{video}}" type="video/mp4">
+        </video>
+        <div class="controls-container" style="display:none">
+            <div id="resume" class="button resume"><a>Resume</a></div>
+            <div id="pause" class="button pause"><a>Pause</a></div>
+            <div id="stop" class="button stop"><a>Stop</a></div>
+        </div>
+        <div id="play" class="play play-button button center center-vertically">
+            <p>You found it!</p><a>Play the video</a>
+        </div>
+    </div>
+
+    <div class="found-item">
+        <div class="video-container">
+            <img class="video_thumbnail" src="img/{{video_poster}}">
+            <div id="replay" class="button center play-button replay hidden">
+                <a>Watch Again</a>
+            </div>
+        </div>
+        <div class="question center-vertically">
+        </div>
+        <!--<a href="#/restart" class="restart-all">Restart</a>-->
+    </div>
+
 </div>

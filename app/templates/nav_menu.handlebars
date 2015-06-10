@@ -1,15 +1,16 @@
-<h3>Sensing Evolution</h3>
-
-<h4>{{title}}</h4>
-<hr>
+<div class="titles">
+	<h3>Sensing Evolution</h3>
+	<h4>{{{title}}}</h4>
+</div>
 
 {{#each topics}}
-    {{title}}
+    {{{title}}}
     <ul>
     {{#each items}}
-        <li class="{{#if isCurrent}}current{{/if}}"><a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isAvailable}}found{{/if}}" {{#if isAvailable}}href="#/item/{{slug}}"{{/if}}>{{title}}</a></li>
+        <li class="{{#if isCurrent}}current{{/if}}"><a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isAvailable}}found{{/if}}" href="#/item/{{slug}}">{{title}}</a></li>
     {{/each}}
     </ul>
 {{/each}}
+<a class="nav-link start-over" href="#">Start Again</a><br>
 <a class="dev-control" href="#/dashboard">Beacon Ranging Dashboard</a>
 

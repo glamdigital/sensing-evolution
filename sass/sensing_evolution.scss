@@ -1,115 +1,159 @@
-@import "compass/css3";
-$phone: "only screen and (max-width: 767px)";
-$tablet: "only screen and (min-width: 768px)";
-$landscape: "(orientation:landscape)";
-$portrait: "(orientation:portrait)";
-$standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
-$standardPadding: 5px;
-$corner-radius: 5px;
-$navBarWidth: 320px;
-$fontColor: black;
-$videoAspectRatio: 1.7777777778;
+@import "_variables.scss";
 
 @mixin rounded-corners {
   border-radius: $corner-radius;
 }
-
+html {
+  height:100%;
+}
 body {
   font-family: $standardFontFamily;
+  color: $blue;
   margin:0;
+  height:100%;
+  font-size: 19px;
+  line-height: 1em;
   @media #{$tablet} {
     font-size: 24px;
   }
 }
 
-h1 {
-  margin: 0px;
-  text-align: center;
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  letter-spacing: 0.1em;
 }
 
+//shared style for all buttons
+div.button {
+  &.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  padding: 2*$standardPadding;
+  border-style: solid;
+  border-color: $transparentGrey;
+  border-width: 1px;
+  background-color: $overlayWhite;
+  a {
+    color: $fontColor;
+    text-decoration: none;
+  }
+  margin: 10px;
+  display: block;
+}
 
 // Used on the trail_intro page
 .video-holder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-    min-height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  min-height: 1000px;
 
-    .buttons-container {
-      display: none;
-      z-index: 50000;
-      position: relative;
-      top: 50px;
-      min-height: 100px;
-      background-color: transparent;
-      width: 50%;
-      .button {
-        padding: 30px;
-      }
-      &.show {
-        // show class is added after the video finishes
-        display: block;
-      }
+  .buttons-container {
+    display: none;
+    z-index: 50000;
+    position: relative;
+    top: 50px;
+    min-height: 100px;
+    background-color: transparent;
+    width: 50%;
+    .button {
+      padding: 30px;
     }
-
-// applies to the intro video
-
-video {
-    width: 100%;
-    z-index: 1000;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+    &.show {
+      // show class is added after the video finishes
+      display: block;
+    }
   }
 
+  // applies to the intro video
+  video {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
   //shrink down gracefully rather than popping
   @include transition-property(max-height);
   @include transition-duration(0.25s);
 }
 
+.controls-container {
+    z-index: 40000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100px;
+    background-color: transparent;
+    
+    .button {
+      padding: 1em 1em 0.8em;
+      &.resume {
+        //resume button hidden until pause pressed
+        display: none;
+      }
+      &.stop {
+        //stop button is hidden until second play
+        @if $debug {
+          display: block;
+        }
+        @else {
+          display: none;
+        }
+      }
+    }
+  }
+
 //Hide the scroll bar on the nav menu for android - it appears on top of everything else
 .nav-menu::-webkit-scrollbar {display:none;}
 
 .nav-menu {
-  //'sensing evolution' title
-  h3 {
-    font-weight: normal;
-  }
   position: fixed;
+  padding: $standardPadding $standardPadding 0;
   top: 0;
   left: 0;
   background-color: #444;
   color: white;
-  z-index: -1;
+  z-index: 0;
   width: $navBarWidth;
   height: 1000px;
   font-size: smaller;
   overflow-y: scroll;
-
-  //trail name
-  h4 {
-    margin: 5px 0px;
-    font-weight: normal;
+  .titles {
+    text-align: center;
+    margin-bottom: 1em;
+    //'sensing evolution' title
+    h3 {
+      text-transform: uppercase;
+      border-bottom: 1px solid white;
+      display: inline-block;
+    }
+    //trail name
+    h4 {
+      line-height: 1em;
+      margin: 0.2em 0 0;     
+    }
   }
-
   //list of items
   ul {
     list-style: none;
-    padding-left: 10px;
-    margin: 2px;
+    padding-left: 0.4em;
+    margin: 0.2em 0.4em 0.4em;
 
     //the li for the item the user is currently on
     li.current {
-      margin: 10px;
       border-style: solid;
-      border-width: 1px;
-      border-left-width: 16px;
+      border-width: 0;
+      border-left-width: 4px;
       border-color: lightgrey;
-      padding: 2px 4px 2px 10px;
+      padding: 2px 4px 2px 4px;
     }
   }
 }
@@ -118,17 +162,32 @@ video {
   position: absolute;
   padding: 0;
   float: left;
+  top: $standardPadding;
+  left: $standardPadding;
+  width: 46px;
+  height: 46px;
 }
 
 a.nav-link {
   font-size: 1.0em;
   color: #777;
   text-decoration: none;
+  @if $debug {
+    pointer-events: auto;
+  }
+  @else {
+    pointer-events: none;
+  }
   &.current {
 
   }
   &.found {
+    pointer-events: auto;
     color: white;
+  }
+  &.start-over {
+    display: block;
+    margin-top: 1.6em;
   }
 }
 
@@ -136,7 +195,6 @@ a.nav-link {
   top: 0;
   left: 0;
   background-color: white;
-  color: black;
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -155,25 +213,53 @@ a.nav-link {
 
 //Header across the top of the content page
 .header {
-    background-color: #f4f4f4;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;    
+  .titles {
+    text-align: center;
+    padding: .4em 2em;
     h1 {
-      font-size: medium;
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 10px;
-      margin: 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      margin: 0 0 .4em;
+      text-align: left;
+      display: inline-block;
       border-bottom-style: solid;
-      border-bottom-color: #dddddd;
+      border-bottom-color: $blue;
       border-bottom-width: 1px;
-        @media #{$phone} and #{$landscape} {
-          text-align: left;
-          margin: 0px 30px 0px 70px;
-        }
     }
+    h2 {
+      font-size: 1.2em;
+      line-height: 1em;
+      margin: 0;
+    }     
+  }
 }
+
+//Proximity indiciator on item page
+.proximity-indicator {
+  background-color: #999999;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 13px 12px;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  //one additional class added dependent on input range
+  &.far {
+    background-color: lightcoral;
+  }
+  &.near {
+    background-color: orange;
+  }
+  &.immediate {
+    background-color: lightgreen;
+  }
+}
+
 
 // Unused?
 .topic {
@@ -199,154 +285,166 @@ h3 {
 
 }
 
-//everything the user sees before finding the item
-.before-found {
-  width: 100%;
-  //Contains the image and instructions for the item the user is supposed to be searching for
-  .search-item {
-    padding: $standardPadding;
-    float: left;
-    text-align: center;
-    width: 45%;
-
-    //Thumbnail/map image
-    img {
-      @media #{$phone} and #{$landscape} {
-        width: 80%;
-        margin: 0 4%;
-      }
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0;
-      padding-right: 0;
-      width: 80%;
-      max-height: 40%;
-    }
-
-  }
-
-  //container for the hint on the item page
-  .hint-container {
-    text-align: center;
-    margin-left: 50%;
-
-    //button offering hint to user
-    .button {
-      margin: 20px 10px 10px 10px;
-    }
-
-    //hint text itself
-    .hint {
-      display: none;
-      &.revealed {
-        //Add the 'revealed' class once revealed, and the hint will be shown
-        display: block;
-      }
-    }
-    
-    margin-top: 3%;
-
-    @media #{$tablet} {
-      margin-right: 10%
-    }
-  }
-}
-//title on the item page
-div.item-title {
-  h3.name {
-    font-style: italic;
-    text-align: center;
-    padding-bottom: 20px;
-    clear: right;
-    margin-top: 10%;
-    @media #{$phone} and #{$landscape} {
-      margin-top: 15%;
-      padding-bottom: 2px;
-    }
-  }
-}
-
-//Proximity indiciator on item page
-.proximity-indicator {
-  background-color: #999999;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 13px 12px;
-  position: fixed;
-  left: 75%;
-  top: 0px;
-
-  //one additional class added dependent on input range
-  &.far {
-    background-color: lightcoral;
-  }
-  &.near {
-    background-color: orange;
-  }
-  &.immediate {
-    background-color: lightgreen;
-  }
-}
-
-//container for what is shown after the user finds the item
-// - video
-// - congratulations text
-// - replay button
-.found-item {
-  width:20%;
-  position: relative;
-  top: -45px;
-  margin: 0px 5%;
-  display: none;
-  padding: 0px;
-  text-align: center;
-//  @media #{$phone} {
-//    padding: 0px 10px;
-//    &.finished {
-//      max-width: 70%;
-//      top: 120px;
-//    }
-//  }
-//  @media #{$phone}{
-//    max-width: 50%;
-//  }
-//  @media #{$tablet} {
-//    width: 100%;
-//    clear: both;
-//  }
-//
-//  //shrink video down after it's finished playing
-//  &.finished {
-//    clear: none;
-//    float: left;
-//    left: 10px;
-//    position: absolute;
-//    max-width: 25%;
-//    @media #{$portrait} {
-//      max-width: 100%;
-//      top: 120px;
-//    }
-//  }
-
-  img.video_thumbnail {
+.item {
+  // the main item image
+  img.item-image {
     width: 100%;
     height: auto;
+    position: absolute;
+    z-index: -1;
   }
 
-  @include transition-property(max-width);
-  @include transition-duration(0.25s);
+  //everything the user sees before finding the item
+  .before-found {
+    width: 100%;
+    //Contains the image and instructions for the item the user is supposed to be searching for
+    .find-prompt {
+      padding: 0.3em 0.2em 0.1em;
+      float: left;
+      text-align: left;
+      background-color: $overlayWhite;
+    }
 
+    //container for the hint on the item page
+    .hint-container {
+      position: absolute;
+      text-align: center;
+      left: 60%;
+      width:40%;
+      height: 100%;
+      background-color: $overlayWhite;
+      img.item-map {
+        width: 70%;
+        height: auto;
+        margin: 0 auto;
+      }
 
+      //button offering hint to user
+      .button-hint {
+        margin: 30px 10px 10px 10px;
+        a {
+          color: $fontColor;
+          text-decoration: none;
+        }
+        margin: 10px;
+      }
 
-  //'well done' text
-  h3 {
-    color: darkgreen;
+      //hint text itself
+      .hint {
+        display: none;
+        &.revealed {
+          //Add the 'revealed' class once revealed, and the hint will be shown
+          display: block;
+        }
+      }
+      @media #{$tablet} {
+        margin-right: 10%
+      }
+    }
   }
-}
+  .found-video {
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-color: $overlayWhite;
+    display:none;
+  }
+
+  //container for what is shown after the user finds the item
+  // - video
+  // - congratulations text
+  // - replay button
+  .found-item {
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    display:none;
+    .button {
+      background-color: $overlayBlue;
+      a {
+        color: white;
+      }
+    }
+    .video-container {
+      float: left;
+      width: 25%;
+      padding: 1em 5% 0;
+      text-align: center;
+      img.video_thumbnail {
+        width: 100%;
+        height: auto;
+      }
+      @include transition-property(max-width);
+      @include transition-duration(0.25s);
+      //'well done' text
+      h3 {
+        color: $green;
+      }
+    }
+      //container for questions
+    .question {
+      position: relative;
+      padding: 1em 0 0;
+      margin-left: 35%;
+      height: 100%;
+      width: 65%;
+      //some questions/answers are quite long. Allow overflow scrolling for this div.
+      // Somewhat hard to notice unfortunately.
+      overflow-y: scroll; 
+      .question-text {
+        font-size: 1.2em;
+        line-height: 1em;
+        margin-bottom: 0.4em;
+      }     
+      .questions {
+        text-align: left;
+        display: block;
+        list-style: none;
+        list-style-position: inside;
+        .answer-container {
+          display: block;
+          padding: 0px 1em 0 0;
+          div.answer {
+            display: block;
+            .button {
+              margin: 0 0.4em 0.4em 0;
+              padding: 0.4em 0.4em 0.2em;
+              //class added to answer button once picked, for red/green highlighting.
+              &.chosen {
+                background-color: $red;
+                border-style: none;
+                &.correct {
+                  background-color: $green;
+                }
+              }
+            }
+          }
+          //explanatory text after selecting an answer
+          div.response {
+            display: none;
+            font-size: 1.0em;
+          }
+        }
+        height: 100%;
+      }
+
+      //buttons shown after answering
+      .try-again {
+        display: none;
+        width: 35%;
+        float: right;
+      }
+      .proceed {
+        display: none;
+        width: 35%;
+        float: right;
+      }      
+    }
+  }
 
   //fullscreen video while it's playing
-  video.found{
-    display: none;
+  video.found {
     &.playing {
       display: inline;
       position: fixed;
@@ -354,176 +452,93 @@ div.item-title {
       left: 0px;
       width: 100%;
       background-color: #000000;
+      z-index:1000;
     }
   }
 
-//class for dev-controls
-// Make this display: none for final build
-.dev-control {
-  display: none;
-  font-size: x-small;
-}
-
-// play / play again buttons on item page
-.play-button {
-  position: relative;
-  top: 125px;
-  z-index: 5;
-  &.hidden {
-    display: none;
-  }
-  &.play {
-    width: 50%;
-    line-height: 3em;
-    margin: 0px;
-    padding: 5px;
-    font-size: 1.8em;
-    display: none;
-  }
-  &.replay {
-    top: 0px;
-    width: 100%;
-    padding-bottom: 5px;
-  }
-}
-
-//container for questions
-.question {
-  margin-left: 35%;
-  max-height: 260px;
-  @media #{$tablet} {
-    max-height: 50%;
-  }
-
-  //some questions/answers are quite long. Allow overflow scrolling for this div.
-  // Somewhat hard to notice unfortunately.
-  overflow-y: scroll;
-  div {
-    display: inline;
-    padding: 0px;
-    text-align: center;
-    font-weight: bold;
-
-    .questions {
+  //class for dev-controls
+  .dev-control {
+    @if $debug {
       display: block;
-      text-align: left;
-      list-style: none;
-      padding: 2px;
-      list-style-position: inside;
-      .answer-container {
-        display: block;
-        div.answer {
-          display: block;
-          .button {
-            margin: 5px 0px;
-            padding: 4px 10px;
-            text-align: center;
+    }
+    @else {
+      display: none;
+      font-size: x-small;
+    }
+  }
 
-            //class added to answer button once picked, for red/green highlighting.
-            &.chosen {
-              background-color: red;
-              border-style: none;
-              &.correct {
-                background-color: green;
-              }
-            }
-
-          }
-        }
-        //explanatory text after selecting an answer
-        div.response {
-          display: none;
-          font-size: 1.0em;
-          font-weight: normal;
-        }
-        padding: 0px 10px;
+  // play / play again buttons on item page
+  .play-button {
+    position: relative;
+    top: 125px;
+    z-index: 5;
+    &.hidden {
+      display: none;
+    }
+    &.play {
+      width: 50%;
+      margin: 0px;
+      padding: 1.4em;
+      line-height: 1.6em;
+      p {
+        margin: 0;
       }
-      height: 100%;
+      a {
+        font-size: 1.4em;  
+      }
     }
-
-    //buttons shown after answering
-    .try-again {
-      display: none;
-      width: 35%;
-      float: right;
-    }
-    .proceed {
-      display: none;
-      width: 35%;
-      float: right;
+    &.replay {
+      padding: 0.4em 0 0.3em;
+      top: 0px;
+      width: 100%;
     }
   }
 }
+
+
 
 //Shown after intro video finishes
 .start-trail {
   display:none;
 }
 
-//shared style for all buttons
-div.button {
-  &.center {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-//    display: block;
-  }
-    padding: 2*$standardPadding;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 1px;
-    background-color: lightgrey;
-  a {
-    color: $fontColor;
-    text-decoration: none;
-  }
-  margin: 10px;
-  display: block;
-}
-
-
 //container for the item unlock view on the item page
 .item-unlock {
-  margin-top: 30px;
-  text-align: center;
-  margin: 20px 0px 20px 10px;
-  clear: both;
-  height: 30px;
-  float: right;
-  border: solid 1px black;
-  border-radius: 5px;
-  padding: 5px;
-  z-index: 100;
-
+  text-align: right;
+  margin: 10px 0px 10px 10px;
+  height: 40px;
+  @media #{$tablet} {
+    height: 60px;
+  }
   //For some reason, the button doesn't respond on iPhone without this...
   position: relative;
-  left: -10px;
-
+  left: -10px;  
   //classes added after attempted input code
   &.correct {
-    border-color: darkgreen;
-    color: darkgreen;
+    border-color: $green;
+    color: $green;
   }
   &.incorrect {
-    border-color: darkred;
-    color: darkred;
+    border-color: $red;
+    color: $red;
   }
-  .button {
-  }
-
   //key icon
   img {
     max-height: 100%;
-    max-width: 100%;
+    max-width: auto;
     padding-left: 10px;
   }
-
   //input field for typing in number
   input{
     height: 24px;
+    margin: 6px 0 4px;
+    @media #{$tablet} {
+      margin: 16px 0 14px;
+    }
     padding: 3px 0px 3px 10px;
-    vertical-align: bottom;
+    text-align: left;
     border: none;
+    vertical-align: top;
     border-right: solid 1px grey;
     position: relative;
     top: -2px;
