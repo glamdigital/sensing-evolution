@@ -30,11 +30,11 @@ div.button {
     margin-left: auto;
     margin-right: auto;
   }
-    padding: 2*$standardPadding;
-    border-style: solid;
-    border-color: $transparentGrey;
-    border-width: 1px;
-    background-color: $overlayWhite;
+  padding: 2*$standardPadding;
+  border-style: solid;
+  border-color: $transparentGrey;
+  border-width: 1px;
+  background-color: $overlayWhite;
   a {
     color: $fontColor;
     text-decoration: none;
@@ -360,6 +360,12 @@ h3 {
     position: absolute;
     background-color: rgba(255,255,255,0.8);
     display:none;
+    .button {
+      background-color: $overlayBlue;
+      a {
+        color: white;
+      }
+    }
     .video-container {
       float: left;
       width: 25%;
