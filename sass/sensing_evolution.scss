@@ -185,6 +185,10 @@ a.nav-link {
     pointer-events: auto;
     color: white;
   }
+  &.start-over {
+    display: block;
+    margin-top: 1.6em;
+  }
 }
 
 .content {
