@@ -94,7 +94,7 @@ div.button {
     background-color: transparent;
     
     .button {
-      padding: 1em;
+      padding: 1em 1em 0.8em;
       &.resume {
         //resume button hidden until pause pressed
         display: none;
@@ -482,7 +482,7 @@ h3 {
       }
     }
     &.replay {
-      padding: 0.4em 0;
+      padding: 0.4em 0 0.3em;
       top: 0px;
       width: 100%;
     }
