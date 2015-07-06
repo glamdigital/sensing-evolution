@@ -131,7 +131,13 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
     {
         var content = $('#content');
         content.toggleClass('slideout');
-    }
+    },
+
+	cleanup: function() {
+		if(this.audioControlsView) {
+			this.audioControlsView.remove();
+		}
+	}
 
     //allQuestions: allQuestions
   }
