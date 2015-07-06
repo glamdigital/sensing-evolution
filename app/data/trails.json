@@ -3,22 +3,22 @@
     "slug": "Discover",
     "title": "Discover",
     "subtitle": "Learn the basic ideas behind evolution",
-    "instructions": "Steve Backshall will be your guide around the Museum as you explore evolution. Here’s how it works:<br/><br/><img src=\"img/maps/mapBottomLeft.png\">You are hunting for 8 objects on the ground floor of the Museum. The map gives you a clue where to look.<br/><br/>When you get close to the object in the photo a video will automatically appear.<br/><br/> If this doesn’t happen, tap the <img src=\"img/key.png\" class=\"inline-icon\"> icon and enter the four-digit code you can see on the label in the display.",
+    "instructions": "Steve Backshall will be your guide around the Museum as you explore evolution. Here’s how it works:<br/><br/>\n<img src=\\\"img/maps/mapBottomLeft.png\\\">\nYou are hunting for 8 objects on the ground floor of the Museum. The map gives you a clue where to look.<br/><br/>\nWhen you get close to the object in the photo a video will automatically appear.<br/><br/>\nIf this doesn’t happen, tap the <img src=\\\"img/key.png\\\" class=\\\"inline-icon\\\"> icon and enter the four-digit code you can see on the label in the display.",
     "trail_icon_image": "",
     "video": "d0intro.mp4",
     "video_poster": "video_posters/d0intro.jpg",
-    "finished_text": "lorem ipsum dolor",
+    "finished_text": "You have gathered evidence of some of the complex processes of the evolution of life on Earth. Well done!",
     "fixed_order": "FALSE"
   },
   {
     "slug": "Investigate",
     "title": "Investigate",
     "subtitle": "Learn more about evolution",
-    "instructions": "Alice Roberts will be your guide around the Museum as you explore evolution. Here’s how it works:<br/><br/><img src=\"img/maps/mapBottomLeft.png\">You are hunting for 8 objects on the ground floor of the Museum. The map gives you a clue where to look.<br/><br/>When you get close to the object in the photo a video will automatically appear.<br/><br/> If this doesn’t happen, tap the <img src=\"img/key.png\" class=\"inline-icon\"> icon and enter the four-digit code you can see on the label in the display.",
+    "instructions": "In separate Google doc - Intro screen copy",
     "trail_icon_image": "",
     "video": "i0intro.mp4",
     "video_poster": "video_posters/i0intro.jpg",
-    "finished_text": "",
+    "finished_text": "You have gathered evidence of some of the complex processes that underpin the evolution of life on Earth.",
     "fixed_order": "FALSE"
   }
 ]

@@ -1,2 +1,10 @@
-<h1>Finished Trail</h1>
-<a href=''>Start again</a>
+<div class="finished-page">
+    <h1>Congratulations – you’ve finished the Sensing Evolution {{title}} trail</h1>
+    <div class="finished-grid">
+        {{#each images}}
+            <img class="finished-image" src="img/items/{{this}}">
+        {{/each}}
+    </div>
+    <p>{{message}}</p>
+    <a href=''>Start again</a>
+</div>

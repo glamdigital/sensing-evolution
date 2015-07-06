@@ -107,7 +107,9 @@ define(["backbone", "jquery", "underscore",
             }
         },
         finished: function() {
-            var view = new FinishedView();
+            var view = new FinishedView({
+	            trail: this.session.getCurrentTrail(),
+            });
             this.contentView.setView(view);
             view.render();
             //TODO mark with the session that it's finished.
