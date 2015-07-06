@@ -1,4 +1,5 @@
 platforms/
+plugins/*
 .idea/
 .sass-cache/
 node_modules/
@@ -18,3 +19,5 @@ _SpecRunner.html
 www
 
 *.css.map
+
+subtitling/**/*.mp4
