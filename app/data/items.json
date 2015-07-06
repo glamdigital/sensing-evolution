@@ -102,7 +102,7 @@
     "hint": "Head for the Sensing Evolution Reptiles table",
     "code": "1111",
     "beaconMajor": "63308",
-    "triggerOnFar": "TRUE"
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "adaptation2",
@@ -162,7 +162,7 @@
     "hint": "Head for the Sensing Evolution Mammals table",
     "code": "1111",
     "beaconMajor": "22691",
-    "triggerOnFar": "TRUE"
+    "triggerOnFar": "FALSE"
   },
   {
     "slug": "reproduction2",
