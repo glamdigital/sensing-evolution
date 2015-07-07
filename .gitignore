@@ -18,6 +18,8 @@ app/libs
 _SpecRunner.html
 www
 
+subtitling/**/*.mp4
+
 *.css.map
 
 subtitling/**/*.mp4
