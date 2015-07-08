@@ -7,6 +7,16 @@
   text-align: left;
   font-size: 1.2em;
   line-height: 1em;
+  @media #{$phone} {
+    font-size: 1.0em;
+    padding-top: 1.5em;
+  }
+  @media #{$phone_small} {
+    font-size: 0.8em;
+    padding-top: 2em;
+  }
+
+
   margin-left: auto;
   margin-right: auto;
   h2 {
@@ -15,11 +25,16 @@
   }
   p {
     padding: 10px;
+    padding-bottom: 0px;
   }
   img {
     text-align: center;
     height: 8em;
     width: 9em;
+    @media #{$phone_small} {
+      height: 6em;
+      width: 6.75em;
+    }
     float: left;
     padding: 10px;
   }
