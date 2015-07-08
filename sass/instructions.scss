@@ -12,9 +12,10 @@
     padding-top: 1.5em;
   }
   @media #{$phone_small} {
-    font-size: 0.8em;
-    padding-top: 2em;
+//    font-size: 0.8em;
+    padding-top: 2.2em;
   }
+
 
 
   margin-left: auto;
@@ -26,6 +27,8 @@
   p {
     padding: 10px;
     padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   img {
     text-align: center;

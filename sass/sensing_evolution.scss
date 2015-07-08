@@ -16,6 +16,9 @@ body {
   @media #{$tablet} {
     font-size: 24px;
   }
+  @media #{$phone_small} {
+    font-size: 17px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -338,6 +341,9 @@ h3 {
       //hint text itself
       .hint {
         display: none;
+        @media #{$phone_small} {
+          margin-top: 5px;
+        }
         &.revealed {
           //Add the 'revealed' class once revealed, and the hint will be shown
           display: block;
@@ -376,6 +382,10 @@ h3 {
       float: left;
       width: 25%;
       padding: 1em 5% 0;
+      @media #{$phone_small} {
+        width: 18%;
+        padding: 1em 2% 0;
+      }
       text-align: center;
       img.video_thumbnail {
         width: 100%;
@@ -395,11 +405,18 @@ h3 {
       margin-left: 35%;
       height: 100%;
       width: 65%;
+      @media #{$phone_small} {
+        margin-left: 25%;
+        width: 74%;
+      }
       //some questions/answers are quite long. Allow overflow scrolling for this div.
       // Somewhat hard to notice unfortunately.
       overflow-y: scroll; 
       .question-text {
         font-size: 1.2em;
+        @media #{$phone_small} {
+          font-size: 1.0em;
+        }
         line-height: 1em;
         margin-bottom: 0.4em;
       }     
