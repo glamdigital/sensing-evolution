@@ -1,10 +1,15 @@
 <div class="finished-page">
-    <h1>Congratulations – you’ve finished the Sensing Evolution {{title}} trail</h1>
+    <div class="header">
+        <img class="nav-menu-button" id="nav-menu-button" src="img/menu.png">
+        <div class="titles">
+            <h1 class="title">Congratulations</h1>
+            <h2 class="subtitle">You’ve finished the Sensing Evolution {{title}} trail</h2>
+        </div>
+    </div>
     <div class="finished-grid">
         {{#each images}}
             <img class="finished-image" src="img/items/{{this}}">
         {{/each}}
     </div>
     <p>{{message}}</p>
-    <a href=''>Start again</a>
 </div>

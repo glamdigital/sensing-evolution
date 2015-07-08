@@ -269,7 +269,6 @@ a.nav-link {
   }
 }
 
-
 // Unused?
 .topic {
   padding: $standardPadding;
@@ -595,10 +594,25 @@ h3 {
 
 
 .finished-page {
-  .finished-grid {
-    img {
-      height: 50px;
-      width: 50px;
+  text-align: center;
+  .header {
+    margin-bottom: 0.5em;
+    h2.subtitle {
+      font-size: 1em;
     }
   }
+    @media #{$phone_small} {
+      padding-top: 0px;
+    }
+    @media #{$tablet} {
+      padding-top: 10px;
+    }
+
+    .finished-grid {
+      img {
+        width: 25%;
+        height: auto;
+        margin: -1%;
+      }
+    }
 }

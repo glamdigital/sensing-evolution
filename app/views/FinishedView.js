@@ -25,7 +25,16 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
 		    message: this.trail.attributes.finished_text,
 		    images: images
 	    }
-    }
+    },
+
+    events: {
+        "click #nav-menu-button" : "toggleNavMenu",
+    },
+
+	  toggleNavMenu: function() {
+		  var content = $('#content');
+		  content.toggleClass('slideout');
+	  }
 
   });
 
