@@ -222,6 +222,9 @@ a.nav-link {
   .titles {
     text-align: center;
     padding: .4em 2em;
+    @media #{$phone_small} {
+      padding: .2em 2em;
+    }
     h1 {
       font-size: 1.2em;
       text-transform: uppercase;

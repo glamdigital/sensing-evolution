@@ -12,8 +12,14 @@ div.trails-list-container {
       color: black;
       li {
         margin-bottom: 10px;
+        @media #{$phone_small} {
+          margin-bottom: 5px;
+        }
         width: 100%;
         height: 140px;
+        @media #{$phone_small} {
+          height: 120px;
+        }
         @media #{$tablet} {
           height: 240px;
         }
@@ -24,6 +30,9 @@ div.trails-list-container {
           background-color: $overlayWhite;
           color: $blue;
           padding-top: 40px;
+          @media #{$phone_small} {
+            padding-top: 30px;
+          }
           @media #{$tablet} {
             padding-top: 90px;
           }
