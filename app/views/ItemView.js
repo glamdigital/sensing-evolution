@@ -94,7 +94,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 
 	    //center play button
 	    this.moveToCentre($('.play'));
-		  //this.moveToCentre($('#foundVideo'));
+		  this.moveToCentre($('#foundVideo'));
       navigator.notification.vibrate(500);
     },
 
