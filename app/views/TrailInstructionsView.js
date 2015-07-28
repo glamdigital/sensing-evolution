@@ -26,17 +26,17 @@ define(['backbone', 'hbs!app/templates/trail_instructions1', 'hbs!app/templates/
 
 		afterRender: function() {
 			//for some reason the dimensions aren't yet final in this function. Need a short delay.
-			setTimeout(this.centreContent.bind(this), 20);
+			//setTimeout(this.centreContent.bind(this), 20);
 		},
 
-	    centreContent: function() {
-		    this.moveToCentre($('.instructions'));
-	    }
+	    //centreContent: function() {
+		 //   this.moveToCentre($('.instructions'));
+	    //}
 
 
     });
 
-    _.extend(TrailInstructionsView.prototype, CentreMixin);
+    //_.extend(TrailInstructionsView.prototype, CentreMixin);
 
     return TrailInstructionsView;
 
