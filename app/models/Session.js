@@ -36,7 +36,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
           for(var j=0; j<items.length; j++) {
 	          var item = topic.shuffledItems.at(j);
 	          var index = j+1;
-	          item.attributes.progressString = "Item " + itemIndex + " of 8";
+	          item.attributes.protgressString = "Item " + itemIndex + " of 8";
 	          itemIndex ++;
 	          this.unvisitedItems.add(item);
           }
@@ -106,7 +106,8 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
             var topicDict = {
                 title: topic.attributes.title,
                 items: [],
-                isCurrent: isCurrentTopic
+                isCurrent: isCurrentTopic,
+	            isComplete: true,
             };
             //fill in items
             var items = topic.shuffledItems;
@@ -123,6 +124,9 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
                     isFound: item.attributes.isFound
                 };
                 topicDict.items.push(itemDict);
+
+	            //update whether the parent topic is complete
+	            topicDict.isComplete = topicDict.isComplete && isVisited;
             }, this);
             out.topics.push(topicDict);
         }, this);

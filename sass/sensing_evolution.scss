@@ -155,15 +155,32 @@ div.button {
     list-style: none;
     padding-left: 0.4em;
     margin: 0.2em 0.4em 0.4em;
-
+    font-size: 1.0em;
     //the li for the item the user is currently on
-    li.current {
-      border-style: solid;
-      border-width: 0;
-      border-left-width: 4px;
-      border-color: lightgrey;
-      padding: 2px 4px 2px 4px;
+    li {
+        color: #777;
+      &.available {
+        color: #ddd;
+      }
+      &.current {
+        color: white;
+  //      border-style: solid;
+  //      border-width: 0;
+  //      border-left-width: 4px;
+  //      border-color: lightgrey;
+  //      padding: 2px 4px 2px 4px;
+      }
     }
+  }
+}
+
+.nav-menu-topic-title {
+  color: #777;
+  &.complete {
+    color:#ddd;
+  }
+  &.current {
+    color: white;
   }
 }
 
@@ -178,7 +195,6 @@ div.button {
 }
 
 a.nav-link {
-  font-size: 1.0em;
   color: #777;
   text-decoration: none;
   @if $debug {
@@ -187,12 +203,12 @@ a.nav-link {
   @else {
     pointer-events: none;
   }
-  &.current {
-
-  }
   &.found {
     pointer-events: auto;
-    color: white;
+    color: #ddd;
+  }
+  &.current {
+    color:white;
   }
   &.start-over {
     pointer-events: auto;

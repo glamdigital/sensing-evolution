@@ -4,10 +4,18 @@
 </div>
 
 {{#each topics}}
-    {{{title}}}
+    <span class="nav-menu-topic-title {{#if isComplete}}complete{{/if}} {{#if isCurrent}}current{{/if}}">{{{title}}}</span>
     <ul>
     {{#each items}}
-        <li class="{{#if isCurrent}}current{{/if}}"><a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isAvailable}}found{{/if}}" href="#/item/{{slug}}">{{{title}}}</a></li>
+        <li class="{{#if isCurrent}}current{{/if}} {{#if isAvailable}}available{{/if}}">
+            {{#if isCurrent}}
+                    <i class="fa fa-caret-square-o-right"></i>
+            {{else}}
+                    {{#if isAvailable}}<i class="fa fa-check-square-o"></i>
+                    {{else}}<i class="fa fa-square-o"></i>{{/if}}
+            {{/if}}
+            <a class="nav-link {{#if isCurrent}}current{{/if}} {{#if isAvailable}}found{{/if}}" href="#/item/{{slug}}">{{{title}}}</a>
+        </li>
     {{/each}}
     </ul>
 {{/each}}
