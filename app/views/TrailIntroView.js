@@ -6,7 +6,6 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 
         initialize: function(params) {
             this.trail = params.trail;
-            this.nextURL = params.nextURL;
         },
 
         afterRender: function() {
@@ -66,7 +65,6 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
         },
         serialize: function() {
             var out = this.trail.toJSON();
-            out.nextURL = this.nextURL;
             return out;
         },
 

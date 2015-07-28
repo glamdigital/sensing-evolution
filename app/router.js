@@ -44,11 +44,9 @@ define(["backbone", "jquery", "underscore",
             }
         },
 
+	    //trail instructions
         trail: function(trailSlug) {
-            //create a new session for the chosen trail
-            var trail = this.allTrails.findWhere( {slug: trailSlug} );
-            this.session = new Session(trail);
-
+            var trail = this.session.getCurrentTrail();
             if(!this.navView) {
                 //create a navbar now we have a session
                 this.navView = new NavView({el: $('#nav-menu'), session: this.session});
@@ -61,7 +59,8 @@ define(["backbone", "jquery", "underscore",
 
             //create intro view
             var view = new TrailInstructionsView({
-                trail: trail
+                trail: trail,
+                nextURL: this.session.getNextURL()
             });
 
             this.contentView.setView(view);
@@ -69,7 +68,10 @@ define(["backbone", "jquery", "underscore",
         },
 
         trail_video: function(trailSlug) {
-            var trail = this.session.getCurrentTrail();
+            //create a new session for the chosen trail
+            var trail = this.allTrails.findWhere( {slug: trailSlug} );
+            this.session = new Session(trail);
+
             if (trailSlug != trail.attributes.slug) {
                 console.error("Trying to show video for trail other than the current one")
             }
@@ -77,7 +79,6 @@ define(["backbone", "jquery", "underscore",
             //create intro view
             var view = new TrailIntroView({
                 trail: trail,
-                nextURL: this.session.getNextURL()
             });
 
             this.contentView.setView(view);

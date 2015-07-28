@@ -7,10 +7,13 @@ define(['backbone', 'hbs!app/templates/trail_instructions', 'underscore', 'app/v
 
         initialize: function(params) {
             this.trail = params.trail;
+	        this.nextURL = params.nextURL;
         },
 
         serialize: function() {
-            return this.trail.toJSON();
+            var out = this.trail.toJSON();
+	        out.nextURL = this.nextURL;
+	        return out;
         },
 
 		afterRender: function() {
