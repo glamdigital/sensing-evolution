@@ -28,6 +28,16 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       Logging.logToDom("Listening for event: " + this.eventId);
       this.listenTo(Backbone, 'unlock-item', this.findObject);
       this.item.attributes.isAvailable = true;
+	    if(typeof(Media) !== 'undefined') {
+
+	            var pathPrefix = ''
+                if(device.platform.toLowerCase() === "android") {
+                    pathPrefix = "/android_asset/www/";
+                }
+                this.foundSound = new Media(pathPrefix + this.question.attributes.correctSound,
+                                    function() { console.log("Created media object"); },
+                                    function(error) { console.log("error creating media object"); console.log(error); });
+        } else { console.log("Media plugin not available!");}
     },
 
     afterRender: function() {
@@ -96,6 +106,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.moveToCentre($('.play'));
 		  this.moveToCentre($('#foundVideo'));
       navigator.notification.vibrate(500);
+	    this.foundSound.play();
     },
 
     //For browser simulation of 'finding' the object. Click on the picture

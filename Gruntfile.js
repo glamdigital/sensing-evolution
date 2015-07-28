@@ -142,6 +142,7 @@ module.exports = function(grunt) {
               'img/**',
               'app/data/**',
               'video/**',
+              'audio/**',
               'css/**',
               'app/built.js',
               'config.xml',
