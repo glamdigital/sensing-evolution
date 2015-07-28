@@ -47,14 +47,14 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		    }
 		    this.checkErrorTimeout = setTimeout(this.checkVideoError.bind(this), 500);
 	    },
-	    centreElements: function() {
-		    //not on android - video has no height initially
-		    if(typeof(device)!='undefined') {
-			    if (device.platform !== 'Android' && device.platform !== 'amazon-fireos') {
-				    this.moveToCentre(this.$video);
-			    }
-		    }
-	    },
+	    //centreElements: function() {
+		 //   //not on android - video has no height initially
+		 //   if(typeof(device)!='undefined') {
+			//    if (device.platform !== 'Android' && device.platform !== 'amazon-fireos') {
+			//	    this.moveToCentre(this.$video);
+			//    }
+		 //   }
+	    //},
         startVideo: function() {
 	        console.log("Playing video");
 	        if(typeof(device)!='undefined') {
@@ -75,7 +75,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 
 	        var $buttonsContainer = $('.buttons-container');
             $buttonsContainer.show();
-            this.moveToCentre($buttonsContainer);
+            //this.moveToCentre($buttonsContainer);
             //add the 'finished' class to the video
             var $video = $('#intro-video');
 
@@ -134,7 +134,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 
     });
 
-    _.extend(TrailIntroView.prototype, CentreMixin);
+    //_.extend(TrailIntroView.prototype, CentreMixin);
 
 
     return TrailIntroView;

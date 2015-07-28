@@ -34,7 +34,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
                 if(device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
                 }
-                this.foundSound = new Media(pathPrefix + this.question.attributes.correctSound,
+                this.foundSound = new Media(pathPrefix + this.item.attributes.foundsound,
                                     function() { console.log("Created media object"); },
                                     function(error) { console.log("error creating media object"); console.log(error); });
         } else { console.log("Media plugin not available!");}

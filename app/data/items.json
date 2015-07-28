@@ -10,9 +10,10 @@
     "video": "d1buckland.mp4",
     "video_poster": "video_posters/d1buckland.jpg",
     "hint": "Look for the display in the centre court called 'Belonging to Professor Buckland'.",
-    "code": "1111",
+    "code": "4781",
     "beaconMajor": "2889",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "changes2",
@@ -25,9 +26,10 @@
     "video": "d2hyaena.mp4",
     "video_poster": "video_posters/d2hyaena.jpg",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
-    "code": "1111",
+    "code": "7528",
     "beaconMajor": "9125",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "fossils1",
@@ -40,9 +42,10 @@
     "video": "d3megalosaurus.mp4",
     "video_poster": "video_posters/d3megalosaurus.jpg",
     "hint": "Look for the '<i>Megalosaurus</i>' case near the T. rex",
-    "code": "1111",
+    "code": "6652",
     "beaconMajor": "4005",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "fossils2",
@@ -55,9 +58,10 @@
     "video": "d4icthyosaur.mp4",
     "video_poster": "video_posters/d4icthyosaur.jpg",
     "hint": "Look for the 'Ichthyosaurs' case",
-    "code": "1111",
+    "code": "1908",
     "beaconMajor": "11889",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "variation1",
@@ -70,9 +74,10 @@
     "video": "d5pepperedmoth.mp4",
     "video_poster": "video_posters/d5pepperedmoth.jpg",
     "hint": "Look for the display called 'Natural Selection at Work'",
-    "code": "1111",
+    "code": "8865",
     "beaconMajor": "50339",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "variation2",
@@ -85,9 +90,10 @@
     "video": "d6darwin.mp4",
     "video_poster": "video_posters/d6darwin.jpg",
     "hint": "Look for the display called 'Darwin's Principles'",
-    "code": "1111",
+    "code": "6509",
     "beaconMajor": "14250",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "adaptation1",
@@ -100,9 +106,10 @@
     "video": "d7reptiles.mp4",
     "video_poster": "video_posters/d7reptiles.jpg",
     "hint": "Head for the Sensing Evolution Reptiles table",
-    "code": "1111",
+    "code": "8350",
     "beaconMajor": "63308",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "adaptation2",
@@ -115,9 +122,10 @@
     "video": "d8archaeopteryx.mp4",
     "video_poster": "video_posters/d8archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
-    "code": "1111",
+    "code": "9972",
     "beaconMajor": "47050",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "origin1",
@@ -130,9 +138,10 @@
     "video": "i1darwin.mp4",
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
-    "code": "1111",
+    "code": "4765",
     "beaconMajor": "12518",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "origin2",
@@ -145,9 +154,10 @@
     "video": "i2ourplace.mp4",
     "video_poster": "video_posters/i2ourplace.jpg",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
-    "code": "1111",
+    "code": "6238",
     "beaconMajor": "21925",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "reproduction1",
@@ -160,9 +170,10 @@
     "video": "i3success.mp4",
     "video_poster": "video_posters/i3success.jpg",
     "hint": "Head for the Sensing Evolution Mammals table",
-    "code": "1111",
+    "code": "4054",
     "beaconMajor": "22691",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "reproduction2",
@@ -175,9 +186,10 @@
     "video": "i4dna.mp4",
     "video_poster": "video_posters/i4dna.jpg",
     "hint": "Look for the spinning DNA model",
-    "code": "1111",
+    "code": "5118",
     "beaconMajor": "53044",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "ancestors1",
@@ -190,9 +202,10 @@
     "video": "i5archaeopteryx.mp4",
     "video_poster": "video_posters/i5archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
-    "code": "1111",
+    "code": "9972",
     "beaconMajor": "47050",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "ancestors2",
@@ -205,9 +218,10 @@
     "video": "i6horse.mp4",
     "video_poster": "video_posters/i6horse.jpg",
     "hint": "The 'Evolution of the Horse' display is tucked away in one of the 'cloisters'",
-    "code": "1111",
+    "code": "1547",
     "beaconMajor": "61866",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "selection1",
@@ -220,9 +234,10 @@
     "video": "i7naturalselection.mp4",
     "video_poster": "video_posters/i7naturalselection.jpg",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
-    "code": "1111",
+    "code": "7401",
     "beaconMajor": "50197",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   },
   {
     "slug": "selection2",
@@ -235,8 +250,9 @@
     "video": "i8sexualselection.mp4",
     "video_poster": "video_posters/i8sexualselection.jpg",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
-    "code": "1111",
+    "code": "9284",
     "beaconMajor": "47967",
-    "triggerOnFar": "FALSE"
+    "triggerOnFar": "FALSE",
+    "foundsound": "audio/elephant.wav"
   }
 ]
