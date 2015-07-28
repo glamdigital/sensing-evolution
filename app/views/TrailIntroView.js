@@ -23,7 +23,14 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        }
 
             //setTimeout(this.startVideo.bind(this), 5000);
+
             this.startVideo();
+            //this.$video.one('touchstart', function(ev) {
+		     //   ev.preventDefault();
+				//this.startVideo();
+            //}.bind(this));
+
+
 	        this.playing = false;
             this.$video.on('ended', this.showStartLink.bind(this));
 	        this.checkErrorTimeout = setTimeout(this.checkVideoError.bind(this), 500);
@@ -36,7 +43,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		     //   }
 	        //}.bind(this));
 
-			setTimeout(this.centreElements.bind(this), 100);
+			//setTimeout(this.centreElements.bind(this), 100);
         },
 	    checkVideoError: function() {
 		    // Sometimes on Android, decoding fails at first attempt.
@@ -62,6 +69,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        } else {
 		        this.video.play();
 	        }
+	        //hide controls
         },
         serialize: function() {
             var out = this.trail.toJSON();
