@@ -4,7 +4,7 @@ HandBrakeCLI -i ~/Movies/Submerge/0.\ INTRODUCTION\ V2.mp4 -o ~/sensing-evolutio
 HandBrakeCLI -i ~/Movies/Submerge/1.\ Buckland\ Case.mp4 -o ~/sensing-evolution/video/d1buckland.mp4 --preset="Normal" -q 25 -l 720 --gain 10
 HandBrakeCLI -i ~/Movies/Submerge/2.\ Hyaena\ Life\ on\ Earth\ Display.mp4 -o ~/sensing-evolution/video/d2hyaena.mp4 --preset="Normal" -q 25 -l 720 --gain 10
 HandBrakeCLI -i ~/Movies/Submerge/3.\ Megalosaurus.mp4 -o ~/sensing-evolution/video/d3megalosaurus.mp4 --preset="Normal" -q 25 -l 720 --gain 10
-HandBrakeCLI -i ~/Movies/Submerge/4.\ Icthyosaur.mp4 -o ~/sensing-evolution/video/d4ichthyosaur.mp4 --preset="Normal" -q 25 -l 720 --gain 10
+HandBrakeCLI -i ~/Movies/Submerge/4.\ Icthyosaur.mp4 -o ~/sensing-evolution/video/d4icthyosaur.mp4 --preset="Normal" -q 25 -l 720 --gain 10
 HandBrakeCLI -i ~/Movies/Submerge/5.\ Peppered\ Moth\ and\ Snails\ Script.mp4 -o ~/sensing-evolution/video/d5pepperedmoth.mp4 --preset="Normal" -q 25 -l 720 --gain 10
 HandBrakeCLI -i ~/Movies/Submerge/6.\ Darwin\'s\ Pigeon\ Case\ Script.mp4 -o ~/sensing-evolution/video/d6darwin.mp4 --preset="Normal" -q 25 -l 720 --gain 10
 HandBrakeCLI -i ~/Movies/Submerge/7.\ Reptiles\ SEvo\ Table.mp4 -o ~/sensing-evolution/video/d7reptiles.mp4 --preset="Normal" -q 25 -l 720 --gain 10
