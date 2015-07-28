@@ -19,7 +19,8 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
             this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
         }
 
-      //get all items for the topic, shuffle and add to unvisited items
+      //get all items for the topic, shuffle and add to unvisited items, and record index
+      var itemIndex = 1;
       for(var i=0; i<this.shuffledTopics.length; i++) {
           var topic = this.shuffledTopics.at(i);
           var items = topic.getItems().filter(function (item) {
@@ -33,8 +34,12 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
               topic.shuffledItems = new ItemsCollection(_.shuffle(items));
           }
           for(var j=0; j<items.length; j++) {
-          this.unvisitedItems.add(topic.shuffledItems.at(j));
-        }
+	          var item = topic.shuffledItems.at(j);
+	          var index = j+1;
+	          item.attributes.progressString = "Item " + itemIndex + " of 8";
+	          itemIndex ++;
+	          this.unvisitedItems.add(item);
+          }
       }
 
       //listen for items being found
