@@ -1,13 +1,21 @@
-define(['backbone', 'hbs!app/templates/trail_instructions', 'underscore', 'app/views/vcentre'],
-        function(Backbone, trailInstructionsTemplate, _, CentreMixin) {
+define(['backbone', 'hbs!app/templates/trail_instructions1', 'hbs!app/templates/trail_instructions2',
+		'underscore', 'app/views/vcentre'],
+        function(Backbone, trailInstructionsTemplate1, trailInstructionsTemplate2, _, CentreMixin) {
 
     var TrailInstructionsView = Backbone.View.extend({
-
-        template: trailInstructionsTemplate,
+        //
+        //template: trailInstructionsTemplate,
 
         initialize: function(params) {
             this.trail = params.trail;
 	        this.nextURL = params.nextURL;
+	        if(this.num == 1) {
+		        this.template = trailInstructionsTemplate1;
+	        } else if (this.num ==2) {
+		        this.template = trailInstructionsTemplate2;
+	        } else {
+		        console.log("trail instructions index not recognised");
+	        }
         },
 
         serialize: function() {

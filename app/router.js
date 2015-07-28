@@ -25,7 +25,7 @@ define(["backbone", "jquery", "underscore",
         routes: {
             "": "home",
             "home": "home",
-            "trail/:trail": "trail",
+            "trail/:trail/instructions/:num": "trail_instructions",
             "trail_video/:trail": "trail_video",
             "item/:item": "item",
             "finished": "finished",
@@ -45,7 +45,7 @@ define(["backbone", "jquery", "underscore",
         },
 
 	    //trail instructions
-        trail: function(trailSlug) {
+        trail_instructions: function(trailSlug, num) {
             var trail = this.session.getCurrentTrail();
             if(!this.navView) {
                 //create a navbar now we have a session
@@ -60,7 +60,8 @@ define(["backbone", "jquery", "underscore",
             //create intro view
             var view = new TrailInstructionsView({
                 trail: trail,
-                nextURL: this.session.getNextURL()
+                nextURL: this.session.getNextURL(),
+	            num: num
             });
 
             this.contentView.setView(view);
