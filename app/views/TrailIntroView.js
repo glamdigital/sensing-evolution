@@ -22,28 +22,21 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 		        });
 	        }
 
-            //setTimeout(this.startVideo.bind(this), 5000);
-
-            this.startVideo();
-            //this.$video.one('touchstart', function(ev) {
-		     //   ev.preventDefault();
-				//this.startVideo();
-            //}.bind(this));
+	        //start video on first play - the start 'control' doesn't work due to video plugin
+	        this.$video.one('touchstart', function(ev){
+		        this.startVideo();
+	        }.bind(this));
 
 
 	        this.playing = false;
             this.$video.on('ended', this.showStartLink.bind(this));
-	        this.checkErrorTimeout = setTimeout(this.checkVideoError.bind(this), 500);
-	        //this.$video.on('canplaythrough', function(ev) {
-		     //   console.log("received canplay event");
-		     //   if(!this.playing) {
-			 //       console.log("Can play!");
-			 //       this.playing = true;
-			 //       this.startVideo();
-		     //   }
-	        //}.bind(this));
+	        this.$video.on('seeked', function(ev) {
+				if(!ev.target.ended) {
+					this.hideStartLink();
+				}
+	        }.bind(this));
 
-			//setTimeout(this.centreElements.bind(this), 100);
+	        this.checkErrorTimeout = setTimeout(this.checkVideoError.bind(this), 500);
         },
 	    checkVideoError: function() {
 		    // Sometimes on Android, decoding fails at first attempt.
@@ -90,9 +83,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        $('.controls-container').hide();
         },
 
-        replayVideo: function(ev) {
-          ev.preventDefault();
-          window.plugins.html5Video.play('introvideo');
+	    hideStartLink: function() {
 
             //hide nav controls
             $('.buttons-container').hide();
@@ -101,6 +92,12 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        $('.controls-container').show();
 	        $('.stop').show();
 	        this.$video.show();
+	    },
+
+        replayVideo: function(ev) {
+            ev.preventDefault();
+            window.plugins.html5Video.play('introvideo');
+			this.hideStartLink();
         },
 	    pauseVideo: function(ev) {
 		    console.log("pausing video");
