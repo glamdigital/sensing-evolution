@@ -15,11 +15,13 @@ $item-height: 40px;
 
 div.trails-list-container {
   text-align: center;
-
+  overflow-y: scroll;
+  margin-top: 0px;
 
   ul {
     padding: 0px;
     list-style: none;
+    margin-top: 0px;
     a {
       text-decoration: none;
       color: white;

@@ -13,6 +13,13 @@ define(["backbone", "hbs!app/templates/topic"],
                 return out;
             },
 
+	        afterRender: function() {
+		        //set the max-height of the items list based on viewport size
+		        var $container = $('.trails-list-container');
+		        var height = $(window).height() - $container.offset().top;
+		        $container.css('max-height', height);
+	        },
+
             initialize: function(params) {
                 this.trail = params.trail;
                 this.topic = params.topic;
