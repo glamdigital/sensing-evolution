@@ -6,7 +6,7 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
 
     //UUIDs to monitor
     //TODO move this to config
-    var Location_UUID_beacons = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D'; //beacons
+    var Location_UUID_beacons = '99F4FAEB-7734-4F6F-B2CD-890ADC286EC5'; //beacons
     var Location_UUID_ios = '8492E75F-4FD6-469D-B132-043FE94921D8'; //ios
 
     var onReady = function() {
@@ -31,7 +31,5 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
               Logging.logToDom("Started the app");
           })
       } );
-
-
 
 });

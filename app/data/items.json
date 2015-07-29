@@ -5,12 +5,13 @@
     "description": "An introduction to some of the themes you'll discover on this tour and how to follow it on your device. The trail covers all three floors of the Museum. The tracks lasts 1-2 minutes each and are voiced by some of the Museum’s knowledgeable volunteer guides - Helen, Lucy and Lizzy. We hope you enjoy it.",
     "location": "Entrance steps",
     "component": "court",
-    "trail1": "first-world-war",
+    "trail1": "",
     "trail2": "",
     "image": "00_WW1_introduction.jpg",
     "hint_image": "",
     "map_image": "",
     "audio": "",
+    "audio_duration": "111",
     "hint": "Stay near the entrance steps.",
     "beaconMajor": "",
     "beaconHint": ""
@@ -27,8 +28,9 @@
     "hint_image": "01_WW1_hint.jpg",
     "map_image": "01_WW1_map_court.jpg",
     "audio": "01_WW1_dance_helmet.mp3",
+    "audio_duration": "67",
     "hint": "This object is in the front of the case as you have you back to the entrance.",
-    "beaconMajor": "2889",
+    "beaconMajor": "64074",
     "beaconHint": "F1"
   },
   {
@@ -43,8 +45,9 @@
     "hint_image": "02_WW1_hint.jpg",
     "map_image": "02_WW1_map_court.jpg",
     "audio": "02_WW1_mandolin.mp3",
+    "audio_duration": "80",
     "hint": "This object is in the side of the Lutes display on the middle shelf.",
-    "beaconMajor": "9125",
+    "beaconMajor": "1144",
     "beaconHint": "F2"
   },
   {
@@ -59,8 +62,9 @@
     "hint_image": "03_WW1_hint.jpg",
     "map_image": "03_WW1_map_lowergallery.jpg",
     "audio": "03_WW1_trench_art.mp3",
+    "audio_duration": "72",
     "hint": "This object is on the bottom of the free-standing recycling case as you have your back to the gallery entrance.",
-    "beaconMajor": "4005",
+    "beaconMajor": "52050",
     "beaconHint": "C1"
   },
   {
@@ -75,8 +79,9 @@
     "hint_image": "04_WW1_hint.jpg",
     "map_image": "04_WW1_map_lowergallery.jpg",
     "audio": "04_WW1_emergencymoney.mp3",
+    "audio_duration": "61",
     "hint": "This object is in the very last case of a run of desktop cases devoted to currency.",
-    "beaconMajor": "11889",
+    "beaconMajor": "17763",
     "beaconHint": "C2"
   },
   {
@@ -91,8 +96,9 @@
     "hint_image": "05_WW1_hint.jpg",
     "map_image": "05_WW1_map_uppergallery.jpg",
     "audio": "05_WW1_trenchart_cap.mp3",
+    "audio_duration": "57",
     "hint": "This is the round brass object in the upright case facing you as you enter the gallery.",
-    "beaconMajor": "50339",
+    "beaconMajor": "42156",
     "beaconHint": "V1"
   },
   {
@@ -106,9 +112,10 @@
     "image": "06_WW1_standard_issue.jpg",
     "hint_image": "06_WW1_hint.jpg",
     "map_image": "06_WW1_map_uppergallery.jpg",
-    "audio": "06_WW1_officers_weapons.mp3",
+    "audio": "06_WW1_standardissue.mp3",
+    "audio_duration": "117",
     "hint": "This object is in the desktop case facing you as you enter the gallery.",
-    "beaconMajor": "14250",
+    "beaconMajor": "40191",
     "beaconHint": "V2"
   },
   {
@@ -123,8 +130,9 @@
     "hint_image": "07_WW1_hint.jpg",
     "map_image": "07_WW1_map_uppergallery.jpg",
     "audio": "07_WW1_humane_killer.mp3",
+    "audio_duration": "52",
     "hint": "This object is in the far left desktop case facing you as you enter the gallery.",
-    "beaconMajor": "63308",
+    "beaconMajor": "2207",
     "beaconHint": "A1"
   },
   {
@@ -139,8 +147,9 @@
     "hint_image": "08_WW1_hint.jpg",
     "map_image": "08_WW1_map_uppergallery.jpg",
     "audio": "08_WW1_conscientious_objector.mp3",
+    "audio_duration": "69",
     "hint": "Stand with your back to the shields and this object is at the bottom edge of the desktop display of revolvers.",
-    "beaconMajor": "",
+    "beaconMajor": "43888",
     "beaconHint": ""
   },
   {
@@ -155,8 +164,9 @@
     "hint_image": "09_WW1_hint.jpg",
     "map_image": "09_WW1_map_uppergallery.jpg",
     "audio": "09_WW1_jibbah.mp3",
+    "audio_duration": "82",
     "hint": "This object is located halfway along this gallery in the wall cases to your left.",
-    "beaconMajor": "",
+    "beaconMajor": "9689",
     "beaconHint": ""
   },
   {
@@ -171,8 +181,9 @@
     "hint_image": "10_WW1_hint.jpg",
     "map_image": "10_WW1_map_uppergallery.jpg",
     "audio": "10_WW1_snipers_helmet.mp3",
+    "audio_duration": "69",
     "hint": "This object is in the corner of this gallery, near the bottom of a display of helmets. ",
-    "beaconMajor": "",
+    "beaconMajor": "2733",
     "beaconHint": ""
   },
   {
@@ -187,8 +198,9 @@
     "hint_image": "11_WW1_hint.jpg",
     "map_image": "11_WW1_map_uppergallery.jpg",
     "audio": "11_WW1_trench_knife.mp3",
+    "audio_duration": "68",
     "hint": "This object is sitting on a cane shelf halfway downt the case, listed as no. 32",
-    "beaconMajor": "",
+    "beaconMajor": "12532",
     "beaconHint": ""
   },
   {
@@ -203,6 +215,7 @@
     "hint_image": "12_WW1_hint.jpg",
     "map_image": "12_WW1_map_uppergallery.jpg",
     "audio": "12_WW1_amulets.mp3",
+    "audio_duration": "94",
     "hint": "These objects are situated in the far corner of the gallery, in a desktop case numbered U.60.A.",
     "beaconMajor": "",
     "beaconHint": ""
@@ -219,6 +232,7 @@
     "hint_image": "",
     "map_image": "",
     "audio": "",
+    "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
     "beaconHint": "A2"
@@ -235,6 +249,7 @@
     "hint_image": "",
     "map_image": "",
     "audio": "",
+    "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
     "beaconHint": "A2"
@@ -251,6 +266,7 @@
     "hint_image": "",
     "map_image": "",
     "audio": "",
+    "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
     "beaconHint": "A2"
@@ -267,6 +283,7 @@
     "hint_image": "",
     "map_image": "",
     "audio": "",
+    "audio_duration": "",
     "hint": "",
     "beaconMajor": "",
     "beaconHint": ""
