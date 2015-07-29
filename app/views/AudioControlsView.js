@@ -1,6 +1,16 @@
 define(['backbone', 'hbs!app/templates/audio_controls'],
     function(Backbone, audioControlsTemplate) {
 
+    Number.prototype.toMSS = function () {
+	    var sec_num = Math.floor(this);
+	    var minutes = Math.floor((sec_num ) / 60);
+	    var seconds = sec_num - (minutes * 60);
+
+	    if (seconds < 10) {seconds = "0"+seconds;}
+	    var time = minutes+':'+seconds;
+	    return time;
+	}
+
     var AudioControlsView = Backbone.View.extend({
 
         template: audioControlsTemplate,
@@ -8,6 +18,7 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
         initialize: function(params) {
             this.audio = params.audio;
             this.caption = params.caption;
+	        this.duration = parseInt(params.duration).toMSS();
             //use Media plugin, for Android playback
             if(typeof(Media) !== 'undefined') {
                 this.media_obj = new Media(this.getAudioURL(),
@@ -18,10 +29,15 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
                     alert("Failed to create audio object:" + err.code + " " + err.message );}
                 );
             } else { alert("Media plugin not available!");}
+
+            this.updateInterval = setInterval(this.updateElapsed.bind(this), 1000);
+
         },
 
         serialize: function() {
-            return { audio: this.audio, caption: this.caption };
+            return {    audio: this.audio,
+                        caption: this.caption,
+                        duration: this.duration };
         },
 
         events: {
@@ -63,16 +79,28 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
         restartAudio: function(ev) {
             if(this.media_obj) {
                 this.media_obj.seekTo(0);
+	            $('#media-elapsed').html('0:00');
             }
             else if(this.media) {
                 this.media.currentTime = 0;
             }
         },
 
+        updateElapsed: function() {
+			this.media_obj.getCurrentPosition(function(elapsed) {
+				if(elapsed < 0) {
+					//not playing
+					return;
+				}
+				$('#media-elapsed').html(elapsed.toMSS());
+			});
+	    },
+
         cleanup: function() {
             if(this.media_obj) {
                 this.media_obj.release();
             }
+	        clearInterval(this.updateInterval);
         }
 
     });

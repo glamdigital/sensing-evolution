@@ -9,13 +9,43 @@
                 "parents": {
                     "CoreBluetooth.framework": [
                         {
-                            "xml": "false",
+                            "xml": false,
                             "count": 1
                         }
                     ],
                     "CoreLocation.framework": [
                         {
-                            "xml": "false",
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "MessageUI.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": true,
+                            "count": 2
+                        }
+                    ],
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": false,
                             "count": 1
                         }
                     ]
@@ -26,6 +56,38 @@
                     "/*": [
                         {
                             "xml": "<feature name=\"LocationManager\"><param name=\"ios-package\" value=\"CDVLocationManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Instagram\"><param name=\"ios-package\" value=\"CDVInstagramPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -43,6 +105,10 @@
                         {
                             "xml": "<string>This app would like to scan for iBeacons while it is in use.</string>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<string />",
+                            "count": 1
                         }
                     ]
                 }
@@ -51,7 +117,31 @@
     },
     "installed_plugins": {
         "com.unarin.cordova.beacon": {
-            "PACKAGE_NAME": "uk.ac.ox.museums.sensingevolution"
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "com.vladstirbu.cordova.instagram": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "nl.x-services.plugins.socialsharing": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
+        },
+        "org.apache.cordova.vibration": {
+            "PACKAGE_NAME": "uk.ac.ox.museums.prtrails"
         }
     },
     "dependent_plugins": {}
