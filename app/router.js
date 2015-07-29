@@ -17,7 +17,11 @@ define(["backbone", "jquery", "underscore",
             error: function(coll, resp, opt) {
               console.log("error fetching trails: ");
               console.log(resp);
-            }
+            },
+	          success: function() {
+		          //start the app after fetching trails
+		          Backbone.history.start();
+	          }
           });
 
             //create the container content-view
@@ -39,6 +43,11 @@ define(["backbone", "jquery", "underscore",
         },
 
         home: function() {
+
+	        ///switch to ww1 trail
+	        Backbone.history.navigate('#/trail/first-world-war');
+	        return;
+
           var view = new TrailsView({
             trails:this.allTrails
           });
@@ -69,8 +78,12 @@ define(["backbone", "jquery", "underscore",
             view.render();
 
             //set links
-            this.headerView.setPrevURL('#');
-            this.headerView.setNextURL(null);
+            //this.headerView.setPrevURL('#');
+
+	        //coming straight here, so no back
+            this.headerView.setPrevURL(null);
+
+	        this.headerView.setNextURL(null);
             this.headerView.render();
 
             FloorTracking.prompttoSwitch = true;

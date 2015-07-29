@@ -25,10 +25,6 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
           Trail.loadTopics( function(coll) {
               var floorTracker = new FloorTracking(coll);
               var router = new Router();
-              //start the app
-              Backbone.history.start();
-
-              Logging.logToDom("Started the app");
           })
       } );
 
