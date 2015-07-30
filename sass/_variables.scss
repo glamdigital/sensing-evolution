@@ -23,3 +23,19 @@ $fontColor: $blue;
 $videoAspectRatio: 1.7777777778;
 
 $debug: false;
+
+@mixin vertical-align-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin vertical-align-center-ish {
+  position: absolute;
+  top: 45%;
+  -webkit-transform: translateY(-45%);
+  -ms-transform: translateY(-45%);
+  transform: translateY(-45%);
+}

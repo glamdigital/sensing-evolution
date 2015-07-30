@@ -232,7 +232,7 @@ a.nav-link {
   &.slideout{
     left: $navBarWidth;
   }
-  min-height: 1000px;
+  min-height: 100%;
 
   @include transition-property(left);
   @include transition-duration(0.25s);

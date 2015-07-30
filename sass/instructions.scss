@@ -3,60 +3,58 @@
 @import "_variables.scss";
 
 .instructions {
+  @include vertical-align-center-ish;
   width: 100%;
   text-align: left;
   font-size: 1.2em;
   line-height: 1em;
   @media #{$phone} {
     font-size: 1.0em;
-    padding-top: 1.5em;
+    @include vertical-align-center;
   }
-  @media #{$phone_small} {
-//    font-size: 0.8em;
-    padding-top: 2.2em;
-  }
-
-
-
   margin-left: auto;
   margin-right: auto;
   h2 {
     padding: 0px 10px;
     margin-top: 0px;
   }
-  p {
-    padding: 10px;
-    padding-bottom: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  .instructions-text {
+    width:60%;
+    margin-left: 40%;
+    @include vertical-align-center;
+
+    p {
+
+      padding: 0 10px;
+      padding-bottom: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      line-height: 1.5em;
+     }
   }
   img {
     text-align: center;
-    height: 8em;
-    width: 9em;
-    @media #{$phone_small} {
-      height: 6em;
-      width: 6.75em;
-    }
+    width: 35%;
     float: left;
-    padding: 10px;
-  }
-  img.inline-icon {
-    height: 1.5em;
-    width: 1.5em;
-    display:inline;
-  }
-  div.instructions-next {
-    text-align: center;
-    width: auto;
-    clear:both;
-    background-color: $overlayBlue;
-    a {
-      color: white;
+    padding: $standardPadding 0 $standardPadding 15px;
+    &.inline-icon {
+      float: none;
+      padding: 3px;
+      height: 1.5em;
+      width: 1.5em;
+      display: inline;
+      vertical-align: middle;
     }
   }
-
-  @media #{$tablet} {
-    width: 80%;
+}
+div.instructions-next {
+  text-align: center;
+  width: 25%;
+  position: fixed;
+  bottom: $standardPadding;
+  right: $standardPadding;
+  background-color: $overlayBlue;
+  a {
+    color: white;
   }
 }
