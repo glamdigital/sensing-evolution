@@ -366,12 +366,18 @@ h3 {
 
       //button offering hint to user
       .button-hint {
-        margin: 30px 10px 10px 10px;
+        margin: 30px 23% 10px 27%;
+        @media #{$phone} {
+          margin-top: 20px;
+        }
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.5);;
+        padding: 2*$standardPadding 0 1.5*$standardPadding;
+ 
         a {
           color: $fontColor;
           text-decoration: none;
         }
-        margin: 10px;
       }
 
       //hint text itself
