@@ -36,7 +36,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
           for(var j=0; j<items.length; j++) {
 	          var item = topic.shuffledItems.at(j);
 	          var index = j+1;
-	          item.attributes.protgressString = "Item " + itemIndex + " of 8";
+	          item.attributes.progressString = "Item " + itemIndex + " of 8";
 	          itemIndex ++;
 	          this.unvisitedItems.add(item);
           }
