@@ -52,12 +52,14 @@ define(["backbone", "hbs!app/templates/topic"],
             didRangeBeacon: function(data) {
                 var item = this.beaconsDict[data.major.toString()];
                 if(item==undefined) {
-                    alert("undefined beacon in dict from data: " + data);
+                    console.warn("undefined beacon in dict from data: " + data);
                     return;
                 }
                 var $itemListEntry = $('#item-'+item.attributes.slug);
                 if($itemListEntry.length == 0) {
-                    alert("No item list entries found for item")
+	                //could be because the screen hasn't rendered yet
+                    console.warn("No item list entries found for item");
+	                return;
                 }
                 if(data.proximity === 'ProximityImmediate' || data.proximity == 'ProximityNear')
                 {

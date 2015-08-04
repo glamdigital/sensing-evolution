@@ -161,7 +161,7 @@ h3 {
 
 //Contains the image and instructions for the item the user is supposed to be searching for
 .search-item {
-  padding: $standardPadding;
+  padding: $standardPadding, 0px;
   float: left;
   text-align: center;
   width: 100%;
