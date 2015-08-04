@@ -23,7 +23,8 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
             beaconRanged: function(data) {
                 //if we're near to a beacon that's different than the current one
                 if(data.proximity === "ProximityNear") {
-                    if(this.currentTopic===null || this.currentTopic.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
+                    //if(this.currentTopic===null || this.currentTopic.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
+	                if(FloorTracking.currentFloor===null || FloorTracking.currentFloor.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
                         //This is a new floor. update current floor and emit a message
                         this.currentTopic = this.beaconsDict[data.major.toString()];
                         Backbone.trigger('changed_floor', this.currentTopic.attributes.slug);
@@ -78,7 +79,9 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
         },
         {
             //Class attribute enabled flag. Can be enabled/disabled by views
-            promptToSwitch:true
+            promptToSwitch:true,
+	        //Class attribute tracks the current floor (as topic object)
+	        currentFloor: null
         }
         );
 
