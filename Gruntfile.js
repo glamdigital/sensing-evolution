@@ -220,6 +220,12 @@ module.exports = function(grunt) {
 	            {
 		            src: ["app/libs/font-awesome/css/font-awesome.min.css"],
 		            dest: "www/css/font-awesome.min.css"
+	            },
+                {
+	                expand: true,
+	                flatten: true,
+		            src: ["app/libs/font-awesome/fonts/*"],
+		            dest: "www/fonts"
 	            }
 
             ]
