@@ -86,7 +86,7 @@ define(["backbone", "jquery", "underscore",
 	        this.headerView.setNextURL(null);
             this.headerView.render();
 
-            FloorTracking.prompttoSwitch = true;
+            FloorTracking.promptToSwitch = false;
         },
 
         topic: function(topicSlug) {
@@ -104,7 +104,7 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setNextURL(null);
             this.headerView.render();
 
-            FloorTracking.prompttoSwitch = true;
+            FloorTracking.promptToSwitch = true;
         },
 
         found_item: function(itemSlug) {
@@ -142,7 +142,7 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setNextURL('#found/' + item.attributes.slug);
             this.headerView.render();
 
-            FloorTracking.prompttoSwitch = false;
+            FloorTracking.promptToSwitch = false;
         },
         finished: function() {
             var trail = this.session.getCurrentTrail();
@@ -157,7 +157,7 @@ define(["backbone", "jquery", "underscore",
             this.headerView.setNextURL(null);
             this.headerView.render();
 
-            FloorTracking.prompttoSwitch = false;
+            FloorTracking.promptToSwitch = false;
         },
         restart: function() {
             //restart the current trail
@@ -165,7 +165,7 @@ define(["backbone", "jquery", "underscore",
             this.session = new Session(trail.attributes.slug);
             Backbone.history.navigate(this.session.getNextURL());
 
-            FloorTracking.prompttoSwitch = false;
+            FloorTracking.promptToSwitch = false;
         },
         dashboard: function() {
             var dashboardView = new DashboardView( [
@@ -176,7 +176,7 @@ define(["backbone", "jquery", "underscore",
             this.contentView.setView(dashboardView);
             dashboardView.render();
 
-            FloorTracking.prompttoSwitch = false;
+            FloorTracking.promptToSwitch = false;
         }
     });
 

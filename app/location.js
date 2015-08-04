@@ -33,7 +33,8 @@ define(["backbone", "underscore", "app/logging"], function(Backbone, _, Logging)
 			        }
 			        else {
 				        //prompt user to enable on iOS
-				        alert("Bluetooth is disabled. Please enable bluetooth to use the location awareness capabilities of this app.");
+				        //alert("Bluetooth is disabled. Please enable bluetooth to use the location awareness capabilities of this app.");
+				        navigator.notification.alert("Bluetooth is disabled. Please enable bluetooth to use the location awareness capabilities of this app.", null, 'Bluetooth disabled');
 			        }
 		        }
 		    })

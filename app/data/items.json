@@ -14,7 +14,8 @@
     "audio_duration": "111",
     "hint": "Stay near the entrance steps.",
     "beaconMajor": "",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "naga-helmet",
@@ -31,7 +32,8 @@
     "audio_duration": "67",
     "hint": "This object is in the front of the case as you have you back to the entrance.",
     "beaconMajor": "64074",
-    "beaconHint": "F1"
+    "beaconHint": "F1",
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "mandolin",
@@ -48,7 +50,8 @@
     "audio_duration": "80",
     "hint": "This object is in the side of the Lutes display on the middle shelf.",
     "beaconMajor": "1144",
-    "beaconHint": "F2"
+    "beaconHint": "F2",
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "trench-art",
@@ -65,7 +68,8 @@
     "audio_duration": "72",
     "hint": "This object is on the bottom of the free-standing recycling case as you have your back to the gallery entrance.",
     "beaconMajor": "52050",
-    "beaconHint": "C1"
+    "beaconHint": "C1",
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "money",
@@ -82,7 +86,8 @@
     "audio_duration": "61",
     "hint": "This object is in the very last case of a run of desktop cases devoted to currency.",
     "beaconMajor": "17763",
-    "beaconHint": "C2"
+    "beaconHint": "C2",
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "cap",
@@ -99,7 +104,8 @@
     "audio_duration": "57",
     "hint": "This is the round brass object in the upright case facing you as you enter the gallery.",
     "beaconMajor": "42156",
-    "beaconHint": "V1"
+    "beaconHint": "V1",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "weapons",
@@ -116,7 +122,8 @@
     "audio_duration": "117",
     "hint": "This object is in the desktop case facing you as you enter the gallery.",
     "beaconMajor": "40191",
-    "beaconHint": "V2"
+    "beaconHint": "V2",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "killer",
@@ -133,7 +140,8 @@
     "audio_duration": "52",
     "hint": "This object is in the far left desktop case facing you as you enter the gallery.",
     "beaconMajor": "2207",
-    "beaconHint": "A1"
+    "beaconHint": "A1",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "conscientious",
@@ -150,7 +158,8 @@
     "audio_duration": "69",
     "hint": "Stand with your back to the shields and this object is at the bottom edge of the desktop display of revolvers.",
     "beaconMajor": "43888",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "jibbah",
@@ -167,7 +176,8 @@
     "audio_duration": "82",
     "hint": "This object is located halfway along this gallery in the wall cases to your left.",
     "beaconMajor": "9689",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "sniper-helmet",
@@ -184,7 +194,8 @@
     "audio_duration": "69",
     "hint": "This object is in the corner of this gallery, near the bottom of a display of helmets. ",
     "beaconMajor": "2733",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "trench-knife",
@@ -201,7 +212,8 @@
     "audio_duration": "68",
     "hint": "This object is sitting on a cane shelf halfway downt the case, listed as no. 32",
     "beaconMajor": "12532",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "amulets",
@@ -218,7 +230,8 @@
     "audio_duration": "94",
     "hint": "These objects are situated in the far corner of the gallery, in a desktop case numbered U.60.A.",
     "beaconMajor": "12517",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": "audio/trumpets_last.wav"
   },
   {
     "id": "amulets-g-1",
@@ -235,7 +248,8 @@
     "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
-    "beaconHint": "A2"
+    "beaconHint": "A2",
+    "foundSound": ""
   },
   {
     "id": "amulets-f1-1",
@@ -252,7 +266,8 @@
     "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
-    "beaconHint": "A2"
+    "beaconHint": "A2",
+    "foundSound": ""
   },
   {
     "id": "amulets-f2-1",
@@ -269,7 +284,8 @@
     "audio_duration": "",
     "hint": "",
     "beaconMajor": "47050",
-    "beaconHint": "A2"
+    "beaconHint": "A2",
+    "foundSound": ""
   },
   {
     "id": "test edit",
@@ -286,6 +302,7 @@
     "audio_duration": "",
     "hint": "",
     "beaconMajor": "",
-    "beaconHint": ""
+    "beaconHint": "",
+    "foundSound": ""
   }
 ]

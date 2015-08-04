@@ -7,7 +7,8 @@
     "trail2": "amulets-charms",
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "64823",
-    "entryPointBeaconId2": "30098"
+    "entryPointBeaconId2": "30098",
+    "notificationSound": "audio/trumpets_last.wav"
   },
   {
     "id": "lower",
@@ -17,7 +18,8 @@
     "trail2": "amulets-charms",
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "18829",
-    "entryPointBeaconId2": ""
+    "entryPointBeaconId2": "",
+    "notificationSound": "audio/trumpets_last.wav"
   },
   {
     "id": "upper",
@@ -27,6 +29,7 @@
     "trail2": "amulets-charms",
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "5744",
-    "entryPointBeaconId2": ""
+    "entryPointBeaconId2": "",
+    "notificationSound": "audio/trumpets_last.wav"
   }
 ]

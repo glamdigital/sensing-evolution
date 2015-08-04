@@ -27,6 +27,18 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       Logging.logToDom("Listening for event: " + this.eventId);
       this.foundAtInit = params.found;
       this.headerView = params.headerView;
+
+	    //found sound
+	    if(typeof(Media) !== 'undefined') {
+
+	            var pathPrefix = ''
+                if(device.platform.toLowerCase() === "android") {
+                    pathPrefix = "/android_asset/www/";
+                }
+                this.foundSound = new Media(pathPrefix + this.item.attributes.foundSound,
+                                    function() { console.log("Created media object"); },
+                                    function(error) { console.log("error creating media object"); console.log(error); });
+        } else { console.log("Media plugin not available!");}
     },
 
     afterRender: function() {
@@ -78,6 +90,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       //vibrate
         if(navigator.notification) {
             navigator.notification.vibrate(500);
+	        this.foundSound.play();
         }
 
       //set header next link to found
