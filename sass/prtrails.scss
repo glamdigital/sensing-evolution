@@ -124,13 +124,31 @@ div.black-bar {
   position: fixed;
   top:0;
   left:0;
-  background-color: black;
   width: 100%;
   height: 400%;
   text-align: center;
-  img.map-image {
-    max-width: 100%;
-    position: relative;
+  .map-bg {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 400%;
+    opacity: 0.8;
+    z-index: -1;
+  }
+  .image-holder {
+    text-align: center;
+    position: fixed;
+    margin-top: 5.5em;
+    img.map-image {
+      max-width: 100%;
+    }
+  }
+  .close {
+    top: 0px;
+    margin-right: 10px;
+    color: white;
+    float: right;
+    font-size: 3em;
   }
 }
 
