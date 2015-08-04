@@ -116,6 +116,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       "click #nav-menu-button" : "toggleNavMenu",
       "click .map-link" : "showMap",
       "click .map-container" : "hideMap",
+      "click .find-item" : "findObject",
     },
 
     onClickImage: function(ev) {
