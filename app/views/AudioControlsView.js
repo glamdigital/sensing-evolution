@@ -23,12 +23,15 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
             if(typeof(Media) !== 'undefined') {
                 this.media_obj = new Media(this.getAudioURL(),
                     //success
-                    function () {alert("Successfully created audio object");},
+                    //function () {alert("Successfully created audio object");},
+	                null,
                     //failure
                     function (err) {
                     alert("Failed to create audio object:" + err.code + " " + err.message );}
                 );
-            } else { alert("Media plugin not available!");}
+            } else {
+	            //alert("Media plugin not available!");
+            }
 
             this.updateInterval = setInterval(this.updateElapsed.bind(this), 1000);
 
@@ -98,6 +101,8 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
 
         cleanup: function() {
             if(this.media_obj) {
+	            console.log('releasing media object');
+	            this.media_obj.stop();
                 this.media_obj.release();
             }
 	        clearInterval(this.updateInterval);

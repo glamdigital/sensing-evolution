@@ -16,12 +16,13 @@ define(["backbone", "underscore", "app/models/Trail", "app/views/AudioControlsVi
                                                             audio: this.trail.attributes.audio,
                                                             caption: 'Trail Intro',
                                                             duration: this.trail.attributes.audio_duration});
-                this.audioControls.render();
+	            this.audioControls.render();
+            } else {
             }
         },
 
         serialize: function() {
-            var out = {}
+            var out = {};
             out.trail = this.trail.toJSON();
             out.topics = this.trail.getTopics().toJSON();
             out.nextURL = this.nextURL;
@@ -67,7 +68,13 @@ define(["backbone", "underscore", "app/models/Trail", "app/views/AudioControlsVi
             $video.addClass('finished');
             //hide the controls
             $video.removeAttr('controls');
-        }
+        },
+
+	    cleanup: function() {
+		    if(this.audioControls) {
+			    this.audioControls.remove();
+		    }
+	    }
     });
 
     return TrailIntroView;

@@ -14,11 +14,6 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
       Location.init();
       //Location.startRangingRegion(Location_UUID_ios);
       Location.startRangingRegion(Location_UUID_beacons);
-    };
-    //start the location service when the device is ready
-    document.addEventListener('deviceready', onReady, false);
-
-    Backbone.Layout.configure({ manage:true });
 
       //load topics and items
       Topic.loadItems( function() {
@@ -27,5 +22,16 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
               var router = new Router();
           })
       } );
+    };
+    //start the location service when the device is ready
+    document.addEventListener('deviceready', onReady, false);
 
+    Backbone.Layout.configure({ manage:true });
+
+	  //force ready on desktop browser
+	  if(typeof(cordova) == 'undefined')
+	  {
+		  console.log("forcing 'device' ready");
+		  onReady();
+	  }
 });
