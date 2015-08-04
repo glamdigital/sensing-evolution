@@ -12,7 +12,7 @@ require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/loggi
     var onReady = function() {
       Logging.logToDom("Device Ready");
       Location.init();
-      Location.startRangingRegion(Location_UUID_ios);
+      //Location.startRangingRegion(Location_UUID_ios);
       Location.startRangingRegion(Location_UUID_beacons);
     };
     //start the location service when the device is ready

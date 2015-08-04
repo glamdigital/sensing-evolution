@@ -55,7 +55,7 @@
     "title": "Trench art - vases",
     "description": "Brass cases from British and French artillery shells, recycled into decorative vases as part of a fashion for 'trench art' during and after the War.",
     "location": "Recycling display",
-    "component": "court",
+    "component": "lower",
     "trail1": "first-world-war",
     "trail2": "",
     "image": "03_WW1_trench_art.jpg",
@@ -89,7 +89,7 @@
     "title": "Trench art - cap and ashtray",
     "description": "During the War there was a fashion for 'trench art' made from reclaimed armament materials. This miniature cap incorporates the base of a French brass shell and a German Imperial button as a badge. ",
     "location": "20th-century Firearms display",
-    "component": "lower",
+    "component": "upper",
     "trail1": "first-world-war",
     "trail2": "",
     "image": "05_WW1_trenchart_cap.jpg",
@@ -217,7 +217,7 @@
     "audio": "12_WW1_amulets.mp3",
     "audio_duration": "94",
     "hint": "These objects are situated in the far corner of the gallery, in a desktop case numbered U.60.A.",
-    "beaconMajor": "",
+    "beaconMajor": "12517",
     "beaconHint": ""
   },
   {
