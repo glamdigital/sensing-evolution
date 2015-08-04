@@ -22,7 +22,7 @@ define(['app/logging', 'backbone', 'underscore', 'app/models/trail', 'app/views/
 
             beaconRanged: function(data) {
                 //if we're near to a beacon that's different than the current one
-                if(data.proximity === "ProximityNear") {
+                if(data.proximity === "ProximityNear" || data.proximity === "ProximityImmediate") {
                     //if(this.currentTopic===null || this.currentTopic.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
 	                if(FloorTracking.currentFloor===null || FloorTracking.currentFloor.attributes.entryPointBeaconIDs.indexOf(data.major.toString()) < 0) {
                         //This is a new floor. update current floor and emit a message
