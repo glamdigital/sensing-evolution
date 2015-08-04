@@ -28,12 +28,25 @@ define(["backbone", "hbs!app/templates/topic"],
                 this.beaconsDict = {}
                 //listen for events
                 for(var i=0; i<this.items.length; i++) {
+
                     var item = this.items.at(i);
                     var eventID = 'beaconRange:' + item.attributes.beaconMajor;
                     this.listenTo(Backbone, eventID, this.didRangeBeacon);
                     console.log("listening for event: " + eventID);
                     this.beaconsDict[item.attributes.beaconMajor.toString()] = item;
                 }
+
+	            //notification sound
+	            if(typeof(Media) !== 'undefined') {
+
+	            var pathPrefix = '';
+                if(device.platform.toLowerCase() === "android") {
+                    pathPrefix = "/android_asset/www/";
+                }
+                this.notificationSound = new Media(pathPrefix + this.topic.attributes.notificationSound,
+                                    function() { console.log("Created media object"); },
+                                    function(error) { console.log("error creating media object"); console.log(error); });
+                } else { console.log("Media plugin not available!");}
             },
 
             didRangeBeacon: function(data) {
@@ -51,6 +64,7 @@ define(["backbone", "hbs!app/templates/topic"],
                     ////vibrate if this is a transition to near
                     if(navigator.notification && !$itemListEntry.hasClass('nearby')) {
                         navigator.notification.vibrate(500);
+	                    this.notificationSound.play();
                     }
 
                     //add class to item to make bg cycle
