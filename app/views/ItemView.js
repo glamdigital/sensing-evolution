@@ -51,7 +51,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
         }
 
         if(this.foundAtInit) {
-          this.findObject();
+          this.findObject(false);
         }
 
     },
@@ -62,12 +62,12 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
         case "ProximityImmediate":
           //update proximity indicator
           $('.proximity-indicator').removeClass('near far').addClass('immediate').html('Immediate');
-          this.findObject();
+          this.findObject(true);
           break;
         case "ProximityNear":
           //update proximity indicator
           $('.proximity-indicator').removeClass('immediate far').addClass('near').html('Near');
-          this.findObject();
+          this.findObject(true);
           break;
         case "ProximityFar":
           //update proximity indicator
@@ -76,7 +76,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       }
     },
 
-    findObject: function() {
+    findObject: function(shouldAlert) {
       $('.search-item').hide();
       $('.found-item').show().css('display', 'inline-block');
       $('.hint-container').hide();
@@ -88,10 +88,12 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       Backbone.trigger('found-item');
 
       //vibrate
-        if(navigator.notification) {
-            navigator.notification.vibrate(500);
-	        this.foundSound.play();
-        }
+	    if(shouldAlert) {
+		    if (navigator.notification) {
+			    navigator.notification.vibrate(500);
+			    this.foundSound.play();
+		    }
+	    }
 
       //set header next link to found
       this.headerView.setNextURL(this.nextURL);
@@ -120,7 +122,8 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
     },
 
     onClickImage: function(ev) {
-      Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
+      //Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
+	    this.findObject(false);
     },
     showHint: function(ev) {
         ev.preventDefault();
