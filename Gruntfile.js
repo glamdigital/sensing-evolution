@@ -102,6 +102,10 @@ module.exports = function(grunt) {
                     dest: "www" },
                 {   src: ["index-built.html"],
                     dest: "www/index.html" },
+                {
+		            src: ["app/libs/font-awesome/css/font-awesome.min.css"],
+		            dest: "www/css/font-awesome.min.css"
+	            }
             ]
         },
         android: {
@@ -124,7 +128,11 @@ module.exports = function(grunt) {
                 },
                 {   src: ["index-built.html"],
                     dest: "www/index.html"
-                }
+                },
+                {
+		            src: ["app/libs/font-awesome/css/font-awesome.min.css"],
+		            dest: "www/css/font-awesome.min.css"
+	            }
             ]
         },
     },
