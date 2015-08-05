@@ -1,5 +1,6 @@
 @import "compass/css3/animation";
 $item-height: 40px;
+$item-padding: 16px;
 
 @include keyframes(cyclebg) {
   0% {
@@ -30,7 +31,7 @@ div.trails-list-container {
         margin: 5px 0px;
         width: 100%;
         height: $item-height;
-        padding: 15px 0;
+        padding: $item-padding 0;
         text-align: left;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -52,11 +53,10 @@ div.trails-list-container {
         div {
           margin-left: 5%;
           &.trails-list-item {
-            margin-right: 30%;
+            margin-right: 10%;
           }
           &.main-title {
-            margin-right: 30%;
-            font-size: 1.2em;
+            margin-right: 10%;
             padding-bottom: 5px;
             overflow-x: hidden;
             text-overflow: ellipsis;
@@ -66,7 +66,7 @@ div.trails-list-container {
           }
           &.subtitle {
             font-size: 0.8em;
-            margin-right: 30%;
+            margin-right: 10%;
           }
         }
         &.near {
@@ -77,13 +77,29 @@ div.trails-list-container {
           border-left: 20px solid #444444;
           background-color: #222222;
         }
-
-        img.item-thumbnail {
-          height: $item-height + 16px;
-          margin: 0px 5px;
-          float: right;
+        .item-thumbnail-container {
+          height: $item-height + 2 * $item-padding;
+          width: $item-height + 2 * $item-padding;
+          float: left;
           position: relative;
-          top: -8px;
+          top: -$item-padding;
+          overflow: hidden;
+          margin: 0 $item-padding / 2 0 0;
+          text-align: center;
+
+        }
+        img.item-thumbnail {
+          height: 100%;
+          width: 100%;
+        }
+        i.fa {
+          float: right;
+          text-align: center;
+          line-height: $item-height + 2 * $item-padding;
+          height: $item-height + 2 * $item-padding;
+          width: $item-height;
+          position: relative;
+          top: -$item-padding;
         }
       }
     }
