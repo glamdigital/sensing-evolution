@@ -1,7 +1,7 @@
 $headerHeight: 60px;
 $headerPadding: 10px;
 $arrow-width: 66px;
-$audio-height: 30px;
+$audio-height: 36px;
 
 @mixin flip() {
   -moz-transform: scaleX(-1);
@@ -121,7 +121,7 @@ div.black-bar {
       height: $audio-height;
       width: $audio-height;
       float: right;
-      padding: 0px 10px;
+      padding: 0;
       &.pause {
         display: none;
       }
@@ -129,9 +129,12 @@ div.black-bar {
         display: none;
       }
       &.speaker {
-        padding-right: 20px;
         float: left;
       }
+    }
+    #media-caption {
+      text-align: left;
+      padding-right: 1em;
     }
   }
   &.map-link {
