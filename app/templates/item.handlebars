@@ -24,12 +24,14 @@
 </div>
 
 <div class="found-item">
-    <img class="item-image" src="img/{{image}}">
     {{#if audio}}
         <div class="audio-controls"></div>
     {{/if}}
-    <h5>Location: {{location}}</h5>
-    <p class="description">{{description}}</p>
+    <div class="found-scrolling">
+        <img class="item-image" src="img/{{image}}">
+        <h5>Location: {{location}}</h5>
+        <p class="description">{{description}}</p>
+    </div>
 </div>
 
 <div class="question">

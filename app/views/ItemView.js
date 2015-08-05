@@ -100,15 +100,18 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
       this.headerView.render();
 
 
-        //fix the height of the description box, for correct overflow scrolling
-        var windowHeight = $(window).height();
-        var $description = $('p.description');
-        var descPos = $description.offset();
-        var descHeight = windowHeight - descPos.top - 10;
-        $description.height(descHeight);
-
         //enable user prompting to switch floor
         FloorTracking.prompttoSwitch = true;
+
+	    //Set up scrolling of image + description. Need a short delay so that the audio control can render first
+	    setTimeout(function() {
+		    var windowHeight = $(window).height();
+		    var $found = $('.found-scrolling');
+		    var foundPos = $found.offset();
+		    var foundHeight = windowHeight - foundPos.top;
+		    $found.height(foundHeight);
+		    $found.css('overflow-y', 'scroll');
+	    }, 50);
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
