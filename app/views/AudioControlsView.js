@@ -27,7 +27,7 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
 	                null,
                     //failure
                     function (err) {
-                    alert("Failed to create audio object:" + err.code + " " + err.message );}
+                    console.warn("Error from media object:" + err.code + " " + err.message );}
                 );
             } else {
 	            //alert("Media plugin not available!");
