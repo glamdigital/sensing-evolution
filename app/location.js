@@ -88,3 +88,10 @@ define(["backbone", "underscore", "app/logging"], function(Backbone, _, Logging)
   return Location;
 
 });
+
+
+//global interface to pretend to see a beacon at near range
+function _range_beacon(id) {
+	var data = {major:id, proximity:"ProximityNear"};
+	Backbone.trigger('beaconRange:' + id, data);
+}
