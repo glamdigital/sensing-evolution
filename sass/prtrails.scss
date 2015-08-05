@@ -1,6 +1,6 @@
 $headerHeight: 60px;
 $headerPadding: 10px;
-$arrow-width: 60px;
+$arrow-width: 66px;
 $audio-height: 30px;
 
 @mixin flip() {
@@ -14,7 +14,7 @@ $audio-height: 30px;
 
 
 .pr-header-container {
-  padding: $headerPadding 0px;
+  padding: $headerPadding 0px 0;
   text-align: center;
   background-color: white;
   .pr-header {
@@ -25,21 +25,41 @@ $audio-height: 30px;
     margin-right: auto;
     div {
       height: $headerHeight;
-      display: inline-block;
-      a {
-        img {
-          height: 100%;
-          padding: 0px;
-          &.flip {
-            @include flip();
-          }
-        }
-      }
       &.header-arrow {
         width: $arrow-width;
+        position:absolute;
+        top:0;
+        &.arrow-left {
+          left:$headerPadding;
+        }
+        &.arrow-right {
+          right:$headerPadding;
+        }
+        a {
+          font-size: 1.1em;
+          line-height: $headerHeight * 1.15;
+          text-decoration: none;
+          color:black;
+          &.back-link {
+            text-align: left;
+            i {
+              padding-right: 0.2em;
+            }
+          }
+          &.next-link {
+            text-align: right;
+            i {
+              padding-left: 0.2em;
+            }
+          }
+
+        }
       }
       &.header-logo {
         padding: 0px 2%;
+        img {
+          height:$headerHeight - $headerPadding/2;
+        }
       }
     }
   }
