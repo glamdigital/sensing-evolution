@@ -1,18 +1,4 @@
-@import "compass/css3/animation";
-$item-height: 40px;
-$item-padding: 16px;
-
-@include keyframes(cyclebg) {
-  0% {
-    background-color: #222;
-  }
-  50% {
-    background-color: #555;
-  }
-  100% {
-    background-color: #222;
-  }
-}
+@import "_common.scss";
 
 div.trails-list-container {
   text-align: center;

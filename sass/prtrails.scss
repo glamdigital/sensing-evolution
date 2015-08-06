@@ -1,17 +1,4 @@
-$headerHeight: 60px;
-$headerPadding: 10px;
-$arrow-width: 66px;
-$audio-height: 36px;
-
-@mixin flip() {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
-
+@import "_common.scss";
 
 .pr-header-container {
   padding: $headerPadding 0px 0;
@@ -182,6 +169,7 @@ div.black-bar {
   text-align: center;
   width: 100%;
   z-index: 2;
+  @include animation(1.4s cyclebg ease-in-out infinite);
 
   .user-prompt {
     padding: 10px 0px;

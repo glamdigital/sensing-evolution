@@ -1,0 +1,47 @@
+@import "compass/css3";
+@import "compass/css3/animation";
+
+$phone: "only screen and (max-width: 767px)";
+$tablet: "only screen and (min-width: 768px)";
+$landscape-test: "only screen and (orientation: landscape)";
+$portrait-test: "only screen and (orientation: portrait)";
+$landscape: "(orientation:landscape)";
+$portrait: "(orientation:portrait)";
+$standardFontFamily: "Helvetica Neue", "Droid Sans", sans-serif;
+$standardPadding: 5px;
+$corner-radius: 5px;
+$navBarWidth: 250px;
+$fontColor: black;
+$videoAspectRatio: 1.7777777778;
+$headerHeight: 60px;
+$headerPadding: 10px;
+$arrow-width: 66px;
+$audio-height: 36px;
+$item-height: 40px;
+$item-padding: 16px;
+
+
+@mixin rounded-corners {
+  border-radius: $corner-radius;
+}
+
+@mixin flip() {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+@include keyframes(cyclebg) {
+  0% {
+    background-color: #222;
+  }
+  50% {
+    background-color: #555;
+  }
+  100% {
+    background-color: #222;
+  }
+}
