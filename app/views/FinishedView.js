@@ -39,7 +39,7 @@ define(["backbone", "hbs!app/templates/finished"], function(Backbone, finishedTe
               this.dataURL = canvas.toDataURL('image/png');
               canvas = null;
           };
-          img.src = this.trail.attributes.share_image;
+          img.src = 'img/' + this.trail.attributes.share_image;
       },
       events: {
           "click #share-facebook": "onClickFacebook",

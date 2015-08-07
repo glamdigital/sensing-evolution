@@ -53,27 +53,51 @@
 }
 
 h1.finished-title {
-  margin: 20px 30px;
+  margin: 0px 30px;
+  @media #{$phone_small} {
+    font-size: 1.0em;
+  }
 }
 
 h3.finished-message {
-  margin: 20px 30px;
+  margin: 0px 30px;
+  @media #{$phone_small} {
+    font-size: 1.0em;
+  }
 }
 
 p.finished-call-to-action {
-  margin: 20px 20px;
+  margin: 3px 20px;
+  @media #{$phone_small} {
+    font-size: 0.9em;
+  }
+}
+
+.img-holder {
+  text-align: center;
+  img {
+    width: 80%;
+    @media #{$phone_small} {
+      width: 60%;
+    }
+  }
 }
 
 table.social-links-table {
-  padding-top: 30px;
+  padding-top: 0px;
   width: 100%;
   text-align: center;
+  font-size: 0.8em;
   tr {
     td {
       a {
         img {
-          height: 77px;
-          width: 77px;
+          height: 50px;
+          width: 50px;
+          @media #{$phone_vsmall} {
+            height: 35px;
+            width: 35px;
+          }
         }
       }
     }
@@ -82,7 +106,7 @@ table.social-links-table {
 
 .feedback-button {
   width: 100%;
-  padding: 17px 50px ;
+  padding: 12px 50px ;
   text-align: left;
   background-color: black;
 //  border-radius: 10px;
@@ -92,7 +116,7 @@ table.social-links-table {
   }
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
 div.black-bar {
