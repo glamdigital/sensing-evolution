@@ -90,13 +90,15 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
         },
 
         updateElapsed: function() {
-			this.media_obj.getCurrentPosition(function(elapsed) {
-				if(elapsed < 0) {
-					//not playing
-					return;
-				}
-				$('#media-elapsed').html(elapsed.toMSS());
-			});
+            if(this.media_obj) {
+	            this.media_obj.getCurrentPosition(function (elapsed) {
+		            if (elapsed < 0) {
+			            //not playing
+			            return;
+		            }
+		            $('#media-elapsed').html(elapsed.toMSS());
+	            });
+            }
 	    },
 
         cleanup: function() {

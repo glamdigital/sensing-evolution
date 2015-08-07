@@ -17,6 +17,9 @@ div.trails-list-container {
         margin: 5px 0px;
         width: 100%;
         height: $item-height;
+        &.compact {
+          height: $compact-item-height;
+        }
         padding: $item-padding 0;
         text-align: left;
         white-space: nowrap;
@@ -86,6 +89,10 @@ div.trails-list-container {
           width: $item-height;
           position: relative;
           top: -$item-padding;
+          &.compact {
+            line-height: $compact-item-height + 2 * $item-padding;
+            height: $compact-item-height + 2 * $item-padding;
+          }
         }
       }
     }

@@ -104,11 +104,27 @@ div.black-bar {
   line-height: 2.2em;
   &.audio {
     height: $audio-height;
+    line-height: $audio-height * 0.5;
+    margin-top: 5px;
+    text-align: left;
+    .audio-info {
+      margin-left: 15%;
+      display: inline-block;
+      text-align: center;
+      #media-caption {
+  //      text-align: left;
+//        padding-right: 1em;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+
+    }
     img.audio-control-icon {
       height: $audio-height;
       width: $audio-height;
       float: right;
       padding: 0;
+      padding-right: 5px;
       &.pause {
         display: none;
       }
@@ -118,10 +134,6 @@ div.black-bar {
       &.speaker {
         float: left;
       }
-    }
-    #media-caption {
-      text-align: left;
-      padding-right: 1em;
     }
   }
   &.map-link {
