@@ -1,7 +1,7 @@
 @import "_common.scss";
 
 .pr-header-container {
-  padding: $headerPadding 0px 0;
+  padding: $status-bar-height 0px $headerPadding 0;
   text-align: center;
   background-color: white;
   .pr-header {
