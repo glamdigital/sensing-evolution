@@ -147,7 +147,7 @@ h3 {
   text-align: center;
   width: 100%;
   img {
-    @media #{$phone} and #{$landscape} {
+    @media #{$phone_small} {
       width: 80%;
       margin: 0 4%;
     }

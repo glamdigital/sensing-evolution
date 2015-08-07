@@ -5,6 +5,15 @@ div.trails-list-container {
   overflow-y: scroll;
   margin-top: 0px;
 
+  h4 {
+    margin: 0px 10px;
+    text-align: left;
+    font-size: 1.0em;
+    @media #{$phone_small} {
+      font-size: 0.8em;
+    }
+  }
+
   ul {
     padding: 0px;
     list-style: none;
@@ -19,6 +28,10 @@ div.trails-list-container {
         height: $item-height;
         &.compact {
           height: $compact-item-height;
+          @media #{$phone_small} {
+            height: $super-compact-item-height;
+            margin: 2px 0px;
+          }
         }
         padding: $item-padding 0;
         text-align: left;
@@ -92,6 +105,10 @@ div.trails-list-container {
           &.compact {
             line-height: $compact-item-height + 2 * $item-padding;
             height: $compact-item-height + 2 * $item-padding;
+            @media #{$phone_small} {
+              line-height: $super-compact-item-height + 2 * $item-padding;
+              height: $super-compact-item-height + 2 * $item-padding;
+            }
           }
         }
       }
