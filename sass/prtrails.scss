@@ -107,7 +107,7 @@ table.social-links-table {
 .feedback-button {
   width: 100%;
   padding: 12px 50px ;
-  text-align: left;
+  text-align: center;
   background-color: black;
 //  border-radius: 10px;
   a {
@@ -134,6 +134,7 @@ div.black-bar {
     height: $audio-height;
     line-height: $audio-height * 0.5;
     margin-top: 5px;
+    margin-bottom: 0px;
     text-align: left;
     .audio-info {
       margin-left: 15%;

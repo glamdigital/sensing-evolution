@@ -147,9 +147,14 @@ h3 {
   text-align: center;
   width: 100%;
   img {
-    @media #{$phone_small} {
+    @media #{$phone_vsmall} {
       width: 80%;
       margin: 0 4%;
+    }
+    @media #{$tablet} {
+      width: 75%;
+      margin-top: 2em;
+      margin-bottom: 2em;
     }
     margin-left: auto;
     margin-right: auto;
@@ -243,6 +248,10 @@ div.item-title {
   .found-scrolling {
     img {
       width: 100%;
+      @media #{$tablet} {
+        width: 75%;
+        margin-bottom: 2em;
+      }
     }
     h5 {
       margin: 5px 0px;
