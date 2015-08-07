@@ -169,9 +169,9 @@ div.black-bar {
   text-align: center;
   width: 100%;
   z-index: 2;
-  @include animation(1.4s cyclebg ease-in-out infinite);
 
   .user-prompt {
+    @include animation(1.4s cyclebg ease-in-out infinite);
     padding: 10px 0px;
     background-color: black;
     &.title {
