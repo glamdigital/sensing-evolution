@@ -106,8 +106,8 @@
   },
   {
     " q": "q8",
-    "item": "ancestors1",
-    "trail1": "Investigate",
+    "item": "adaptation1",
+    "trail1": "Discover",
     "trail2": "",
     "question": "Which feature does <i>Archaeopteryx</i> share with modern birds?",
     "correctAnswer": "A light skeleton.",
@@ -181,8 +181,8 @@
   },
   {
     " q": "qi5",
-    "item": "adaptation2",
-    "trail1": "Discover",
+    "item": "ancestors1",
+    "trail1": "Investigate",
     "trail2": "",
     "question": "What features does <i>Archaeopteryx</i> have that modern birds DON’T?",
     "correctAnswer": "Teeth",
