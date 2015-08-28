@@ -10,6 +10,7 @@
     "video": "d1buckland.mp4",
     "video_poster": "video_posters/d1buckland.jpg",
     "hint": "Look for the display in the centre court called 'Belonging to Professor Buckland'.",
+    "": "Willliam Buckland, 'Undergroundologist'",
     "code": "4781",
     "beaconMajor": "2889",
     "triggerOnFar": "FALSE",
@@ -26,6 +27,7 @@
     "video": "d2hyaena.mp4",
     "video_poster": "video_posters/d2hyaena.jpg",
     "hint": "Near the shop and lift, look for a small picture of a Hyaena",
+    "": "Hyaenas in Yorkshire!",
     "code": "7528",
     "beaconMajor": "9125",
     "triggerOnFar": "FALSE",
@@ -42,6 +44,7 @@
     "video": "d3megalosaurus.mp4",
     "video_poster": "video_posters/d3megalosaurus.jpg",
     "hint": "Look for the '<i>Megalosaurus</i>' case near the T. rex",
+    "": "<i>Megalosaurus</i>: An Oxfordshire Dinosaur",
     "code": "6652",
     "beaconMajor": "4005",
     "triggerOnFar": "FALSE",
@@ -58,6 +61,7 @@
     "video": "d4icthyosaur.mp4",
     "video_poster": "video_posters/d4icthyosaur.jpg",
     "hint": "Look for the 'Ichthyosaurs' case",
+    "": "Ichthyosaurs - not dinosaurs, but marine reptiles",
     "code": "1908",
     "beaconMajor": "11889",
     "triggerOnFar": "FALSE",
@@ -74,6 +78,7 @@
     "video": "d5pepperedmoth.mp4",
     "video_poster": "video_posters/d5pepperedmoth.jpg",
     "hint": "Look for the display called 'Natural Selection at Work'",
+    "": "Variations - similar, but not the same…",
     "code": "8865",
     "beaconMajor": "50339",
     "triggerOnFar": "FALSE",
@@ -90,6 +95,7 @@
     "video": "d6darwin.mp4",
     "video_poster": "video_posters/d6darwin.jpg",
     "hint": "Look for the display called 'Darwin's Principles'",
+    "": "Charles Darwin and the pigeons",
     "code": "6509",
     "beaconMajor": "14250",
     "triggerOnFar": "FALSE",
@@ -106,6 +112,7 @@
     "video": "d7reptiles.mp4",
     "video_poster": "video_posters/d7reptiles.jpg",
     "hint": "Head for the Sensing Evolution Reptiles table",
+    "": "Reptiles… everywhere!",
     "code": "8350",
     "beaconMajor": "63308",
     "triggerOnFar": "FALSE",
@@ -122,6 +129,7 @@
     "video": "d8archaeopteryx.mp4",
     "video_poster": "video_posters/d8archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
+    "": "From dinosaur to bird",
     "code": "9972",
     "beaconMajor": "47050",
     "triggerOnFar": "FALSE",
@@ -138,10 +146,11 @@
     "video": "i1darwin.mp4",
     "video_poster": "video_posters/i1darwin.jpg",
     "hint": "One of the statues is of Charles Darwin…",
+    "": "Why was Charles Darwin so special?",
     "code": "4765",
     "beaconMajor": "12518",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "origin2",
@@ -154,10 +163,11 @@
     "video": "i2ourplace.mp4",
     "video_poster": "video_posters/i2ourplace.jpg",
     "hint": "Look for the primate evolution case called 'Our Closest Relatives'",
+    "": "Our place in evolution",
     "code": "6238",
     "beaconMajor": "21925",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "reproduction1",
@@ -170,10 +180,11 @@
     "video": "i3success.mp4",
     "video_poster": "video_posters/i3success.jpg",
     "hint": "Head for the Sensing Evolution Mammals table",
+    "": "Reproductive strategies",
     "code": "4054",
     "beaconMajor": "22691",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "reproduction2",
@@ -186,10 +197,11 @@
     "video": "i4dna.mp4",
     "video_poster": "video_posters/i4dna.jpg",
     "hint": "Look for the spinning DNA model",
+    "": "In your genes",
     "code": "5118",
     "beaconMajor": "53044",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "ancestors1",
@@ -202,10 +214,11 @@
     "video": "i5archaeopteryx.mp4",
     "video_poster": "video_posters/i5archaeopteryx.jpg",
     "hint": "This model is in a glass case on its own near the Sensing Evolution Mammals table",
+    "": "Early birds",
     "code": "9972",
     "beaconMajor": "47050",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "ancestors2",
@@ -218,10 +231,11 @@
     "video": "i6horse.mp4",
     "video_poster": "video_posters/i6horse.jpg",
     "hint": "The 'Evolution of the Horse' display is tucked away in one of the 'cloisters'",
+    "": "Evolution of the horse",
     "code": "1547",
     "beaconMajor": "61866",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "selection1",
@@ -234,10 +248,11 @@
     "video": "i7naturalselection.mp4",
     "video_poster": "video_posters/i7naturalselection.jpg",
     "hint": "Wings outstretched and in a silver case, look for Snowy Owl",
+    "": "Natural selection",
     "code": "7401",
     "beaconMajor": "50197",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   },
   {
     "slug": "selection2",
@@ -250,9 +265,10 @@
     "video": "i8sexualselection.mp4",
     "video_poster": "video_posters/i8sexualselection.jpg",
     "hint": "The 'Evolution' case features a peacock and a beaver…",
+    "": "Sexual selection",
     "code": "9284",
     "beaconMajor": "47967",
     "triggerOnFar": "FALSE",
-    "foundsound": "audio/elephant.wav"
+    "foundsound": "audio/harp.mp3"
   }
 ]
