@@ -19,6 +19,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
             this.shuffledTopics = new TopicsCollection(this.topics.shuffle());
         }
 
+
       //get all items for the topic, shuffle and add to unvisited items, and record index
       var itemIndex = 1;
       for(var i=0; i<this.shuffledTopics.length; i++) {
@@ -28,7 +29,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
           }, this);
           if(topic.attributes.fixed_order) {
               //if the topic is set to be in fixed order, then items will appear in the order they are in the imported json
-              topic.shuffledItems = new ItemsCollection(items);
+              topic.shuffledItems = new ItemsCollection(_.clone(items));
           }
           else {
               topic.shuffledItems = new ItemsCollection(_.shuffle(items));
@@ -38,6 +39,8 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 	          var index = j+1;
 	          item.attributes.progressString = "Item " + itemIndex + " of 8";
 	          itemIndex ++;
+	          item.attributes.isFound = false;
+	          item.attributes.isAvailable = false;
 	          this.unvisitedItems.add(item);
           }
       }
