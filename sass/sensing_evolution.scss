@@ -357,7 +357,7 @@ h3 {
       background-color: $overlayWhite;
       img.item-map {
         width: 70%;
-        @media #{$phone_small} {
+        @media #{$phone} {
           width: 60%;
         }
         height: auto;
@@ -382,8 +382,9 @@ h3 {
 
       //hint text itself
       .hint {
+        padding: 10px;
         display: none;
-        @media #{$phone_small} {
+        @media #{$phone} {
           margin-top: 0px;
           margin-left: 3%;
           margin-right: 3%;
@@ -522,6 +523,7 @@ h3 {
       top: 0px;
       left: 0px;
       width: 100%;
+      height: 100%;
       background-color: #000000;
       z-index:1000;
     }

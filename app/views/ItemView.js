@@ -60,7 +60,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     },
 
     centreElements: function() {
-	    this.moveToCentre($('.before-found'));
+	    //this.moveToCentre($('.before-found'));
     },
 
     didRangeBeacon: function(data) {
@@ -91,6 +91,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       $('.proximity-indicator').hide();
       $('.before-found').hide();
       $('.found-video').show();
+      this.$video.addClass('playing');
       //start the video after half a second
       //setTimeout( _.bind(function() {
       //  this.video.play();
@@ -103,10 +104,16 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       this.unlockView.remove();
 
 	    //center play button
-	    this.moveToCentre($('.play'));
-		  this.moveToCentre($('#foundVideo'));
+	    //this.moveToCentre($('.play'));
+		  //this.moveToCentre($('#foundVideo'));
       navigator.notification.vibrate(500);
 	    this.foundSound.play();
+
+	    ////start video playing
+	    //this.playVideo();
+	    ////pause immediately
+	    //setTimeout(this.pauseVideo().bind(this), 1);
+
     },
 
     //For browser simulation of 'finding' the object. Click on the picture
@@ -118,6 +125,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       "click .pause" : "pauseVideo",
       "click .resume" : "resumeVideo",
       "click .stop" : "stopVideo",
+      "click video" : "playVideo",
     },
     replayVideo: function(ev) {
 	    //enable stopping on second play
@@ -125,25 +133,20 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.playVideo(ev);
     },
     playVideo: function(ev) {
-      
+
       this.$video.addClass('playing');
       //  //hide the play control
       $('.play-button').hide();
-	    
+
       if(typeof(device)!='undefined') {
 		    window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
 	    } else {
 		    //browser
 		    this.$video[0].play();
 	    }
-	    //finish the video early for testing
-	    if(typeof(device) == 'undefined') {
-		    setTimeout(this.onVideoEnded.bind(this), 2000);
-	    }
 
 	    //unhide video and controls
       $('.found-video').show();
-	    $('.controls-container').show();
     },
     pauseVideo: function(ev) {
 	    this.video.pause();
@@ -192,8 +195,8 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	
     },
 	  centreQuestion: function() {
-	    this.moveToVerticalCentre($('.questions'));
-	    this.moveToVerticalCentre($('.video-container'));
+	    //this.moveToVerticalCentre($('.questions'));
+	    //this.moveToVerticalCentre($('.video-container'));
 	  },
     toggleNavMenu: function(ev)
     {

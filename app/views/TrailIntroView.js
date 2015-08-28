@@ -11,11 +11,11 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
         afterRender: function() {
             this.$video = $('#introvideo');
             this.video = this.$video[0];
-
+			this.isAndroid = (device.platform == 'Android' || device.platform == 'amazon-fireos');
             //initiailize the video plugin
             //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
 	        if(typeof(device)!='undefined') {
-		        var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
+		        var videoPath = this.isAndroid ? '' : 'video/'
 		        console.log("Initializing video");
 		        window.plugins.html5Video.initialize({
 			        "introvideo": videoPath + this.trail.attributes.video,
@@ -23,7 +23,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        }
 
 	        //start video on first play - the start 'control' doesn't work due to video plugin
-	        this.$video.one('touchstart', function(ev){
+	        this.$video.one('click', function(ev){
 		        this.startVideo();
 	        }.bind(this));
 
@@ -57,19 +57,24 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	    //},
         startVideo: function() {
 	        console.log("Playing video");
-	        if(typeof(device)!='undefined') {
+	        if(typeof(device)!='undefined' && (device.platform == 'Android' || device.platform == 'amazon-fireos')) {
 		        window.plugins.html5Video.play('introvideo', this.showStartLink);
 	        } else {
 		        this.video.play();
 	        }
+
 	        //hide controls
         },
         serialize: function() {
             var out = this.trail.toJSON();
+	        out.isAndroid = this.isAndroid;
             return out;
         },
 
         showStartLink: function() {
+
+
+
 	        //stop error checking
 	        clearTimeout(this.checkErrorTimeout);
 
@@ -77,7 +82,9 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
             $buttonsContainer.show();
             //this.moveToCentre($buttonsContainer);
             //add the 'finished' class to the video
-            var $video = $('#intro-video');
+            var $video = $('#introvideo');
+
+	        $video.hide();
 
 	        //hide controls
 	        $('.controls-container').hide();
@@ -95,8 +102,11 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	    },
 
         replayVideo: function(ev) {
+	        this.$video.show();
             ev.preventDefault();
-            window.plugins.html5Video.play('introvideo');
+
+            //window.plugins.html5Video.play('introvideo');
+	        this.$video[0].play();
 			this.hideStartLink();
         },
 	    pauseVideo: function(ev) {
