@@ -1,5 +1,12 @@
 @import "_common.scss";
 
+body {
+  @media #{$tablet} {
+    font-size: 1.6em;
+  }
+//  font-size: 1.5em;
+}
+
 div.trails-list-container {
   text-align: center;
   overflow-y: scroll;
@@ -12,6 +19,9 @@ div.trails-list-container {
     @media #{$phone_small} {
       font-size: 0.8em;
     }
+//    @media #{$tablet} {
+//      font-size: 1.5em;
+//    }
   }
 
   ul {
@@ -26,8 +36,18 @@ div.trails-list-container {
         margin: 5px 0px;
         width: 100%;
         height: $item-height;
+        @media #{$tablet} {
+          height: $item-height-tablet;
+          margin: 10px 0px;
+          font-size: 1.0em;
+          line-height: 1.0em;
+        }
         &.compact {
           height: $compact-item-height;
+          @media #{$tablet} {
+            height: $compact-item-height-tablet;
+            line-height: $compact-item-height-tablet;
+          }
           @media #{$phone_small} {
             height: $super-compact-item-height;
             margin: 2px 0px;
@@ -82,6 +102,10 @@ div.trails-list-container {
         .item-thumbnail-container {
           height: $item-height + 2 * $item-padding;
           width: $item-height + 2 * $item-padding;
+          @media #{$tablet} {
+            height: $item-height-tablet + 2*$item-padding;
+            width: $item-height-tablet + 2*$item-padding;
+          }
           float: left;
           position: relative;
           top: -$item-padding;
@@ -100,6 +124,11 @@ div.trails-list-container {
           line-height: $item-height + 2 * $item-padding;
           height: $item-height + 2 * $item-padding;
           width: $item-height;
+          @media #{$tablet} {
+            line-height: $item-height-tablet + 2*$item-padding;
+            height: $item-height-tablet + 2 * $item-padding;
+            width: $item-height-tablet;
+          }
           position: relative;
           top: -$item-padding;
           &.compact {
@@ -108,6 +137,11 @@ div.trails-list-container {
             @media #{$phone_small} {
               line-height: $super-compact-item-height + 2 * $item-padding;
               height: $super-compact-item-height + 2 * $item-padding;
+            }
+            @media #{$tablet} {
+              line-height: $compact-item-height-tablet + 2*$item-padding;
+              height: $compact-item-height-tablet + 2 * $item-padding;
+              width: $compact-item-height-tablet;
             }
           }
         }
@@ -121,4 +155,8 @@ p.description {
   margin: 10px 5px;
   text-align: left;
   font-size: 0.9em;
+  @media #{$tablet} {
+    font-size: 1.0em;
+    margin: 40px 7%;
+  }
 }

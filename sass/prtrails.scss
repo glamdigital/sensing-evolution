@@ -4,39 +4,65 @@
   padding: $status-bar-height 0px $headerPadding 0;
   text-align: center;
   background-color: white;
+  @media #{$tablet} {
+    padding: 2*$status-bar-height 0px $headerPadding 0;
+  }
   .pr-header {
     z-index: 3;
     height: $headerHeight;
+    @media #{$tablet} {
+      height: $headerHeightTablet;
+    }
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     div {
       height: $headerHeight;
+      @media #{$tablet} {
+        height: $headerHeightTablet;
+      }
+
       &.header-arrow {
         width: $arrow-width;
         position:absolute;
         top:0;
         &.arrow-left {
           left:$headerPadding;
+          @media #{$tablet} {
+            left: $headerPadding;
+          }
         }
         &.arrow-right {
           right:$headerPadding;
+          @media #{$tablet} {
+            right: 50px;
+          }
         }
         a {
           font-size: 1.1em;
           line-height: $headerHeight * 1.15;
+          @media #{$tablet} {
+            line-height: $headerHeightTablet * 1.15;
+            font-size: 1.5em;
+          }
           text-decoration: none;
           color:black;
           &.back-link {
             text-align: left;
             i {
               padding-right: 0.2em;
+              @media #{$tablet} {
+                display: inline;
+              }
             }
           }
           &.next-link {
             text-align: right;
             i {
               padding-left: 0.2em;
+              @media #{$tablet} {
+                display: inline;
+              }
             }
           }
 
@@ -46,6 +72,9 @@
         padding: 0px 2%;
         img {
           height:$headerHeight - $headerPadding/2;
+          @media #{$tablet} {
+            height: $headerHeightTablet - $headerPadding/2;
+          }
         }
       }
     }
@@ -68,6 +97,7 @@ h3.finished-message {
 
 p.finished-call-to-action {
   margin: 3px 20px;
+  text-align: center;
   @media #{$phone_small} {
     font-size: 0.9em;
   }
@@ -79,6 +109,10 @@ p.finished-call-to-action {
     width: 80%;
     @media #{$phone_small} {
       width: 60%;
+    }
+    @media #{$tablet} {
+      width: 70%;
+      padding: 25px;
     }
   }
 }
@@ -106,7 +140,7 @@ table.social-links-table {
 
 .feedback-button {
   width: 100%;
-  padding: 12px 50px ;
+  padding: 12px 0px ;
   text-align: center;
   background-color: black;
 //  border-radius: 10px;
@@ -126,14 +160,23 @@ div.black-bar {
   color: white;
   font-size: 1em;
   line-height: 2.2em;
+
   margin-bottom: 10px;
   @media #{$phone_small} {
     margin-bottom: 3px;
+  }
+  @media #{$tablet} {
+    height: $item-height;
   }
   &.audio {
     height: $audio-height;
     line-height: $audio-height * 0.5;
     margin-top: 5px;
+    @media #{$tablet} {
+      margin-top: 10px;
+      height: $audio-height-tablet;
+      line-height: $audio-height-tablet * 0.5;
+    }
     margin-bottom: 0px;
     text-align: left;
     .audio-info {
@@ -151,6 +194,11 @@ div.black-bar {
     img.audio-control-icon {
       height: $audio-height;
       width: $audio-height;
+      @media #{$tablet} {
+        height: $audio-height-tablet* 0.8;
+        width: $audio-height-tablet * 0.8;
+        padding: $audio-height-tablet * 0.1;
+      }
       float: right;
       padding: 0;
       padding-right: 5px;
@@ -171,6 +219,11 @@ div.black-bar {
   &.compact {
     height: $compact-item-height + 10px;
     line-height: $compact-item-height + 10px;
+    @media #{$tablet} {
+      height: $compact-item-height-tablet + 10px;
+      line-height: $compact-item-height-tablet + 10px;
+      font-size: 1.3em;
+    }
   }
 }
 

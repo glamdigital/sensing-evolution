@@ -78,6 +78,9 @@ a.nav-link {
 
 .content {
   top: $headerHeight + 2*$headerPadding;
+    @media #{$tablet} {
+      top: $headerHeightTablet + 3*$headerPadding;
+    }
   left: 0;
   position: fixed;
   background-color: white;
@@ -152,7 +155,7 @@ h3 {
       margin: 0 4%;
     }
     @media #{$tablet} {
-      width: 75%;
+      width: 60%;
       margin-top: 2em;
       margin-bottom: 2em;
     }
@@ -249,8 +252,9 @@ div.item-title {
     img {
       width: 100%;
       @media #{$tablet} {
-        width: 75%;
-        margin-bottom: 2em;
+        width: 60%;
+        margin-top: 16px;
+        margin-bottom: 5px;
       }
     }
     h5 {
@@ -267,7 +271,10 @@ div.item-title {
     p.description {
 //      overflow-y: scroll;
       padding-bottom: 5px;
-
+      @media #{$tablet} {
+        font-size: 0.9em;
+        margin: 15px 7%;
+      }
     }
   }
   @include transition-property(max-width);
