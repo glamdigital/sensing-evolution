@@ -5,7 +5,7 @@
   text-align: center;
   background-color: white;
   @media #{$tablet} {
-    padding: 2*$status-bar-height 0px $headerPadding 0;
+    padding: 1.5*$status-bar-height 0px $headerPadding 0;
   }
   .pr-header {
     z-index: 3;
@@ -71,9 +71,10 @@
       &.header-logo {
         padding: 0px 2%;
         img {
-          height:$headerHeight - $headerPadding/2;
+          width: auto;
+          height: 55px;
           @media #{$tablet} {
-            height: $headerHeightTablet - $headerPadding/2;
+            height: $headerHeightTablet - $headerPadding;
           }
         }
       }
@@ -217,6 +218,36 @@ div.black-bar {
     height: 40px;
   }
   &.compact {
+    height: $compact-item-height + 10px;
+    line-height: $compact-item-height + 10px;
+    @media #{$tablet} {
+      height: $compact-item-height-tablet + 10px;
+      line-height: $compact-item-height-tablet + 10px;
+      font-size: 1.3em;
+    }
+  }
+}
+
+div.red-button {
+  width: auto;
+  background: #9d1f29;
+  padding: 5px 12px;
+  color: white;
+  font-size: 1em;
+  line-height: 2.2em;
+  margin: 0 3px 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #333;
+  @media #{$phone_small} {
+    margin-bottom: 3px;
+  }
+  @media #{$tablet} {
+    height: $item-height;
+  }
+  &.map-link {
+    height: 40px;
+  }
+    &.compact {
     height: $compact-item-height + 10px;
     line-height: $compact-item-height + 10px;
     @media #{$tablet} {
