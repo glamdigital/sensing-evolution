@@ -279,7 +279,9 @@ div.red-button {
     position: fixed;
     margin-top: 5.5em;
     img.map-image {
-      max-width: 80%;
+      width: 80%;
+      height: auto;
+      max-height: 100%;
     }
   }
   .close {
