@@ -1,5 +1,11 @@
 @import "_variables.scss";
 
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}
+
+
 @mixin rounded-corners {
   border-radius: $corner-radius;
 }
@@ -606,6 +612,7 @@ h3 {
   }
   //input field for typing in number
   input{
+    -webkit-user-select: auto;
     height: 24px;
     margin: 6px 0 4px;
     @media #{$tablet} {
