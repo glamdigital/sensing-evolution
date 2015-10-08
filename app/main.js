@@ -1,13 +1,15 @@
 /**
  * Created by ahaith on 30/01/15.
  */
-require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/logging', 'layoutmanager', 'app/router', 'app/location', 'app/test/validateData', 'app/floor_tracking'],
-  function($, Backbone, Trail, Topic, Logging, LayoutManager, Router, Location, Tests, FloorTracking){
+require(['jquery','backbone', 'app/models/Trail', 'app/models/Topic', 'app/logging', 'layoutmanager', 'fastclick', 'app/router', 'app/location', 'app/test/validateData', 'app/floor_tracking'],
+  function($, Backbone, Trail, Topic, Logging, LayoutManager, FastClick, Router, Location, Tests, FloorTracking){
 
     //UUIDs to monitor
     //TODO move this to config
     var Location_UUID_beacons = '99F4FAEB-7734-4F6F-B2CD-890ADC286EC5'; //beacons
     var Location_UUID_ios = '8492E75F-4FD6-469D-B132-043FE94921D8'; //ios
+
+    new FastClick(document.body);
 
     var onReady = function() {
       Logging.logToDom("Device Ready");
