@@ -117,6 +117,7 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
     //For browser simulation of 'finding' the object. Click on the picture
     events: {
       "click img.item-image" : "onClickImage",
+      "click img.toggle-audio-button" : "toggleAudio",
       "click .show-hint" : "showHint",
       "click #nav-menu-button" : "toggleNavMenu",
       "click .map-link" : "showMap",
@@ -127,6 +128,9 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
     onClickImage: function(ev) {
       //Backbone.trigger(this.eventId, { proximity:"ProximityImmediate" });
 	    this.findObject(false);
+    },
+    toggleAudio: function (ev) {
+      this.audioControlsView.toggleAudioPublic();
     },
     showHint: function(ev) {
         ev.preventDefault();
