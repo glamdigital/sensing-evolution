@@ -235,7 +235,7 @@ div.red-button {
   color: white;
   font-size: 1em;
   line-height: 2.2em;
-  margin: 0 3px 10px;
+  margin: $standardPadding $standardPadding*2;
   border-radius: 10px;
   box-shadow: 1px 1px #333;
   @media #{$phone_small} {

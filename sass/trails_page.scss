@@ -20,9 +20,12 @@ div.trails-list-container {
     @media #{$phone_small} {
       font-size: 0.8em;
     }
-//    @media #{$tablet} {
-//      font-size: 1.5em;
-//    }
+  }
+  .audio-controls {
+    margin-top: 10px;
+    @media #{$tablet} {
+      margin-top: 20px;
+    }
   }
 
   p.description {
@@ -92,7 +95,12 @@ div.trails-list-container {
             text-overflow: ellipsis;
             &.title-smaller {
               font-size: 1.0em;
+              line-height: 1.0em;
+              @media #{$tablet} {
+                padding-top: 5px;
+              }
             }
+            
           }
           &.subtitle {
             font-size: 0.8em;
