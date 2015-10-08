@@ -1,5 +1,11 @@
 @import "_common.scss";
 
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}
+
+
 .pr-header-container {
   padding: $status-bar-height 0px $headerPadding 0;
   text-align: center;
