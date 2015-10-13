@@ -14,9 +14,8 @@ Audio File: Natural selection.mp4
 Video File: Natural selection.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Scroll Position: 14
-Active Line: 15
-Video Position: 1841
+Active Line: 14
+Video Position: 1683
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -26,18 +25,18 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:00.40,0:00:04.35,Default,,0,0,0,,The Snowy Owl has incredible hearing and eyesight
 Dialogue: 0,0:00:04.38,0:00:08.75,Default,,0,0,0,,near silent flight, feathered talons, and of course it's white.
-Dialogue: 0,0:00:08.83,0:00:13.92,Default,,0,0,0,,These are all incredibly valuable features for an arctic predator.
-Dialogue: 0,0:00:13.92,0:00:20.76,Default,,0,0,0,,And they're the result of natural selection acting on countless generations of Snowy Owls
+Dialogue: 0,0:00:08.83,0:00:13.92,Default,,0,0,0,,These are all incredibly valuable features for an Arctic predator.
+Dialogue: 0,0:00:13.92,0:00:20.76,Default,,0,0,0,,And they're the result of natural selection acting on countless generations of Snowy Owls.
 Dialogue: 0,0:00:21.07,0:00:26.01,Default,,0,0,0,,Parents with characteristics which helped them survive and reproduce
-Dialogue: 0,0:00:26.01,0:00:30.56,Default,,0,0,0,,would be most likely to pass on those characteristics to their offspring
+Dialogue: 0,0:00:26.01,0:00:30.56,Default,,0,0,0,,would be most likely to pass on those characteristics to their offspring.
 Dialogue: 0,0:00:30.89,0:00:36.03,Default,,0,0,0,,We think that natural selection is even acting on the size of the Snowy Owl as well,
 Dialogue: 0,0:00:36.03,0:00:39.88,Default,,0,0,0,,because average sized owls tend to have the most offspring.
 Dialogue: 0,0:00:39.88,0:00:42.57,Default,,0,0,0,,This might all be about energy.
-Dialogue: 0,0:00:42.57,0:00:49.29,Default,,0,0,0,,Larger owls might have too much of an energy demand to have plenty of offspring
+Dialogue: 0,0:00:42.57,0:00:49.29,Default,,0,0,0,,Larger owls might have too much of an energy demand to have plenty of offspring.
 Dialogue: 0,0:00:49.29,0:00:53.24,Default,,0,0,0,,Smaller owls might not get enough larger prey
 Dialogue: 0,0:00:53.53,0:00:58.88,Default,,0,0,0,,and so natural selection favours an optimum body weight
-Dialogue: 0,0:00:59.02,0:01:01.96,Default,,0,0,0,,where more offspring will be produced
+Dialogue: 0,0:00:59.02,0:01:01.96,Default,,0,0,0,,where more offspring will be produced.
 Dialogue: 0,0:01:02.16,0:01:07.29,Default,,0,0,0,,Natural selection acts on every single species on the planet
-Dialogue: 0,0:01:07.29,0:01:13.53,Default,,0,0,0,,and we see a wonderful range of animals adapted to all sorts of different environments
+Dialogue: 0,0:01:07.29,0:01:13.53,Default,,0,0,0,,and we see a wonderful range of animals adapted to all sorts of different environments.
 Dialogue: 0,0:01:13.63,0:01:18.24,Default,,0,0,0,,And of course, natural selection and evolution is still happening.
 Dialogue: 0,0:01:18.24,0:01:20.24,Default,,0,0,0,,

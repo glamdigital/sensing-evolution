@@ -14,9 +14,9 @@ Audio File: Reproductive success.mp4
 Video File: Reproductive success.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Scroll Position: 10
-Active Line: 17
-Video Position: 1565
+Video Zoom Percent: 0.250000
+Active Line: 9
+Video Position: 828
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -24,16 +24,16 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.78,0:00:04.79,Default,,0,0,0,,Reproduction is key to the survival of any species
-Dialogue: 0,0:00:05.20,0:00:10.32,Default,,0,0,0,,Even amongst mammals, we find differences in reproductive strategies
+Dialogue: 0,0:00:00.78,0:00:04.79,Default,,0,0,0,,Reproduction is key to the survival of any species.
+Dialogue: 0,0:00:05.20,0:00:10.32,Default,,0,0,0,,Even amongst mammals, we find differences in reproductive strategies.
 Dialogue: 0,0:00:10.32,0:00:14.49,Default,,0,0,0,,Some species like us humans tend to have just a few offspring
 Dialogue: 0,0:00:14.49,0:00:16.49,Default,,0,0,0,,and we look after them very carefully
-Dialogue: 0,0:00:16.90,0:00:20.20,Default,,0,0,0,,and this improved their chances of surviving to adulthood
+Dialogue: 0,0:00:16.90,0:00:20.20,Default,,0,0,0,,and this improves their chances of surviving to adulthood.
 Dialogue: 0,0:00:20.81,0:00:23.51,Default,,0,0,0,,Other species have a very different strategy
-Dialogue: 0,0:00:23.92,0:00:26.24,Default,,0,0,0,,and they have many many offspring
+Dialogue: 0,0:00:23.92,0:00:26.24,Default,,0,0,0,,and they have many, many offspring
 Dialogue: 0,0:00:26.40,0:00:28.98,Default,,0,0,0,,A really good example of that is the shrew
 Dialogue: 0,0:00:28.98,0:00:33.12,Default,,0,0,0,,A female shrew has between 15 and 28 offspring
-Dialogue: 0,0:00:33.12,0:00:35.12,Default,,0,0,0,,in every breeding season
+Dialogue: 0,0:00:33.12,0:00:35.12,Default,,0,0,0,,in every breeding season.
 Dialogue: 0,0:00:35.84,0:00:39.64,Default,,0,0,0,,In every single litter, there is going to be variation.
 Dialogue: 0,0:00:39.64,0:00:43.08,Default,,0,0,0,,Those offspring are going to differ from each other.
 Dialogue: 0,0:00:43.40,0:00:48.12,Default,,0,0,0,,Some individuals are going to be better suited to the environment that they're born into
@@ -41,4 +41,4 @@ Dialogue: 0,0:00:48.30,0:00:50.61,Default,,0,0,0,,and they'll have a better chan
 Dialogue: 0,0:00:51.04,0:00:54.44,Default,,0,0,0,,So this is what's known as "survival of the fittest".
 Dialogue: 0,0:00:54.80,0:00:57.08,Default,,0,0,0,,But natural selection doesn't stop there.
 Dialogue: 0,0:00:57.08,0:01:02.60,Default,,0,0,0,,Because even amongst the shrews that survive to adulthood, there will be varying numbers of offspring.
-Dialogue: 0,0:01:02.60,0:01:10.36,Default,,0,0,0,,So natural selection is actually about survival {\i1\b1}and{\i0\b0} reproduction.
+Dialogue: 0,0:01:02.60,0:01:10.36,Default,,0,0,0,,So natural selection is actually about survival <i><b>and</i></b> reproduction.

@@ -14,9 +14,9 @@ Audio File: Our place in evolution.mp4
 Video File: Our place in evolution.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Scroll Position: 13
-Active Line: 16
-Video Position: 1522
+Scroll Position: 5
+Active Line: 15
+Video Position: 1430
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -24,22 +24,22 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.09,0:00:05.28,Default,,0,0,0,,In his 1971 book, {\i1}The Descent of Man{\i0}, Charles Darwin suggested
-Dialogue: 0,0:00:05.28,0:00:09.37,Default,,0,0,0,,that humans were descended from ancestral African apes
-Dialogue: 0,0:00:09.66,0:00:15.55,Default,,0,0,0,,Now since then, many fossils of ancestral human-like species have been discovered
+Dialogue: 0,0:00:00.09,0:00:05.28,Default,,0,0,0,,In his 1871 book, <i>The Descent of Man</i>, Charles Darwin suggested
+Dialogue: 0,0:00:05.28,0:00:09.37,Default,,0,0,0,,that humans were descended from ancestral African apes.
+Dialogue: 0,0:00:09.66,0:00:15.55,Default,,0,0,0,,Now since then, many fossils of ancestral human-like species have been discovered.
 Dialogue: 0,0:00:15.58,0:00:17.80,Default,,0,0,0,,We have about twenty of these species now
 Dialogue: 0,0:00:18.08,0:00:20.62,Default,,0,0,0,,and all of these "hominins", as we call them
 Dialogue: 0,0:00:20.62,0:00:23.06,Default,,0,0,0,,are more closely related to us humans
 Dialogue: 0,0:00:23.06,0:00:27.27,Default,,0,0,0,,than they are to African apes like chimpanzees and gorillas.
-Dialogue: 0,0:00:27.37,0:00:31.93,Default,,0,0,0,,One of the most famous Hominin species is {\i1}Australopithecus aforensis{\i0}
+Dialogue: 0,0:00:27.37,0:00:31.93,Default,,0,0,0,,One of the most famous Hominin species is <i>Australopithecus afarensis</i>
 Dialogue: 0,0:00:31.93,0:00:36.34,Default,,0,0,0,,and one of the most famous fossils of that species is called "Lucy"
-Dialogue: 0,0:00:36.34,0:00:40.56,Default,,0,0,0,,and she was discovered in 1974 in Ethiopia
-Dialogue: 0,0:00:41.18,0:00:45.48,Default,,0,0,0,,And in fact there was much more of Lucy's skeleton than I've got represented here
+Dialogue: 0,0:00:36.34,0:00:40.56,Default,,0,0,0,,and she was discovered in 1974 in Ethiopia.
+Dialogue: 0,0:00:41.18,0:00:45.48,Default,,0,0,0,,And in fact there was much more of Lucy's skeleton than I've got represented here.
 Dialogue: 0,0:00:45.48,0:00:48.35,Default,,0,0,0,,We have about 40% of her skeleton
 Dialogue: 0,0:00:48.35,0:00:51.58,Default,,0,0,0,,and that's enough to see that there are important differences
 Dialogue: 0,0:00:51.58,0:00:53.98,Default,,0,0,0,,between her skeleton and that of
-Dialogue: 0,0:00:53.98,0:00:56.81,Default,,0,0,0,,living African apes like chimpanzees and gorillas
-Dialogue: 0,0:00:57.17,0:01:00.85,Default,,0,0,0,,and those differences relate to the way in which she moved around.
+Dialogue: 0,0:00:53.98,0:00:56.81,Default,,0,0,0,,living African apes like chimpanzees and gorillas.
+Dialogue: 0,0:00:57.17,0:01:00.85,Default,,0,0,0,,And those differences relate to the way in which she moved around.
 Dialogue: 0,0:01:00.85,0:01:03.29,Default,,0,0,0,,We know from looking at her skeleton
 Dialogue: 0,0:01:03.29,0:01:07.58,Default,,0,0,0,,that Lucy was adapted to walking upright on two legs.
 Dialogue: 0,0:01:06.31,0:01:08.31,Default,,0,0,0,,

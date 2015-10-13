@@ -14,8 +14,9 @@ Audio File: 3. Megalosaurus.mp4
 Video File: 3. Megalosaurus.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Active Line: 9
-Video Position: 861
+Video Zoom Percent: 0.250000
+Active Line: 4
+Video Position: 319
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -23,16 +24,16 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:02.92,Default,,0,0,0,,This case is all about {\i1}Megalosaurus{\i0}
+Dialogue: 0,0:00:00.00,0:00:02.92,Default,,0,0,0,,This case is all about <i>Megalosaurus</i>
 Dialogue: 0,0:00:02.92,0:00:05.40,Default,,0,0,0,,It was a giant, 9-meter long lizard
 Dialogue: 0,0:00:05.40,0:00:09.36,Default,,0,0,0,,That roamed around Oxfordshire around about a hundred and sixty million years ago
 Dialogue: 0,0:00:09.36,0:00:11.36,Default,,0,0,0,,But how do we know this? I mean, even I'm not that old!
 Dialogue: 0,0:00:12.74,0:00:18.42,Default,,0,0,0,,Well, this was first found by William Buckland, who was a geologist in the 19th century.
 Dialogue: 0,0:00:18.42,0:00:20.72,Default,,0,0,0,,He quickly realised what he had
-Dialogue: 0,0:00:20.72,0:00:25.90,Default,,0,0,0,,but also there were no 9-metre long carnivorous lizards wandering around Oxfordshire
+Dialogue: 0,0:00:20.72,0:00:25.90,Default,,0,0,0,,but also that there were no 9-metre long carnivorous lizards wandering around Oxfordshire
 Dialogue: 0,0:00:25.90,0:00:30.66,Default,,0,0,0,,So, he reasoned that at some time in the past, they must have been here but had gone extinct.
 Dialogue: 0,0:00:30.66,0:00:34.42,Default,,0,0,0,,As other bones were discovered, all around the country and all around the planet,
 Dialogue: 0,0:00:34.42,0:00:37.24,Default,,0,0,0,,The name 'Dinosaur' was thought up to describe them
 Dialogue: 0,0:00:37.24,0:00:41.92,Default,,0,0,0,,So, here in this case, we have the first described bones of any dinosaur
-Dialogue: 0,0:00:41.92,0:00:47.22,Default,,0,0,0,,and they show how much our wildlife, and our planet, has changed through its long history
+Dialogue: 0,0:00:41.92,0:00:47.22,Default,,0,0,0,,and they show how much our wildlife, and our planet, has changed through its long history.
 Dialogue: 0,0:00:47.22,0:00:49.22,Default,,0,0,0,,

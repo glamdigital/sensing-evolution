@@ -14,8 +14,9 @@ Audio File: /Users/ahaith/Dropbox/Sensing Evolution/Investigate - Alice Roberts/
 Video File: /Users/ahaith/Dropbox/Sensing Evolution/Investigate - Alice Roberts/Evolution of horse.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Active Line: 19
-Video Position: 1867
+Scroll Position: 1
+Active Line: 17
+Video Position: 1588
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -30,16 +31,16 @@ Dialogue: 0,0:00:09.28,0:00:14.04,Default,,0,0,0,,The ancestors of our modern ho
 Dialogue: 0,0:00:14.04,0:00:17.44,Default,,0,0,0,,and we know that because we have a fantastic fossil record
 Dialogue: 0,0:00:17.44,0:00:20.96,Default,,0,0,0,,stretching back around 60 million years.
 Dialogue: 0,0:00:20.96,0:00:24.84,Default,,0,0,0,,The ancestors of horses were small creatures
-Dialogue: 0,0:00:24.84,0:00:28.81,Default,,0,0,0,,with several toes and they lived in rainforests
+Dialogue: 0,0:00:24.84,0:00:28.81,Default,,0,0,0,,with several toes and they lived in rainforests.
 Dialogue: 0,0:00:28.81,0:00:32.49,Default,,0,0,0,,Their small size would have meant that they could hide in the undergrowth
 Dialogue: 0,0:00:32.49,0:00:36.80,Default,,0,0,0,,and their splayed toes meant that they could walk on marshy ground.
-Dialogue: 0,0:00:37.39,0:00:43.36,Default,,0,0,0,,But then the environment changed. The forest started to disappear and horses spread out
+Dialogue: 0,0:00:37.39,0:00:43.36,Default,,0,0,0,,But then the environment changed. The forest started to disappear and grassland spread out
 Dialogue: 0,0:00:43.60,0:00:47.50,Default,,0,0,0,,and horses adapted to this changing environment.
 Dialogue: 0,0:00:47.66,0:00:53.56,Default,,0,0,0,,They became larger, taller, longer-legged and fleet of foot.
 Dialogue: 0,0:00:53.76,0:00:58.12,Default,,0,0,0,,They were able to range widely across the grasslands eating enough grass
-Dialogue: 0,0:00:58.14,0:01:02.03,Default,,0,0,0,,but also being able to run away fast from predators
+Dialogue: 0,0:00:58.14,0:01:02.03,Default,,0,0,0,,but also being able to run away fast from predators.
 Dialogue: 0,0:01:02.32,0:01:04.70,Default,,0,0,0,,And just think about horses' legs today.
-Dialogue: 0,0:01:04.70,0:01:07.04,Default,,0,0,0,,They don't have this many toes
-Dialogue: 0,0:01:07.04,0:01:11.61,Default,,0,0,0,,In fact, they've reduced down to a single toe on each leg
+Dialogue: 0,0:01:04.70,0:01:07.04,Default,,0,0,0,,They don't have this many toes.
+Dialogue: 0,0:01:07.04,0:01:11.61,Default,,0,0,0,,In fact, they've reduced down to a single toe on each leg.
 Dialogue: 0,0:01:11.79,0:01:14.67,Default,,0,0,0,,A single toe, and a single hoof.
 Dialogue: 0,0:01:14.67,0:01:16.67,Default,,0,0,0,,
