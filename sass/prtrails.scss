@@ -187,9 +187,9 @@ div.black-bar {
     margin-bottom: 0px;
     text-align: left;
     .audio-info {
-      margin-left: 15%;
+      margin-left: 15px;
       display: inline-block;
-      text-align: center;
+      text-align: left;
       #media-caption {
   //      text-align: left;
 //        padding-right: 1em;
@@ -241,7 +241,7 @@ div.red-button {
   color: white;
   font-size: 1em;
   line-height: 2.2em;
-  margin: 0 3px 10px;
+  margin: $standardPadding $standardPadding*2;
   border-radius: 10px;
   box-shadow: 1px 1px #333;
   @media #{$phone_small} {
@@ -283,7 +283,7 @@ div.red-button {
   .image-holder {
     text-align: center;
     position: fixed;
-    margin-top: 5.5em;
+    margin-top: 2.5em;
     img.map-image {
       width: 80%;
       height: auto;

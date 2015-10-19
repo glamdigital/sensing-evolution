@@ -13,19 +13,30 @@ div.trails-list-container {
   margin-top: 0px;
 
   h4 {
-    margin: 0px 10px;
-    text-align: left;
+    margin: 0;
+    padding: $standardPadding*2 $standardPadding;
+    text-align: center;
     font-size: 1.0em;
     @media #{$phone_small} {
       font-size: 0.8em;
     }
-//    @media #{$tablet} {
-//      font-size: 1.5em;
-//    }
+  }
+  .audio-controls {
+    margin-top: 10px;
+    @media #{$tablet} {
+      margin-top: 20px;
+    }
+  }
+
+  p.description {
+    background-color: $prmRedColor;
+    margin: 0 0 $standardPadding;
+    color: white;
+    padding: $standardPadding*2;
   }
 
   ul {
-    padding: 0px;
+    padding: 0 $standardPadding;
     list-style: none;
     margin-top: 0px;
     a {
@@ -84,7 +95,12 @@ div.trails-list-container {
             text-overflow: ellipsis;
             &.title-smaller {
               font-size: 1.0em;
+              line-height: 1.0em;
+              @media #{$tablet} {
+                padding-top: 5px;
+              }
             }
+            
           }
           &.subtitle {
             font-size: 0.8em;
@@ -158,5 +174,9 @@ p.description {
   @media #{$tablet} {
     font-size: 1.0em;
     margin: 40px 7%;
+  }
+  &.topic-description {
+    text-align:center;
+    font-weight: bold;
   }
 }
