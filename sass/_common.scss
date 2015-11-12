@@ -51,7 +51,7 @@ $prmRedColor: #9B1828;
     background-color: #222;
   }
   50% {
-    background-color: #555;
+    background-color: $prmRedColor;
   }
   100% {
     background-color: #222;
