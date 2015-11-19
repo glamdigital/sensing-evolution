@@ -73,7 +73,7 @@ div.trails-list-container {
         }
         padding: $item-padding 0;
         @media #{$phone_small} {
-          padding: $item-padding - 2 0 $item-padding;
+          padding: $item-padding - 2 0 $item-padding + 2;
         }
         text-align: left;
         white-space: nowrap;
