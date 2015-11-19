@@ -118,6 +118,8 @@ div.trails-list-container {
           &.subtitle {
             font-size: 0.8em;
             margin-right: 10%;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
           }
         }
         &.near {
@@ -138,6 +140,9 @@ div.trails-list-container {
           float: left;
           position: relative;
           top: -$item-padding;
+          @media #{$phone_small} {
+            top: -$item-padding + 2;
+          }
           overflow: hidden;
           margin: 0 $item-padding / 2 0 0;
           text-align: center;
