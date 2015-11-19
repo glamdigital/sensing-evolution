@@ -140,7 +140,9 @@ h3 {
   text-align: center;
   margin: 5px 0px;
   padding-bottom: 5px;
-
+  @media #{$phone_small} {
+    padding-bottom: 0;
+  }
 }
 
 //Contains the image and instructions for the item the user is supposed to be searching for

@@ -33,6 +33,10 @@ div.trails-list-container {
     margin: 0 0 $standardPadding;
     color: white;
     padding: $standardPadding*2;
+    @media #{$phone_small} {
+      padding: $standardPadding;
+    }
+
   }
 
   ul {
