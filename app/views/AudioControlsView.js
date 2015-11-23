@@ -122,15 +122,29 @@ define(['backbone', 'hbs!app/templates/audio_controls'],
 		            $('#media-elapsed').html(elapsed.toMSS());
 	            });
             }
+            //
 	    },
 
         audioStatus: function(status) {
             switch (status) {
-                case Media.MEDIA_NONE: this.isPlayingAudio = false; break;
-                case Media.MEDIA_STARTING: this.isPlayingAudio = true; break;
-                case Media.MEDIA_RUNNING: this.isPlayingAudio = true; break;
-                case Media.MEDIA_PAUSED: this.isPlayingAudio = false; break;
-                case Media.MEDIA_STOPPED: this.isPlayingAudio = false; break;
+                case Media.MEDIA_NONE:
+                    this.isPlayingAudio = false;
+                    break;
+                case Media.MEDIA_STARTING:
+                    this.isPlayingAudio = true;
+                    break;
+                case Media.MEDIA_RUNNING:
+                    this.isPlayingAudio = true;
+                    break;
+                case Media.MEDIA_PAUSED:
+                    this.isPlayingAudio = false;
+                    break;
+                case Media.MEDIA_STOPPED:
+                    this.isPlayingAudio = false;
+                    //playback finished emit event
+                    this.trigger('audio-ended');
+
+                    break;
             }
             this.updateControls();            
         },

@@ -48,12 +48,20 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
                                                             caption: 'About',
                                                             duration: this.item.attributes.audio_duration});
             this.audioControlsView.render();
+            this.listenTo(this.audioControlsView, 'audio-ended', _.bind(this.onAudioEnded, this));
         }
 
         if(this.foundAtInit) {
           this.findObject(false);
         }
 
+    },
+
+    onAudioEnded: function() {
+        //return to floor (topic) screen after half a second
+        setTimeout(_.bind(function() {
+            Backbone.history.navigate('#/topic/' + this.item.attributes.topic);
+        }, this), 500);
     },
 
     didRangeBeacon: function(data) {
