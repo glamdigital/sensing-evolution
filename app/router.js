@@ -114,7 +114,8 @@ define(["backbone", "jquery", "underscore",
             this.item(itemSlug, true);
 
             //links
-            this.headerView.setNextURL(this.session.getNextURL());
+            //this.headerView.setNextURL(this.session.getNextURL());    //removing the 'next' link
+            this.headerView.setNextURL(null);
             this.headerView.render();
 
             FloorTracking.prompttoSwitch = true;
@@ -142,7 +143,8 @@ define(["backbone", "jquery", "underscore",
 
             //links
             this.headerView.setPrevURL('#topic/' + currentTopic.attributes.slug);
-            this.headerView.setNextURL('#found/' + item.attributes.slug);
+            //this.headerView.setNextURL('#found/' + item.attributes.slug);
+            this.headerView.setNextURL('');
             this.headerView.render();
 
             FloorTracking.promptToSwitch = false;
