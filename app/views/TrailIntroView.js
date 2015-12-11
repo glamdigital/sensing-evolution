@@ -22,9 +22,10 @@ define(["backbone", "underscore", "app/models/Trail", "app/views/AudioControlsVi
 			                pathPrefix = "/android_asset/www";
 		                }
 		                topic.notificationSound = new Media(pathPrefix + topic.attributes.notificationSound,
-			                function () {
-				                console.log("Created media object for notification");
-			                },
+			                //function () {
+				             //   console.log("Created media object for notification");
+			                //},
+                            null,
 			                function (error) {
 				                console.log("error creating notification media object");
 			                });

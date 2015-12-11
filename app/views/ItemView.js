@@ -31,13 +31,19 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 	    //found sound
 	    if(typeof(Media) !== 'undefined') {
 
-	            var pathPrefix = ''
+	            var pathPrefix = '';
                 if(device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
+                    this.foundSound_media = new Media(pathPrefix + this.item.attributes.foundSound,
+                                        //function() { console.log("Created media object"); },
+                                        null,
+                                        function(error) { console.log("error creating media object"); console.log(error); });
                 }
-                this.foundSound = new Media(pathPrefix + this.item.attributes.foundSound,
-                                    function() { console.log("Created media object"); },
-                                    function(error) { console.log("error creating media object"); console.log(error); });
+                else {
+                    //ios, use an html5 audio object. Multiple Media objects seem to clash - resulting in the end of the
+                    // found sound stopping the main object audio.
+                    this.foundSound = new Audio(this.item.attributes.foundSound);
+                }
         } else { console.log("Media plugin not available!");}
     },
 
@@ -99,7 +105,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 	    if(shouldAlert) {
 		    if (navigator.notification) {
 			    navigator.notification.vibrate(500);
-			    this.foundSound.play();
+			    if (this.foundSound_media) {
+                    this.foundSound_media.play();
+                } else {
+                    this.foundSound.play();
+                }
 		    }
 	    }
 
@@ -171,6 +181,11 @@ define(["backbone", "underscore", "hbs!app/templates/item", "app/logging", "app/
 		if(this.audioControlsView) {
 			this.audioControlsView.remove();
 		}
+        if(this.foundSound_media) {
+            console.log('releasing found sound media object');
+            this.foundSound_media.stop();
+            this.foundSound_media.release();
+        }
 	}
 
     //allQuestions: allQuestions

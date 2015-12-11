@@ -105,7 +105,7 @@
     "hint": "This is the round brass object in the upright case facing you as you enter the gallery.",
     "beaconMajor": "42156",
     "beaconHint": "V1",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "weapons",
@@ -123,7 +123,7 @@
     "hint": "This object is in the desktop case facing you as you enter the gallery.",
     "beaconMajor": "40191",
     "beaconHint": "V2",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "killer",
@@ -141,7 +141,7 @@
     "hint": "This object is in the far left desktop case facing you as you enter the gallery.",
     "beaconMajor": "2207",
     "beaconHint": "A1",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "conscientious",
@@ -159,7 +159,7 @@
     "hint": "Stand with your back to the shields and this object is at the bottom edge of the desktop display of revolvers.",
     "beaconMajor": "43888",
     "beaconHint": "",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "jibbah",
@@ -177,7 +177,7 @@
     "hint": "This object is located halfway along this gallery in the wall cases to your left.",
     "beaconMajor": "9689",
     "beaconHint": "",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "sniper-helmet",
@@ -195,7 +195,7 @@
     "hint": "This object is in the corner of this gallery, near the bottom of a display of helmets. ",
     "beaconMajor": "2733",
     "beaconHint": "",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "trench-knife",
@@ -213,7 +213,7 @@
     "hint": "This object is sitting on a cane shelf halfway downt the case, listed as no. 32",
     "beaconMajor": "12532",
     "beaconHint": "",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "amulets",
@@ -231,7 +231,7 @@
     "hint": "These objects are situated in the far corner of the gallery, in a desktop case numbered U.60.A.",
     "beaconMajor": "12517",
     "beaconHint": "",
-    "foundSound": "audio/trumpets_last.wav"
+    "foundSound": "audio/found_bell.wav"
   },
   {
     "id": "amulets-g-1",

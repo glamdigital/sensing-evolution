@@ -44,7 +44,8 @@ define(["backbone", "hbs!app/templates/topic"],
                     pathPrefix = "/android_asset/www/";
                 }
                 this.notificationSound = new Media(pathPrefix + this.topic.attributes.notificationSound,
-                                    function() { console.log("Created media object"); },
+                                    //function() { console.log("Created media object"); },
+                                    null,
                                     function(error) { console.log("error creating media object"); console.log(error); });
                 } else { console.log("Media plugin not available!");}
             },
