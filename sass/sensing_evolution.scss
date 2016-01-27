@@ -156,6 +156,10 @@ h3 {
       width: 80%;
       margin: 0 4%;
     }
+    @media #{$phone_square} {
+        width: 80%;
+        margin: 0 4%;
+    }
     @media #{$tablet} {
       width: 60%;
       margin-top: 2em;
