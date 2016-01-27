@@ -8,7 +8,7 @@
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "64823",
     "entryPointBeaconId2": "30098",
-    "notificationSound": "audio/trumpets_last.wav"
+    "notificationSound": "audio/found_bell.wav"
   },
   {
     "id": "lower",
@@ -19,7 +19,7 @@
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "18829",
     "entryPointBeaconId2": "",
-    "notificationSound": "audio/trumpets_last.wav"
+    "notificationSound": "audio/found_bell.wav"
   },
   {
     "id": "upper",
@@ -30,6 +30,6 @@
     "fixed_order": "TRUE",
     "entryPointBeaconId1": "5744",
     "entryPointBeaconId2": "",
-    "notificationSound": "audio/trumpets_last.wav"
+    "notificationSound": "audio/found_bell.wav"
   }
 ]
