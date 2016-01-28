@@ -134,19 +134,21 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     },
     playVideo: function(ev) {
 
-      this.$video.addClass('playing');
-      //  //hide the play control
-      $('.play-button').hide();
+      if(!this.$video.hasClass('playing')) {
+        this.$video.addClass('playing');
+        //  //hide the play control
+        $('.play-button').hide();
 
-      if(typeof(device)!='undefined') {
-		    window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
-	    } else {
-		    //browser
-		    this.$video[0].play();
-	    }
+        if (typeof(device) != 'undefined') {
+          window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
+        } else {
+          //browser
+          this.$video[0].play();
+        }
 
-	    //unhide video and controls
-      $('.found-video').show();
+        //unhide video and controls
+        $('.found-video').show();
+      }
     },
     pauseVideo: function(ev) {
 	    this.video.pause();
