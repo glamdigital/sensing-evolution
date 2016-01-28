@@ -27,7 +27,7 @@
     "incorrectAnswer2": "Some seagulls ate shellfish from the sea and then pooed them out over Oxford",
     "incorrectResponse2": "Nope. The fossilised seashells in Oxford are usually buried deep inside rock where no seagulls could drop them (and seagulls don’t usually swallow the shells anyway!)",
     "correctSound": "audio/rooster.mp3",
-    "incorrectSound": "audio/Monkey_1.mp3"
+    "incorrectSound": "audio/Lion.mp3"
   },
   {
     " q": "q3",
@@ -57,7 +57,7 @@
     "incorrectAnswer2": "They like gross, smelly things",
     "incorrectResponse2": "Not exactly. Scientists might often be interested in weird stuff, but coprolites are so old that they have turned to stone (been fossilised), so they are no longer squishy and they stopped being smelly a long time ago.",
     "correctSound": "audio/rooster.mp3",
-    "incorrectSound": "audio/Monkey_1.mp3"
+    "incorrectSound": "audio/Lion.mp3"
   },
   {
     " q": "q5",
@@ -87,7 +87,7 @@
     "incorrectAnswer2": "Breeding animals like pigeons or dogs so that they look how you want them to",
     "incorrectResponse2": "No. Although breeding animals to keep certain characteristics – such as speckled wings in pigeons – is a kind of selection it is not a natural process. In fact, Darwin called this ‘artificial selection’.",
     "correctSound": "audio/rooster.mp3",
-    "incorrectSound": "audio/Monkey_1.mp3"
+    "incorrectSound": "audio/Lion.mp3"
   },
   {
     " q": "q7",
@@ -117,7 +117,7 @@
     "incorrectAnswer2": "Three clawed fingers.",
     "incorrectResponse2": "No, this is a feature <i>Archaeopteryx</i> shares with its dinosaur ancestors.",
     "correctSound": "audio/rooster.mp3",
-    "incorrectSound": "audio/Monkey_1.mp3"
+    "incorrectSound": "audio/Lion.mp3"
   },
   {
     " q": "qi1",
