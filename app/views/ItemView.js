@@ -30,13 +30,17 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       this.item.attributes.isAvailable = true;
 	    if(typeof(Media) !== 'undefined') {
 
-	            var pathPrefix = ''
+	            var pathPrefix = '';
                 if(device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
-                }
-                this.foundSound = new Media(pathPrefix + this.item.attributes.foundsound,
+                    this.foundSound_media = new Media(pathPrefix + this.item.attributes.foundsound,
                                     function() { console.log("Created media object"); },
                                     function(error) { console.log("error creating media object"); console.log(error); });
+                } else {
+                    //ios, use an html5 audio object. Multiple Media objects seem to clash - resulting in the end of the
+                    // found sound stopping the main object audio.
+                    this.foundSound = new Audio(this.item.attributes.foundsound);
+                }
         } else { console.log("Media plugin not available!");}
     },
 
@@ -106,8 +110,13 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    //center play button
 	    //this.moveToCentre($('.play'));
 		  //this.moveToCentre($('#foundVideo'));
-      navigator.notification.vibrate(500);
-	    this.foundSound.play();
+      navigator.vibrate(500);
+	    if (this.foundSound_media) {
+            this.foundSound_media.play();
+        } else {
+            this.foundSound.play();
+        }
+
 
 	    ////start video playing
 	    //this.playVideo();
@@ -204,6 +213,14 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
     {
         var content = $('#content');
         content.toggleClass('slideout');
+    },
+    
+    cleanup: function() {
+        if(this.foundSound_media) {
+            console.log('releasing found sound media object');
+            this.foundSound_media.stop();
+            this.foundSound_media.release();
+        }
     }
 
   }
