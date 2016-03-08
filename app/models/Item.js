@@ -1,6 +1,10 @@
-define(["backbone", "underscore", "app/collections/QuestionsCollection"], function(Backbone, _, QuestionsCollection) {
+define(["backbone", "underscore", "app/collections/QuestionsCollection", "moment"], function(Backbone, _, QuestionsCollection, moment) {
 
   var allQuestions = new QuestionsCollection();
+
+
+  MOVE_START_DATE = "2016-08-01";
+  MOVE_END_DATE = "2016-08-20";
 
   var Item = Backbone.Model.extend({
 
@@ -43,6 +47,14 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection"], functi
         }
         i++;
       }
+      
+      //switch to alt map during move period
+      if(moment().isBetween(MOVE_START_DATE, MOVE_END_DATE)) {
+          if(item.map_alt) {
+              item.map = item.map_alt;
+          }
+      }
+      
       return item;
     },
 

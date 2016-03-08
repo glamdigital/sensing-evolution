@@ -27,7 +27,8 @@
     "backbone": "~1.1.2",
     "layoutmanager": "~0.9.5",
     "require-handlebars-plugin": "~0.11.2",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "moment": "~2.12.0"
   },
   "devDependencies": {
     "jasmine": "~2.2.1"

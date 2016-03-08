@@ -13,7 +13,8 @@ require.config({
     underscore: "app/libs/underscore/underscore",
     layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
     hbs: "app/libs/require-handlebars-plugin/hbs",
-    jasmine: "app/libs/jasmine/lib/jasmine-core"
+    jasmine: "app/libs/jasmine/lib/jasmine-core",
+    moment: "app/libs/moment/min/moment.min"
   },
   packages: [
 
