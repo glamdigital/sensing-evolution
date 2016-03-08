@@ -47,14 +47,15 @@
     }
   }
 }
-div.instructions-next {
-  text-align: center;
-  width: 25%;
-  position: fixed;
-  bottom: $standardPadding;
-  right: $standardPadding;
-  background-color: $overlayBlue;
-  a {
-    color: white;
-  }
+
+a {
+    div.instructions-next {
+      text-align: center;
+      width: 25%;
+      position: fixed;
+      bottom: $standardPadding;
+      right: $standardPadding;
+      background-color: $overlayBlue;
+      color: white;
+    }
 }

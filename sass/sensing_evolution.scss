@@ -33,6 +33,11 @@ h1, h2, h3, h4, h5 {
 }
 
 //shared style for all buttons
+a.button {
+    color: $fontColor;
+    text-decoration: none;
+}
+
 div.button {
   &.center {
     text-align: center;
@@ -48,6 +53,8 @@ div.button {
     color: $fontColor;
     text-decoration: none;
   }
+  color: $fontColor;
+  text-decoration: none;
   margin: 10px;
   display: block;
 }

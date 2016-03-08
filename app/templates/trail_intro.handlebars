@@ -1,7 +1,7 @@
 <div class="video-holder">
     <div class="buttons-container center-vertically">
-        <div id="replay" class="button center"><a>Replay</a></div>
-        <div id="start-trail" class="button center"><a href="#/trail/{{slug}}/instructions/1">Start the trail!</a></div>
+        <a class="button"><div id="replay" class="button center">Replay</div></a>
+        <a class="button" href="#/trail/{{slug}}/instructions/1"><div id="start-trail" class="button center">Start the trail!</div></a>
     </div>
     <video id="introvideo" class="intro" width="100%" height="100%" webkit-playsinline preload="auto" poster="img/{{video_poster}}" controls >
         {{#if isAndroid}}
@@ -15,5 +15,3 @@
         <!--<div id="stop" class="button stop"><a>Stop</a></div>-->
     <!--</div>-->
 </div>
-
-

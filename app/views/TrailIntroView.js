@@ -11,7 +11,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
         afterRender: function() {
             this.$video = $('#introvideo');
             this.video = this.$video[0];
-			this.isAndroid = (device.platform == 'Android' || device.platform == 'amazon-fireos');
+			this.isAndroid = (typeof(device) !== 'undefined') &&   (device.platform == 'Android' || device.platform == 'amazon-fireos');
             //initiailize the video plugin
             //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
 	        if(typeof(device)!='undefined') {
