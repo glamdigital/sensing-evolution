@@ -3,8 +3,8 @@ define(["backbone", "underscore", "app/collections/QuestionsCollection", "moment
   var allQuestions = new QuestionsCollection();
 
 
-  MOVE_START_DATE = "2016-08-01";
-  MOVE_END_DATE = "2016-08-20";
+  MOVE_START_DATE = "2015-08-01";   //set to past for now
+  MOVE_END_DATE = "2015-08-20";     //set to past for now
 
   var Item = Backbone.Model.extend({
 
