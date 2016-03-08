@@ -17,8 +17,8 @@ require(['jquery','backbone', 'fastclick', 'app/logging', 'layoutmanager', 'app/
     var onReady = function() {
       Logging.logToDom("Device Ready");
       Location.init();
-      Location.startRangingRegion(Location_UUID_ios);
       Location.startRangingRegion(Location_UUID_beacons);
+    //   Location.startRangingRegion(Location_UUID_ios);
         console.log("Device ready");
     };
 
