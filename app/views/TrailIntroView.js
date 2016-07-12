@@ -6,6 +6,7 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 
         initialize: function(params) {
             this.trail = params.trail;
+            this.isAndroid = (typeof(device) !== 'undefined') &&   (device.platform == 'Android' || device.platform == 'amazon-fireos');
         },
 
         afterRender: function() {
@@ -17,9 +18,9 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        if(typeof(device)!='undefined') {
 		        var videoPath = this.isAndroid ? '' : 'video/'
 		        console.log("Initializing video");
-		        window.plugins.html5Video.initialize({
-			        "introvideo": videoPath + this.trail.attributes.video,
-		        });
+		        // window.plugins.html5Video.initialize({
+			      //   "introvideo": videoPath +this.trail.attributes.video,
+		        // });
 	        }
 
 	        //start video on first play - the start 'control' doesn't work due to video plugin
@@ -37,6 +38,14 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
 	        }.bind(this));
 
 	        this.checkErrorTimeout = setTimeout(this.checkVideoError.bind(this), 500);
+          
+        $("#android-video-overlay").on('click', function(ev){
+          $("#android-video-overlay").hide();
+          console.log("#android-video-overlay clicked");
+          this.video.webkitEnterFullscreen();
+          this.startVideo();
+        }.bind(this));
+
         },
 	    checkVideoError: function() {
 		    // Sometimes on Android, decoding fails at first attempt.
@@ -58,7 +67,8 @@ define(["backbone", "underscore", "app/views/vcentre", "app/models/Trail", "hbs!
         startVideo: function() {
 	        console.log("Playing video");
 	        if(typeof(device)!='undefined' && (device.platform == 'Android' || device.platform == 'amazon-fireos')) {
-		        window.plugins.html5Video.play('introvideo', this.showStartLink);
+		        // window.plugins.html5Video.play('introvideo', this.showStartLink);
+            this.video.play();
 	        } else {
 		        this.video.play();
 	        }
