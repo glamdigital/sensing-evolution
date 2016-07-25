@@ -38,3 +38,15 @@ This sheet should be exported to .csv into a folder named SensingEvolutionData.
 The following task then converts the data to the json format read by the app
 
     grunt convertData
+
+The following cordova plugins are used:
+com.dawsonloudon.videoplayer 1.0.0 "VideoPlayer"
+com.unarin.cordova.beacon 3.4.0 "Proximity Beacon Plugin"
+cordova-plugin-barcodescanner 0.7.0 "BarcodeScanner"
+cordova-plugin-compat 1.0.0 "Compat"
+cordova-plugin-device 1.1.2 "Device"
+cordova-plugin-dialogs 1.2.1 "Notification"
+cordova-plugin-file 4.2.0 "File"
+cordova-plugin-geolocation 2.2.0 "Geolocation"
+cordova-plugin-media 2.3.0 "Media"
+cordova-plugin-vibration 2.1.1 "Vibration"
