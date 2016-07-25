@@ -26,17 +26,15 @@
     </div>
 
     <div class="found-video">
+      {{#if isAndroid}}
+        <div id="android-video" style="background-image: url('img/{{video_poster}}');">
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </div>
+      {{else}}
         <video controls id='foundVideo' class='found' width="100%" height="auto" webkit-playsinline preload="auto" poster="img/{{video_poster}}" >
             <source src="video/{{video}}" type="video/mp4">
         </video>
-        <!--<div class="controls-container" style="display:none">-->
-            <!--<div id="resume" class="button resume"><a>Resume</a></div>-->
-            <!--<div id="pause" class="button pause"><a>Pause</a></div>-->
-            <!--<div id="stop" class="button stop"><a>Stop</a></div>-->
-        <!--</div>-->
-        <!--<div id="play" class="play play-button button center center-vertically">-->
-            <!--<p>You found it!</p><a>Play the video</a>-->
-        <!--</div>-->
+      {{/if}}
     </div>
 
     <div class="found-item">
