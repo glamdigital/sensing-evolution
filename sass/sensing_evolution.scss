@@ -107,7 +107,7 @@ div.button {
   @include transition-duration(0.25s);
 }
 
-#android-video-overlay {
+#android-video-overlay, #android-video {
     position: absolute;
     width: 100%;
     height: 100%;
