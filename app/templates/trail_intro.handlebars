@@ -3,16 +3,20 @@
         <a class="button"><div id="replay" class="button center">Replay</div></a>
         <a class="button" href="#/trail/{{slug}}/instructions/1"><div id="start-trail" class="button center">Start the trail!</div></a>
     </div>
-    <video id="introvideo" class="intro" width="100%" height="100%" webkit-playsinline preload="auto" poster="img/{{video_poster}}" controls >
-        <source src="video/{{video}}" type="video/mp4">
-    </video>
+
+    {{#if isAndroid}}
+      <div id="android-video-overlay" style="background-image: url('img/{{video_poster}}');">
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </div>
+    {{else}}
+      <video id="introvideo" class="intro" width="100%" height="100%" webkit-playsinline preload="auto" poster="img/{{video_poster}}" controls >
+          <source src="video/{{video}}" type="video/mp4">
+      </video>
+    {{/if}}
+
     <!--<div class="controls-container">-->
         <!--<div id="resume" class="button resume"><a>Resume</a></div>-->
         <!--<div id="pause" class="button pause"><a>Pause</a></div>-->
         <!--<div id="stop" class="button stop"><a>Stop</a></div>-->
     <!--</div>-->
 </div>
-{{#if isAndroid}}
-  <div id="android-video-overlay">
-  </div>
-{{/if}}
