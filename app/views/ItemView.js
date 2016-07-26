@@ -37,7 +37,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    if(typeof(Media) !== 'undefined') {
 
 	            var pathPrefix = '';
-                if(device.platform.toLowerCase() === "android") {
+                if(device.platform && device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
                     this.foundSound_media = new Media(pathPrefix + this.item.attributes.foundsound,
                                     function() { console.log("Created media object"); },
@@ -148,6 +148,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
         VideoPlayer.play(this.videoPath +this.item.attributes.video);
         setTimeout(this.onVideoEnded.bind(this), 2000);
       } else {
+        $('.found-video').show();
         this.video.play();
       }
 
