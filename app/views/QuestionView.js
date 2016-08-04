@@ -15,7 +15,7 @@ define(["backbone", "underscore", "hbs!app/templates/question"],
             if(typeof(Media) !== 'undefined') {
 
 	            var pathPrefix = ''
-                if(device.platform.toLowerCase() === "android") {
+                if(device.platform && device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
                 }
                 this.correctAudio = new Media(pathPrefix + this.question.attributes.correctSound);

@@ -120,16 +120,12 @@ module.exports = function(grunt) {
                     src: ["app/built.js",
                         "app/data/**",
                         "img/**",
-	                    "audio/**",
+                        "video/**",
+                        "audio/**",
                         "css/**",
 	                    "fonts/**",
                         ],
                     dest: "www"
-                },
-                {   expand: true,
-	                flatten: true,
-                    src: ["video/*"],
-                    dest: "platforms/android/res/raw"
                 },
                 {   src: ["index-built.html"],
                     dest: "www/index.html"
@@ -326,7 +322,6 @@ module.exports = function(grunt) {
       }
       grunt.task.run('cordovacli:' + arg);
   });
-
   grunt.registerTask('convertData', 'convert csv data to json format required by the app', ['convert:trails', 'convert:topics', 'convert:items', 'convert:questions']);
 
   grunt.registerTask('test', 'Run jasmine tests', ['jasmine']);

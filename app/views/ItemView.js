@@ -12,6 +12,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       output.nextURL = this.nextURL;
       output.trailTitle = this.trail.attributes.title;
       output.topicTitle = this.topic.attributes.title;
+      output.isAndroid = this.isAndroid;
       return output;
     },
 
@@ -28,10 +29,15 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       Logging.logToDom("Listening for event: " + this.eventId);
       this.listenTo(Backbone, 'unlock-item', this.findObject);
       this.item.attributes.isAvailable = true;
+      this.isAndroid = (typeof(device) !== 'undefined') &&   (device.platform == 'Android' || device.platform == 'amazon-fireos');
+      if(typeof(device)!='undefined') {
+        this.videoPath = this.isAndroid ? 'file:///android_asset/www/video/' : 'video/';
+      }
+      
 	    if(typeof(Media) !== 'undefined') {
 
 	            var pathPrefix = '';
-                if(device.platform.toLowerCase() === "android") {
+                if(device.platform && device.platform.toLowerCase() === "android") {
                     pathPrefix = "/android_asset/www/";
                     this.foundSound_media = new Media(pathPrefix + this.item.attributes.foundsound,
                                     function() { console.log("Created media object"); },
@@ -51,21 +57,12 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       //var eventData = { question: this.question, url:this.nextURL };
       this.$video.on('ended', this.onVideoEnded.bind(this));
 
-	    if(typeof(device)!='undefined') {
-		    //on Android the videos must be loose in res/raw/, where the plugin plays them, on ios they are in www/video'
-		    var videoPath = (device.platform == 'Android' || device.platform == 'amazon-fireos') ? '' : 'video/'
-		    window.plugins.html5Video.initialize({"foundVideo": videoPath + this.item.attributes.video});
-	    }
         //create the unlock view
         this.unlockView = new UnlockCodeView({ el:$('#unlock-code'), item: this.item});
         this.unlockView.render();
 
-		//setTimeout(this.centreElements.bind(this), 100);
     },
 
-    centreElements: function() {
-	    //this.moveToCentre($('.before-found'));
-    },
 
     didRangeBeacon: function(data) {
         Logging.logToDom("View heard about ranged beacon!");
@@ -135,6 +132,7 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
       "click .resume" : "resumeVideo",
       "click .stop" : "stopVideo",
       "click video" : "playVideo",
+      "click #android-video": "playVideo",
     },
     replayVideo: function(ev) {
 	    //enable stopping on second play
@@ -142,41 +140,18 @@ define(["backbone", "underscore", "jquery", "app/views/vcentre", "hbs!app/templa
 	    this.playVideo(ev);
     },
     playVideo: function(ev) {
-
       if(!this.$video.hasClass('playing')) {
         this.$video.addClass('playing');
-        //  //hide the play control
-        $('.play-button').hide();
-
-        if (typeof(device) != 'undefined') {
-          window.plugins.html5Video.play("foundVideo", this.onVideoEnded.bind(this));
-        } else {
-          //browser
-          this.$video[0].play();
-        }
-
-        //unhide video and controls
-        $('.found-video').show();
       }
-    },
-    pauseVideo: function(ev) {
-	    this.video.pause();
-	    $('.pause').hide();
-	    $('.resume').show();
-    },
-    resumeVideo: function(ev) {
-	    this.video.play();
-	    $('.pause').show();
-	    $('.resume').hide();
-    },
-    stopVideo: function(ev) {
-	    this.video.pause();
-	    this.video.currentTime = 0;
-        //this.$video.hide();
-        //$('.controls-container').hide();
-        //$('.buttons-container').show();
-        //$('.replay').show();
-	    this.onVideoEnded();
+      if (this.isAndroid) {
+        $("#android-video").hide();
+        VideoPlayer.play(this.videoPath +this.item.attributes.video);
+        setTimeout(this.onVideoEnded.bind(this), 2000);
+      } else {
+        $('.found-video').show();
+        this.video.play();
+      }
+
     },
     showHint: function(ev) {
       ev.preventDefault();
