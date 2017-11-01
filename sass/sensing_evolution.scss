@@ -59,6 +59,15 @@ div.button {
   display: block;
 }
 
+.resume-buttons {
+  width:50%;
+  margin: 0 auto;
+  .button {
+    background:#eee;
+    margin: 10% 0;
+  }
+}
+
 // Used on the trail_intro page
 .video-holder {
   position: absolute;
@@ -177,7 +186,7 @@ div.button {
     //trail name
     h4 {
       line-height: 1em;
-      margin: 0.2em 0 0;     
+      margin: 0.2em 0 0;
     }
   }
   //list of items
@@ -273,7 +282,7 @@ a.nav-link {
 .header {
   width: 100%;
   margin: 0;
-  padding: 0;    
+  padding: 0;
   .titles {
     text-align: center;
     padding: .4em 2em;
@@ -295,7 +304,7 @@ a.nav-link {
       font-size: 1.2em;
       line-height: 1em;
       margin: 0;
-    }     
+    }
   }
 }
 
@@ -408,7 +417,7 @@ h3 {
           color: $fontColor;
           text-decoration: none;
       }
- 
+
       //hint text itself
       .hint {
         padding: 10px;
@@ -489,7 +498,7 @@ h3 {
       }
       //some questions/answers are quite long. Allow overflow scrolling for this div.
       // Somewhat hard to notice unfortunately.
-      overflow-y: scroll; 
+      overflow-y: scroll;
       .question-text {
         font-size: 1.2em;
         @media #{$phone_small} {
@@ -497,7 +506,7 @@ h3 {
         }
         line-height: 1em;
         margin-bottom: 0.4em;
-      }     
+      }
       .questions {
         text-align: left;
         display: block;
@@ -540,7 +549,7 @@ h3 {
         display: none;
         width: 35%;
         float: right;
-      }      
+      }
     }
   }
 
@@ -586,7 +595,7 @@ h3 {
         margin: 0;
       }
       a {
-        font-size: 1.4em;  
+        font-size: 1.4em;
       }
     }
     &.replay {
@@ -617,7 +626,7 @@ h3 {
   }
   //For some reason, the button doesn't respond on iPhone without this...
   position: relative;
-  left: -10px;  
+  left: -10px;
   //classes added after attempted input code
   &.correct {
     border-color: $green;

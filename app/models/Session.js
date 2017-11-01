@@ -3,16 +3,23 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
   var Session = Backbone.Model.extend({
 
-    initialize: function(trail) {
+    localStorage: true,
+
+    initialize: function(trail, savedSession=false) {
 
       this.trail = trail;
-
       //initialise the visited/unvisited collections
       this.visitedItems = new ItemsCollection();
       this.unvisitedItems = new ItemsCollection();
 
-      //get all topics for the trail
-      this.topics = trail.getTopics();
+      if (savedSession) {
+        this.resumeSession(savedSession);
+      }
+      else {
+
+
+        //get all topics for the trail
+        this.topics = trail.getTopics();
         if(trail.attributes.fixed_order) {
             this.shuffledTopics = this.topics;
         } else {
@@ -20,33 +27,33 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
         }
 
 
-      //get all items for the topic, shuffle and add to unvisited items, and record index
-      var itemIndex = 1;
-      for(var i=0; i<this.shuffledTopics.length; i++) {
-          var topic = this.shuffledTopics.at(i);
-          var items = topic.getItems().filter(function (item) {
-              return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
-          }, this);
-          if(topic.attributes.fixed_order) {
-              //if the topic is set to be in fixed order, then items will appear in the order they are in the imported json
-              topic.shuffledItems = new ItemsCollection(_.clone(items));
-          }
-          else {
-              topic.shuffledItems = new ItemsCollection(_.shuffle(items));
-          }
-          for(var j=0; j<items.length; j++) {
-	          var item = topic.shuffledItems.at(j);
-	          var index = j+1;
-	          item.attributes.progressString = "Item " + itemIndex + " of 8";
-	          itemIndex ++;
-	          item.attributes.isFound = false;
-	          item.attributes.isAvailable = false;
-	          this.unvisitedItems.add(item);
-          }
+        //get all items for the topic, shuffle and add to unvisited items, and record index
+        var itemIndex = 1;
+        for(var i=0; i<this.shuffledTopics.length; i++) {
+            var topic = this.shuffledTopics.at(i);
+            var items = topic.getItems().filter(function (item) {
+                return item.attributes.trails.indexOf(this.trail.attributes.slug) >= 0;
+            }, this);
+            if(topic.attributes.fixed_order) {
+                //if the topic is set to be in fixed order, then items will appear in the order they are in the imported json
+                topic.shuffledItems = new ItemsCollection(_.clone(items));
+            }
+            else {
+                topic.shuffledItems = new ItemsCollection(_.shuffle(items));
+            }
+            for(var j=0; j<items.length; j++) {
+  	          var item = topic.shuffledItems.at(j);
+  	          var index = j+1;
+  	          item.attributes.progressString = "Item " + itemIndex + " of 8";
+  	          itemIndex ++;
+  	          item.attributes.isFound = false;
+  	          item.attributes.isAvailable = false;
+  	          this.unvisitedItems.add(item);
+            }
+        }
       }
-
       //listen for items being found
-        this.listenTo(Backbone, 'complete-item', this.completeItem);
+      this.listenTo(Backbone, 'complete-item', this.completeItem);
     },
 
     hasNext: function() {
@@ -89,6 +96,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
         //called when the item has been completed
         // - i.e. the item has been found, and the question has been answered correctly
         this.visitItem(data.slug);
+        this.saveSession();
     },
 
     visitItem: function(slug) {
@@ -101,6 +109,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
     getAllSessionTopicsAndItems: function() {
         var out = {
             title: this.trail.attributes.title,
+            slug: this.trail.attributes.slug,
             topics: []
         };
 
@@ -108,6 +117,7 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
             var isCurrentTopic = this.currentTopic === topic;
             var topicDict = {
                 title: topic.attributes.title,
+                slug: topic.attributes.slug,
                 items: [],
                 isCurrent: isCurrentTopic,
 	            isComplete: true,
@@ -136,6 +146,34 @@ define(["backbone", "app/collections/ItemsCollection", "app/collections/TopicsCo
 
         return out;
 
+    },
+    saveSession:function() {
+      if(typeof(Storage)!=="undefined") {
+        localStorage.setItem("SEVOsession", JSON.stringify(this.getAllSessionTopicsAndItems()));
+      }
+    },
+    resumeSession:function(savedSession) {
+      this.topics = this.trail.getTopics();
+      this.shuffledTopics = new TopicsCollection();
+      _.each(savedSession.topics, function(topicDict){
+        var topic = this.topics.findWhere({slug: topicDict.slug});
+        this.shuffledTopics.add(topic);
+        topic.shuffledItems = new ItemsCollection();
+        var items = topic.getItems();
+        _.each(topicDict.items, function(itemDict){
+          var item = items.findWhere({slug: itemDict.slug})
+          if (itemDict.isCurrent) this.currentItem = item;
+          if (itemDict.isVisited) {
+            item.attributes.isAvailable = true;
+            item.attributes.isFound = true;
+            this.visitedItems.add(item);
+          }
+          else {
+            this.unvisitedItems.add(item);
+          }
+          topic.shuffledItems.add(item);
+        }, this)
+      }, this);
     },
 
     // ItemsCollection of items the user has yet to visit

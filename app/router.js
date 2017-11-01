@@ -1,11 +1,11 @@
 define(["backbone", "jquery", "underscore",
           "app/collections/TrailsCollection",
           "app/views/TrailsView", "app/views/TrailInstructionsView", "app/views/TrailIntroView", "app/views/ItemView", "app/views/FinishedView",
-          "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView"],
+          "app/views/ContentView", "app/models/Session", "app/views/NavView", "app/views/DashboardView", "app/views/ResumeView"],
   function(Backbone, $, _,
             TrailsCollection,
             TrailsView, TrailInstructionsView, TrailIntroView, ItemView, FinishedView,
-            ContentView, Session, NavView, DashboardView) {
+            ContentView, Session, NavView, DashboardView, ResumeView) {
 
     var SEVRouter = Backbone.Router.extend({
         initialize: function() {
@@ -23,16 +23,26 @@ define(["backbone", "jquery", "underscore",
         },
 
         routes: {
-            "": "home",
+            "": "resume_ui",
             "home": "home",
             "trail/:trail/instructions/:num": "trail_instructions",
             "trail_video/:trail": "trail_video",
             "item/:item": "item",
             "finished": "finished",
             "restart": "restart",
+            "resume": "resume",
             "dashboard": "dashboard"
         },
-
+        resume_ui: function() {
+          if(typeof(Storage)!=="undefined" && localStorage.getItem("SEVOsession")) {
+            var view = new ResumeView();
+            this.contentView.setView(view);
+            view.render();
+          }
+          else {
+            this.home();
+          }
+        },
         home: function() {
           var view = new TrailsView({
             trails:this.allTrails
@@ -103,28 +113,50 @@ define(["backbone", "jquery", "underscore",
             this.contentView.setView(view);
             view.render();
             //re-render and hide the nav view
-            this.navView.render();
             if(this.navView) {
-                this.navView.hide();
+              this.navView.render();
+              this.navView.hide();
             }
         },
         finished: function() {
-            var view = new FinishedView({
-	            trail: this.session.getCurrentTrail(),
-            });
-            this.contentView.setView(view);
-            view.render();
-            //TODO mark with the session that it's finished.
-            //TODO re-render the nav menu
-            //Hide the nav-menu
+          var view = new FinishedView({
+            trail: this.session.getCurrentTrail(),
+          });
+          this.contentView.setView(view);
+          view.render();
+          //TODO mark with the session that it's finished.
+          //TODO re-render the nav menu
+          //Hide the nav-menu
+          if(typeof(Storage)!=="undefined") {
+            localStorage.removeItem("SEVOsession");
+          }
 	        if(this.navView) {
 		        this.navView.hide();
 	        }
+
         },
         restart: function() {
             //restart the current trail
             this.session = new Session(this.session.attributes.trail.attributes.slug);
             Backbone.history.navigate(this.session.getNextURL());
+        },
+        resume: function() {
+          //resume the previous trail
+          if(typeof(Storage)!=="undefined") {
+            var savedSession =  JSON.parse(localStorage.getItem("SEVOsession"));
+            var trail = this.allTrails.findWhere( {slug: savedSession.slug} );
+            this.session = new Session(trail, savedSession);
+            Backbone.history.navigate(this.session.getNextURL());
+            if(!this.navView) {
+                //create a navbar now we have a session
+                this.navView = new NavView({el: $('#nav-menu'), session: this.session});
+            }
+            else {
+                //update if for the new session.
+                this.navView.session = this.session;
+            }
+            this.navView.render();
+          }
         },
         dashboard: function() {
             var dashboardView = new DashboardView( [
